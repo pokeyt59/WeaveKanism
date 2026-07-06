@@ -13,7 +13,7 @@ import mekanism.common.capabilities.holder.energy.IEnergyContainerHolder;
 import mekanism.common.capabilities.proxy.ProxyStrictEnergyHandler;
 import mekanism.common.integration.energy.EnergyCompatUtils;
 import net.minecraft.core.Direction;
-import net.neoforged.neoforge.capabilities.BlockCapability;
+import mekanism.fabric_shim.capabilities.BlockCapability;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault

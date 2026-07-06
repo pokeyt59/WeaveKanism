@@ -10,7 +10,7 @@ import mekanism.common.Mekanism;
 import mekanism.common.capabilities.resolver.ICapabilityResolver;
 import mekanism.common.tile.component.TileComponentConfig;
 import net.minecraft.core.Direction;
-import net.neoforged.neoforge.capabilities.BlockCapability;
+import mekanism.fabric_shim.capabilities.BlockCapability;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault

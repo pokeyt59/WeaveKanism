@@ -21,7 +21,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.Item;
-import net.neoforged.neoforge.items.IItemHandler;
+import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class SorterFilter<FILTER extends SorterFilter<FILTER>> extends BaseFilter<FILTER> {

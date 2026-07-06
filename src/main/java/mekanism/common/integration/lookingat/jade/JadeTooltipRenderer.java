@@ -24,7 +24,7 @@ import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.phys.Vec2;
-import net.neoforged.neoforge.common.util.NeoForgeExtraCodecs;
+import mekanism.fabric_shim.common.util.NeoForgeExtraCodecs;
 import org.jetbrains.annotations.Nullable;
 import snownee.jade.api.Accessor;
 import snownee.jade.api.IComponentProvider;

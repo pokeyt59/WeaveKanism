@@ -4,9 +4,9 @@ import java.util.Collection;
 import mekanism.api.math.MathUtils;
 import mekanism.common.lib.distribution.SplitInfo;
 import mekanism.common.lib.distribution.Target;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler.FluidAction;
 import org.jetbrains.annotations.NotNull;
 
 public class FluidHandlerTarget extends Target<IFluidHandler, @NotNull FluidStack> {

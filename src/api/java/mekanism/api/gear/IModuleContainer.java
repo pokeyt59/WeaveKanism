@@ -17,7 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredHolder;
 import org.jetbrains.annotations.Nullable;
 
 /**

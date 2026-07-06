@@ -34,10 +34,10 @@ import net.neoforged.neoforge.common.SoundActions;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid.Flowing;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid.Source;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 

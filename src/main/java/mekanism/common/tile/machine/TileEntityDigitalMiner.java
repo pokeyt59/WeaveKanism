@@ -111,11 +111,11 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.redstone.Redstone;
-import net.neoforged.neoforge.capabilities.BlockCapability;
+import mekanism.fabric_shim.capabilities.BlockCapability;
 import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
-import net.neoforged.neoforge.common.NeoForge;
+import mekanism.fabric_shim.common.NeoForge;
 import net.neoforged.neoforge.event.level.BlockEvent;
-import net.neoforged.neoforge.items.IItemHandler;
+import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

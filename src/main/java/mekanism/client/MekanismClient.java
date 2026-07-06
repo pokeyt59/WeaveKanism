@@ -19,7 +19,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.Connection;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.neoforged.api.distmarker.Dist;
+import mekanism.fabric_shim.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;

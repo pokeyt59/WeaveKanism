@@ -31,7 +31,7 @@ import mekanism.common.util.NBTUtils;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 
 public class TankMultiblockData extends MultiblockData implements IValveHandler {
 

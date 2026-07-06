@@ -7,7 +7,7 @@ import java.util.Map;
 import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.common.capabilities.holder.IHolder;
 import net.minecraft.core.Direction;
-import net.neoforged.neoforge.capabilities.BlockCapability;
+import mekanism.fabric_shim.capabilities.BlockCapability;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault

@@ -13,7 +13,7 @@ import mekanism.common.config.MekanismConfig;
 import mekanism.common.recipe.IMekanismRecipeTypeProvider;
 import mekanism.common.recipe.lookup.cache.IInputRecipeCache;
 import net.minecraft.world.item.crafting.RecipeInput;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
 public class FluidTanksBuilder {

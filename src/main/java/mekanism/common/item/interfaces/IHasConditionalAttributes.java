@@ -1,6 +1,6 @@
 package mekanism.common.item.interfaces;
 
-import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
 
 public interface IHasConditionalAttributes {
 

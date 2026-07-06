@@ -12,7 +12,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredHolder;
 
 @NothingNullByDefault
 public class BasicPurifyingRecipe extends BasicItemStackChemicalToItemStackRecipe {

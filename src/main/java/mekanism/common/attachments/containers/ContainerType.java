@@ -54,11 +54,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.capabilities.ICapabilityProvider;
-import net.neoforged.neoforge.capabilities.ItemCapability;
+import mekanism.fabric_shim.capabilities.ItemCapability;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.common.util.INBTSerializable;
+import mekanism.fabric_shim.common.util.INBTSerializable;
 import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredHolder;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault

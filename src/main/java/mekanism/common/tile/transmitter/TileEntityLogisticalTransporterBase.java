@@ -19,8 +19,8 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.capabilities.BlockCapability;
-import net.neoforged.neoforge.items.IItemHandler;
+import mekanism.fabric_shim.capabilities.BlockCapability;
+import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

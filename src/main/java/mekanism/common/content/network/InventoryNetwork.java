@@ -29,7 +29,7 @@ import net.minecraft.core.GlobalPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.chunk.ChunkAccess;
-import net.neoforged.neoforge.items.IItemHandler;
+import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class InventoryNetwork extends DynamicNetwork<IItemHandler, InventoryNetwork, LogisticalTransporterBase> {

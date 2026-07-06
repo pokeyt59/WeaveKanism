@@ -13,8 +13,8 @@ import mekanism.common.attachments.containers.ContainerType;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler.FluidAction;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

@@ -12,7 +12,7 @@ import mekanism.api.text.IHasTextComponent;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
+import mekanism.fabric_shim.network.codec.NeoForgeStreamCodecs;
 import org.jetbrains.annotations.Nullable;
 
 /**

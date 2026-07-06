@@ -3,7 +3,7 @@ package mekanism.common.integration.gender;
 import com.wildfire.api.IGenderArmor;
 import mekanism.common.Mekanism;
 import net.minecraft.world.level.ItemLike;
-import net.neoforged.neoforge.capabilities.ItemCapability;
+import mekanism.fabric_shim.capabilities.ItemCapability;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 
 public record MekanismGenderArmor(boolean coversBreasts, boolean alwaysHidesBreasts, float physicsResistance, float tightness, boolean armorStandsCopySettings) implements IGenderArmor {

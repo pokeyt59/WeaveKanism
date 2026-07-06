@@ -4,10 +4,10 @@ import mekanism.api.Action;
 import mekanism.api.annotations.NothingNullByDefault;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
-import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.items.IItemHandler;
+import mekanism.fabric_shim.items.IItemHandlerModifiable;
 import org.jetbrains.annotations.Nullable;
 
 /**

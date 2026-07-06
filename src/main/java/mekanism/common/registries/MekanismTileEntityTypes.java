@@ -116,7 +116,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredHolder;
 
 public class MekanismTileEntityTypes {
 

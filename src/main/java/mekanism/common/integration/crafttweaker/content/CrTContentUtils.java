@@ -8,7 +8,7 @@ import mekanism.api.MekanismAPI;
 import mekanism.api.chemical.Chemical;
 import mekanism.common.integration.crafttweaker.CrTConstants;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.registries.RegisterEvent;
+import mekanism.fabric_shim.registries.RegisterEvent;
 
 /**
  * Helper class for registering chemicals via CraftTweaker. This is sort of akin to how ContentTweaker allows registering items/blocks via CraftTweaker

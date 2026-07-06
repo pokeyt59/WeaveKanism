@@ -4,8 +4,8 @@ import mekanism.common.Mekanism;
 import net.minecraft.advancements.critereon.ItemSubPredicate;
 import net.minecraft.advancements.critereon.ItemSubPredicate.Type;
 import net.minecraft.core.registries.Registries;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredRegister;
 
 public class MekanismItemPredicates {
 

@@ -16,7 +16,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.ExtraCodecs;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
 public class FluidElement extends LookingAtElement {

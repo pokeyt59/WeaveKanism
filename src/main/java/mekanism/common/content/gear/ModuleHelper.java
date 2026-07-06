@@ -37,7 +37,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.fml.event.lifecycle.InterModProcessEvent;
+import mekanism.fabric_shim.fml.event.lifecycle.InterModProcessEvent;
 import org.jetbrains.annotations.Nullable;
 
 /**

@@ -69,9 +69,9 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.ItemAbilities;
-import net.neoforged.neoforge.common.ItemAbility;
+import mekanism.fabric_shim.common.ItemAbility;
 import net.neoforged.neoforge.common.util.Lazy;
-import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
 import org.jetbrains.annotations.NotNull;
 

@@ -42,8 +42,8 @@ import net.minecraft.util.ExtraCodecs;
 import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.neoforged.neoforge.registries.datamaps.DataMapType;
-import net.neoforged.neoforge.registries.datamaps.IWithData;
+import mekanism.fabric_shim.registries.datamaps.DataMapType;
+import mekanism.fabric_shim.registries.datamaps.IWithData;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault
@@ -150,7 +150,7 @@ public final class ChemicalStack implements IHasTextComponent, IHasTranslationKe
     /**
      * A standard codec for chemical stacks that always deserializes with a fixed amount, and does not accept empty stacks.
      * <p>
-     * Chemical equivalent of {@link ItemStack#SINGLE_ITEM_CODEC}. and {@link net.neoforged.neoforge.fluids.FluidStack#fixedAmountCodec(int)}
+     * Chemical equivalent of {@link ItemStack#SINGLE_ITEM_CODEC}. and {@link mekanism.fabric_shim.fluids.FluidStack#fixedAmountCodec(int)}
      *
      * @since 10.6.0
      */
@@ -168,7 +168,7 @@ public final class ChemicalStack implements IHasTextComponent, IHasTranslationKe
      * Creates a chemical stack from a holder and a given amount.
      *
      * @param chemical Holder representing the chemical this stack is for. It is recommended to use a reference holder ({@link net.minecraft.core.Holder.Reference} or
-     *                 {@link net.neoforged.neoforge.registries.DeferredHolder}, but if a direct holder is used the stack will attempt to look up the corresponding
+     *                 {@link mekanism.fabric_shim.registries.DeferredHolder}, but if a direct holder is used the stack will attempt to look up the corresponding
      *                 reference holder.
      * @param amount   Amount of chemical in this stack. If this is less than or equal to zero the stack will be considered empty.
      *

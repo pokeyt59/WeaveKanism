@@ -2,8 +2,8 @@ package mekanism.api.fluid;
 
 import mekanism.api.Action;
 import mekanism.api.annotations.NothingNullByDefault;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 
 /**
  * Extended version of {@link IFluidHandler} to make it easier to integrate with Mekanism

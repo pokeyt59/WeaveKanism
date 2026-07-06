@@ -6,8 +6,8 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.Optional;
 import mekanism.api.SerializationConstants;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModList;
-import net.neoforged.neoforge.common.conditions.ICondition;
+import mekanism.fabric_shim.fml.ModList;
+import mekanism.fabric_shim.common.conditions.ICondition;
 import org.apache.maven.artifact.versioning.ComparableVersion;
 
 public record ModVersionLoadedCondition(String modid, String minVersion) implements ICondition {

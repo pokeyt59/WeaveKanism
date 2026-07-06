@@ -7,8 +7,8 @@ import java.util.function.Predicate;
 import mekanism.api.AutomationType;
 import mekanism.api.chemical.ChemicalStack;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.common.util.TriPredicate;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.common.util.TriPredicate;
+import mekanism.fabric_shim.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
 /**

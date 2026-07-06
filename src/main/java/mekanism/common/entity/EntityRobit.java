@@ -123,7 +123,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.client.model.data.ModelData;
 import net.neoforged.neoforge.client.model.data.ModelProperty;
-import net.neoforged.neoforge.common.NeoForge;
+import mekanism.fabric_shim.common.NeoForge;
 import net.neoforged.neoforge.common.damagesource.DamageContainer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

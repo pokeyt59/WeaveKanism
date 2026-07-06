@@ -5,7 +5,7 @@ import mekanism.api.inventory.ISidedItemHandler;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;
 import mekanism.common.capabilities.proxy.ProxyItemHandler;
-import net.neoforged.neoforge.items.IItemHandler;
+import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

@@ -23,7 +23,7 @@ import org.jetbrains.annotations.Nullable;
  * <p>{@link ChemicalIngredient}, like its item counterpart, explicitly does not perform count checks,
  * so this class is used to (a) wrap a standard ChemicalIngredient with an amount and (b) provide a standard serialization format for mods to use.
  *
- * @see net.neoforged.neoforge.common.crafting.SizedIngredient
+ * @see mekanism.fabric_shim.common.crafting.SizedIngredient
  */
 @NothingNullByDefault
 public final class ChemicalStackIngredient implements InputIngredient<ChemicalStack> {

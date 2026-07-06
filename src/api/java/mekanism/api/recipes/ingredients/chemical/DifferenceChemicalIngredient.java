@@ -8,7 +8,7 @@ import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.api.chemical.Chemical;
 import mekanism.api.recipes.ingredients.creator.IngredientCreatorAccess;
 import net.minecraft.core.Holder;
-import net.neoforged.neoforge.common.crafting.DifferenceIngredient;
+import mekanism.fabric_shim.common.crafting.DifferenceIngredient;
 import org.jetbrains.annotations.Nullable;
 
 /**

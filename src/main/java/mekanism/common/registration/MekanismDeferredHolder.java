@@ -5,7 +5,7 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredHolder;
 
 @NothingNullByDefault
 public class MekanismDeferredHolder<R, T extends R> extends DeferredHolder<R, T> implements INamedEntry {

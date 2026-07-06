@@ -9,8 +9,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.datamaps.DataMapType;
-import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
+import mekanism.fabric_shim.registries.datamaps.DataMapType;
+import mekanism.fabric_shim.registries.datamaps.RegisterDataMapTypesEvent;
 
 @NothingNullByDefault
 public final class DataMapTypeRegister {

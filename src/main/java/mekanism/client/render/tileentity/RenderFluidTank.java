@@ -20,8 +20,8 @@ import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.util.profiling.ProfilerFiller;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidStackLinkedSet;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStackLinkedSet;
 import org.jetbrains.annotations.NotNull;
 
 @NothingNullByDefault

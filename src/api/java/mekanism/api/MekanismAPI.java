@@ -15,9 +15,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.RegistryBuilder;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.RegistryBuilder;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.slf4j.Logger;
 

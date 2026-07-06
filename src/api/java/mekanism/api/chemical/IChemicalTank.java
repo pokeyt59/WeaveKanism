@@ -10,9 +10,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
-import net.neoforged.neoforge.common.util.INBTSerializable;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.common.util.INBTSerializable;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 
 @NothingNullByDefault
 public interface IChemicalTank extends INBTSerializable<CompoundTag>, IContentsListener {

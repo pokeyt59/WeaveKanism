@@ -18,11 +18,11 @@ import mekanism.common.registries.MekanismItems;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.InterModComms;
-import net.neoforged.fml.ModList;
-import net.neoforged.fml.event.lifecycle.InterModEnqueueEvent;
+import mekanism.fabric_shim.fml.InterModComms;
+import mekanism.fabric_shim.fml.ModList;
+import mekanism.fabric_shim.fml.event.lifecycle.InterModEnqueueEvent;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.common.NeoForge;
+import mekanism.fabric_shim.common.NeoForge;
 import net.neoforged.neoforge.data.loading.DatagenModLoader;
 
 /**

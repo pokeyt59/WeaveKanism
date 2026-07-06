@@ -11,9 +11,9 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
-import net.neoforged.fml.LogicalSide;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.entity.EntityTeleportEvent;
+import mekanism.fabric_shim.fml.LogicalSide;
+import mekanism.fabric_shim.common.NeoForge;
+import mekanism.fabric_shim.event.entity.EntityTeleportEvent;
 
 /**
  * Base Mekanism extension of the {@link EntityTeleportEvent}.

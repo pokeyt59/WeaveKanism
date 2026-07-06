@@ -55,7 +55,7 @@ import net.minecraft.world.phys.HitResult.Type;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.neoforged.neoforge.common.CommonHooks;
-import net.neoforged.neoforge.common.NeoForge;
+import mekanism.fabric_shim.common.NeoForge;
 import net.neoforged.neoforge.common.damagesource.DamageContainer;
 import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;

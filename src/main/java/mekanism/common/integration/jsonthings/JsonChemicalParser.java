@@ -19,8 +19,8 @@ import mekanism.common.Mekanism;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.RegisterEvent;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.RegisterEvent;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault

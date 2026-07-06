@@ -11,7 +11,7 @@ import java.util.Map;
 import mekanism.common.Mekanism;
 import mekanism.common.util.InventoryUtils;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.items.IItemHandler;
+import mekanism.fabric_shim.items.IItemHandler;
 
 public class HandlerTransitRequest extends CollectionTransitRequest {
 

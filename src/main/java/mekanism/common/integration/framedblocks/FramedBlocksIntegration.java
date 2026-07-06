@@ -5,12 +5,12 @@ import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.loading.FMLEnvironment;
+import mekanism.fabric_shim.fml.FMLEnvironment;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredRegister;
 import xfacthd.framedblocks.api.camo.CamoContainerFactory;
 import xfacthd.framedblocks.api.util.FramedConstants;
 

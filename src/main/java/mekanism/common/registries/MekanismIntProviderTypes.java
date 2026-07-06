@@ -5,8 +5,8 @@ import mekanism.common.world.ConfigurableConstantInt;
 import mekanism.common.world.ConfigurableUniformInt;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.valueproviders.IntProviderType;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredRegister;
 
 public class MekanismIntProviderTypes {
 

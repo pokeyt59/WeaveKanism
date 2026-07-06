@@ -23,7 +23,7 @@ import net.minecraft.nbt.NbtOps;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
-import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
+import mekanism.fabric_shim.network.codec.NeoForgeStreamCodecs;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 

@@ -200,11 +200,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.api.distmarker.Dist;
+import mekanism.fabric_shim.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import mekanism.fabric_shim.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.BakingCompleted;
 import net.neoforged.neoforge.client.event.ModelEvent.ModifyBakingResult;
@@ -220,7 +220,7 @@ import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.client.model.SeparateTransformsModel;
-import net.neoforged.neoforge.common.NeoForge;
+import mekanism.fabric_shim.common.NeoForge;
 import org.jetbrains.annotations.NotNull;
 
 @EventBusSubscriber(modid = Mekanism.MODID, value = Dist.CLIENT)

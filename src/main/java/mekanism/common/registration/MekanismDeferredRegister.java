@@ -6,7 +6,7 @@ import mekanism.api.annotations.NothingNullByDefault;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.DeferredRegister;
 
 @NothingNullByDefault
 public class MekanismDeferredRegister<T> extends DeferredRegister<T> {

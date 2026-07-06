@@ -2,7 +2,7 @@ package mekanism.common.capabilities.resolver;
 
 import java.util.List;
 import mekanism.api.annotations.NothingNullByDefault;
-import net.neoforged.neoforge.capabilities.BlockCapability;
+import mekanism.fabric_shim.capabilities.BlockCapability;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.UnknownNullability;
 

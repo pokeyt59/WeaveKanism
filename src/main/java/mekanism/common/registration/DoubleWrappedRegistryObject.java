@@ -3,7 +3,7 @@ package mekanism.common.registration;
 import mekanism.api.annotations.NothingNullByDefault;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceKey;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredHolder;
 
 @NothingNullByDefault
 public class DoubleWrappedRegistryObject<PRIMARY_REGISTRY, PRIMARY extends PRIMARY_REGISTRY, SECONDARY_REGISTRY, SECONDARY extends SECONDARY_REGISTRY>

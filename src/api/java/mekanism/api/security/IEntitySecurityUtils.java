@@ -2,7 +2,7 @@ package mekanism.api.security;
 
 import mekanism.api.MekanismAPI;
 import net.minecraft.world.entity.Entity;
-import net.neoforged.neoforge.capabilities.EntityCapability;
+import mekanism.fabric_shim.capabilities.EntityCapability;
 import org.jetbrains.annotations.Nullable;
 
 /**

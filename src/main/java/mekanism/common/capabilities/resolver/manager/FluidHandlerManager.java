@@ -5,7 +5,7 @@ import mekanism.api.fluid.ISidedFluidHandler;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.capabilities.holder.fluid.IFluidTankHolder;
 import mekanism.common.capabilities.proxy.ProxyFluidHandler;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

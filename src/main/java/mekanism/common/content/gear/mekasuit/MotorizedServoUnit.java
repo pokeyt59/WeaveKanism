@@ -8,7 +8,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
 
 @ParametersAreNotNullByDefault
 public class MotorizedServoUnit implements ICustomModule<MotorizedServoUnit> {

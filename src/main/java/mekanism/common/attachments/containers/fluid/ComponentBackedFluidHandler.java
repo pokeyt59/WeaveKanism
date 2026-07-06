@@ -11,7 +11,7 @@ import mekanism.common.attachments.containers.ComponentBackedHandler;
 import mekanism.common.attachments.containers.ContainerType;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import org.jetbrains.annotations.Nullable;
 

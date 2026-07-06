@@ -1,6 +1,6 @@
 package mekanism.api;
 
-import net.neoforged.neoforge.common.ItemAbility;
+import mekanism.fabric_shim.common.ItemAbility;
 
 /**
  * Common placeholder of all the Item Abilities we create in Mekanism. It is still possible to just recreate the item abilities yourself to avoid referencing this class

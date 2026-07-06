@@ -8,11 +8,11 @@ import mekanism.api.annotations.NothingNullByDefault;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
-import net.neoforged.neoforge.common.util.INBTSerializable;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.IFluidTank;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
+import mekanism.fabric_shim.common.util.INBTSerializable;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.IFluidTank;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler.FluidAction;
 
 @NothingNullByDefault
 public interface IExtendedFluidTank extends IFluidTank, INBTSerializable<CompoundTag>, IContentsListener {

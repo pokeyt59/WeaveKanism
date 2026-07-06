@@ -19,8 +19,8 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.neoforged.neoforge.common.util.NeoForgeExtraCodecs;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.common.util.NeoForgeExtraCodecs;
+import mekanism.fabric_shim.fluids.FluidStack;
 
 @NothingNullByDefault
 public class RotaryRecipeSerializer implements RecipeSerializer<BasicRotaryRecipe> {

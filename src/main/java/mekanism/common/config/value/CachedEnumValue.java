@@ -2,7 +2,7 @@ package mekanism.common.config.value;
 
 import mekanism.common.config.IMekanismConfig;
 import net.neoforged.neoforge.common.ModConfigSpec.EnumValue;
-import net.neoforged.neoforge.common.TranslatableEnum;
+import mekanism.fabric_shim.common.TranslatableEnum;
 
 public class CachedEnumValue<T extends Enum<T>> extends CachedConfigValue<T> {
 

@@ -22,11 +22,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.loading.FMLEnvironment;
+import mekanism.fabric_shim.fml.FMLEnvironment;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.event.ModifyDefaultComponentsEvent;
-import net.neoforged.neoforge.registries.RegisterEvent;
+import mekanism.fabric_shim.registries.RegisterEvent;
 import org.jetbrains.annotations.NotNull;
 
 @NothingNullByDefault

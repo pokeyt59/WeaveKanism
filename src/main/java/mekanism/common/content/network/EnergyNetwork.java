@@ -22,7 +22,7 @@ import mekanism.common.util.EmitUtils;
 import mekanism.common.util.text.EnergyDisplay;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.neoforged.neoforge.common.NeoForge;
+import mekanism.fabric_shim.common.NeoForge;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

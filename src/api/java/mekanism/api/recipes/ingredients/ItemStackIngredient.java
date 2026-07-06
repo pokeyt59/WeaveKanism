@@ -12,7 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Ingredient.TagValue;
 import net.minecraft.world.item.crafting.Ingredient.Value;
-import net.neoforged.neoforge.common.crafting.SizedIngredient;
+import mekanism.fabric_shim.common.crafting.SizedIngredient;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

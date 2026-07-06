@@ -5,7 +5,7 @@ import mekanism.api.datagen.recipe.MekanismRecipeBuilder;
 import mekanism.api.recipes.FluidToFluidRecipe;
 import mekanism.api.recipes.basic.BasicFluidToFluidRecipe;
 import mekanism.api.recipes.ingredients.FluidStackIngredient;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 
 @NothingNullByDefault
 public class FluidToFluidRecipeBuilder extends MekanismRecipeBuilder<FluidToFluidRecipeBuilder> {

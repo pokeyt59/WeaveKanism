@@ -18,8 +18,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
+import mekanism.fabric_shim.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

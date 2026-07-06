@@ -31,7 +31,7 @@ import net.minecraft.util.ByIdMap;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
+import mekanism.fabric_shim.network.codec.NeoForgeStreamCodecs;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

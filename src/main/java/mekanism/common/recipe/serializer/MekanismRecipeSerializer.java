@@ -53,8 +53,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.ShapedRecipe;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.network.codec.NeoForgeStreamCodecs;
 
 public record MekanismRecipeSerializer<RECIPE extends Recipe<?>>(MapCodec<RECIPE> codec, StreamCodec<RegistryFriendlyByteBuf, RECIPE> streamCodec)
       implements RecipeSerializer<RECIPE> {

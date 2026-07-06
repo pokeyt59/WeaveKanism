@@ -8,8 +8,8 @@ import mekanism.common.item.gear.ItemFlamethrower.FlamethrowerMode;
 import mekanism.common.lib.radiation.MeltdownLevelData;
 import mekanism.common.lib.radiation.RadiationLevelData;
 import net.neoforged.neoforge.attachment.AttachmentType;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 @NothingNullByDefault

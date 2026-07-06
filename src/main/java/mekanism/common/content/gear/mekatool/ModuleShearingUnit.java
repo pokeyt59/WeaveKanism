@@ -32,7 +32,7 @@ import net.minecraft.world.phys.AABB;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.common.IShearable;
 import net.neoforged.neoforge.common.ItemAbilities;
-import net.neoforged.neoforge.common.ItemAbility;
+import mekanism.fabric_shim.common.ItemAbility;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

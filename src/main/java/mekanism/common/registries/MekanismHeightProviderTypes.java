@@ -4,8 +4,8 @@ import mekanism.common.Mekanism;
 import mekanism.common.world.height.ConfigurableHeightProvider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProviderType;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredRegister;
 
 public class MekanismHeightProviderTypes {
 

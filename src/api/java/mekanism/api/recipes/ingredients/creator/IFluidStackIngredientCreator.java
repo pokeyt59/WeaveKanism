@@ -9,11 +9,11 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentPredicate;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.crafting.CompoundFluidIngredient;
-import net.neoforged.neoforge.fluids.crafting.DataComponentFluidIngredient;
-import net.neoforged.neoforge.fluids.crafting.FluidIngredient;
-import net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.crafting.CompoundFluidIngredient;
+import mekanism.fabric_shim.fluids.crafting.DataComponentFluidIngredient;
+import mekanism.fabric_shim.fluids.crafting.FluidIngredient;
+import mekanism.fabric_shim.fluids.crafting.SizedFluidIngredient;
 
 @NothingNullByDefault
 public interface IFluidStackIngredientCreator extends IIngredientCreator<Fluid, FluidStack, FluidStackIngredient> {

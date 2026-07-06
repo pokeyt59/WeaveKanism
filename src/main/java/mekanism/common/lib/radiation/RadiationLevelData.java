@@ -13,7 +13,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.util.Mth;
-import net.neoforged.neoforge.common.util.INBTSerializable;
+import mekanism.fabric_shim.common.util.INBTSerializable;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault

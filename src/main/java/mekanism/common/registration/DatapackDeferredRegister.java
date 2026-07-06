@@ -12,9 +12,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.StructureModifier;
-import net.neoforged.neoforge.registries.DataPackRegistryEvent;
+import mekanism.fabric_shim.registries.DataPackRegistryEvent;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import net.neoforged.neoforge.registries.RegistryBuilder;
+import mekanism.fabric_shim.registries.RegistryBuilder;
 import org.jetbrains.annotations.Nullable;
 
 public class DatapackDeferredRegister<T> extends DeferredMapCodecRegister<T> {

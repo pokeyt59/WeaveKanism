@@ -7,8 +7,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackLinkedSet;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.common.crafting.CompoundIngredient;
-import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
+import mekanism.fabric_shim.common.crafting.CompoundIngredient;
+import mekanism.fabric_shim.common.crafting.DataComponentIngredient;
 
 public class ItemInputCache<RECIPE extends MekanismRecipe<?>> extends ComponentSensitiveInputCache<Item, ItemStack, ItemStackIngredient, RECIPE> {
 

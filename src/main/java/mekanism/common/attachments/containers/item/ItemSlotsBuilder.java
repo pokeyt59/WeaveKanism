@@ -39,9 +39,9 @@ import mekanism.common.tile.machine.TileEntityFormulaicAssemblicator;
 import mekanism.common.tile.machine.TileEntityOredictionificator;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeInput;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler.FluidAction;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import org.jetbrains.annotations.NotNull;
 

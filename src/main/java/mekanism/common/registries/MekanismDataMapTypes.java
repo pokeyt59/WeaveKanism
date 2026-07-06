@@ -18,7 +18,7 @@ import net.minecraft.core.RegistryAccess;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
-import net.neoforged.neoforge.registries.datamaps.DataMapType;
+import mekanism.fabric_shim.registries.datamaps.DataMapType;
 import org.jetbrains.annotations.Nullable;
 
 public class MekanismDataMapTypes implements IMekanismDataMapTypes {

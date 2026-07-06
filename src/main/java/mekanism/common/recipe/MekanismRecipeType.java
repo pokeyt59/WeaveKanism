@@ -64,10 +64,10 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.item.crafting.SmeltingRecipe;
 import net.minecraft.world.level.Level;
-import net.neoforged.fml.loading.FMLEnvironment;
-import net.neoforged.neoforge.common.crafting.CompoundIngredient;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.server.ServerLifecycleHooks;
+import mekanism.fabric_shim.fml.FMLEnvironment;
+import mekanism.fabric_shim.common.crafting.CompoundIngredient;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

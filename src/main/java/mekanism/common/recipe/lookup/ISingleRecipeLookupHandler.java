@@ -10,7 +10,7 @@ import mekanism.common.recipe.lookup.cache.InputRecipeCache.SingleFluid;
 import mekanism.common.recipe.lookup.cache.InputRecipeCache.SingleItem;
 import mekanism.common.recipe.lookup.cache.SingleInputRecipeCache;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
 /**

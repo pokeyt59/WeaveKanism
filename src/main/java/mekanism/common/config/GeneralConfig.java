@@ -20,7 +20,7 @@ import mekanism.common.tier.FluidTankTier;
 import net.minecraft.SharedConstants;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.config.ModConfig.Type;
-import net.neoforged.fml.loading.FMLEnvironment;
+import mekanism.fabric_shim.fml.FMLEnvironment;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.fluids.FluidType;
 

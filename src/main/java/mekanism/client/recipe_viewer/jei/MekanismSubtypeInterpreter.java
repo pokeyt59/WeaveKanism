@@ -10,8 +10,8 @@ import mekanism.common.capabilities.Capabilities;
 import mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter;
 import mezz.jei.api.ingredients.subtypes.UidContext;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import org.jetbrains.annotations.Nullable;
 
 public class MekanismSubtypeInterpreter implements ISubtypeInterpreter<ItemStack> {

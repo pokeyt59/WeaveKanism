@@ -3,7 +3,7 @@ package mekanism.common.integration.computer;
 import java.util.Arrays;
 import java.util.Objects;
 import mekanism.common.integration.computer.ComputerMethodFactory.ComputerFunctionCaller;
-import net.neoforged.fml.ModList;
+import mekanism.fabric_shim.fml.ModList;
 import org.jetbrains.annotations.Nullable;
 
 public record MethodData<T>(String name, MethodRestriction restriction, String[] requiredMods, boolean threadSafe, String[] argumentNames, Class<?>[] argClasses,

@@ -3,11 +3,11 @@ package mekanism.common.recipe.lookup.cache.type;
 import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.ingredients.FluidStackIngredient;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidStackLinkedSet;
-import net.neoforged.neoforge.fluids.crafting.CompoundFluidIngredient;
-import net.neoforged.neoforge.fluids.crafting.DataComponentFluidIngredient;
-import net.neoforged.neoforge.fluids.crafting.FluidIngredient;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStackLinkedSet;
+import mekanism.fabric_shim.fluids.crafting.CompoundFluidIngredient;
+import mekanism.fabric_shim.fluids.crafting.DataComponentFluidIngredient;
+import mekanism.fabric_shim.fluids.crafting.FluidIngredient;
 
 public class FluidInputCache<RECIPE extends MekanismRecipe<?>> extends ComponentSensitiveInputCache<Fluid, FluidStack, FluidStackIngredient, RECIPE> {
 

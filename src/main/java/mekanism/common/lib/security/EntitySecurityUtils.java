@@ -11,7 +11,7 @@ import mekanism.api.security.SecurityMode;
 import mekanism.common.capabilities.Capabilities;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.capabilities.EntityCapability;
+import mekanism.fabric_shim.capabilities.EntityCapability;
 import org.jetbrains.annotations.Nullable;
 
 /**

@@ -25,7 +25,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.ExtraCodecs;
-import net.neoforged.neoforge.common.util.NeoForgeExtraCodecs;
+import mekanism.fabric_shim.common.util.NeoForgeExtraCodecs;
 
 @NothingNullByDefault
 public class ChemicalIngredientCreator implements IChemicalIngredientCreator {

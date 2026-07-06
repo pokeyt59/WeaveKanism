@@ -9,8 +9,8 @@ import mekanism.common.content.network.transmitter.MechanicalPipe;
 import mekanism.common.content.network.transmitter.PressurizedTube;
 import mekanism.common.content.network.transmitter.Transmitter;
 import net.minecraft.core.Holder;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 
 public class CompatibleTransmitterValidator<ACCEPTOR, NETWORK extends DynamicNetwork<ACCEPTOR, NETWORK, TRANSMITTER>,
       TRANSMITTER extends Transmitter<ACCEPTOR, NETWORK, TRANSMITTER>> {

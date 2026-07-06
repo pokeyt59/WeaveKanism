@@ -10,7 +10,7 @@ import mekanism.api.recipes.RotaryRecipe;
 import mekanism.api.recipes.ingredients.ChemicalStackIngredient;
 import mekanism.api.recipes.ingredients.FluidStackIngredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 

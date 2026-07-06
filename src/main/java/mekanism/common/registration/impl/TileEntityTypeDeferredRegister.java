@@ -29,11 +29,11 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.entity.BlockEntityType.BlockEntitySupplier;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.loading.FMLEnvironment;
-import net.neoforged.neoforge.capabilities.BlockCapability;
+import mekanism.fabric_shim.fml.FMLEnvironment;
+import mekanism.fabric_shim.capabilities.BlockCapability;
 import net.neoforged.neoforge.capabilities.ICapabilityProvider;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

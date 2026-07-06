@@ -3,7 +3,7 @@ package mekanism.common.recipe.condition;
 import mekanism.common.Mekanism;
 import mekanism.common.registration.DeferredMapCodecHolder;
 import mekanism.common.registration.DeferredMapCodecRegister;
-import net.neoforged.neoforge.common.conditions.ICondition;
+import mekanism.fabric_shim.common.conditions.ICondition;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class MekanismRecipeConditions {

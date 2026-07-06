@@ -28,7 +28,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForgeMod;
-import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
 
 @ParametersAreNotNullByDefault
 public record ModuleGravitationalModulatingUnit(SprintBoost speedBoost) implements ICustomModule<ModuleGravitationalModulatingUnit> {

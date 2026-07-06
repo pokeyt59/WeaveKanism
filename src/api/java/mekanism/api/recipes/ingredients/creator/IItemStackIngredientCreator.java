@@ -16,8 +16,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
-import net.neoforged.neoforge.common.crafting.DataComponentIngredient;
-import net.neoforged.neoforge.common.crafting.SizedIngredient;
+import mekanism.fabric_shim.common.crafting.DataComponentIngredient;
+import mekanism.fabric_shim.common.crafting.SizedIngredient;
 
 @NothingNullByDefault
 public interface IItemStackIngredientCreator extends IIngredientCreator<Item, ItemStack, ItemStackIngredient> {

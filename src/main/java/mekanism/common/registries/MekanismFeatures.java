@@ -7,8 +7,8 @@ import mekanism.common.world.ResizableDiskReplaceFeature;
 import mekanism.common.world.ResizableOreFeature;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import mekanism.fabric_shim.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredRegister;
 
 public class MekanismFeatures {
 

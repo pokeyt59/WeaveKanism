@@ -2,7 +2,7 @@ package mekanism.api.text;
 
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.network.chat.Component;
-import net.neoforged.neoforge.common.TranslatableEnum;
+import mekanism.fabric_shim.common.TranslatableEnum;
 import org.jetbrains.annotations.NotNull;
 
 @MethodsReturnNonnullByDefault

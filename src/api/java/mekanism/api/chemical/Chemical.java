@@ -42,7 +42,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.TooltipFlag;
-import net.neoforged.neoforge.registries.datamaps.DataMapType;
+import mekanism.fabric_shim.registries.datamaps.DataMapType;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.MustBeInvokedByOverriders;
 import org.jetbrains.annotations.NotNull;

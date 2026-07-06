@@ -4,7 +4,7 @@ import java.util.List;
 import mekanism.api.MekanismAPI;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.capabilities.ItemCapability;
+import mekanism.fabric_shim.capabilities.ItemCapability;
 import org.jetbrains.annotations.Nullable;
 
 /**

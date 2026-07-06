@@ -9,7 +9,7 @@ import mekanism.common.Mekanism;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.neoforged.neoforge.common.util.FakePlayer;
+import mekanism.fabric_shim.util.FakePlayer;
 import org.jetbrains.annotations.NotNull;
 
 /**

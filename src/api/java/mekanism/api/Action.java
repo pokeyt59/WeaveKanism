@@ -1,6 +1,6 @@
 package mekanism.api;
 
-import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler.FluidAction;
 
 public enum Action {
     EXECUTE(FluidAction.EXECUTE),

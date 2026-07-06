@@ -13,7 +13,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.common.NeoForgeMod;
-import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
+import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
 
 @ParametersAreNotNullByDefault
 public record ModuleHydrostaticRepulsorUnit(boolean swimBoost) implements ICustomModule<ModuleHydrostaticRepulsorUnit> {

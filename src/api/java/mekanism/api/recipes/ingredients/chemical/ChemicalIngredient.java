@@ -12,7 +12,7 @@ import mekanism.api.recipes.ingredients.creator.IChemicalIngredientCreator;
 import mekanism.api.recipes.ingredients.creator.IngredientCreatorAccess;
 import net.minecraft.core.Holder;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.neoforged.neoforge.common.crafting.ICustomIngredient;
+import mekanism.fabric_shim.common.crafting.ICustomIngredient;
 
 /**
  * This class serves as the chemical analogue of an item {@link Ingredient}, that is, a representation of both a {@linkplain #test predicate} to test {@link Chemical}s

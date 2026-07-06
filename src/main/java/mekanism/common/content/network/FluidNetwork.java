@@ -22,10 +22,10 @@ import mekanism.common.util.FluidUtils;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.common.NeoForge;
+import mekanism.fabric_shim.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

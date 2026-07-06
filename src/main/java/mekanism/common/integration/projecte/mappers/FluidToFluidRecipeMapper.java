@@ -7,8 +7,8 @@ import mekanism.common.recipe.MekanismRecipeType;
 import moze_intel.projecte.api.mapper.collector.IMappingCollector;
 import moze_intel.projecte.api.mapper.recipe.RecipeTypeMapper;
 import moze_intel.projecte.api.nss.NormalizedSimpleStack;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidStackLinkedSet;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStackLinkedSet;
 
 @RecipeTypeMapper
 public class FluidToFluidRecipeMapper extends TypedMekanismRecipeMapper<FluidToFluidRecipe> {

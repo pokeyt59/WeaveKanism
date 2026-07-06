@@ -27,7 +27,7 @@ import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.neoforged.neoforge.common.NeoForge;
+import mekanism.fabric_shim.common.NeoForge;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

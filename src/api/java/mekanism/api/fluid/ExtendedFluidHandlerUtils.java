@@ -12,7 +12,7 @@ import mekanism.api.container.ContainerInteraction;
 import mekanism.api.container.InContainerGetter;
 import mekanism.api.container.IntContainerInteraction;
 import net.minecraft.core.Direction;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import org.jetbrains.annotations.Nullable;
 
 public class ExtendedFluidHandlerUtils {

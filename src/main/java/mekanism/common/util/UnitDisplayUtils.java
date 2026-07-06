@@ -20,7 +20,7 @@ import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.util.ByIdMap;
 import net.minecraft.util.Mth;
-import net.neoforged.neoforge.common.TranslatableEnum;
+import mekanism.fabric_shim.common.TranslatableEnum;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

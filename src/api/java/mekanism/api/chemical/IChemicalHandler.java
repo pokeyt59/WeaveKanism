@@ -2,8 +2,8 @@ package mekanism.api.chemical;
 
 import mekanism.api.Action;
 import mekanism.api.annotations.NothingNullByDefault;
-import net.neoforged.neoforge.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import mekanism.fabric_shim.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 
 @NothingNullByDefault
 public interface IChemicalHandler {

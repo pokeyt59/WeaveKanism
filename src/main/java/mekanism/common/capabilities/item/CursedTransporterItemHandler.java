@@ -13,7 +13,7 @@ import mekanism.common.lib.inventory.TransitRequest.TransitResponse;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.GlobalPos;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.items.IItemHandler;
+import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class CursedTransporterItemHandler implements IItemHandler {

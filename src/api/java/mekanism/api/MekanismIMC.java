@@ -7,8 +7,8 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.neoforged.fml.InterModComms;
-import net.neoforged.fml.event.lifecycle.InterModEnqueueEvent;
+import mekanism.fabric_shim.fml.InterModComms;
+import mekanism.fabric_shim.fml.event.lifecycle.InterModEnqueueEvent;
 
 /**
  * Class containing various helpers for sending IMC messages to Mekanism.

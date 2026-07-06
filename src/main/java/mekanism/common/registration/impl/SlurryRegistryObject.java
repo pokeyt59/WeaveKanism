@@ -2,7 +2,7 @@ package mekanism.common.registration.impl;
 
 import mekanism.api.chemical.Chemical;
 import mekanism.common.registration.DoubleWrappedRegistryObject;
-import net.neoforged.neoforge.registries.DeferredHolder;
+import mekanism.fabric_shim.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
 
 public class SlurryRegistryObject<DIRTY extends Chemical, CLEAN extends Chemical> extends DoubleWrappedRegistryObject<Chemical, DIRTY, Chemical, CLEAN> {

@@ -2,7 +2,7 @@ package mekanism.common.capabilities;
 
 import net.minecraft.core.Direction;
 import net.minecraft.core.Vec3i;
-import net.neoforged.neoforge.capabilities.BlockCapability;
+import mekanism.fabric_shim.capabilities.BlockCapability;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

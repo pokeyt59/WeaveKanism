@@ -89,7 +89,7 @@ import net.minecraft.world.level.portal.DimensionTransition.PostDimensionTransit
 import net.minecraft.world.level.redstone.Redstone;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.NeoForge;
+import mekanism.fabric_shim.common.NeoForge;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.entity.PartEntity;
 import net.neoforged.neoforge.network.PacketDistributor;

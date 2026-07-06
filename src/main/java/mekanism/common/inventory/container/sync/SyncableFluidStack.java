@@ -7,7 +7,7 @@ import mekanism.common.network.to_client.container.property.FluidStackPropertyDa
 import mekanism.common.network.to_client.container.property.IntPropertyData;
 import mekanism.common.network.to_client.container.property.PropertyData;
 import net.minecraft.core.RegistryAccess;
-import net.neoforged.neoforge.fluids.FluidStack;
+import mekanism.fabric_shim.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 
 /**
