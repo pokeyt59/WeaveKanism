@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Ingredient.TagValue;
 import net.minecraft.world.item.crafting.Ingredient.Value;
+import mekanism.fabric_shim.common.crafting.CustomIngredients;
 import mekanism.fabric_shim.common.crafting.SizedIngredient;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.NotNull;
@@ -92,18 +93,20 @@ public final class ItemStackIngredient implements InputIngredient<@NotNull ItemS
 
     @Override
     public boolean hasNoMatchingInstances() {
-        return ingredient.ingredient().hasNoItems();
+        //Fabric port: Ingredient#hasNoItems/#isSimple/#getValues are NeoForge patches; shim helpers
+        // and the access-widened values field replace them
+        return CustomIngredients.hasNoItems(ingredient.ingredient());
     }
 
     @Override
     public void logMissingTags() {
         if (hasNoMatchingInstances()) {
             Ingredient unsized = ingredient.ingredient();
-            if (unsized.isSimple()) {
+            if (CustomIngredients.isSimple(unsized)) {
                 if (unsized.isEmpty()) {
                     MekanismAPI.logger.error("Empty ingredient: {}", unsized);
                 } else {
-                    for (Value ingredientValue : unsized.getValues()) {
+                    for (Value ingredientValue : unsized.values) {
                         if (ingredientValue instanceof TagValue tagValue) {
                             MekanismAPI.logger.error("Empty tag: {}", tagValue);
                         } else {

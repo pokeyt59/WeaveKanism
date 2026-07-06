@@ -28,7 +28,8 @@ public interface IEntitySecurityUtils extends ITypedSecurityUtils<Entity> {
     @Nullable
     @Override
     default IOwnerObject ownerCapability(@Nullable Entity entity) {
-        return entity == null ? null : entity.getCapability(ownerCapability());
+        //Fabric port: Entity#getCapability is a NeoForge patch; query through the capability token
+        return entity == null ? null : ownerCapability().getCapability(entity, null);
     }
 
     /**
@@ -39,6 +40,6 @@ public interface IEntitySecurityUtils extends ITypedSecurityUtils<Entity> {
     @Nullable
     @Override
     default ISecurityObject securityCapability(@Nullable Entity entity) {
-        return entity == null ? null : entity.getCapability(securityCapability());
+        return entity == null ? null : securityCapability().getCapability(entity, null);
     }
 }

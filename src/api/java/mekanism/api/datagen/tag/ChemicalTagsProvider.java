@@ -7,7 +7,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.IntrinsicHolderTagsProvider;
 import net.minecraft.data.tags.TagsProvider;
-import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import mekanism.fabric_shim.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -17,7 +17,9 @@ public abstract class ChemicalTagsProvider extends IntrinsicHolderTagsProvider<C
 
     protected ChemicalTagsProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider,
           String modid, @Nullable ExistingFileHelper existingFileHelper) {
+        //Fabric port: vanilla IntrinsicHolderTagsProvider has no modid/ExistingFileHelper parameters
+        // (kept in this constructor's signature for source compatibility; datagen runs on the NeoForge branch)
         super(packOutput, MekanismAPI.CHEMICAL_REGISTRY_NAME, lookupProvider, CompletableFuture.completedFuture(TagsProvider.TagLookup.empty()),
-              chemical -> MekanismAPI.CHEMICAL_REGISTRY.getResourceKey(chemical).orElseThrow(), modid, existingFileHelper);
+              chemical -> MekanismAPI.CHEMICAL_REGISTRY.getResourceKey(chemical).orElseThrow());
     }
 }

@@ -66,7 +66,8 @@ public interface IBlockSecurityUtils {
      */
     @Nullable
     default IOwnerObject ownerCapability(Level level, BlockPos pos, @Nullable BlockState state, @Nullable BlockEntity blockEntity) {
-        return level.getCapability(ownerCapability(), pos, state, blockEntity, null);
+        //Fabric port: Level#getCapability is a NeoForge patch; query through the capability token
+        return ownerCapability().getCapability(level, pos, state, blockEntity, null);
     }
 
     /**
@@ -107,7 +108,8 @@ public interface IBlockSecurityUtils {
      */
     @Nullable
     default ISecurityObject securityCapability(Level level, BlockPos pos, @Nullable BlockState state, @Nullable BlockEntity blockEntity) {
-        return level.getCapability(securityCapability(), pos, state, blockEntity, null);
+        //Fabric port: Level#getCapability is a NeoForge patch; query through the capability token
+        return securityCapability().getCapability(level, pos, state, blockEntity, null);
     }
 
     /**
@@ -337,7 +339,7 @@ public interface IBlockSecurityUtils {
      */
     @Nullable
     default UUID getOwnerUUID(Level level, BlockPos pos, @Nullable BlockState state, @Nullable BlockEntity blockEntity) {
-        IOwnerObject ownerObject = level.getCapability(ownerCapability(), pos, state, blockEntity, null);
+        IOwnerObject ownerObject = ownerCapability().getCapability(level, pos, state, blockEntity, null);
         return ownerObject == null ? null : ownerObject.getOwnerUUID();
     }
 

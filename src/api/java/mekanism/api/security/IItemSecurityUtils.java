@@ -30,7 +30,8 @@ public interface IItemSecurityUtils extends ITypedSecurityUtils<ItemStack> {
     @Nullable
     @Override
     default ISecurityObject securityCapability(@Nullable ItemStack stack) {
-        return stack == null ? null : stack.getCapability(securityCapability());
+        //Fabric port: ItemStack#getCapability is a NeoForge patch; query through the capability token
+        return stack == null ? null : securityCapability().getCapability(stack, null);
     }
 
     /**
@@ -41,7 +42,7 @@ public interface IItemSecurityUtils extends ITypedSecurityUtils<ItemStack> {
     @Nullable
     @Override
     default IOwnerObject ownerCapability(@Nullable ItemStack stack) {
-        return stack == null ? null : stack.getCapability(ownerCapability());
+        return stack == null ? null : ownerCapability().getCapability(stack, null);
     }
 
     /**
