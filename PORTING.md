@@ -72,10 +72,31 @@ textually identical; no Yarn remap.
         RegisterEvent/NewRegistryEvent replayed on the real NeoForge bus (JiJ'd `net.neoforged:bus`)
         in NeoForge's registration order; environment shims (FMLEnvironment/Dist/OnlyIn/ModList/
         ServerLifecycleHooks/FakePlayer). Dev-server verified 2026-07-05.
-  - [ ] 1b: custom Chemical/Module/RobitSkin registries (MekanismAPI RegistryBuilder path + datapack registry)
+  - [x] 1b: custom-registry path — RegistryBuilder shim (Fabric-backed, NewRegistryEvent fill),
+        DataPackRegistryEvent over Fabric DynamicRegistries (RobitSkin), data-map types + store.
+        End-to-end verification happens when main's registration code activates (1c).
+  - [x] 1e: **src/api compiles on Fabric** (265 files) — scripted remap (59 mappings, 346 files,
+        commit-replayable) + shims: FluidStack family (NeoForge-format codecs), ingredient family
+        (item + fluid, bridged into Fabric custom ingredients under NeoForge type ids), capability
+        tokens over Fabric API Lookup, data maps, FML lifecycle + IMC, fabric-port/extra.aw for
+        vanilla members NeoForge ATs (Ingredient values/fromValues). Dev-server verified 2026-07-06.
   - [ ] 1c: entry-point split (loader-neutral Mekanism init from Fabric bootstrap)
   - [ ] 1d: config via Forge Config API Port, attachments, SavedData server holder
-  - [ ] 1e: api source set compiling (scripted remap + shim growth)
+  - [ ] 1f: main source set compiling (the long tail; overlaps Phases 2-3)
+
+### Hand-edit patterns for NeoForge patches to vanilla classes (recur in main)
+
+| NeoForge patch | Replacement |
+|---|---|
+| `Registry#getKeyOrNull(v)` | vanilla `getKey(v)` |
+| `Holder#getKey()` | `unwrapKey().orElse(null)` |
+| `Holder#getData(type)` | `DataMaps.getData(holder, type)` |
+| `Level/ItemStack/Entity#getCapability(...)` | `cap.getCapability(...)` on the shim token |
+| `Fluid#getFluidType()` descriptions | `FluidAttributes.getDescription/Id(...)` |
+| `Ingredient#isSimple/hasNoItems/getValues` | `CustomIngredients` helpers / AW'd `values` field |
+| `ItemTags.create(rl)` | `TagKey.create(Registries.ITEM, rl)` |
+| `new ListTag(size)` | `new ListTag()` |
+| `RecipeOutput#accept(..., ICondition...)` | drop conditions arg (datagen on NeoForge branch) |
 - [ ] Phase 2: capabilities + transfer/energy bridge (critical path)
 - [ ] Phase 3: events + networking
 - [ ] Phase 4: client (models, renderers, shaders)
