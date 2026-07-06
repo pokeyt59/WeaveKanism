@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import mekanism.fabric_shim.registries.datamaps.RegisterDataMapTypesEvent;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -27,6 +28,10 @@ public final class ShimRegistryEvents {
         NewRegistryEvent newRegistries = new NewRegistryEvent();
         modBus.post(newRegistries);
         newRegistries.fill();
+        //Datapack (dynamic) registries and data map types register before entry registration,
+        // mirroring NeoForge's mod-loading order
+        modBus.post(new DataPackRegistryEvent.NewRegistry());
+        modBus.post(new RegisterDataMapTypesEvent());
         for (Registry<?> registry : registrationOrder()) {
             modBus.post(new RegisterEvent(registry.key(), registry));
         }

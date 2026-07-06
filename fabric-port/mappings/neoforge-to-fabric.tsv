@@ -38,9 +38,41 @@ net.neoforged.neoforge.fluids.capability.IFluidHandler	mekanism.fabric_shim.flui
 # --- small common/util shims ---
 net.neoforged.neoforge.common.util.INBTSerializable	mekanism.fabric_shim.common.util.INBTSerializable
 net.neoforged.neoforge.common.util.TriPredicate	mekanism.fabric_shim.common.util.TriPredicate
+net.neoforged.neoforge.common.util.NeoForgeExtraCodecs	mekanism.fabric_shim.common.util.NeoForgeExtraCodecs
 net.neoforged.neoforge.common.TranslatableEnum	mekanism.fabric_shim.common.TranslatableEnum
 net.neoforged.neoforge.common.MutableDataComponentHolder	mekanism.fabric_shim.common.MutableDataComponentHolder
+net.neoforged.neoforge.common.ItemAbility	mekanism.fabric_shim.common.ItemAbility
+net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs	mekanism.fabric_shim.network.codec.NeoForgeStreamCodecs
 net.neoforged.fml.LogicalSide	mekanism.fabric_shim.fml.LogicalSide
+
+# --- capabilities: tokens over Fabric API Lookup (registration/queries wired in Phase 2) ---
+net.neoforged.neoforge.capabilities.BlockCapability	mekanism.fabric_shim.capabilities.BlockCapability
+net.neoforged.neoforge.capabilities.ItemCapability	mekanism.fabric_shim.capabilities.ItemCapability
+net.neoforged.neoforge.capabilities.EntityCapability	mekanism.fabric_shim.capabilities.EntityCapability
+
+# --- item handlers (simulate-based internal contract; Phase 2 bridges at boundary) ---
+net.neoforged.neoforge.items.IItemHandler	mekanism.fabric_shim.items.IItemHandler
+net.neoforged.neoforge.items.IItemHandlerModifiable	mekanism.fabric_shim.items.IItemHandlerModifiable
+
+# --- data maps (types + store now; datapack loader lands Phase 3) ---
+net.neoforged.neoforge.registries.datamaps.DataMapType	mekanism.fabric_shim.registries.datamaps.DataMapType
+net.neoforged.neoforge.registries.datamaps.IWithData	mekanism.fabric_shim.registries.datamaps.IWithData
+net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent	mekanism.fabric_shim.registries.datamaps.RegisterDataMapTypesEvent
+net.neoforged.neoforge.registries.datamaps.DataMapsUpdatedEvent	mekanism.fabric_shim.registries.datamaps.DataMapsUpdatedEvent
+net.neoforged.neoforge.registries.DataPackRegistryEvent	mekanism.fabric_shim.registries.DataPackRegistryEvent
+
+# --- events (game-bus glue fires these in Phase 3; classes compile-ready now) ---
+net.neoforged.neoforge.event.entity.EntityEvent	mekanism.fabric_shim.event.entity.EntityEvent
+net.neoforged.neoforge.event.entity.EntityTeleportEvent	mekanism.fabric_shim.event.entity.EntityTeleportEvent
+net.neoforged.neoforge.event.ItemAttributeModifierEvent	mekanism.fabric_shim.event.ItemAttributeModifierEvent
+
+# --- FML lifecycle + IMC ---
+net.neoforged.fml.event.lifecycle.ParallelDispatchEvent	mekanism.fabric_shim.fml.event.lifecycle.ParallelDispatchEvent
+net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent	mekanism.fabric_shim.fml.event.lifecycle.FMLCommonSetupEvent
+net.neoforged.fml.event.lifecycle.FMLClientSetupEvent	mekanism.fabric_shim.fml.event.lifecycle.FMLClientSetupEvent
+net.neoforged.fml.event.lifecycle.InterModEnqueueEvent	mekanism.fabric_shim.fml.event.lifecycle.InterModEnqueueEvent
+net.neoforged.fml.event.lifecycle.InterModProcessEvent	mekanism.fabric_shim.fml.event.lifecycle.InterModProcessEvent
+net.neoforged.fml.InterModComms	mekanism.fabric_shim.fml.InterModComms
 
 # --- config ---
 # NO remap needed: Forge Config API Port (Fabric) provides net.neoforged.neoforge.common.ModConfigSpec
