@@ -66,6 +66,25 @@ net.neoforged.neoforge.event.entity.EntityEvent	mekanism.fabric_shim.event.entit
 net.neoforged.neoforge.event.entity.EntityTeleportEvent	mekanism.fabric_shim.event.entity.EntityTeleportEvent
 net.neoforged.neoforge.event.ItemAttributeModifierEvent	mekanism.fabric_shim.event.ItemAttributeModifierEvent
 
+# --- ingredients: NeoForge-format JSON via shim codecs; bridged into Fabric's custom-ingredient
+#     system (registered under NeoForge's type ids) for vanilla recipe slots + network sync ---
+net.neoforged.neoforge.common.crafting.SizedIngredient	mekanism.fabric_shim.common.crafting.SizedIngredient
+net.neoforged.neoforge.common.crafting.ICustomIngredient	mekanism.fabric_shim.common.crafting.ICustomIngredient
+net.neoforged.neoforge.common.crafting.IngredientType	mekanism.fabric_shim.common.crafting.IngredientType
+net.neoforged.neoforge.common.crafting.CompoundIngredient	mekanism.fabric_shim.common.crafting.CompoundIngredient
+net.neoforged.neoforge.common.crafting.DifferenceIngredient	mekanism.fabric_shim.common.crafting.DifferenceIngredient
+net.neoforged.neoforge.common.crafting.DataComponentIngredient	mekanism.fabric_shim.common.crafting.DataComponentIngredient
+net.neoforged.neoforge.common.conditions.ICondition	mekanism.fabric_shim.common.conditions.ICondition
+net.neoforged.neoforge.fluids.FluidStackLinkedSet	mekanism.fabric_shim.fluids.FluidStackLinkedSet
+net.neoforged.neoforge.fluids.crafting.FluidIngredient	mekanism.fabric_shim.fluids.crafting.FluidIngredient
+net.neoforged.neoforge.fluids.crafting.FluidIngredientType	mekanism.fabric_shim.fluids.crafting.FluidIngredientType
+net.neoforged.neoforge.fluids.crafting.SingleFluidIngredient	mekanism.fabric_shim.fluids.crafting.SingleFluidIngredient
+net.neoforged.neoforge.fluids.crafting.TagFluidIngredient	mekanism.fabric_shim.fluids.crafting.TagFluidIngredient
+net.neoforged.neoforge.fluids.crafting.EmptyFluidIngredient	mekanism.fabric_shim.fluids.crafting.EmptyFluidIngredient
+net.neoforged.neoforge.fluids.crafting.CompoundFluidIngredient	mekanism.fabric_shim.fluids.crafting.CompoundFluidIngredient
+net.neoforged.neoforge.fluids.crafting.DataComponentFluidIngredient	mekanism.fabric_shim.fluids.crafting.DataComponentFluidIngredient
+net.neoforged.neoforge.fluids.crafting.SizedFluidIngredient	mekanism.fabric_shim.fluids.crafting.SizedFluidIngredient
+
 # --- FML lifecycle + IMC ---
 net.neoforged.fml.event.lifecycle.ParallelDispatchEvent	mekanism.fabric_shim.fml.event.lifecycle.ParallelDispatchEvent
 net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent	mekanism.fabric_shim.fml.event.lifecycle.FMLCommonSetupEvent

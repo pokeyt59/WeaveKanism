@@ -1,5 +1,6 @@
 package mekanism.fabric;
 
+import mekanism.fabric_shim.common.crafting.CustomIngredients;
 import mekanism.fabric_shim.internal.ShimBuses;
 import mekanism.fabric_shim.registries.ShimRegistryEvents;
 import mekanism.fabric_shim.server.ServerLifecycleHooks;
@@ -26,6 +27,9 @@ public class MekanismFabric implements ModInitializer {
         //Harmless if already started; buses only begin shut down when built with startShutdown()
         ShimBuses.MOD_BUS.start();
         ServerLifecycleHooks.init();
+        //NeoForge's built-in custom ingredient types (compound/difference/components), bridged into
+        // Fabric's custom-ingredient system under NeoForge's ids
+        CustomIngredients.registerBuiltins();
 
         //Mod construction goes here: new Mekanism(...) equivalent subscribing to ShimBuses.MOD_BUS
         // (lands with the entry-point split; see PORTING.md Phase 1)
