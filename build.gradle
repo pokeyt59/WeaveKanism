@@ -33,7 +33,7 @@ sourceSets {
     main {
         //fabric_shim: Fabric-backed stand-ins for NeoForge classes (same simple names; see fabric-port/README.md).
         //Upstream api/main srcDirs join this list as porting phases land (see PORTING.md).
-        java.srcDirs = ['src/fabric/java', 'src/fabric_shim/java']
+        java.srcDirs = ['src/fabric/java', 'src/fabric_shim/java', 'src/api/java']
         resources.srcDirs = ['src/fabric/resources']
     }
     //Upstream unit tests are NeoForge-coupled; they come back in Phase 6 (see PORTING.md)
@@ -61,6 +61,14 @@ repositories {
         name = 'NeoForged (standalone bus library only)'
         url = 'https://maven.neoforged.net/releases/'
     }
+    maven {
+        name = 'BlameJared (JEI)'
+        url = 'https://maven.blamejared.com/'
+    }
+    maven {
+        name = 'TerraformersMC (EMI)'
+        url = 'https://maven.terraformersmc.com/releases/'
+    }
 }
 
 dependencies {
@@ -85,6 +93,11 @@ dependencies {
 
     //Compile-time nullability annotations (upstream got these transitively through the NeoForge platform)
     compileOnly("org.jetbrains:annotations:${jetbrains_annotations_version}")
+    compileOnly("com.google.code.findbugs:jsr305:${jsr305_version}")
+
+    //Integration APIs referenced by src/api helper interfaces; runtime wiring is Phase 5
+    compileOnly("mezz.jei:jei-1.21.1-common-api:${jei_fabric_api_version}")
+    compileOnly("dev.emi:emi-fabric:${emi_fabric_version}:api")
 }
 
 processResources {

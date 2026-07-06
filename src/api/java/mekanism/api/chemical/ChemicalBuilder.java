@@ -91,7 +91,8 @@ public class ChemicalBuilder {
      */
     @Deprecated(forRemoval = true, since = "10.7.11")
     public ChemicalBuilder ore(ResourceLocation oreTagLocation) {
-        return ore(ItemTags.create(Objects.requireNonNull(oreTagLocation)));
+        //Fabric port: ItemTags.create(ResourceLocation) is a NeoForge helper
+        return ore(TagKey.create(Registries.ITEM, Objects.requireNonNull(oreTagLocation)));
     }
 
     /**

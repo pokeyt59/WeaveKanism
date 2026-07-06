@@ -43,6 +43,7 @@ import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import mekanism.fabric_shim.registries.datamaps.DataMapType;
+import mekanism.fabric_shim.registries.datamaps.DataMaps;
 import mekanism.fabric_shim.registries.datamaps.IWithData;
 import org.jetbrains.annotations.Nullable;
 
@@ -398,7 +399,7 @@ public final class ChemicalStack implements IHasTextComponent, IHasTranslationKe
      */
     @Deprecated(forRemoval = true, since = "10.7.11")
     public ResourceLocation getTypeRegistryName() {
-        ResourceKey<?> key = getChemicalHolder().getKey();
+        ResourceKey<?> key = getChemicalHolder().unwrapKey().orElse(null);
         return key == null ? MekanismAPI.CHEMICAL_REGISTRY.getDefaultKey() : key.location();
     }
 
@@ -583,7 +584,7 @@ public final class ChemicalStack implements IHasTextComponent, IHasTranslationKe
     @Override
     public <T> T getData(DataMapType<Chemical, T> type) {
         //Note: We only accept reference holders, and reference holders can be queried directly for data
-        return getChemicalHolder().getData(type);
+        return DataMaps.getData(getChemicalHolder(), type);
     }
 
     @Override

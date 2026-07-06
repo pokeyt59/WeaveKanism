@@ -229,7 +229,7 @@ public class ModuleData<MODULE extends ICustomModule<MODULE>> implements mekanis
     @Override
     public String getTranslationKey() {
         if (translationKey == null) {
-            translationKey = Util.makeDescriptionId("module", MekanismAPI.MODULE_REGISTRY.getKeyOrNull(this));
+            translationKey = Util.makeDescriptionId("module", MekanismAPI.MODULE_REGISTRY.getKey(this));
         }
         return translationKey;
     }
@@ -239,7 +239,7 @@ public class ModuleData<MODULE extends ICustomModule<MODULE>> implements mekanis
      */
     public String getDescriptionTranslationKey() {
         if (descriptionTranslationKey == null) {
-            descriptionTranslationKey = Util.makeDescriptionId("description", MekanismAPI.MODULE_REGISTRY.getKeyOrNull(this));
+            descriptionTranslationKey = Util.makeDescriptionId("description", MekanismAPI.MODULE_REGISTRY.getKey(this));
         }
         return descriptionTranslationKey;
     }

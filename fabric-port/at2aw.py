@@ -31,6 +31,9 @@ AT_FILES = [
 # Lives in the fabric bootstrap resources for now; moves to src/main/resources when Phase 1
 # activates the main source set (update loom.accessWidenerPath + fabric.mod.json alongside).
 OUT_FILE = REPO_ROOT / "src" / "fabric" / "resources" / "mekanism.accesswidener"
+# Port-specific AW lines appended verbatim: vanilla members that NeoForge widens in ITS OWN access
+# transformers (so upstream code compiles against them) but Mekanism's AT does not cover.
+EXTRA_AW = Path(__file__).resolve().parent / "extra.aw"
 
 ACCESS_KEYWORDS = {"public", "protected", "private", "default"}
 
@@ -219,6 +222,11 @@ def main() -> None:
         return
 
     out = header + [""] + lines
+    if EXTRA_AW.is_file():
+        extra = [l for l in EXTRA_AW.read_text(encoding="utf-8").splitlines() if l.strip()]
+        out += ["", "# --- port-specific entries from fabric-port/extra.aw (NeoForge-AT'd vanilla members) ---"]
+        out += extra
+        print(f"appended {len([l for l in extra if not l.startswith('#')])} extra AW lines from {EXTRA_AW.name}")
     if todo:
         out += ["", "# --- fields awaiting descriptor resolution (run with --mc-jar or via generateAccessWidener) ---"]
         out += todo

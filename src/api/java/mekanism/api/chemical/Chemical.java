@@ -43,6 +43,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Item.TooltipContext;
 import net.minecraft.world.item.TooltipFlag;
 import mekanism.fabric_shim.registries.datamaps.DataMapType;
+import mekanism.fabric_shim.registries.datamaps.DataMaps;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.MustBeInvokedByOverriders;
 import org.jetbrains.annotations.NotNull;
@@ -210,7 +211,7 @@ public class Chemical implements IChemicalProvider, IChemicalAttributeContainer<
     @Override
     public String getTranslationKey() {
         if (translationKey == null) {
-            translationKey = Util.makeDescriptionId("chemical", MekanismAPI.CHEMICAL_REGISTRY.getKeyOrNull(this));
+            translationKey = Util.makeDescriptionId("chemical", MekanismAPI.CHEMICAL_REGISTRY.getKey(this));
         }
         return translationKey;
     }
@@ -473,7 +474,7 @@ public class Chemical implements IChemicalProvider, IChemicalAttributeContainer<
     @Internal//TODO - 1.22: Evaluate if we want to get rid of this or if caching the state of some of this is useful from a performance standpoint
     @MustBeInvokedByOverriders
     public void updateFromDataMap(Holder<Chemical> holder) {
-        ChemicalSolidTag tag = holder.getData(IMekanismDataMapTypes.INSTANCE.chemicalSolidTag());
+        ChemicalSolidTag tag = DataMaps.getData(holder, IMekanismDataMapTypes.INSTANCE.chemicalSolidTag());
         oreTag = tag == null ? legacyOreTag : tag.solidRepresentation();
         attributeMap = null;//Clear cached map
         hasAttributesWithValidation = hasLegacyAttributesWithValidation;
@@ -494,7 +495,7 @@ public class Chemical implements IChemicalProvider, IChemicalAttributeContainer<
      * @since 10.7.11
      */
     protected void trackAttribute(Holder<Chemical> holder, DataMapType<Chemical, ? extends IChemicalAttribute> dataMapType) {
-        IChemicalAttribute attribute = holder.getData(dataMapType);
+        IChemicalAttribute attribute = DataMaps.getData(holder, dataMapType);
         if (attribute != null) {
             attributes.add(attribute);
             if (attribute instanceof ChemicalRadioactivity(double rads)) {

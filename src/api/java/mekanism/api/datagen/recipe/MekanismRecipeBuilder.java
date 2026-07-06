@@ -98,7 +98,9 @@ public abstract class MekanismRecipeBuilder<BUILDER extends MekanismRecipeBuilde
             this.criteria.forEach(advancementBuilder::addCriterion);
             advancementHolder = advancementBuilder.build(id.withPrefix("recipes/"));
         }
-        recipeOutput.accept(id, asRecipe(), advancementHolder, conditions.toArray(new ICondition[0]));
+        //Fabric port: vanilla RecipeOutput has no conditions overload (datagen runs on the NeoForge
+        // branch; Fabric-side conditional recipe support is a Phase 5 concern)
+        recipeOutput.accept(id, asRecipe(), advancementHolder);
     }
 
     /**
@@ -110,7 +112,7 @@ public abstract class MekanismRecipeBuilder<BUILDER extends MekanismRecipeBuilde
      */
     @Deprecated(forRemoval = true, since = "10.7.11")
     protected void build(RecipeOutput recipeOutput, ItemLike output) {
-        ResourceLocation registryName = BuiltInRegistries.ITEM.getKeyOrNull(output.asItem());
+        ResourceLocation registryName = BuiltInRegistries.ITEM.getKey(output.asItem());
         if (registryName == null) {
             throw new IllegalStateException("Could not retrieve registry name for output.");
         }
@@ -125,7 +127,7 @@ public abstract class MekanismRecipeBuilder<BUILDER extends MekanismRecipeBuilde
      * @since 10.7.11
      */
     protected void build(RecipeOutput recipeOutput, Holder<Item> output) {
-        ResourceKey<Item> key = output.getKey();
+        ResourceKey<Item> key = output.unwrapKey().orElse(null);
         if (key == null) {
             throw new IllegalStateException("Could not retrieve registry name for output.");
         }

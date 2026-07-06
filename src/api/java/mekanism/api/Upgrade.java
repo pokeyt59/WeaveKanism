@@ -112,7 +112,8 @@ public enum Upgrade implements IHasEnumNameTranslationKey, StringRepresentable {
      * @param nbtTags  Tag to write to.
      */
     public static void saveMap(Map<Upgrade, Integer> upgrades, CompoundTag nbtTags) {
-        ListTag list = new ListTag(upgrades.size());
+        //Fabric port: the sized ListTag constructor is a NeoForge patch
+        ListTag list = new ListTag();
         for (Entry<Upgrade, Integer> entry : upgrades.entrySet()) {
             list.add(entry.getKey().getTag(entry.getValue()));
         }

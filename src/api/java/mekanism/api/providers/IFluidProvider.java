@@ -5,6 +5,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.Fluid;
+import mekanism.fabric_shim.fluids.FluidAttributes;
 import mekanism.fabric_shim.fluids.FluidStack;
 
 @SuppressWarnings("removal")
@@ -33,11 +34,11 @@ public interface IFluidProvider extends IBaseProvider {
 
     @Override
     default Component getTextComponent() {
-        return getFluid().getFluidType().getDescription(getFluidStack(1));
+        return FluidAttributes.getDescription(getFluidStack(1));
     }
 
     @Override
     default String getTranslationKey() {
-        return getFluid().getFluidType().getDescriptionId();
+        return FluidAttributes.getDescriptionId(getFluid());
     }
 }
