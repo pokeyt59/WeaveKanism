@@ -31,7 +31,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import mekanism.fabric_shim.common.NeoForge;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import mekanism.fabric_shim.event.level.BlockEvent;
 import org.jetbrains.annotations.NotNull;
 
 public class ItemBlockCardboardBox extends ItemBlockMekanism<BlockCardboardBox> {

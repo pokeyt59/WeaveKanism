@@ -15,7 +15,7 @@ import mekanism.fabric_shim.fluids.FluidStack;
 import mekanism.fabric_shim.fluids.FluidStackLinkedSet;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler.FluidAction;
-import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
+import mekanism.fabric_shim.fluids.capability.IFluidHandlerItem;
 
 public interface IFluidHandlerSlot extends IInventorySlot {
 

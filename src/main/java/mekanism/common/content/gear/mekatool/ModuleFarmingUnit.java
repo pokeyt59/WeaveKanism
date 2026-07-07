@@ -50,9 +50,9 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.ItemAbilities;
+import mekanism.fabric_shim.common.ItemAbilities;
 import mekanism.fabric_shim.common.ItemAbility;
-import net.neoforged.neoforge.common.util.Lazy;
+import mekanism.fabric_shim.common.util.Lazy;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

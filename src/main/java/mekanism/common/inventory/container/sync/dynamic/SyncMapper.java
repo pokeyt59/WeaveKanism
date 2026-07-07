@@ -35,8 +35,8 @@ import mekanism.common.util.LambdaMetaFactoryUtil;
 import net.minecraft.core.BlockPos;
 import mekanism.fabric_shim.fluids.FluidStack;
 import mekanism.fabric_shim.fluids.IFluidTank;
-import net.neoforged.neoforgespi.language.IModFileInfo;
-import net.neoforged.neoforgespi.language.ModFileScanData.AnnotationData;
+import mekanism.fabric_shim.spi.IModFileInfo;
+import mekanism.fabric_shim.spi.ModFileScanData.AnnotationData;
 import org.objectweb.asm.Type;
 
 public class SyncMapper extends BaseAnnotationScanner {

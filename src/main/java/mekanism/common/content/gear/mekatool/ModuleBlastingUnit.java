@@ -32,7 +32,7 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import mekanism.fabric_shim.common.TranslatableEnum;
-import net.neoforged.neoforge.common.util.Lazy;
+import mekanism.fabric_shim.common.util.Lazy;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

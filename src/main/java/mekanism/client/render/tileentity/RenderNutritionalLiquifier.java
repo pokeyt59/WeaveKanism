@@ -39,7 +39,7 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
-import net.neoforged.neoforge.client.model.data.ModelData;
+import mekanism.fabric_shim.client.model.data.ModelData;
 import mekanism.fabric_shim.fluids.FluidStack;
 import org.joml.Matrix4f;
 import org.joml.Quaternionf;

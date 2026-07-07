@@ -54,11 +54,11 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult.Type;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.neoforged.neoforge.common.CommonHooks;
+import mekanism.fabric_shim.common.CommonHooks;
 import mekanism.fabric_shim.common.NeoForge;
-import net.neoforged.neoforge.common.damagesource.DamageContainer;
-import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import mekanism.fabric_shim.common.damagesource.DamageContainer;
+import mekanism.fabric_shim.event.entity.living.LivingShieldBlockEvent;
+import mekanism.fabric_shim.event.level.BlockEvent;
 import org.jetbrains.annotations.NotNull;
 
 //TODO - V11: Make the laser "shrink" the further distance it goes, If above a certain energy level and in water makes it make a bubble stream

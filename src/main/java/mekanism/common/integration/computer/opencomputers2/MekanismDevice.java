@@ -18,7 +18,7 @@ import mekanism.common.integration.computer.FactoryRegistry;
 import mekanism.common.integration.computer.IComputerTile;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.common.util.Lazy;
+import mekanism.fabric_shim.common.util.Lazy;
 import org.jetbrains.annotations.Nullable;
 
 @MethodsReturnNonnullByDefault

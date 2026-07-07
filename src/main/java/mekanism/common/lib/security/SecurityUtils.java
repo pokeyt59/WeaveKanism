@@ -18,7 +18,7 @@ import mekanism.common.lib.frequency.FrequencyType;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.server.permission.PermissionAPI;
+import mekanism.fabric_shim.server.permission.PermissionAPI;
 import org.jetbrains.annotations.Nullable;
 
 /**

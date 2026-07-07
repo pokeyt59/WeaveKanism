@@ -21,11 +21,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.SubscribeEvent;
 import mekanism.fabric_shim.common.NeoForge;
-import net.neoforged.neoforge.common.util.TriState;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerChangedDimensionEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedInEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent.PlayerLoggedOutEvent;
+import mekanism.fabric_shim.common.util.TriState;
+import mekanism.fabric_shim.event.entity.player.PlayerEvent;
+import mekanism.fabric_shim.event.entity.player.PlayerEvent.PlayerChangedDimensionEvent;
+import mekanism.fabric_shim.event.entity.player.PlayerEvent.PlayerLoggedInEvent;
+import mekanism.fabric_shim.event.entity.player.PlayerEvent.PlayerLoggedOutEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
 import net.neoforged.neoforge.network.PacketDistributor;
 

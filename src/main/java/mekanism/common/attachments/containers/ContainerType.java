@@ -57,7 +57,7 @@ import net.neoforged.neoforge.capabilities.ICapabilityProvider;
 import mekanism.fabric_shim.capabilities.ItemCapability;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import mekanism.fabric_shim.common.util.INBTSerializable;
-import net.neoforged.neoforge.common.util.Lazy;
+import mekanism.fabric_shim.common.util.Lazy;
 import mekanism.fabric_shim.registries.DeferredHolder;
 import org.jetbrains.annotations.Nullable;
 

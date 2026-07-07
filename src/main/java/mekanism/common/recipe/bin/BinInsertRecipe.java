@@ -21,7 +21,7 @@ import net.minecraft.world.item.crafting.CraftingBookCategory;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent.ItemCraftedEvent;
+import mekanism.fabric_shim.event.entity.player.PlayerEvent.ItemCraftedEvent;
 
 //TODO: Test this recipe in various modded crafting tables/auto crafters
 @NothingNullByDefault

@@ -24,7 +24,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.BlockHitResult;
 import mekanism.fabric_shim.common.NeoForge;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import mekanism.fabric_shim.event.level.BlockEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

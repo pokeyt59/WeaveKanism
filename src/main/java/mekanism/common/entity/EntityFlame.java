@@ -45,13 +45,13 @@ import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.HitResult.Type;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.ItemAbilities;
+import mekanism.fabric_shim.common.ItemAbilities;
 import mekanism.fabric_shim.common.ItemAbility;
 import mekanism.fabric_shim.common.NeoForge;
-import net.neoforged.neoforge.common.util.BlockSnapshot;
+import mekanism.fabric_shim.common.util.BlockSnapshot;
 import net.neoforged.neoforge.entity.IEntityWithComplexSpawn;
-import net.neoforged.neoforge.event.EventHooks;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import mekanism.fabric_shim.event.EventHooks;
+import mekanism.fabric_shim.event.level.BlockEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

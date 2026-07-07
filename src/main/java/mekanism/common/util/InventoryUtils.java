@@ -27,7 +27,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import mekanism.fabric_shim.items.IItemHandler;
-import net.neoforged.neoforge.items.ItemHandlerHelper;
+import mekanism.fabric_shim.items.ItemHandlerHelper;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 

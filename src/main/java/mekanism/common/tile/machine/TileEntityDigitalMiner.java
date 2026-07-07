@@ -114,7 +114,7 @@ import net.minecraft.world.level.redstone.Redstone;
 import mekanism.fabric_shim.capabilities.BlockCapability;
 import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
 import mekanism.fabric_shim.common.NeoForge;
-import net.neoforged.neoforge.event.level.BlockEvent;
+import mekanism.fabric_shim.event.level.BlockEvent;
 import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

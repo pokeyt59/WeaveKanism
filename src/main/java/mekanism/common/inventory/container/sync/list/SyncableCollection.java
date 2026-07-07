@@ -8,7 +8,7 @@ import mekanism.common.network.PacketUtils;
 import mekanism.common.network.to_client.container.property.ByteArrayPropertyData;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.neoforged.neoforge.common.util.FriendlyByteBufUtil;
+import mekanism.fabric_shim.common.util.FriendlyByteBufUtil;
 import org.jetbrains.annotations.NotNull;
 
 /**

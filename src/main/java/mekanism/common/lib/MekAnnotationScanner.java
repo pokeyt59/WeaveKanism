@@ -19,10 +19,10 @@ import java.util.function.Predicate;
 import mekanism.common.Mekanism;
 import mekanism.common.inventory.container.sync.dynamic.SyncMapper;
 import mekanism.fabric_shim.fml.ModList;
-import net.neoforged.fml.loading.modscan.ModAnnotation;
-import net.neoforged.neoforgespi.language.IModFileInfo;
-import net.neoforged.neoforgespi.language.ModFileScanData;
-import net.neoforged.neoforgespi.language.ModFileScanData.AnnotationData;
+import mekanism.fabric_shim.spi.ModAnnotation;
+import mekanism.fabric_shim.spi.IModFileInfo;
+import mekanism.fabric_shim.spi.ModFileScanData;
+import mekanism.fabric_shim.spi.ModFileScanData.AnnotationData;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.Type;
 
