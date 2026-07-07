@@ -126,6 +126,11 @@ textually identical; no Yarn remap.
 | `new ListTag(size)` | `new ListTag()` |
 | `RecipeOutput#accept(..., ICondition...)` | drop conditions arg (datagen on NeoForge branch) |
 - [ ] Phase 2: capabilities + transfer/energy bridge (critical path)
+  - [x] 2-core: fluid bridge implemented + guardrail-tested ahead of time
+        (`mekanism.fabric_shim.transfer`: TransferUnits, ExtendedFluidTankStorage,
+        StorageFluidHandler; 19 tests in `src/fabric_test`, run via `gradlew test`).
+        Design locked in `fabric-port/design/transfer-bridge.md` — read it before any
+        Phase 2 work; item/energy adapters follow the same patterns.
 - [ ] Phase 3: events + networking
 - [ ] Phase 4: client (models, renderers, shaders)
 - [ ] Phase 5: integrations + API cleanup

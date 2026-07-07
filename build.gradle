@@ -36,9 +36,11 @@ sourceSets {
         java.srcDirs = ['src/fabric/java', 'src/fabric_shim/java', 'src/api/java']
         resources.srcDirs = ['src/fabric/resources']
     }
-    //Upstream unit tests are NeoForge-coupled; they come back in Phase 6 (see PORTING.md)
+    //Upstream unit tests (src/test) are NeoForge-coupled; they come back in Phase 6 (see PORTING.md).
+    //src/fabric_test holds port-owned guardrail tests: wire-format golden tests and transfer-bridge
+    // semantics tests (see fabric-port/design/transfer-bridge.md). Run with: gradlew test
     test {
-        java.srcDirs = []
+        java.srcDirs = ['src/fabric_test/java']
         resources.srcDirs = []
     }
 }
@@ -98,6 +100,17 @@ dependencies {
     //Integration APIs referenced by src/api helper interfaces; runtime wiring is Phase 5
     compileOnly("mezz.jei:jei-1.21.1-common-api:${jei_fabric_api_version}")
     compileOnly("dev.emi:emi-fabric:${emi_fabric_version}:api")
+
+    //Port guardrail tests (fabric-loader-junit boots Knot so game classes + mixins behave as in dev)
+    testImplementation("net.fabricmc:fabric-loader-junit:${fabric_loader_version}")
+    testImplementation(platform("org.junit:junit-bom:${junit_version}"))
+    testImplementation("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+}
+
+tasks.named('test', Test) {
+    useJUnitPlatform()
+    maxHeapSize = '2G'
 }
 
 processResources {

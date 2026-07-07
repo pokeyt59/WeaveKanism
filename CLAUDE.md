@@ -42,10 +42,11 @@ TODO, in order:
 1. **Phase 1f — make `src/main` compile** (~470 files still import `net.neoforged.*`). This is
    the current task. Workflow in §4 below. When it compiles, uncomment the mod-construction block
    in `src/fabric/java/mekanism/fabric/MekanismFabric.java`.
-2. **Phase 2 — capabilities + transfer/energy bridge** (critical path): Fabric API Lookup
-   registration for the 11 `RegisterCapabilitiesEvent` sites; bidirectional adapters Mekanism
-   handlers ↔ `Storage<ItemVariant>`/`Storage<FluidVariant>`/team-reborn `EnergyStorage`
-   (simulate = open+abort transaction; mB↔droplets ×81 exact; FE↔J via existing config).
+2. **Phase 2 — capabilities + transfer/energy bridge** (critical path): the fluid bridge CORE IS
+   ALREADY IMPLEMENTED AND TESTED (`mekanism.fabric_shim.transfer.*`, suite in
+   `src/fabric_test`). Remaining: item/energy adapters (follow the identical patterns), the 11
+   `RegisterCapabilitiesEvent` sites via Fabric API Lookup, `BlockCapabilityCache`. **Read
+   `fabric-port/design/transfer-bridge.md` first — it locks the design; do not redesign.**
 3. **Phase 3 — events + networking**: `PacketHandler` funnel → Fabric play networking (57
    packets untouched); remaining event glue + small mixins (`ChunkTicketLevelUpdatedEvent`);
    data-map JSON loader; registry alias support; chunk-ticket owner persistence; attachment
@@ -59,8 +60,10 @@ TODO, in order:
 ## 3. Golden rules
 
 - Work on `fabric/1.21.x` only. **Never `git push`** (no remote for the port yet).
-- Keep the build green: before every commit run `.\gradlew compileJava`; boot-verify with
-  `runServer` for lifecycle-touching changes. Never commit a broken tree.
+- Keep the build green: before every commit run `.\gradlew compileJava` **and `.\gradlew test`**
+  (19+ guardrail tests in `src/fabric_test` — wire formats + transfer-bridge semantics);
+  boot-verify with `runServer` for lifecycle-touching changes. Never commit a broken tree, never
+  commit with failing or weakened tests.
 - Commit messages: `[port]` or `[scripted]` prefix + trailer
   `Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>`.
 - New import remappings go in `fabric-port/mappings/neoforge-to-fabric.tsv` (tab-separated,
@@ -119,7 +122,24 @@ In terms of intent:
 - NOT without asking: `git push`, changing branches, rewriting history, deleting files you did
   not create, editing anything under `1.21.x`, adding new remote dependencies.
 
-## 7. Gotchas that cost time before (don't rediscover these)
+## 7. Design-sensitive areas — follow the specs, don't improvise
+
+In these areas a plausible-looking guess is usually subtly wrong and expensive to unwind. The
+rule: **implement exactly what the written spec/tests say; if a case isn't covered, stop and ask
+the user instead of choosing.**
+
+| Area | Spec / guardrail |
+|---|---|
+| Transfer bridge (fluid/item/energy semantics, ×81, simulate) | `fabric-port/design/transfer-bridge.md` + `src/fabric_test` suite |
+| Serialized formats (FluidStack codecs, ingredient JSON, packet bytes) | must match NeoForge byte-for-byte; golden tests in `FluidStackWireFormatTest` — never "fix" an expected value without diffing against NeoForge's serialization |
+| Registry lifecycle order | `ShimRegistryEvents` javadoc; NeoForge's GameData order — don't reorder |
+| Energy J↔FE conversion rate | OPEN item — reuse Mekanism's own EnergyUnit helpers from src/main once it compiles; do not hardcode a rate |
+| Access wideners | generated — edit `fabric-port/extra.aw` + rerun at2aw.py, never the generated file |
+
+Pre-commit checklist: `compileJava` green → `test` green (no weakened assertions) → boot check if
+lifecycle/registration touched → `[port]`/`[scripted]` split correct → PORTING.md updated.
+
+## 8. Gotchas that cost time before (don't rediscover these)
 
 - FCAP ships `net.neoforged.fml.config.*` + `ModConfigSpec` under original names → config
   classes need NO remap. Only `ModConfigEvent` is shimmed.
