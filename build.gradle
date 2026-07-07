@@ -130,4 +130,6 @@ processResources {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     options.release = Integer.parseInt(java_version)
+    //Show the full error picture during the porting grind instead of javac's 100-error cap
+    options.compilerArgs.addAll(['-Xmaxerrs', '10000'])
 }

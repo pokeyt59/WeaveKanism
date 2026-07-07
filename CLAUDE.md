@@ -78,27 +78,23 @@ TODO, in order:
 
 ## 4. Phase 1f workflow (the compile grind)
 
-1. Locally add `'src/main/java'` to the `srcDirs` list in `build.gradle` (keep this change
-   uncommitted until main is fully green — committing it early breaks the build for the user).
-2. `.\gradlew compileJava 2>&1 | Select-String "error:"` — expect thousands at first. Triage by
-   *cluster* (same missing class/pattern), not file by file.
-3. For each cluster, in preference order:
-   a. **Existing pattern** — check the hand-edit table in `PORTING.md` ("Hand-edit patterns for
-      NeoForge patches to vanilla classes"); apply mechanically.
-   b. **New shim** — same-surface class in `mekanism.fabric_shim.*` + TSV mapping + remap run.
-      Reference signatures: extract from the NeoForge sources jar
-      (`maven.neoforged.net/releases`, `net.neoforged:neoforge:21.1.200:sources`) — do NOT copy code.
-   c. **Defer** — client-only (`mekanism/client/**`) and integration (`common/integration/**`)
-      files may be excluded temporarily via a build.gradle exclude filter if they block progress;
-      document any exclusion in PORTING.md.
-4. Big known clusters and their plan: `IPayloadContext`/`PacketDistributor` (55+14 files → thin
-   networking shim over Fabric play networking, Phase 3 but the shim types can land in 1f);
-   `FluidType` (46 files → decide Phase 2: most uses are `FluidType.BUCKET_VOLUME` and
-   fluid registration — grep before designing); `RegisterCapabilitiesEvent`/`BlockCapabilityCache`
-   (Phase 2); `ModelData`/client models (Phase 4, defer); `EventBusSubscriber` classes (annotation
-   is inert — register each class explicitly in the bootstrap; keep a list).
-5. Verify: compile green → dev server `Done (...)` in log → commit (`[port]` + `[scripted]`
-   separately) → update PORTING.md checkboxes → update memory.
+**The full battle plan, with the error census already taken and every cluster decision made,
+is `fabric-port/design/main-compile-plan.md` — follow its 6 steps in order.** Summary: the census
+(9,060 errors, 2026-07-06) showed ~5,700 are Phase 4/5 areas to exclude (client/**,
+common/integration/** minus the energy core), ~850 fall to a scripted @Override strip (NeoForge
+extension hooks — maintain the hook-wiring checklist!), ~400 to a data-component Holder-overload
+bridge (interface injection + the port's first mixins), and the rest to a listed trivial-shim
+batch, three design shims (FluidType/capabilities-surface/networking-surface), and pattern-table
+residue.
+
+Ground rules while grinding:
+- Add `'src/main/java'` to srcDirs LOCALLY; commit that line only when compile is fully green.
+- Re-run the compile after each step; the count must drop as the plan predicts — if it doesn't,
+  stop and investigate before continuing.
+- New shims: same-surface fresh implementations (signatures from the NeoForge sources jar —
+  never copy code) + TSV mapping + remap.py run committed `[scripted]`.
+- Verify at the end: compile green → `gradlew test` green → dev server boots with mod
+  construction uncommented → commit → PORTING.md + memory updated.
 
 ## 5. Build & verify commands
 
