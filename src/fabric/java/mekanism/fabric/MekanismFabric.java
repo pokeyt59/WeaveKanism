@@ -51,6 +51,8 @@ public class MekanismFabric implements ModInitializer {
         //Must happen inside onInitialize while Fabric still permits Registry.register.
         ShimRegistryEvents.fire(ShimBuses.MOD_BUS);
         ShimChunkManager.fireRegistration(ShimBuses.MOD_BUS);
+        //Capability provider registration (on Fabric this registers straight into the API lookups)
+        ShimBuses.MOD_BUS.post(new mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent());
 
         //FML lifecycle order after registration; single-threaded, so enqueueWork runs inline
         ShimBuses.MOD_BUS.post(new FMLCommonSetupEvent());

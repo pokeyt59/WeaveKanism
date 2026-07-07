@@ -172,3 +172,11 @@ net.neoforged.neoforge.server.permission.nodes.PermissionDynamicContext	mekanism
 net.neoforged.neoforgespi.language.ModFileScanData	mekanism.fabric_shim.spi.ModFileScanData
 net.neoforged.neoforgespi.language.IModFileInfo	mekanism.fabric_shim.spi.IModFileInfo
 net.neoforged.fml.loading.modscan.ModAnnotation	mekanism.fabric_shim.spi.ModAnnotation
+
+# --- Phase 1f Step 5.2: capabilities compile surface ---
+net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent	mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent
+net.neoforged.neoforge.capabilities.Capabilities	mekanism.fabric_shim.capabilities.Capabilities
+net.neoforged.neoforge.capabilities.BlockCapabilityCache	mekanism.fabric_shim.capabilities.BlockCapabilityCache
+net.neoforged.neoforge.capabilities.ICapabilityProvider	mekanism.fabric_shim.capabilities.ICapabilityProvider
+net.neoforged.neoforge.capabilities.IBlockCapabilityProvider	mekanism.fabric_shim.capabilities.IBlockCapabilityProvider
+net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener	mekanism.fabric_shim.capabilities.ICapabilityInvalidationListener
