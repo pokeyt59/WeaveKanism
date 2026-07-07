@@ -35,6 +35,11 @@ sourceSets {
         //Upstream api/main srcDirs join this list as porting phases land (see PORTING.md).
         java.srcDirs = ['src/fabric/java', 'src/fabric_shim/java', 'src/api/java']
         resources.srcDirs = ['src/fabric/resources']
+        //Phase 1f grind switch: compile src/main with `gradlew compileJava -PportMain`.
+        //Move src/main/java into the list above (and drop this block) once 1f is green.
+        if (project.hasProperty('portMain')) {
+            java.srcDirs += 'src/main/java'
+        }
         //Phase 1f deferrals (inert until src/main/java joins srcDirs; see fabric-port/design/main-compile-plan.md):
         // client is Phase 4 — EXCEPT recipe_viewer/type (loader-agnostic data classes imported by
         // ~30 common files). Per-mod integrations are Phase 5; the integration/computer CORE stays
