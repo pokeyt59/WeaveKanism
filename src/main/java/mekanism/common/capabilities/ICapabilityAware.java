@@ -1,6 +1,6 @@
 package mekanism.common.capabilities;
 
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
 
 @FunctionalInterface
 public interface ICapabilityAware {

@@ -65,7 +65,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
-import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import mekanism.fabric_shim.capabilities.BlockCapabilityCache;
 import mekanism.fabric_shim.fluids.FluidStack;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import org.jetbrains.annotations.NotNull;

@@ -6,7 +6,7 @@ import mekanism.common.capabilities.Capabilities;
 import mekanism.common.capabilities.MultiTypeCapability;
 import mekanism.common.integration.energy.IEnergyCompat;
 import mekanism.common.util.UnitDisplayUtils.EnergyUnit;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
+import mekanism.fabric_shim.capabilities.ICapabilityProvider;
 import mekanism.fabric_shim.energy.IEnergyStorage;
 
 @NothingNullByDefault

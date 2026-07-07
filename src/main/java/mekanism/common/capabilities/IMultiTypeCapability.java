@@ -11,7 +11,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import mekanism.fabric_shim.capabilities.BlockCapability;
-import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import mekanism.fabric_shim.capabilities.BlockCapabilityCache;
 import mekanism.fabric_shim.capabilities.EntityCapability;
 import mekanism.fabric_shim.capabilities.ItemCapability;
 import org.jetbrains.annotations.NotNull;

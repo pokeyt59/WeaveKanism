@@ -12,8 +12,8 @@ import mekanism.common.registration.impl.TileEntityTypeDeferredRegister.BlockEnt
 import mekanism.common.tile.TileEntityBoundingBlock;
 import mekanism.common.tile.base.CapabilityTileEntity;
 import net.minecraft.core.Direction;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import mekanism.fabric_shim.capabilities.ICapabilityProvider;
+import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
 import org.jetbrains.annotations.Nullable;
 
 public class CCCapabilityHelper {

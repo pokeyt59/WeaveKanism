@@ -17,7 +17,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;
 import mekanism.fabric_shim.capabilities.BlockCapability;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
+import mekanism.fabric_shim.capabilities.ICapabilityProvider;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;

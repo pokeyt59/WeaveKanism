@@ -17,7 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import mekanism.fabric_shim.fml.FMLEnvironment;
-import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import mekanism.fabric_shim.capabilities.BlockCapabilityCache;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import mekanism.fabric_shim.fluids.FluidStack;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler;

@@ -20,9 +20,9 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import mekanism.fabric_shim.capabilities.BlockCapability;
 import mekanism.fabric_shim.capabilities.EntityCapability;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
+import mekanism.fabric_shim.capabilities.ICapabilityProvider;
 import mekanism.fabric_shim.capabilities.ItemCapability;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

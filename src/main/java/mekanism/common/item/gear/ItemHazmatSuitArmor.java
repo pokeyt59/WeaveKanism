@@ -9,7 +9,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.enchantment.Enchantment;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
 import org.jetbrains.annotations.NotNull;
 
 public class ItemHazmatSuitArmor extends ArmorItem implements ICapabilityAware {

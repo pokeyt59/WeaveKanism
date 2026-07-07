@@ -31,8 +31,8 @@ import net.minecraft.world.level.block.entity.BlockEntityType.BlockEntitySupplie
 import net.neoforged.bus.api.IEventBus;
 import mekanism.fabric_shim.fml.FMLEnvironment;
 import mekanism.fabric_shim.capabilities.BlockCapability;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import mekanism.fabric_shim.capabilities.ICapabilityProvider;
+import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
 import mekanism.fabric_shim.registries.DeferredHolder;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

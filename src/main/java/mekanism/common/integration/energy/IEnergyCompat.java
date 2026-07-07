@@ -10,7 +10,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
+import mekanism.fabric_shim.capabilities.ICapabilityProvider;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault

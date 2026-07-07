@@ -7,7 +7,7 @@ import mekanism.common.capabilities.MultiTypeCapability;
 import mekanism.common.config.MekanismConfig;
 import mekanism.common.integration.energy.IEnergyCompat;
 import mekanism.common.util.UnitDisplayUtils.EnergyUnit;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
+import mekanism.fabric_shim.capabilities.ICapabilityProvider;
 import sonar.fluxnetworks.api.energy.IFNEnergyStorage;
 
 @NothingNullByDefault

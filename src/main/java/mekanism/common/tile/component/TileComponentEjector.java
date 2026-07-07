@@ -61,7 +61,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import mekanism.fabric_shim.capabilities.BlockCapabilityCache;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import mekanism.fabric_shim.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;

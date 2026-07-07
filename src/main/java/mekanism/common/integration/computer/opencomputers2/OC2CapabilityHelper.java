@@ -4,7 +4,7 @@ import java.util.function.BooleanSupplier;
 import mekanism.common.integration.computer.IComputerTile;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister.BlockEntityTypeBuilder;
 import mekanism.common.tile.base.CapabilityTileEntity;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
 
 public class OC2CapabilityHelper {
 

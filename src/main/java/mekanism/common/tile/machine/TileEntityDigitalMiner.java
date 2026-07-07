@@ -112,7 +112,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.redstone.Redstone;
 import mekanism.fabric_shim.capabilities.BlockCapability;
-import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import mekanism.fabric_shim.capabilities.BlockCapabilityCache;
 import mekanism.fabric_shim.common.NeoForge;
 import mekanism.fabric_shim.event.level.BlockEvent;
 import mekanism.fabric_shim.items.IItemHandler;

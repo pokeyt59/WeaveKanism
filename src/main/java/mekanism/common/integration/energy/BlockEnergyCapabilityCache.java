@@ -11,7 +11,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener;
+import mekanism.fabric_shim.capabilities.ICapabilityInvalidationListener;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
  *
  * <p>Instances are automatically cleared by the garbage collector when they are no longer in use.
  *
- * @implNote This is a modified copy of NeoForge's {@link net.neoforged.neoforge.capabilities.BlockCapabilityCache}
+ * @implNote This is a modified copy of NeoForge's {@link mekanism.fabric_shim.capabilities.BlockCapabilityCache}
  */
 public class BlockEnergyCapabilityCache {
 

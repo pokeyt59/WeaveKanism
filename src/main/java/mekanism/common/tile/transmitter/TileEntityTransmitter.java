@@ -48,7 +48,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.neoforged.neoforge.capabilities.ICapabilityProvider;
+import mekanism.fabric_shim.capabilities.ICapabilityProvider;
 import mekanism.fabric_shim.client.model.data.ModelData;
 import mekanism.fabric_shim.client.model.data.ModelProperty;
 import org.jetbrains.annotations.NotNull;

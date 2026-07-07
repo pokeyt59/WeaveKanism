@@ -21,7 +21,7 @@ import net.neoforged.bus.api.IEventBus;
 import mekanism.fabric_shim.fml.InterModComms;
 import mekanism.fabric_shim.fml.ModList;
 import mekanism.fabric_shim.fml.event.lifecycle.InterModEnqueueEvent;
-import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
+import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
 import mekanism.fabric_shim.common.NeoForge;
 
 /**
