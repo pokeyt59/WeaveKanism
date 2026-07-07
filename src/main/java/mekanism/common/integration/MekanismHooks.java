@@ -3,27 +3,26 @@ package mekanism.common.integration;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
-import mekanism.common.integration.computer.FactoryRegistry;
-import mekanism.common.integration.computer.computercraft.CCCapabilityHelper;
-import mekanism.common.integration.crafttweaker.content.CrTContentUtils;
-import mekanism.common.integration.curios.CuriosIntegration;
+//Fabric port (Phase 5): per-mod integration classes are excluded from compilation for now; their
+// hook calls below are commented with the same marker. Restore both together per integration.
+//import mekanism.common.integration.computer.FactoryRegistry;
+//import mekanism.common.integration.computer.computercraft.CCCapabilityHelper;
+//import mekanism.common.integration.crafttweaker.content.CrTContentUtils;
+//import mekanism.common.integration.curios.CuriosIntegration;
 import mekanism.common.integration.energy.EnergyCompatUtils;
-import mekanism.common.integration.framedblocks.FramedBlocksIntegration;
-import mekanism.common.integration.gender.MekanismGenderArmor;
-import mekanism.common.integration.jsonthings.JsonThingsIntegration;
-import mekanism.common.integration.lookingat.theoneprobe.TOPProvider;
-import mekanism.common.integration.projecte.MekanismNormalizedSimpleStacks;
+//import mekanism.common.integration.framedblocks.FramedBlocksIntegration;
+//import mekanism.common.integration.gender.MekanismGenderArmor;
+//import mekanism.common.integration.jsonthings.JsonThingsIntegration;
+//import mekanism.common.integration.lookingat.theoneprobe.TOPProvider;
+//import mekanism.common.integration.projecte.MekanismNormalizedSimpleStacks;
 import mekanism.common.recipe.bin.BinInsertRecipe;
-import mekanism.common.registries.MekanismItems;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import mekanism.fabric_shim.fml.InterModComms;
 import mekanism.fabric_shim.fml.ModList;
 import mekanism.fabric_shim.fml.event.lifecycle.InterModEnqueueEvent;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import mekanism.fabric_shim.common.NeoForge;
-import net.neoforged.neoforge.data.loading.DatagenModLoader;
 
 /**
  * Hooks for Mekanism. Use to grab items or blocks out of different mods.
@@ -97,40 +96,43 @@ public final class MekanismHooks {
     }
 
     public void hookConstructor(final IEventBus modEventBus) {
-        if (curios.isLoaded()) {
-            CuriosIntegration.addListeners(modEventBus);
-        }
-        if (craftTweaker.isLoaded() && !DatagenModLoader.isRunningDataGen()) {
-            //Register our CrT listener at lowest priority to try and ensure they get later ids than our normal registries
-            modEventBus.addListener(EventPriority.LOWEST, CrTContentUtils::registerCrTContent);
-        }
-        if (jsonThings.isLoaded()) {
-            JsonThingsIntegration.hook(modEventBus);
-        }
-        if (projecte.isLoaded()) {
-            MekanismNormalizedSimpleStacks.NSS_SERIALIZERS.register(modEventBus);
-        }
-        if (framedBlocks.isLoaded()) {
-            FramedBlocksIntegration.init(modEventBus);
-        }
+        //Fabric port (Phase 5): integration hooks disabled while their packages are excluded
+        //if (curios.isLoaded()) {
+        //    CuriosIntegration.addListeners(modEventBus);
+        //}
+        //if (craftTweaker.isLoaded() && !DatagenModLoader.isRunningDataGen()) {
+        //    //Register our CrT listener at lowest priority to try and ensure they get later ids than our normal registries
+        //    modEventBus.addListener(EventPriority.LOWEST, CrTContentUtils::registerCrTContent);
+        //}
+        //if (jsonThings.isLoaded()) {
+        //    JsonThingsIntegration.hook(modEventBus);
+        //}
+        //if (projecte.isLoaded()) {
+        //    MekanismNormalizedSimpleStacks.NSS_SERIALIZERS.register(modEventBus);
+        //}
+        //if (framedBlocks.isLoaded()) {
+        //    FramedBlocksIntegration.init(modEventBus);
+        //}
     }
 
     public void hookCapabilityRegistration(RegisterCapabilitiesEvent event) {
         EnergyCompatUtils.initLoadedCache();
-        if (genderMod.isLoaded()) {
-            MekanismGenderArmor.HAZMAT.register(event, MekanismItems.HAZMAT_GOWN);
-            MekanismGenderArmor.OPEN_FRONT.register(event, MekanismItems.JETPACK, MekanismItems.SCUBA_TANK);
-            MekanismGenderArmor.HIDES_BREASTS.register(event, MekanismItems.ARMORED_JETPACK, MekanismItems.MEKASUIT_BODYARMOR);
-        }
+        //Fabric port (Phase 5): integration hooks disabled while their packages are excluded
+        //if (genderMod.isLoaded()) {
+        //    MekanismGenderArmor.HAZMAT.register(event, MekanismItems.HAZMAT_GOWN);
+        //    MekanismGenderArmor.OPEN_FRONT.register(event, MekanismItems.JETPACK, MekanismItems.SCUBA_TANK);
+        //    MekanismGenderArmor.HIDES_BREASTS.register(event, MekanismItems.ARMORED_JETPACK, MekanismItems.MEKASUIT_BODYARMOR);
+        //}
     }
 
     public void hookCommonSetup() {
-        if (computerCompatEnabled()) {
-            FactoryRegistry.load();
-            if (computerCraft.isLoaded()) {
-                CCCapabilityHelper.registerApis();
-            }
-        }
+        //Fabric port (Phase 5): integration hooks disabled while their packages are excluded
+        //if (computerCompatEnabled()) {
+        //    FactoryRegistry.load();
+        //    if (computerCraft.isLoaded()) {
+        //        CCCapabilityHelper.registerApis();
+        //    }
+        //}
 
         //TODO - 1.20: Move this out of here and back to always being registered whenever it gets fixed in Neo.
         // Modifying the result doesn't apply properly when "quick crafting"
@@ -145,9 +147,10 @@ public final class MekanismHooks {
             // we add this check here, so we can skip iterating the list of things we want to blacklist when it is not present
             sendDarkModeEverywhereIMC();
         }
-        if (theOneProbe.isLoaded()) {
-            theOneProbe.sendImc("getTheOneProbe", TOPProvider::new);
-        }
+        //Fabric port (Phase 5): integration hooks disabled while their packages are excluded
+        //if (theOneProbe.isLoaded()) {
+        //    theOneProbe.sendImc("getTheOneProbe", TOPProvider::new);
+        //}
     }
 
     public boolean computerCompatEnabled() {

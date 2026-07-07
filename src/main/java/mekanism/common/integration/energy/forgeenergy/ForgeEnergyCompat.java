@@ -7,7 +7,7 @@ import mekanism.common.capabilities.MultiTypeCapability;
 import mekanism.common.integration.energy.IEnergyCompat;
 import mekanism.common.util.UnitDisplayUtils.EnergyUnit;
 import net.neoforged.neoforge.capabilities.ICapabilityProvider;
-import net.neoforged.neoforge.energy.IEnergyStorage;
+import mekanism.fabric_shim.energy.IEnergyStorage;
 
 @NothingNullByDefault
 public class ForgeEnergyCompat implements IEnergyCompat {

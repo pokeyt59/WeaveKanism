@@ -33,7 +33,7 @@ import mekanism.fabric_shim.capabilities.EntityCapability;
 import net.neoforged.neoforge.capabilities.ICapabilityProvider;
 import mekanism.fabric_shim.capabilities.ItemCapability;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.energy.IEnergyStorage;
+import mekanism.fabric_shim.energy.IEnergyStorage;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import net.neoforged.neoforge.fluids.capability.IFluidHandlerItem;
 import mekanism.fabric_shim.items.IItemHandler;

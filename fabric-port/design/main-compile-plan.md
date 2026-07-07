@@ -38,7 +38,42 @@ Then repair the seams this cuts:
   call behind `FMLEnvironment.dist` + reflection-free indirection, shim the client class name, or
   defer the file with a documented exclude. List every such seam in PORTING.md.
 
-## Step 2 — Scripted @Override strip for NeoForge extension hooks (≈ −850 errors)
+## Step 1 RESULTS (executed 2026-07-06 — baseline for the next steps: **3,576 errors**)
+
+Step 1 is DONE and committed: build.gradle exclusion filters (client via a file-only spec closure
+with an allowlist, integrations per-package), MekanismHooks Phase-5 hook bodies commented,
+IEnergyStorage shim + remap. Findings that AMEND the original step text above:
+
+- `integration/computer` CORE STAYS IN — its annotations (@ComputerMethod etc.) and wrappers are
+  imported by 80+ core tiles. Only `computer/computercraft/**`, `computer/opencomputers2/**` and
+  `computer/ComputerCapabilityHelper.java` (the one CC-touching core file) are excluded. The
+  computer core needs the ModFileScanData/AnnotationData stubs (Step 4) and `ComputerConstants`
+  (44 errs — check where it lives; likely excluded CC binding → relocate reference or stub) plus
+  3 references to the excluded ComputerCapabilityHelper to seam out.
+- `client/recipe_viewer/type/**` is allowlisted back in (its types appear in core tile method
+  signatures — 30 files). Two allowlisted data classes still fail on
+  `RecipeViewerUtils` (2 errors): either allowlist RecipeViewerUtils IF its own imports are clean,
+  else hand-edit the two call sites to inline the helper. STOP RULE: if the allowlist would grow
+  past ~8 files, hand-edit instead of allowlisting.
+- Remaining common→client seams to fix during Steps 4-6 (from the census):
+  `mekanism.client.key` MekanismKeyHandler/MekKeyHandler (8 common files; client/key needs only
+  small KeyModifier/IKeyConflictContext/KeyConflictContext shims → shim those in Step 4, then
+  allowlist client/key/**), `SoundHandler` (3 files), `MekanismClient` (3 files),
+  `mekanism.client` root (8 files), `client.model.data`/`TransmitterModelData`/`QuadTransformation`
+  (7 files — goes with the ModelData shim decision). Treat each: smallest of shim / allowlist /
+  dist-guard; document every choice here.
+- New pattern-table entries discovered: `Item.Properties#setNoRepair` (10 files — Step 3 injected
+  interface + mixin storing a flag; repair-blocking behavior wires in Phase 3),
+  `ItemStack#canPerformAction` (3 files — route through an ItemAbilityHooks shim static),
+  `net.neoforged.neoforge.common.Tags` (11 files — shim with conventional `c:` tag constants).
+- Post-Step-1 top clusters (baseline for Step 2+): FluidType 236+14, BlockCapabilityCache 124,
+  IPayloadContext 118 (+ network pkgs 148), capabilities pkg 98 + RegisterCapabilitiesEvent 54 +
+  ICapabilityProvider 56, recipe-viewer seam 118+114 (fixed by allowlist, see above), Lazy 78,
+  IFluidHandlerItem 62, ItemAbilities 50, BaseFlowingFluid Source/Flowing 100, override-strip 192
+  (much smaller than the pre-exclusion 854 — most were client/integration), data-component
+  Holder overloads ~370, event classes ~90, ListTag(int) 18, computer-core stubs ~90.
+
+## Step 2 — Scripted @Override strip for NeoForge extension hooks (≈ −190 errors post-Step-1)
 
 Cluster: `method does not override or implement a method from a supertype` (854). Cause: Mekanism
 classes override methods that only exist because NeoForge patches vanilla (IItemExtension,

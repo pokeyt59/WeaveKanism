@@ -132,3 +132,6 @@ net.neoforged.neoforge.common.world.chunk.LoadingValidationCallback	mekanism.fab
 net.neoforged.neoforge.common.NeoForgeMod	mekanism.fabric_shim.common.NeoForgeMod
 net.neoforged.neoforge.registries.NeoForgeRegistries	mekanism.fabric_shim.registries.NeoForgeRegistries
 net.neoforged.neoforge.attachment.AttachmentType	mekanism.fabric_shim.attachment.AttachmentType
+
+# --- energy (compile surface; live interop is team-reborn, Phase 2) ---
+net.neoforged.neoforge.energy.IEnergyStorage	mekanism.fabric_shim.energy.IEnergyStorage
