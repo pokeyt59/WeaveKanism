@@ -108,7 +108,10 @@ textually identical; no Yarn remap.
 | TicketController → vanilla forced chunks: `ticking` flag ignored, no per-owner persistence, validation callbacks never invoked | common/world/chunk shims | Phase 3 (own SavedData with owners) |
 | AddReloadListenerEvent runs synchronous listeners only (Mekanism's only listener is synchronous) | ShimGameEvents | Phase 3 if an async listener appears |
 | ServerStartingEvent posted immediately before ServerStartedEvent (Fabric has no post-level-load pre-ready hook) | ShimGameEvents | acceptable |
-| `NeoForgeMod.MILK` is an absent holder: `is()` matches the id, `value()` throws | NeoForgeMod shim | Phase 2 (audit fluid tank bucket/cauldron sites) |
+| `NeoForgeMod.MILK` is an absent holder: `is()` matches the id, `value()`/`get()` throws | NeoForgeMod shim | Phase 2 (audit fluid tank bucket/cauldron sites) |
+| `Entity.getMaxHeightFluidType()` returns the empty type (never the fluid the entity is submerged in) → mekasuit hydrostatic-repulsor swim boost stays inert | MekEntityExt inject shim | Phase 3/4 (movement/submersion hooks) |
+| Non-Mekanism fluids resolve to a generic `DEFAULT` FluidType (only vanilla water/lava/empty are special-cased); Mekanism fluids carry their real type via BaseFlowingFluid. WATER/LAVA built-in FluidType property values are best-effort | fluids shim (FluidTypes) | Phase 2 (refine if a consumer needs accurate cross-mod attributes) |
+| FluidType client render data (still/flowing/overlay textures, tint) + `IClientFluidTypeExtensions.getTintColor` return neutral defaults | fluids/client-extensions shim | Phase 4 (register real client fluid extensions) |
 | Empty `neoforge:*` shim registries log "Registry was empty after loading" errors | NeoForgeRegistries | self-resolves when main's registrations land (1f) |
 | ModConfigEvent.Loading may fire during registerConfigs (FCAP loads at registration), before Mekanism's listener subscribes — harmless: caches are lazy; listener matters for reloads | ModContainer shim | verify during 1f boot |
 

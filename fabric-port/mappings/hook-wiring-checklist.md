@@ -83,7 +83,7 @@ dead-on-Fabric with a reason. Do not delete entries; check them off with the fix
 - [ ] `mekanism/common/network/to_client/configuration/SyncAllSecurityData.java` — `run`
 - [ ] `mekanism/common/network/to_client/configuration/SyncAllSecurityData.java` — `type`
 - [ ] `mekanism/common/registration/impl/CreativeTabDeferredRegister.java` — `getLabelColor`
-- [ ] `mekanism/common/registration/impl/FluidDeferredRegister.java` — `isVaporizedOnPlacement`
+- [x] `mekanism/common/registration/impl/FluidDeferredRegister.java` — `isVaporizedOnPlacement` (Step 5.1: real FluidType method; MekanismFluidType overrides it, called by BlockData/WorldUtils)
 - [ ] `mekanism/common/tile/TileEntityEnergyCube.java` — `getModelData`
 - [ ] `mekanism/common/tile/base/TileEntityUpdateable.java` — `handleUpdateTag`
 - [ ] `mekanism/common/tile/base/TileEntityUpdateable.java` — `onDataPacket`
