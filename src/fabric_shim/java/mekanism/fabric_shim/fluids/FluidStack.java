@@ -45,8 +45,8 @@ import org.slf4j.Logger;
  * Amounts remain in millibuckets everywhere inside the mod; conversion to Fabric droplets
  * (x81) happens only in the transfer-API boundary adapters (Phase 2).
  *
- * <p>Differences from NeoForge: FluidType-based methods are not provided (Fabric has no FluidType);
- * name lookups go through Fabric's fluid variant attributes instead.
+ * <p>Differences from NeoForge: name lookups go through Fabric's fluid variant attributes instead of
+ * FluidType; {@link #getFluidType()} resolves to the port's own {@link FluidType} stand-in.
  */
 public final class FluidStack implements MutableDataComponentHolder {
 
@@ -229,6 +229,14 @@ public final class FluidStack implements MutableDataComponentHolder {
 
     public Holder<Fluid> getFluidHolder() {
         return this.getFluid().builtInRegistryHolder();
+    }
+
+    /**
+     * The {@link FluidType} of this stack's fluid (NeoForge parity for {@code FluidStack#getFluidType()}).
+     * Resolves through {@link FluidTypes}, so it agrees with the injected {@code Fluid#getFluidType()}.
+     */
+    public FluidType getFluidType() {
+        return FluidTypes.resolve(getFluid());
     }
 
     public boolean is(TagKey<Fluid> tag) {

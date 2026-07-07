@@ -3,7 +3,10 @@ package mekanism.fabric_shim.common;
 import com.mojang.datafixers.util.Either;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
+import mekanism.fabric_shim.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidTypes;
 import mekanism.fabric_shim.registries.DeferredRegister;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderOwner;
@@ -42,7 +45,14 @@ public final class NeoForgeMod {
     public static final Holder<Attribute> CREATIVE_FLIGHT = ATTRIBUTES.register("creative_flight",
           () -> new RangedAttribute("neoforge.creative_flight", 0.0D, 0.0D, 1.0D).setSyncable(true));
 
-    public static final Holder<Fluid> MILK = new AbsentHolder<>(ResourceKey.create(Registries.FLUID, ResourceLocation.fromNamespaceAndPath("neoforge", "milk")));
+    public static final AbsentHolder<Fluid> MILK = new AbsentHolder<>(ResourceKey.create(Registries.FLUID, ResourceLocation.fromNamespaceAndPath("neoforge", "milk")));
+
+    //Built-in fluid types re-exported from the fluids shim so upstream identity checks against these
+    //(e.g. the electrolytic breathing unit comparing WATER_TYPE.value()) keep resolving to the same
+    //singletons the injected Fluid#getFluidType() hands out. See FluidTypes.
+    public static final Holder<FluidType> WATER_TYPE = FluidTypes.WATER;
+    public static final Holder<FluidType> LAVA_TYPE = FluidTypes.LAVA;
+    public static final Holder<FluidType> EMPTY_TYPE = FluidTypes.EMPTY;
 
     private NeoForgeMod() {
     }
@@ -55,11 +65,16 @@ public final class NeoForgeMod {
         LOGGER.debug("enableMilkFluid() requested; the Fabric port has no milk fluid (no-op)");
     }
 
-    private record AbsentHolder<T>(ResourceKey<T> key) implements Holder<T> {
+    public record AbsentHolder<T>(ResourceKey<T> key) implements Holder<T>, Supplier<T> {
 
         @Override
         public T value() {
             throw new IllegalStateException(key + " is not available on the Fabric port");
+        }
+
+        @Override
+        public T get() {
+            return value();
         }
 
         @Override

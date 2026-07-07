@@ -27,7 +27,10 @@
       "net/minecraft/class_1799": ["mekanism/fabric_shim/inject/MekItemStackExt"],
       "net/minecraft/class_1792$class_1793": ["mekanism/fabric_shim/inject/MekItemPropertiesExt"],
       "net/minecraft/class_9323$class_9324": ["mekanism/fabric_shim/inject/MekDataComponentMapBuilderExt"],
-      "net/minecraft/class_2586$class_9473": ["mekanism/fabric_shim/inject/MekDataComponentInputExt"]
+      "net/minecraft/class_2586$class_9473": ["mekanism/fabric_shim/inject/MekDataComponentInputExt"],
+      "net/minecraft/class_3611": ["mekanism/fabric_shim/inject/MekFluidExt"],
+      "net/minecraft/class_3610": ["mekanism/fabric_shim/inject/MekFluidStateExt"],
+      "net/minecraft/class_1297": ["mekanism/fabric_shim/inject/MekEntityExt"]
     }
   },
   "entrypoints": {

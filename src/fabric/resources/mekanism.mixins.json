@@ -6,6 +6,9 @@
     "DataComponentHolderMixin",
     "DataComponentInputMixin",
     "DataComponentMapBuilderMixin",
+    "EntityMixin",
+    "FluidMixin",
+    "FluidStateMixin",
     "ItemPropertiesMixin",
     "ItemStackMixin"
   ],
