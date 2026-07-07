@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import mekanism.common.Mekanism;
-import net.neoforged.fml.ModContainer;
+import mekanism.fabric_shim.fml.ModContainer;
 import net.neoforged.fml.config.IConfigSpec;
-import net.neoforged.fml.event.config.ModConfigEvent;
+import mekanism.fabric_shim.fml.event.config.ModConfigEvent;
 
 public class MekanismConfig {
 

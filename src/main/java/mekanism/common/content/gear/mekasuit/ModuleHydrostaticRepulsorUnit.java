@@ -12,7 +12,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.common.NeoForgeMod;
+import mekanism.fabric_shim.common.NeoForgeMod;
 import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
 
 @ParametersAreNotNullByDefault

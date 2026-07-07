@@ -3,11 +3,11 @@ package mekanism.common.config;
 import java.nio.file.Path;
 import java.util.Map;
 import mekanism.common.Mekanism;
-import net.neoforged.fml.ModContainer;
+import mekanism.fabric_shim.fml.ModContainer;
 import net.neoforged.fml.config.IConfigSpec;
 import net.neoforged.fml.config.ModConfig;
-import net.neoforged.fml.event.config.ModConfigEvent;
-import net.neoforged.fml.loading.FMLPaths;
+import mekanism.fabric_shim.fml.event.config.ModConfigEvent;
+import mekanism.fabric_shim.fml.FMLPaths;
 
 public class MekanismConfigHelper {
 

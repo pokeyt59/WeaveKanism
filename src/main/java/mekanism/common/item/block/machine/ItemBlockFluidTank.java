@@ -62,7 +62,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult.Type;
-import net.neoforged.neoforge.common.NeoForgeMod;
+import mekanism.fabric_shim.common.NeoForgeMod;
 import net.neoforged.neoforge.common.SoundActions;
 import mekanism.fabric_shim.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;

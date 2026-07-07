@@ -23,7 +23,7 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.fml.util.thread.EffectiveSide;
+import mekanism.fabric_shim.fml.EffectiveSide;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

@@ -9,7 +9,7 @@ import mekanism.common.MekanismLang;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.fml.util.thread.EffectiveSide;
+import mekanism.fabric_shim.fml.EffectiveSide;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

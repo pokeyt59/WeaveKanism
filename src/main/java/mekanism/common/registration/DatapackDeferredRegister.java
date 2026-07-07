@@ -13,7 +13,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.StructureModifier;
 import mekanism.fabric_shim.registries.DataPackRegistryEvent;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import mekanism.fabric_shim.registries.NeoForgeRegistries;
 import mekanism.fabric_shim.registries.RegistryBuilder;
 import org.jetbrains.annotations.Nullable;
 

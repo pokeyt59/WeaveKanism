@@ -5,10 +5,10 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.Optional;
 import mekanism.api.SerializationConstants;
-import net.neoforged.fml.ModContainer;
+import mekanism.fabric_shim.fml.ModContainer;
 import mekanism.fabric_shim.fml.ModList;
 import mekanism.fabric_shim.common.conditions.ICondition;
-import org.apache.maven.artifact.versioning.ComparableVersion;
+import mekanism.fabric_shim.fml.ComparableVersion;
 
 public record ModVersionLoadedCondition(String modid, String minVersion) implements ICondition {
 

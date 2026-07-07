@@ -27,7 +27,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.common.NeoForgeMod;
+import mekanism.fabric_shim.common.NeoForgeMod;
 import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
 
 @ParametersAreNotNullByDefault

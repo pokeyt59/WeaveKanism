@@ -24,7 +24,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.AABB;
-import net.neoforged.neoforge.common.NeoForgeMod;
+import mekanism.fabric_shim.common.NeoForgeMod;
 import net.neoforged.neoforge.fluids.FluidType;
 
 @ParametersAreNotNullByDefault

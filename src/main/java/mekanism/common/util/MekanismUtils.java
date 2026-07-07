@@ -83,7 +83,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import mekanism.fabric_shim.fml.FMLEnvironment;
-import net.neoforged.fml.util.thread.EffectiveSide;
+import mekanism.fabric_shim.fml.EffectiveSide;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.common.EffectCures;
 import net.neoforged.neoforge.common.Tags;

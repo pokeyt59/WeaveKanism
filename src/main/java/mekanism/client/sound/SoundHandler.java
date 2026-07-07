@@ -36,7 +36,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import mekanism.fabric_shim.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import mekanism.fabric_shim.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.ClientHooks;
 import net.neoforged.neoforge.client.event.sound.PlaySoundEvent;
 import net.neoforged.neoforge.client.event.sound.SoundEngineLoadEvent;

@@ -1,7 +1,7 @@
 package mekanism.common.lib;
 
-import net.neoforged.fml.ModContainer;
-import org.apache.maven.artifact.versioning.ArtifactVersion;
+import mekanism.fabric_shim.fml.ModContainer;
+import mekanism.fabric_shim.fml.ArtifactVersion;
 
 /**
  * Version v2.0.0. Simple version handling for Mekanism.

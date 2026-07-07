@@ -7,10 +7,10 @@ import mekanism.common.Mekanism;
 import mekanism.common.item.gear.ItemFlamethrower.FlamethrowerMode;
 import mekanism.common.lib.radiation.MeltdownLevelData;
 import mekanism.common.lib.radiation.RadiationLevelData;
-import net.neoforged.neoforge.attachment.AttachmentType;
+import mekanism.fabric_shim.attachment.AttachmentType;
 import mekanism.fabric_shim.registries.DeferredHolder;
 import mekanism.fabric_shim.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import mekanism.fabric_shim.registries.NeoForgeRegistries;
 
 @NothingNullByDefault
 public class MekanismAttachmentTypes {

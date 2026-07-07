@@ -38,7 +38,7 @@ import mekanism.fabric_shim.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
 import mekanism.fabric_shim.registries.DeferredHolder;
 import mekanism.fabric_shim.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import mekanism.fabric_shim.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 
 public class FluidDeferredRegister {

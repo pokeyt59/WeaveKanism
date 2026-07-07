@@ -203,7 +203,7 @@ import net.minecraft.world.level.material.Fluid;
 import mekanism.fabric_shim.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import mekanism.fabric_shim.fml.common.EventBusSubscriber;
 import mekanism.fabric_shim.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.ModelEvent.BakingCompleted;

@@ -20,7 +20,7 @@ import mekanism.common.registries.MekanismDataComponents;
 import net.minecraft.MethodsReturnNonnullByDefault;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.fml.util.thread.EffectiveSide;
+import mekanism.fabric_shim.fml.EffectiveSide;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

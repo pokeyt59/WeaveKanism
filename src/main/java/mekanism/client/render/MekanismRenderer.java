@@ -54,7 +54,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.Vec3;
 import mekanism.fabric_shim.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import mekanism.fabric_shim.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import mekanism.fabric_shim.fluids.FluidStack;

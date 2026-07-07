@@ -4,7 +4,7 @@ import mekanism.common.Mekanism;
 import mekanism.common.registration.DeferredMapCodecHolder;
 import mekanism.common.registration.DeferredMapCodecRegister;
 import mekanism.fabric_shim.common.conditions.ICondition;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
+import mekanism.fabric_shim.registries.NeoForgeRegistries;
 
 public class MekanismRecipeConditions {
 

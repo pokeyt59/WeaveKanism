@@ -14,7 +14,7 @@ import net.minecraft.nbt.ListTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import mekanism.fabric_shim.fml.common.EventBusSubscriber;
 import mekanism.fabric_shim.common.util.INBTSerializable;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import org.jetbrains.annotations.Nullable;

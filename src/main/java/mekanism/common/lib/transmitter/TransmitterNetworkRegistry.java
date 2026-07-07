@@ -31,7 +31,7 @@ import net.minecraft.server.level.ChunkMap;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+import mekanism.fabric_shim.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.level.ChunkTicketLevelUpdatedEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 import org.jetbrains.annotations.Nullable;
