@@ -164,7 +164,9 @@ processResources {
     ]
     inputs.properties(templateProps)
     filesMatching('fabric.mod.json') {
-        expand(templateProps)
+        //ReplaceTokens (@token@) instead of expand(): Groovy template expansion breaks on the $
+        // in inner-class names inside loom:injected_interfaces (class_1792$class_1793)
+        filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: templateProps)
     }
 }
 

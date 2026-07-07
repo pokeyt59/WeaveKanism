@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "mekanism",
-  "version": "${version}",
+  "version": "@version@",
   "name": "Mekanism",
   "description": "High-tech machinery, powerful energy generation, fancy gadgets and more. Unofficial Fabric port.",
   "authors": [
@@ -18,6 +18,18 @@
   "license": "MIT",
   "environment": "*",
   "accessWidener": "mekanism.accesswidener",
+  "mixins": [
+    "mekanism.mixins.json"
+  ],
+  "custom": {
+    "loom:injected_interfaces": {
+      "net/minecraft/class_9322": ["mekanism/fabric_shim/inject/MekDataComponentHolderExt"],
+      "net/minecraft/class_1799": ["mekanism/fabric_shim/inject/MekItemStackExt"],
+      "net/minecraft/class_1792$class_1793": ["mekanism/fabric_shim/inject/MekItemPropertiesExt"],
+      "net/minecraft/class_9323$class_9324": ["mekanism/fabric_shim/inject/MekDataComponentMapBuilderExt"],
+      "net/minecraft/class_2586$class_9473": ["mekanism/fabric_shim/inject/MekDataComponentInputExt"]
+    }
+  },
   "entrypoints": {
     "main": [
       "mekanism.fabric.MekanismFabric"
@@ -27,9 +39,9 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=${fabric_loader_version}",
+    "fabricloader": ">=@fabric_loader_version@",
     "fabric-api": "*",
-    "minecraft": "=${minecraft_version}",
+    "minecraft": "=@minecraft_version@",
     "java": ">=21"
   }
 }

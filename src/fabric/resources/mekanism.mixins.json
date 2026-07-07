@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "mekanism.fabric.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "DataComponentHolderMixin",
+    "DataComponentInputMixin",
+    "DataComponentMapBuilderMixin",
+    "ItemPropertiesMixin",
+    "ItemStackMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
