@@ -30,6 +30,14 @@ public final class ModList {
     }
 
     /**
+     * FML annotation scan data has no Fabric equivalent — always empty, which makes
+     * MekAnnotationScanner-driven features inert (deferred with the computer integrations).
+     */
+    public java.util.List<mekanism.fabric_shim.spi.ModFileScanData> getAllScanData() {
+        return java.util.List.of();
+    }
+
+    /**
      * Note: containers returned here are metadata views only — config events are deliberately not
      * bridged for them (see ModContainer#bridgeConfigEvents).
      */

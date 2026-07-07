@@ -63,7 +63,12 @@ sourceSets {
                 def p = el.path
                 p.startsWith('mekanism/client/') && !clientAllowlist.any { a -> p.startsWith(a) }
             }
-            exclude 'mekanism/common/integration/computer/computercraft/**'
+            exclude { el ->
+                //CC bindings are Phase 5, but ComputerConstants is a pure constants class used by
+                // 22 core files — spare it
+                !el.directory && el.path.startsWith('mekanism/common/integration/computer/computercraft/') &&
+                      el.path != 'mekanism/common/integration/computer/computercraft/ComputerConstants.java'
+            }
             exclude 'mekanism/common/integration/computer/opencomputers2/**'
             exclude 'mekanism/common/integration/computer/ComputerCapabilityHelper.java'
             exclude 'mekanism/common/integration/crafttweaker/**'

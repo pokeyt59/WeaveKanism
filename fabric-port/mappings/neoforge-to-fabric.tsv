@@ -135,3 +135,40 @@ net.neoforged.neoforge.attachment.AttachmentType	mekanism.fabric_shim.attachment
 
 # --- energy (compile surface; live interop is team-reborn, Phase 2) ---
 net.neoforged.neoforge.energy.IEnergyStorage	mekanism.fabric_shim.energy.IEnergyStorage
+
+# --- Phase 1f Step 4: trivial shim batch ---
+net.neoforged.neoforge.common.util.Lazy	mekanism.fabric_shim.common.util.Lazy
+net.neoforged.neoforge.fluids.capability.IFluidHandlerItem	mekanism.fabric_shim.fluids.capability.IFluidHandlerItem
+net.neoforged.neoforge.common.ItemAbilities	mekanism.fabric_shim.common.ItemAbilities
+net.neoforged.neoforge.client.model.data.ModelData	mekanism.fabric_shim.client.model.data.ModelData
+net.neoforged.neoforge.client.model.data.ModelProperty	mekanism.fabric_shim.client.model.data.ModelProperty
+net.neoforged.neoforge.common.util.TriState	mekanism.fabric_shim.common.util.TriState
+net.neoforged.neoforge.common.SoundActions	mekanism.fabric_shim.common.SoundActions
+net.neoforged.neoforge.common.SoundAction	mekanism.fabric_shim.common.SoundAction
+net.neoforged.neoforge.common.util.FriendlyByteBufUtil	mekanism.fabric_shim.common.util.FriendlyByteBufUtil
+net.neoforged.neoforge.common.UsernameCache	mekanism.fabric_shim.common.UsernameCache
+net.neoforged.neoforge.items.ItemHandlerHelper	mekanism.fabric_shim.items.ItemHandlerHelper
+net.neoforged.neoforge.common.util.RecipeMatcher	mekanism.fabric_shim.common.util.RecipeMatcher
+net.neoforged.neoforge.common.util.ItemStackMap	mekanism.fabric_shim.common.util.ItemStackMap
+net.neoforged.neoforge.common.Tags	mekanism.fabric_shim.common.Tags
+net.neoforged.neoforge.common.CommonHooks	mekanism.fabric_shim.common.CommonHooks
+net.neoforged.neoforge.event.EventHooks	mekanism.fabric_shim.event.EventHooks
+net.neoforged.neoforge.event.level.BlockEvent	mekanism.fabric_shim.event.level.BlockEvent
+net.neoforged.neoforge.common.util.BlockSnapshot	mekanism.fabric_shim.common.util.BlockSnapshot
+net.neoforged.neoforge.event.entity.player.PlayerEvent	mekanism.fabric_shim.event.entity.player.PlayerEvent
+net.neoforged.neoforge.event.entity.living.LivingEvent	mekanism.fabric_shim.event.entity.living.LivingEvent
+net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent	mekanism.fabric_shim.event.entity.living.LivingShieldBlockEvent
+net.neoforged.neoforge.common.damagesource.DamageContainer	mekanism.fabric_shim.common.damagesource.DamageContainer
+net.neoforged.neoforge.event.entity.ProjectileImpactEvent	mekanism.fabric_shim.event.entity.ProjectileImpactEvent
+net.neoforged.neoforge.event.level.ExplosionEvent	mekanism.fabric_shim.event.level.ExplosionEvent
+net.neoforged.neoforge.event.entity.EntityStruckByLightningEvent	mekanism.fabric_shim.event.entity.EntityStruckByLightningEvent
+net.neoforged.neoforge.server.permission.PermissionAPI	mekanism.fabric_shim.server.permission.PermissionAPI
+net.neoforged.neoforge.server.permission.events.PermissionGatherEvent	mekanism.fabric_shim.server.permission.events.PermissionGatherEvent
+net.neoforged.neoforge.server.permission.nodes.PermissionNode	mekanism.fabric_shim.server.permission.nodes.PermissionNode
+net.neoforged.neoforge.server.permission.nodes.PermissionTypes	mekanism.fabric_shim.server.permission.nodes.PermissionTypes
+net.neoforged.neoforge.server.permission.nodes.PermissionType	mekanism.fabric_shim.server.permission.nodes.PermissionType
+net.neoforged.neoforge.server.permission.nodes.PermissionDynamicContextKey	mekanism.fabric_shim.server.permission.nodes.PermissionDynamicContextKey
+net.neoforged.neoforge.server.permission.nodes.PermissionDynamicContext	mekanism.fabric_shim.server.permission.nodes.PermissionDynamicContext
+net.neoforged.neoforgespi.language.ModFileScanData	mekanism.fabric_shim.spi.ModFileScanData
+net.neoforged.neoforgespi.language.IModFileInfo	mekanism.fabric_shim.spi.IModFileInfo
+net.neoforged.fml.loading.modscan.ModAnnotation	mekanism.fabric_shim.spi.ModAnnotation
