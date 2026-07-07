@@ -38,6 +38,26 @@ Then repair the seams this cuts:
   call behind `FMLEnvironment.dist` + reflection-free indirection, shim the client class name, or
   defer the file with a documented exclude. List every such seam in PORTING.md.
 
+## SCOREBOARD (update after every step)
+
+| Step | State | Errors after |
+|---|---|---|
+| census | — | 9,060 |
+| 1 — exclusions + seams | DONE (b97cafed46) | 3,576 |
+| 2 — @Override strip | DONE (161e9b70a7; script: strip_overrides.py, 88 methods → hook-wiring-checklist.md) | 3,400 |
+| 3 — component Holder bridge | DONE (2b69fcf24b; interface injection + first mixins, runtime-verified by DataComponentBridgeTest) | 2,868 |
+| 4 — trivial shims | DONE (5ae79149e4 + df73f47756; 23 classes incl. hooks/events/permissions/scan stubs) | 2,166 |
+| 5 — design shims (fluids / capabilities / networking / remaining events) | IN PROGRESS | — |
+| 6 — residue | pending | target 0 |
+
+Remaining top clusters at 2,166: FluidType ~250, capabilities (BlockCapabilityCache 124 +
+RegisterCapabilitiesEvent + ICapabilityProvider + pkg ~330 incl. invalidateCapabilities 32),
+networking (IPayloadContext 118 + PacketDistributor 44 + pkgs ~150), BaseFlowingFluid 100,
+recipe-viewer seam RecipeViewerUtils 2 (+ downstream ~110), client/key seam ~50, remaining event
+classes ~90 (tick/chunk/entity-join/creative-tab/datapack-sync/spawn-placement/attribute-creation,
+LivingIncomingDamageEvent/LivingFallEvent/LivingDeathEvent/EntityTeleportEvent already exists),
+Player.openMenu overload ~10, ListTag(int) 18, misc residue.
+
 ## Step 1 RESULTS (executed 2026-07-06 — baseline for the next steps: **3,576 errors**)
 
 Step 1 is DONE and committed: build.gradle exclusion filters (client via a file-only spec closure
