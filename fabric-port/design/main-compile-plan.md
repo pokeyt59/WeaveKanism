@@ -47,8 +47,11 @@ Then repair the seams this cuts:
 | 2 — @Override strip | DONE (161e9b70a7; script: strip_overrides.py, 88 methods → hook-wiring-checklist.md) | 3,400 |
 | 3 — component Holder bridge | DONE (2b69fcf24b; interface injection + first mixins, runtime-verified by DataComponentBridgeTest) | 2,868 |
 | 4 — trivial shims | DONE (5ae79149e4 + df73f47756; 23 classes incl. hooks/events/permissions/scan stubs) | 2,166 |
-| 5 — design shims (fluids / capabilities / networking / remaining events) | IN PROGRESS | — |
-| 6 — residue | pending | target 0 |
+| 5.2 — capabilities surface (live Fabric registration; bootstrap posts RegisterCapabilitiesEvent) | DONE (371b439c8f + c935583125) | 1,798 |
+| 5.1 — FluidType + BaseFlowingFluid | pending (design notes in Step 5 below) | — |
+| 5.3 — networking surface (read PacketHandler/BasePacketHandler first) | pending | — |
+| 5.4 — remaining event classes (~90 errs; NeoForge sources jar for surfaces) | pending | — |
+| 6 — residue (openMenu, invalidateCapabilities args, ListTag(int), getData sites, seams) | pending | target 0 |
 
 Remaining top clusters at 2,166: FluidType ~250, capabilities (BlockCapabilityCache 124 +
 RegisterCapabilitiesEvent + ICapabilityProvider + pkg ~330 incl. invalidateCapabilities 32),
