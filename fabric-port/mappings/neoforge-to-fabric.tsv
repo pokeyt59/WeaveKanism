@@ -94,7 +94,41 @@ net.neoforged.fml.event.lifecycle.InterModProcessEvent	mekanism.fabric_shim.fml.
 net.neoforged.fml.InterModComms	mekanism.fabric_shim.fml.InterModComms
 
 # --- config ---
-# NO remap needed: Forge Config API Port (Fabric) provides net.neoforged.neoforge.common.ModConfigSpec
-# and friends under their original package names. Only the registration call site changes
-# (ModContainer#registerConfig -> fuzs.forgeconfigapiport.fabric.api.neoforge.v4.NeoForgeConfigRegistry),
-# which is a hand edit in the entry point, not a scripted transform.
+# Mostly NO remap needed: Forge Config API Port (Fabric) provides net.neoforged.fml.config.*
+# (ModConfig, IConfigSpec) and net.neoforged.neoforge.common.ModConfigSpec under their original
+# package names. The ModContainer shim routes registerConfig through FCAP's NeoForgeConfigRegistry
+# and bridges FCAP's config callbacks onto the shim mod bus as ModConfigEvents.
+net.neoforged.fml.event.config.ModConfigEvent	mekanism.fabric_shim.fml.event.config.ModConfigEvent
+
+# --- FML runtime (entry point, environment, versions) ---
+net.neoforged.fml.common.Mod	mekanism.fabric_shim.fml.Mod
+net.neoforged.fml.ModContainer	mekanism.fabric_shim.fml.ModContainer
+net.neoforged.fml.loading.FMLPaths	mekanism.fabric_shim.fml.FMLPaths
+net.neoforged.fml.common.EventBusSubscriber	mekanism.fabric_shim.fml.common.EventBusSubscriber
+net.neoforged.fml.util.thread.EffectiveSide	mekanism.fabric_shim.fml.EffectiveSide
+org.apache.maven.artifact.versioning.ArtifactVersion	mekanism.fabric_shim.fml.ArtifactVersion
+org.apache.maven.artifact.versioning.ComparableVersion	mekanism.fabric_shim.fml.ComparableVersion
+
+# --- game events: server lifecycle / level / tags / commands / reload ---
+net.neoforged.neoforge.event.server.ServerLifecycleEvent	mekanism.fabric_shim.event.server.ServerLifecycleEvent
+net.neoforged.neoforge.event.server.ServerAboutToStartEvent	mekanism.fabric_shim.event.server.ServerAboutToStartEvent
+net.neoforged.neoforge.event.server.ServerStartingEvent	mekanism.fabric_shim.event.server.ServerStartingEvent
+net.neoforged.neoforge.event.server.ServerStartedEvent	mekanism.fabric_shim.event.server.ServerStartedEvent
+net.neoforged.neoforge.event.server.ServerStoppingEvent	mekanism.fabric_shim.event.server.ServerStoppingEvent
+net.neoforged.neoforge.event.server.ServerStoppedEvent	mekanism.fabric_shim.event.server.ServerStoppedEvent
+net.neoforged.neoforge.event.level.LevelEvent	mekanism.fabric_shim.event.level.LevelEvent
+net.neoforged.neoforge.event.TagsUpdatedEvent	mekanism.fabric_shim.event.TagsUpdatedEvent
+net.neoforged.neoforge.event.RegisterCommandsEvent	mekanism.fabric_shim.event.RegisterCommandsEvent
+net.neoforged.neoforge.event.AddReloadListenerEvent	mekanism.fabric_shim.event.AddReloadListenerEvent
+
+# --- chunk ticket controllers ---
+net.neoforged.neoforge.common.world.chunk.TicketController	mekanism.fabric_shim.common.world.chunk.TicketController
+net.neoforged.neoforge.common.world.chunk.RegisterTicketControllersEvent	mekanism.fabric_shim.common.world.chunk.RegisterTicketControllersEvent
+net.neoforged.neoforge.common.world.chunk.TicketHelper	mekanism.fabric_shim.common.world.chunk.TicketHelper
+net.neoforged.neoforge.common.world.chunk.TicketSet	mekanism.fabric_shim.common.world.chunk.TicketSet
+net.neoforged.neoforge.common.world.chunk.LoadingValidationCallback	mekanism.fabric_shim.common.world.chunk.LoadingValidationCallback
+
+# --- NeoForge-owned registries, attachments, misc common ---
+net.neoforged.neoforge.common.NeoForgeMod	mekanism.fabric_shim.common.NeoForgeMod
+net.neoforged.neoforge.registries.NeoForgeRegistries	mekanism.fabric_shim.registries.NeoForgeRegistries
+net.neoforged.neoforge.attachment.AttachmentType	mekanism.fabric_shim.attachment.AttachmentType
