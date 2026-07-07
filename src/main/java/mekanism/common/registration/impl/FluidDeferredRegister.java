@@ -265,7 +265,6 @@ public class FluidDeferredRegister {
             this.color = renderProperties.color;
         }
 
-        @Override
         public boolean isVaporizedOnPlacement(Level level, BlockPos pos, FluidStack stack) {
             //TODO - 1.19: Decide on this for our fluids for now default to not vaporizing
             return false;

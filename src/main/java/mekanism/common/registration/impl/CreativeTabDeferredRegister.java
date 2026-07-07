@@ -124,7 +124,6 @@ public class CreativeTabDeferredRegister extends MekanismDeferredRegister<Creati
             super(builder);
         }
 
-        @Override
         public int getLabelColor() {
             return SpecialColors.TEXT_TITLE.argb();
         }

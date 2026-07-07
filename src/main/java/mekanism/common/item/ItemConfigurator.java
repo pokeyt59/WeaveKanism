@@ -90,7 +90,6 @@ public class ItemConfigurator extends Item implements IRadialModeItem<Configurat
         return TextComponentUtil.build(EnumColor.AQUA, super.getName(stack));
     }
 
-    @Override
     public boolean canPerformAction(@NotNull ItemStack stack, @NotNull ItemAbility action) {
         if (action == MekanismItemAbilities.WRENCH_CONFIGURE) {
             return getMode(stack).isConfigurating();
@@ -201,7 +200,6 @@ public class ItemConfigurator extends Item implements IRadialModeItem<Configurat
         return InteractionResult.PASS;
     }
 
-    @Override
     public boolean doesSneakBypassUse(ItemStack stack, LevelReader world, BlockPos pos, Player player) {
         return getMode(stack) == ConfiguratorMode.WRENCH;
     }

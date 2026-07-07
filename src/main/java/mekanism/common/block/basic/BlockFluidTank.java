@@ -26,7 +26,6 @@ public class BlockFluidTank extends BlockTileModel<TileEntityFluidTank, Machine<
         super(type, properties -> properties.mapColor(BlockResourceInfo.STEEL.getMapColor()));
     }
 
-    @Override
     public int getLightEmission(BlockState state, BlockGetter world, BlockPos pos) {
         int ambientLight = super.getLightEmission(state, world, pos);
         if (ambientLight == 15) {

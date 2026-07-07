@@ -108,7 +108,6 @@ public class ItemAtomicDisassembler extends ItemEnergized implements IItemHUDPro
         tooltip.add(MekanismLang.DISASSEMBLER_EFFICIENCY.translateColored(EnumColor.INDIGO, mode.getEfficiency()));
     }
 
-    @Override
     public boolean canPerformAction(ItemStack stack, ItemAbility action) {
         if (ALWAYS_SUPPORTED_ACTIONS.contains(action)) {
             IEnergyContainer energyContainer = StorageUtils.getEnergyContainer(stack, 0);
@@ -251,17 +250,14 @@ public class ItemAtomicDisassembler extends ItemEnergized implements IItemHUDPro
         return false;
     }
 
-    @Override
     public boolean isBookEnchantable(@NotNull ItemStack stack, @NotNull ItemStack book) {
         return isEnchantable(stack) && super.isBookEnchantable(stack, book);
     }
 
-    @Override
     public boolean isPrimaryItemFor(@NotNull ItemStack stack, @NotNull Holder<Enchantment> enchantment) {
         return isEnchantable(stack) && super.isPrimaryItemFor(stack, enchantment);
     }
 
-    @Override
     public boolean supportsEnchantment(@NotNull ItemStack stack, @NotNull Holder<Enchantment> enchantment) {
         return isEnchantable(stack) && super.supportsEnchantment(stack, enchantment);
     }

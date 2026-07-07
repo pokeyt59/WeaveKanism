@@ -24,7 +24,6 @@ public class BlockResource extends BlockMekanism {
         return resource;
     }
 
-    @Override
     public boolean isPortalFrame(BlockState state, BlockGetter world, BlockPos pos) {
         return resource.isPortalFrame();
     }

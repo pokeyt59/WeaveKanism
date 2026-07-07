@@ -86,7 +86,6 @@ public class BlockBase<TYPE extends BlockType> extends BlockMekanism implements 
         return TextComponentUtil.build(baseTier.getColor(), super.getName());
     }
 
-    @Override
     public float getExplosionResistance(@NotNull BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull Explosion explosion) {
         AttributeCustomResistance customResistance = type.get(AttributeCustomResistance.class);
         return customResistance == null ? super.getExplosionResistance(state, world, pos, explosion) : customResistance.resistance();
@@ -100,7 +99,6 @@ public class BlockBase<TYPE extends BlockType> extends BlockMekanism implements 
     }
 
     @Nullable
-    @Override
     public PathType getBlockPathType(@NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos, @Nullable Mob mob) {
         AttributeCustomPathType customPathType = type.get(AttributeCustomPathType.class);
         if (customPathType != null) {

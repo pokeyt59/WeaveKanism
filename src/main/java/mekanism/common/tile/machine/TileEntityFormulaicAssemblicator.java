@@ -195,7 +195,6 @@ public class TileEntityFormulaicAssemblicator extends TileEntityConfigurableMach
         return formulaSlot;
     }
 
-    @Override
     public void onLoad() {
         super.onLoad();
         if (!isRemote()) {

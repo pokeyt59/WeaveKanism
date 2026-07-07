@@ -14,14 +14,12 @@ public record SyncAllSecurityData(ServerConfigurationPacketListener listener) im
     private static final ResourceLocation ID = Mekanism.rl("sync_security");
     private static final Type TYPE = new Type(ID);
 
-    @Override
     public void run(Consumer<CustomPacketPayload> sender) {
         sender.accept(new PacketBatchSecurityUpdate());
         listener().finishCurrentTask(type());
     }
 
     @NotNull
-    @Override
     public Type type() {
         return TYPE;
     }

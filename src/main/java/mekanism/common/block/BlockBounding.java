@@ -149,7 +149,6 @@ public class BlockBounding extends Block implements IHasTileEntity<TileEntityBou
      * {@inheritDoc} Delegate to main {@link Block#getCloneItemStack(BlockState, HitResult, LevelReader, BlockPos, Player)}.
      */
     @NotNull
-    @Override
     public ItemStack getCloneItemStack(@NotNull BlockState state, @NotNull HitResult target, @NotNull LevelReader world, @NotNull BlockPos pos, @NotNull Player player) {
         BlockPos mainPos = getMainBlockPos(world, pos);
         if (mainPos == null) {
@@ -159,7 +158,6 @@ public class BlockBounding extends Block implements IHasTileEntity<TileEntityBou
         return mainState.getBlock().getCloneItemStack(mainState, target, world, mainPos, player);
     }
 
-    @Override
     public boolean onDestroyedByPlayer(@NotNull BlockState state, @NotNull Level world, @NotNull BlockPos pos, @NotNull Player player, boolean willHarvest,
           @NotNull FluidState fluidState) {
         if (willHarvest) {
@@ -273,7 +271,6 @@ public class BlockBounding extends Block implements IHasTileEntity<TileEntityBou
         return world.getBlockState(mainPos).getDestroyProgress(player, world, mainPos);
     }
 
-    @Override
     public float getExplosionResistance(@NotNull BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull Explosion explosion) {
         BlockPos mainPos = getMainBlockPos(world, pos);
         if (mainPos == null) {

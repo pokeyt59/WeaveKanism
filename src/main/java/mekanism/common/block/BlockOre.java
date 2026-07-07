@@ -49,7 +49,6 @@ public class BlockOre extends Block implements IHasDescription {
         return this::getDescriptionTranslationKey;
     }
 
-    @Override
     public int getExpDrop(@NotNull BlockState state, @NotNull LevelAccessor level, @NotNull BlockPos pos, @Nullable BlockEntity blockEntity, @Nullable Entity breaker,
           @NotNull ItemStack tool) {
         //Note: If min exp = max exp = 0, then this will just return zero, similar to what super does

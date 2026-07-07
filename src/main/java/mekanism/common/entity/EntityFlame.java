@@ -291,12 +291,10 @@ public class EntityFlame extends Projectile implements IEntityWithComplexSpawn {
     protected void defineSynchedData(@NotNull SynchedEntityData.Builder builder) {
     }
 
-    @Override
     public void writeSpawnData(RegistryFriendlyByteBuf buffer) {
         buffer.writeEnum(getData(MekanismAttachmentTypes.FLAMETHROWER_MODE));
     }
 
-    @Override
     public void readSpawnData(RegistryFriendlyByteBuf buffer) {
         setData(MekanismAttachmentTypes.FLAMETHROWER_MODE, buffer.readEnum(FlamethrowerMode.class));
     }

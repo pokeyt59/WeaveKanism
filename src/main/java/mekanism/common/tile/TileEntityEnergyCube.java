@@ -178,7 +178,6 @@ public class TileEntityEnergyCube extends TileEntityConfigurableMachine {
     }
 
     @NotNull
-    @Override
     public ModelData getModelData() {
         ConfigInfo config = getConfig().getConfig(TransmissionType.ENERGY);
         if (config == null) {//Should not happen but validate it anyway

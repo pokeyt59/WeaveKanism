@@ -126,7 +126,6 @@ public abstract class TileEntityUpdateable extends BlockEntity implements ITileW
         return ClientboundBlockEntityDataPacket.create(this);
     }
 
-    @Override
     public void handleUpdateTag(@NotNull CompoundTag tag, @NotNull HolderLookup.Provider provider) {
         //We don't want to do a full read from NBT so simply call the super's read method to let Neo do whatever
         // it wants, but don't treat this as if it was the full saved NBT data as not everything has to be synced to the client
@@ -152,7 +151,6 @@ public abstract class TileEntityUpdateable extends BlockEntity implements ITileW
         return super.getUpdateTag(provider);
     }
 
-    @Override
     public void onDataPacket(@NotNull Connection net, @NotNull ClientboundBlockEntityDataPacket pkt, @NotNull HolderLookup.Provider provider) {
         //Handle the update tag when we are on the client
         CompoundTag tag = pkt.getTag();

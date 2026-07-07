@@ -62,7 +62,6 @@ public class ItemFreeRunners extends ItemSpecialArmor implements IItemHUDProvide
         tabOutput.accept(StorageUtils.getFilledEnergyVariant(item));
     }
 
-    @Override
     public boolean canWalkOnPowderedSnow(@NotNull ItemStack stack, @NotNull LivingEntity wearer) {
         return true;
     }

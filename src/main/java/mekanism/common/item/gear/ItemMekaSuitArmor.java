@@ -130,13 +130,11 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
         }
     }
 
-    @Override
     public <T extends LivingEntity> int damageItem(@NotNull ItemStack stack, int amount, T entity, @NotNull Consumer<Item> onBroken) {
         // safety check
         return 0;
     }
 
-    @Override
     public void onDestroyed(@NotNull ItemEntity item, @NotNull DamageSource damageSource) {
         ModuleHelper.INSTANCE.dropModuleContainerContents(item, damageSource);
     }
@@ -157,17 +155,14 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
         }
     }
 
-    @Override
     public boolean makesPiglinsNeutral(@NotNull ItemStack stack, @NotNull LivingEntity wearer) {
         return true;
     }
 
-    @Override
     public boolean isEnderMask(@NotNull ItemStack stack, @NotNull Player player, @NotNull EnderMan enderman) {
         return type == ArmorItem.Type.HELMET;
     }
 
-    @Override
     public boolean canWalkOnPowderedSnow(@NotNull ItemStack stack, @NotNull LivingEntity wearer) {
         return type == ArmorItem.Type.BOOTS;
     }
@@ -187,13 +182,11 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
         return MekanismConfig.client.energyColor.get();
     }
 
-    @Override
     public boolean isNotReplaceableByPickAction(ItemStack stack, Player player, int inventorySlot) {
         //Try to avoid replacing this item if there are any modules currently installed
         return super.isNotReplaceableByPickAction(stack, player, inventorySlot) || hasInstalledModules(stack);
     }
 
-    @Override
     public int getEnchantmentLevel(ItemStack stack, Holder<Enchantment> enchantment) {
         //Enchantments in our data
         IModuleContainer container = IModuleHelper.INSTANCE.getModuleContainer(stack);
@@ -202,7 +195,6 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
     }
 
     @NotNull
-    @Override
     public ItemEnchantments getAllEnchantments(@NotNull ItemStack stack, RegistryLookup<Enchantment> lookup) {
         ItemEnchantments enchantments = super.getAllEnchantments(stack, lookup);
         IModuleContainer container = IModuleHelper.INSTANCE.getModuleContainer(stack);
@@ -292,7 +284,6 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
         return slotType == getEquipmentSlot() && getModules(stack).stream().anyMatch(IModule::handlesModeChange);
     }
 
-    @Override
     public boolean canElytraFly(ItemStack stack, LivingEntity entity) {
         if (getType() == ArmorItem.Type.CHESTPLATE && !entity.isShiftKeyDown()) {
             //Don't allow elytra flight if the player is sneaking. This lets the player exit elytra flight early
@@ -311,7 +302,6 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
         return false;
     }
 
-    @Override
     public boolean elytraFlightTick(ItemStack stack, LivingEntity entity, int flightTicks) {
         //Note: As canElytraFly is checked just before this we don't bother validating ahead of time we have the energy
         // or that we are the correct slot
@@ -393,13 +383,11 @@ public class ItemMekaSuitArmor extends ItemSpecialArmor implements IModuleContai
         return getMaterial().value().toughness();
     }
 
-    @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         //Ignore NBT for energized items causing re-equip animations
         return slotChanged || oldStack.getItem() != newStack.getItem();
     }
 
-    @Override
     public boolean shouldCauseBlockBreakReset(ItemStack oldStack, ItemStack newStack) {
         //Ignore NBT for energized items causing block break reset
         return oldStack.getItem() != newStack.getItem();

@@ -59,7 +59,6 @@ public abstract class BlockMekanism extends Block {
     }
 
     @Nullable
-    @Override
     public PushReaction getPistonPushReaction(@NotNull BlockState state) {
         if (state.hasBlockEntity()) {
             //Protect against mods like Quark that allow blocks with TEs to be moved
@@ -76,7 +75,6 @@ public abstract class BlockMekanism extends Block {
     }
 
     @NotNull
-    @Override
     public ItemStack getCloneItemStack(@NotNull BlockState state, @NotNull HitResult target, @NotNull LevelReader world, @NotNull BlockPos pos, @NotNull Player player) {
         ItemStack stack = super.getCloneItemStack(state, target, world, pos, player);
         if (MekanismConfig.common.copyBlockData.get()) {
@@ -168,7 +166,6 @@ public abstract class BlockMekanism extends Block {
         }
     }
 
-    @Override
     public void onBlockExploded(@NotNull BlockState state, @NotNull Level world, @NotNull BlockPos pos, @NotNull Explosion explosion) {
         if (!world.isClientSide) {
             AttributeMultiblock multiblockAttribute = Attribute.get(state, AttributeMultiblock.class);
@@ -183,7 +180,6 @@ public abstract class BlockMekanism extends Block {
     }
 
     @NotNull
-    @Override
     public BlockState rotate(@NotNull BlockState state, @NotNull LevelAccessor world, @NotNull BlockPos pos, @NotNull Rotation rotation) {
         return AttributeStateFacing.rotate(state, world, pos, rotation);
     }

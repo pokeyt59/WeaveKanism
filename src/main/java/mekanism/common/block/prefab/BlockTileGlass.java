@@ -24,7 +24,6 @@ public class BlockTileGlass<TILE extends TileEntityMekanism, TYPE extends BlockT
               .isSuffocating(BlockStateHelper.NEVER_PREDICATE).isViewBlocking(BlockStateHelper.NEVER_PREDICATE).instrument(NoteBlockInstrument.HAT));
     }
 
-    @Override
     public boolean shouldDisplayFluidOverlay(@NotNull BlockState state, @NotNull BlockAndTintGetter world, @NotNull BlockPos pos, @NotNull FluidState fluidState) {
         return true;
     }

@@ -26,7 +26,6 @@ public class ContainerProvider implements MenuProvider {
         this.resetMousePosition = resetMousePosition;
     }
 
-    @Override
     public boolean shouldTriggerClientSideContainerClosingOnOpen() {
         return resetMousePosition;
     }

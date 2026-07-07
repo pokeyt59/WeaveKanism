@@ -288,7 +288,6 @@ public class EntityRobit extends PathfinderMob implements IRobit, IMekanismInven
         return MathUtils.ceilToLong(DISTANCE_MULTIPLIER * Math.sqrt(distanceToSqr(xo, yo, zo)));
     }
 
-    @Override
     public void onRemovedFromLevel() {
         if (level() != null && !level().isClientSide && getFollowing() && getOwner() != null) {
             //If this robit is currently following its owner and is being removed from the world (due to chunk unloading)
@@ -525,7 +524,6 @@ public class EntityRobit extends PathfinderMob implements IRobit, IMekanismInven
               () -> setSkin(MekanismRobitSkins.BASE, null));
     }
 
-    @Override
     public void onDamageTaken(@NotNull DamageContainer damageContainer) {
         energyContainer.extract(MathUtils.clampToLong(1_000D * damageContainer.getNewDamage()), Action.EXECUTE, AutomationType.INTERNAL);
         //Don't actually allow taking damage to reduce the robit's health
@@ -671,7 +669,6 @@ public class EntityRobit extends PathfinderMob implements IRobit, IMekanismInven
         return energyContainer;
     }
 
-    @Override
     public ItemStack getPickedResult(@NotNull HitResult target) {
         return getItemVariant();
     }

@@ -63,7 +63,6 @@ public class ComponentBackedFluidHandler extends ComponentBackedHandler<FluidSta
         return ExtendedFluidHandlerUtils.extract(stack, action, AutomationType.handler(side), size(), this);
     }
 
-    @Override
     public ItemStack getContainer() {
         return attachedTo;
     }

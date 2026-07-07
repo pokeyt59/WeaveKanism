@@ -97,7 +97,6 @@ public class TileEntityOredictionificator extends TileEntityConfigurableMachine 
         return sendUpdatePacket;
     }
 
-    @Override
     public void onLoad() {
         super.onLoad();
         MekanismConfig.general.validOredictionificatorFilters.addInvalidationListener(validFiltersListener);

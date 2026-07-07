@@ -54,7 +54,6 @@ public class ItemRobit extends ItemEnergized implements ICapabilityAware {
         );
     }
 
-    @Override
     public void onDestroyed(@NotNull ItemEntity item, @NotNull DamageSource damageSource) {
         InventoryUtils.dropItemContents(item, damageSource);
     }

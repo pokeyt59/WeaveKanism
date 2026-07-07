@@ -49,7 +49,6 @@ public class ItemPortableQIODashboard extends Item implements IFrequencyItem, IG
         );
     }
 
-    @Override
     public void onDestroyed(@NotNull ItemEntity item, @NotNull DamageSource damageSource) {
         InventoryUtils.dropItemContents(item, damageSource);
     }
@@ -62,7 +61,6 @@ public class ItemPortableQIODashboard extends Item implements IFrequencyItem, IG
         super.appendHoverText(stack, context, tooltip, flag);
     }
 
-    @Override
     public boolean shouldCauseReequipAnimation(@NotNull ItemStack oldStack, @NotNull ItemStack newStack, boolean slotChanged) {
         return slotChanged || oldStack.getItem() != newStack.getItem();
     }

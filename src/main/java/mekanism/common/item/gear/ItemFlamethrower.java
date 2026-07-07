@@ -64,7 +64,6 @@ public class ItemFlamethrower extends Item implements IItemHUDProvider, IChemica
         tooltip.add(MekanismLang.MODE.translateColored(EnumColor.GRAY, getMode(stack)));
     }
 
-    @Override
     public boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
         return slotChanged || oldStack.getItem() != newStack.getItem();
     }
@@ -198,17 +197,14 @@ public class ItemFlamethrower extends Item implements IItemHUDProvider, IChemica
         return false;
     }
 
-    @Override
     public boolean isBookEnchantable(@NotNull ItemStack stack, @NotNull ItemStack book) {
         return isEnchantable(stack) && super.isBookEnchantable(stack, book);
     }
 
-    @Override
     public boolean isPrimaryItemFor(@NotNull ItemStack stack, @NotNull Holder<Enchantment> enchantment) {
         return isEnchantable(stack) && super.isPrimaryItemFor(stack, enchantment);
     }
 
-    @Override
     public boolean supportsEnchantment(@NotNull ItemStack stack, @NotNull Holder<Enchantment> enchantment) {
         return isEnchantable(stack) && super.supportsEnchantment(stack, enchantment);
     }

@@ -14,7 +14,6 @@ public class ItemHDPEElytra extends ElytraItem {
     }
 
     @Nullable
-    @Override
     public EquipmentSlot getEquipmentSlot(ItemStack stack) {
         return EquipmentSlot.CHEST;
     }

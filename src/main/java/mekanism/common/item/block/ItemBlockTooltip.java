@@ -63,7 +63,6 @@ public class ItemBlockTooltip<BLOCK extends Block & IHasDescription> extends Ite
         this.hasDetails = hasDetails;
     }
 
-    @Override
     public void onDestroyed(@NotNull ItemEntity item, @NotNull DamageSource damageSource) {
         //Try to drop the inventory contents if we are a block item that persists our inventory
         InventoryUtils.dropItemContents(item, damageSource);
@@ -126,7 +125,6 @@ public class ItemBlockTooltip<BLOCK extends Block & IHasDescription> extends Ite
         }
     }
 
-    @Override
     public boolean shouldCauseReequipAnimation(@NotNull ItemStack oldStack, @NotNull ItemStack newStack, boolean slotChanged) {
         if (exposesEnergyCapOrTooltips()) {
             //Ignore NBT for energized items causing re-equip animations
@@ -136,7 +134,6 @@ public class ItemBlockTooltip<BLOCK extends Block & IHasDescription> extends Ite
         return super.shouldCauseReequipAnimation(oldStack, newStack, slotChanged);
     }
 
-    @Override
     public boolean shouldCauseBlockBreakReset(@NotNull ItemStack oldStack, @NotNull ItemStack newStack) {
         if (exposesEnergyCapOrTooltips()) {
             //Ignore NBT for energized items causing block break reset
