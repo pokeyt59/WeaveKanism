@@ -1,0 +1,47 @@
+{
+  "//": "RECOMMENDED permission rules for continuing the Fabric port with Claude Code.",
+  "//how": "Review, then merge the 'permissions' object into .claude/settings.local.json (keep any existing entries). Claude cannot apply this itself — permission changes need your review.",
+  "//scope": "Allows: read/search/edit/write inside this repo; git status/diff/log/show/add/commit; the two fabric-port transform scripts; gradlew compileJava/build/runServer. Denies: push, rebase, hard reset.",
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Edit(**)",
+      "Write(**)",
+      "Glob(**)",
+      "Grep(**)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git stash:*)",
+      "Bash(python fabric-port/remap.py:*)",
+      "Bash(python fabric-port/at2aw.py:*)",
+      "Bash(./gradlew compileJava:*)",
+      "Bash(./gradlew build:*)",
+      "Bash(./gradlew runServer:*)",
+      "Bash(ls:*)",
+      "Bash(unzip -l:*)",
+      "PowerShell(git status:*)",
+      "PowerShell(git diff:*)",
+      "PowerShell(git log:*)",
+      "PowerShell(git show:*)",
+      "PowerShell(git add:*)",
+      "PowerShell(git commit:*)",
+      "PowerShell(.\\gradlew compileJava:*)",
+      "PowerShell(.\\gradlew build:*)",
+      "PowerShell(.\\gradlew runServer:*)",
+      "PowerShell(python fabric-port/remap.py:*)",
+      "PowerShell(python fabric-port/at2aw.py:*)"
+    ],
+    "deny": [
+      "Bash(git push:*)",
+      "PowerShell(git push:*)",
+      "Bash(git rebase:*)",
+      "PowerShell(git rebase:*)",
+      "Bash(git reset --hard:*)",
+      "PowerShell(git reset --hard:*)"
+    ]
+  }
+}

@@ -30,6 +30,8 @@ and make mechanical rewrites scripted and replayable.
 ### Residual checklist (things transforms can't catch)
 
 - [ ] New `@SubscribeEvent` handlers → wire into the event glue (`mekanism.fabric_shim.event`)
+- [ ] New `@EventBusSubscriber` classes → the annotation is inert on Fabric; add an explicit
+      `bus.register(TheClass.class)` to the bootstrap's registration list
 - [ ] New capabilities registered via `RegisterCapabilitiesEvent` → register in the Fabric lookup registrar
 - [ ] New packets → confirm they flow through `PacketHandler` funnel (they should)
 - [ ] New config options → no action (Forge Config API Port), but verify spec loads
@@ -80,9 +82,35 @@ textually identical; no Yarn remap.
         (item + fluid, bridged into Fabric custom ingredients under NeoForge type ids), capability
         tokens over Fabric API Lookup, data maps, FML lifecycle + IMC, fabric-port/extra.aw for
         vanilla members NeoForge ATs (Ingredient values/fromValues). Dev-server verified 2026-07-06.
-  - [ ] 1c: entry-point split (loader-neutral Mekanism init from Fabric bootstrap)
-  - [ ] 1d: config via Forge Config API Port, attachments, SavedData server holder
-  - [ ] 1f: main source set compiling (the long tail; overlaps Phases 2-3)
+  - [x] 1c: entry-point driver — no split needed: Mekanism.java's (ModContainer, IEventBus)
+        constructor stays textually intact via fml shims (Mod annotation, ModContainer, FMLPaths,
+        ModConfigEvent, EventBusSubscriber, ArtifactVersion/ComparableVersion). MekanismFabric
+        drives FML's order: construct → registry events → ticket controllers → FMLCommonSetupEvent
+        → IMC enqueue → IMC process. The actual `new Mekanism(...)` call is staged in
+        MekanismFabric behind 1f. Dev-server verified 2026-07-06.
+  - [x] 1d: config via Forge Config API Port — FCAP ships net.neoforged.fml.config.* and
+        ModConfigSpec under their original package names (verified against the 21.1.6 jar), so
+        config classes need NO remap; the ModContainer shim registers specs through FCAP's
+        NeoForgeConfigRegistry and bridges FCAP's config callbacks onto the mod bus as
+        ModConfigEvents (bridge only Mekanism's own container — see ModContainer#bridgeConfigEvents).
+        AttachmentType builder shim done (Fabric data-attachment wiring lands with Phase 3 usage
+        sites). MekanismSavedData already fixed via shim ServerLifecycleHooks.
+  - [ ] 1f: main source set compiling (the long tail; overlaps Phases 2-3). Enable
+        'src/main/java' in build.gradle srcDirs, work the compile-error clusters down using the
+        pattern table below + new shims; keep the srcDirs change uncommitted until green.
+        Then uncomment the mod-construction block in MekanismFabric.onInitialize.
+
+### Phase 1 shim semantics deviations (revisit in later phases)
+
+| Deviation | Where | Revisit |
+|---|---|---|
+| `neoforge:swim_speed`/`creative_flight` attributes registered but behaviorless (nothing applies them to players; vanilla entities lack them in attribute maps) | NeoForgeMod shim | Phase 3 (default-attribute injection + movement/ability hooks) |
+| TicketController → vanilla forced chunks: `ticking` flag ignored, no per-owner persistence, validation callbacks never invoked | common/world/chunk shims | Phase 3 (own SavedData with owners) |
+| AddReloadListenerEvent runs synchronous listeners only (Mekanism's only listener is synchronous) | ShimGameEvents | Phase 3 if an async listener appears |
+| ServerStartingEvent posted immediately before ServerStartedEvent (Fabric has no post-level-load pre-ready hook) | ShimGameEvents | acceptable |
+| `NeoForgeMod.MILK` is an absent holder: `is()` matches the id, `value()` throws | NeoForgeMod shim | Phase 2 (audit fluid tank bucket/cauldron sites) |
+| Empty `neoforge:*` shim registries log "Registry was empty after loading" errors | NeoForgeRegistries | self-resolves when main's registrations land (1f) |
+| ModConfigEvent.Loading may fire during registerConfigs (FCAP loads at registration), before Mekanism's listener subscribes — harmless: caches are lazy; listener matters for reloads | ModContainer shim | verify during 1f boot |
 
 ### Hand-edit patterns for NeoForge patches to vanilla classes (recur in main)
 

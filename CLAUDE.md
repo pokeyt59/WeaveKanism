@@ -1,0 +1,139 @@
+# Mekanism → Fabric port — Claude working brief
+
+You are continuing an in-progress port. **Read this file, then `PORTING.md`, before writing any
+code.** The full phase roadmap lives in the approved plan file:
+`C:\Users\Newpi\.claude\plans\take-a-deep-look-delegated-liskov.md` (read it once per session when
+planning larger slices).
+
+## 1. Goal
+
+Port **core Mekanism** (`src/api` + `src/main`; Additions/Generators/Tools later) from
+NeoForge/MC 1.21.1 to **Fabric**, on branch `fabric/1.21.x`, structured as a **repeatable porting
+framework** (the "Create: Fabric" model): upstream is a third party we don't control, so every
+upstream release must be re-portable via `git merge` + re-run scripted transforms + fix a bounded
+set of residuals. This means:
+
+- **Minimal diff against upstream.** Never restructure upstream files; prefer shims that keep
+  NeoForge class names so changes are import-line-only.
+- `1.21.x` is the pristine upstream branch — **never commit port work there**.
+- Mechanical rewrites are **scripted** (`fabric-port/remap.py` + mapping TSV) and committed
+  separately with the `[scripted]` prefix so they replay after merges. Hand edits use `[port]`.
+- Shims live in `src/fabric_shim/java/mekanism/fabric_shim/` and are **fresh implementations of
+  NeoForge API surfaces** (NeoForge is LGPL; do not copy its code — reference sources may be
+  consulted for *signatures* only).
+
+First milestone: Fabric dev client boots, world loads, a Metallurgic Infuser + Basic Energy Cube
+can be placed, opened, and store/transfer energy.
+
+## 2. Current state (2026-07-06) and TODO
+
+Done (see `PORTING.md` "Port status" — that section is the source of truth, keep it updated):
+
+- Phase 0 complete: Loom build (Mojang mappings), AT→AW generation, transform pipeline.
+- Phase 1 a–e complete: full shim registration lifecycle on the **real NeoForge event bus**
+  (`net.neoforged:bus:8.0.5` JiJ'd — `net.neoforged.bus.api.*` imports need NO remap);
+  `src/api` (265 files) compiles and a dev server boots clean.
+- Phase 1 c/d complete: FML shims (Mod/ModContainer/FMLPaths/ModConfigEvent/…), config via Forge
+  Config API Port, game-event glue (`ShimGameEvents`), chunk tickets, attachment-type surface.
+  `MekanismFabric.onInitialize` drives FML's full lifecycle order.
+
+TODO, in order:
+
+1. **Phase 1f — make `src/main` compile** (~470 files still import `net.neoforged.*`). This is
+   the current task. Workflow in §4 below. When it compiles, uncomment the mod-construction block
+   in `src/fabric/java/mekanism/fabric/MekanismFabric.java`.
+2. **Phase 2 — capabilities + transfer/energy bridge** (critical path): Fabric API Lookup
+   registration for the 11 `RegisterCapabilitiesEvent` sites; bidirectional adapters Mekanism
+   handlers ↔ `Storage<ItemVariant>`/`Storage<FluidVariant>`/team-reborn `EnergyStorage`
+   (simulate = open+abort transaction; mB↔droplets ×81 exact; FE↔J via existing config).
+3. **Phase 3 — events + networking**: `PacketHandler` funnel → Fabric play networking (57
+   packets untouched); remaining event glue + small mixins (`ChunkTicketLevelUpdatedEvent`);
+   data-map JSON loader; registry alias support; chunk-ticket owner persistence; attachment
+   data access wiring (`getData`/`setData` sites) over `fabric-data-attachment-api-v1`.
+4. **Phase 4 — client**: model loaders (OBJ via Porting Lib), BEWLR → `BuiltinItemRendererRegistry`,
+   core shaders, `FluidRenderHandlerRegistry`, keybinds, HUD. Entry point
+   `mekanism.fabric.client.MekanismFabricClient` (declared in fabric.mod.json, not written yet).
+5. **Phase 5 — integrations** (JEI/EMI compileOnly deps already wired), **Phase 6 — datagen
+   import + gametests + parity QA**. Then the 1.20.1 track (see PORTING.md branch model).
+
+## 3. Golden rules
+
+- Work on `fabric/1.21.x` only. **Never `git push`** (no remote for the port yet).
+- Keep the build green: before every commit run `.\gradlew compileJava`; boot-verify with
+  `runServer` for lifecycle-touching changes. Never commit a broken tree.
+- Commit messages: `[port]` or `[scripted]` prefix + trailer
+  `Co-Authored-By: Claude Fable 5 <noreply@anthropic.com>`.
+- New import remappings go in `fabric-port/mappings/neoforge-to-fabric.tsv` (tab-separated,
+  old→new), then run `python fabric-port/remap.py`, commit the rewrites as their own
+  `[scripted]` commit.
+- If upstream ATs a vanilla member you need, add the AW line to `fabric-port/extra.aw` and re-run
+  `python fabric-port/at2aw.py` (regenerates `src/fabric/resources/mekanism.accesswidener`).
+- The user sometimes makes their own checkpoint commits ("scott codes") — leave them intact,
+  never rebase/rewrite history.
+- Do not add libraries without checking `PORTING.md`'s dependency matrix; versions are pinned in
+  `gradle.properties`. Gradle is 9.6 — all version strings need 3 parts; config cache is ON.
+
+## 4. Phase 1f workflow (the compile grind)
+
+1. Locally add `'src/main/java'` to the `srcDirs` list in `build.gradle` (keep this change
+   uncommitted until main is fully green — committing it early breaks the build for the user).
+2. `.\gradlew compileJava 2>&1 | Select-String "error:"` — expect thousands at first. Triage by
+   *cluster* (same missing class/pattern), not file by file.
+3. For each cluster, in preference order:
+   a. **Existing pattern** — check the hand-edit table in `PORTING.md` ("Hand-edit patterns for
+      NeoForge patches to vanilla classes"); apply mechanically.
+   b. **New shim** — same-surface class in `mekanism.fabric_shim.*` + TSV mapping + remap run.
+      Reference signatures: extract from the NeoForge sources jar
+      (`maven.neoforged.net/releases`, `net.neoforged:neoforge:21.1.200:sources`) — do NOT copy code.
+   c. **Defer** — client-only (`mekanism/client/**`) and integration (`common/integration/**`)
+      files may be excluded temporarily via a build.gradle exclude filter if they block progress;
+      document any exclusion in PORTING.md.
+4. Big known clusters and their plan: `IPayloadContext`/`PacketDistributor` (55+14 files → thin
+   networking shim over Fabric play networking, Phase 3 but the shim types can land in 1f);
+   `FluidType` (46 files → decide Phase 2: most uses are `FluidType.BUCKET_VOLUME` and
+   fluid registration — grep before designing); `RegisterCapabilitiesEvent`/`BlockCapabilityCache`
+   (Phase 2); `ModelData`/client models (Phase 4, defer); `EventBusSubscriber` classes (annotation
+   is inert — register each class explicitly in the bootstrap; keep a list).
+5. Verify: compile green → dev server `Done (...)` in log → commit (`[port]` + `[scripted]`
+   separately) → update PORTING.md checkboxes → update memory.
+
+## 5. Build & verify commands
+
+- Compile: `.\gradlew compileJava --console=plain -q`
+- Dev server (headless check): `.\gradlew runServer`, watch `run/` logs for `Done (` and for
+  `ERROR`/`Exception`. Kill it after the check — it doesn't exit on its own. Known-benign noise:
+  FCAP night-config mixin WARN; "Registry 'neoforge:…' was empty" until 1f lands.
+- Dev client (needs user, GUI): `.\gradlew runClient`.
+- Transforms: `python fabric-port/remap.py`, `python fabric-port/at2aw.py`.
+
+## 6. Safe-without-asking (user-granted standing permissions)
+
+Ready-to-merge permission rules live in `fabric-port/claude-settings.recommended.json` — the user
+merges them into `.claude/settings.local.json` (Claude must not edit its own permission settings).
+In terms of intent:
+
+- Reading/searching anything in this repo; reading the NeoForge/Fabric reference jars in the
+  scratchpad; writing/editing files **inside this repo** and the session scratchpad.
+- `git status/diff/log/show/add/commit` on `fabric/1.21.x`; `gradlew compileJava/runServer`;
+  the two `fabric-port/*.py` scripts.
+- NOT without asking: `git push`, changing branches, rewriting history, deleting files you did
+  not create, editing anything under `1.21.x`, adding new remote dependencies.
+
+## 7. Gotchas that cost time before (don't rediscover these)
+
+- FCAP ships `net.neoforged.fml.config.*` + `ModConfigSpec` under original names → config
+  classes need NO remap. Only `ModConfigEvent` is shimmed.
+- The NeoForge bus is a plain library; untyped `addListener(this::method)` resolution via
+  typetools works under Knot — verified. Don't remap `net.neoforged.bus.api.*`.
+- Shim registration lifecycle order matters: `NewRegistryEvent` → fill → datapack registries →
+  data maps → `RegisterEvent` per registry (ATTRIBUTE, DATA_COMPONENT_TYPE, ARMOR_MATERIAL first,
+  then root-registry insertion order). All inside `onInitialize` (Fabric freezes registries after).
+- `Edit` tool requires `Read` first — `grep`/`cat` output doesn't count.
+- remap.py rewrites files on disk — re-`Read` any file you touched before editing it again.
+- Windows: `javap` isn't on PATH — find it under `%USERPROFILE%\.gradle\jdks` or Program Files.
+- Don't let log-watching scripts kill the server on the string "Error" — FCAP logs a benign
+  mixin WARN containing it; match `Done \(` / crash markers instead.
+- `ItemStackIngredient.logMissingTags` and friends use the AW'd `Ingredient#values` field —
+  if AW regeneration drops `fabric-port/extra.aw` entries, api stops compiling.
+- Phase 1 shim semantic deviations are tabled in PORTING.md — check that table before debugging
+  "missing" behavior (milk fluid, swim-speed attribute, chunk ticket validation are known gaps).
