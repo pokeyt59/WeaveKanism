@@ -23,7 +23,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.Fluid;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 
 public class JEIAliasHelper implements RVAliasHelper<ItemStack, FluidStack, ChemicalStack> {
 

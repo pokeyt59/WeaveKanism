@@ -47,7 +47,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

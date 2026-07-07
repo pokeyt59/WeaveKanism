@@ -4,7 +4,7 @@ import mekanism.api.tier.BaseTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.config.value.CachedLongValue;
 import mekanism.common.util.EnumUtils;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 
 public enum TubeTier implements ITier {
     BASIC(BaseTier.BASIC, 4 * FluidType.BUCKET_VOLUME, 750),

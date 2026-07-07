@@ -34,6 +34,11 @@ net.neoforged.neoforge.common.NeoForge	mekanism.fabric_shim.common.NeoForge
 net.neoforged.neoforge.fluids.FluidStack	mekanism.fabric_shim.fluids.FluidStack
 net.neoforged.neoforge.fluids.IFluidTank	mekanism.fabric_shim.fluids.IFluidTank
 net.neoforged.neoforge.fluids.capability.IFluidHandler	mekanism.fabric_shim.fluids.capability.IFluidHandler
+# FluidType (data holder) + BaseFlowingFluid (configurable FlowingFluid); FluidType registered under
+# neoforge:fluid_type. FluidType-based accessors reach vanilla Fluid/FluidState via interface injection.
+net.neoforged.neoforge.fluids.FluidType	mekanism.fabric_shim.fluids.FluidType
+net.neoforged.neoforge.fluids.BaseFlowingFluid	mekanism.fabric_shim.fluids.BaseFlowingFluid
+net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions	mekanism.fabric_shim.client.extensions.IClientFluidTypeExtensions
 
 # --- small common/util shims ---
 net.neoforged.neoforge.common.util.INBTSerializable	mekanism.fabric_shim.common.util.INBTSerializable

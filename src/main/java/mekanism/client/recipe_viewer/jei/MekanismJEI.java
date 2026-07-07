@@ -76,7 +76,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin

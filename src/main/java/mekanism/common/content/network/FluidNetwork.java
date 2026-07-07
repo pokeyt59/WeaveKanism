@@ -24,7 +24,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import mekanism.fabric_shim.common.NeoForge;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

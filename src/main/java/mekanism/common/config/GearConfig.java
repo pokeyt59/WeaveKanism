@@ -10,7 +10,7 @@ import net.minecraft.SharedConstants;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.neoforged.fml.config.ModConfig.Type;
 import net.neoforged.neoforge.common.ModConfigSpec;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 
 public class GearConfig extends BaseMekanismConfig {
 

@@ -48,7 +48,7 @@ import mekanism.fabric_shim.common.NeoForge;
 import mekanism.fabric_shim.common.SoundActions;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

@@ -40,7 +40,7 @@ import mekanism.common.tile.machine.TileEntityOredictionificator;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeInput;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import mekanism.fabric_shim.fluids.capability.IFluidHandler.FluidAction;
 import mekanism.fabric_shim.fluids.capability.IFluidHandlerItem;
 import org.jetbrains.annotations.NotNull;

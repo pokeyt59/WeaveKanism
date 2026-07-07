@@ -8,7 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import mekanism.fabric_shim.fml.FMLEnvironment;
 import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import mekanism.fabric_shim.registries.DeferredHolder;
 import mekanism.fabric_shim.registries.DeferredRegister;
 import xfacthd.framedblocks.api.camo.CamoContainerFactory;

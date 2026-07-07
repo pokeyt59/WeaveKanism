@@ -15,7 +15,7 @@ import net.minecraft.client.renderer.Rect2i;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.material.Fluid;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
 public class EmiGhostIngredientHandler implements EmiDragDropHandler<Screen> {

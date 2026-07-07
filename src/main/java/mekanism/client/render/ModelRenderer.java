@@ -12,7 +12,7 @@ import mekanism.client.render.data.ValveRenderData;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.core.Direction;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
 public final class ModelRenderer {

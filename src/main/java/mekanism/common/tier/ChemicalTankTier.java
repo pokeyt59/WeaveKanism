@@ -5,7 +5,7 @@ import mekanism.api.tier.BaseTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.config.value.CachedLongValue;
 import net.minecraft.util.StringRepresentable;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
 
 public enum ChemicalTankTier implements ITier, StringRepresentable {

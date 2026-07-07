@@ -36,8 +36,8 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
-import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.client.extensions.IClientFluidTypeExtensions;
+import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
 
 public class GuiSeismicReader extends GuiMekanism<SeismicReaderContainer> {

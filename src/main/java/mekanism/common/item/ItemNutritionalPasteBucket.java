@@ -19,7 +19,7 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
 import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import net.neoforged.neoforge.fluids.capability.wrappers.FluidBucketWrapper;
 import org.jetbrains.annotations.NotNull;
 

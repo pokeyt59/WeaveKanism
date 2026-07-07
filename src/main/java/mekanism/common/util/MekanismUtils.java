@@ -90,7 +90,7 @@ import mekanism.fabric_shim.common.Tags;
 import mekanism.fabric_shim.common.UsernameCache;
 import mekanism.fabric_shim.event.level.BlockEvent;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import mekanism.fabric_shim.items.IItemHandler;
 import mekanism.fabric_shim.items.ItemHandlerHelper;
 import mekanism.fabric_shim.server.ServerLifecycleHooks;

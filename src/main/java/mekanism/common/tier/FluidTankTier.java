@@ -3,7 +3,7 @@ package mekanism.common.tier;
 import mekanism.api.tier.BaseTier;
 import mekanism.api.tier.ITier;
 import mekanism.common.config.value.CachedIntValue;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 
 public enum FluidTankTier implements ITier {
     BASIC(BaseTier.BASIC, 32 * FluidType.BUCKET_VOLUME, FluidType.BUCKET_VOLUME),

@@ -56,7 +56,7 @@ import mekanism.fabric_shim.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import mekanism.fabric_shim.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent;
-import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import mekanism.fabric_shim.client.extensions.IClientFluidTypeExtensions;
 import mekanism.fabric_shim.fluids.FluidStack;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

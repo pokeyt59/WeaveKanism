@@ -24,7 +24,7 @@ import net.minecraft.core.HolderSet.Named;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.Nullable;
 
 public class ChemicalStackHelper implements IIngredientHelper<ChemicalStack> {

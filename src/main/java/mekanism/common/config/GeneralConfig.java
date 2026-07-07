@@ -22,7 +22,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.config.ModConfig.Type;
 import mekanism.fabric_shim.fml.FMLEnvironment;
 import net.neoforged.neoforge.common.ModConfigSpec;
-import net.neoforged.neoforge.fluids.FluidType;
+import mekanism.fabric_shim.fluids.FluidType;
 
 public class GeneralConfig extends BaseMekanismConfig {
 
