@@ -12,7 +12,7 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.network.handling.IPayloadContext;
+import mekanism.fabric_shim.network.handling.IPayloadContext;
 import org.jetbrains.annotations.NotNull;
 
 public record PacketRobitSkin(int entityId, ResourceKey<RobitSkin> skin) implements IMekanismPacket {

@@ -27,7 +27,7 @@ import mekanism.fabric_shim.event.entity.player.PlayerEvent.PlayerChangedDimensi
 import mekanism.fabric_shim.event.entity.player.PlayerEvent.PlayerLoggedInEvent;
 import mekanism.fabric_shim.event.entity.player.PlayerEvent.PlayerLoggedOutEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
-import net.neoforged.neoforge.network.PacketDistributor;
+import mekanism.fabric_shim.network.PacketDistributor;
 
 public class CommonPlayerTracker {
 

@@ -21,7 +21,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import mekanism.fabric_shim.capabilities.ItemCapability;
-import net.neoforged.neoforge.network.PacketDistributor;
+import mekanism.fabric_shim.network.PacketDistributor;
 
 /**
  * @apiNote Do not instantiate this class directly as it will be done via the service loader. Instead, access instances of this via {@link IItemSecurityUtils#INSTANCE}

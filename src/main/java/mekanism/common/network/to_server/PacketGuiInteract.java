@@ -47,7 +47,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.network.handling.IPayloadContext;
+import mekanism.fabric_shim.network.handling.IPayloadContext;
 import org.jetbrains.annotations.NotNull;
 
 /**

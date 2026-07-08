@@ -22,7 +22,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.inventory.MenuType.MenuSupplier;
 import net.minecraft.world.item.Item;
-import net.neoforged.neoforge.network.IContainerFactory;
+import mekanism.fabric_shim.network.IContainerFactory;
 import org.jetbrains.annotations.NotNull;
 
 public class ContainerTypeDeferredRegister extends MekanismDeferredRegister<MenuType<?>> {

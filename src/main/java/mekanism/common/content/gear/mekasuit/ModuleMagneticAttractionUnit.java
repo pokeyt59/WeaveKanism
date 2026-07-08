@@ -29,7 +29,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
-import net.neoforged.neoforge.network.PacketDistributor;
+import mekanism.fabric_shim.network.PacketDistributor;
 
 @ParametersAreNotNullByDefault
 public record ModuleMagneticAttractionUnit(Range range) implements ICustomModule<ModuleMagneticAttractionUnit> {

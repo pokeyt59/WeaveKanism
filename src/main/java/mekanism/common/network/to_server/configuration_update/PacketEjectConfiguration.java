@@ -10,7 +10,7 @@ import mekanism.common.tile.component.config.ConfigInfo;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.neoforged.neoforge.network.handling.IPayloadContext;
+import mekanism.fabric_shim.network.handling.IPayloadContext;
 import org.jetbrains.annotations.NotNull;
 
 public record PacketEjectConfiguration(BlockPos pos, TransmissionType transmission) implements IMekanismPacket {

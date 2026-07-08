@@ -16,7 +16,7 @@ import net.minecraft.util.ByIdMap;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.network.handling.IPayloadContext;
+import mekanism.fabric_shim.network.handling.IPayloadContext;
 import org.jetbrains.annotations.NotNull;
 
 public record PacketItemGuiInteract(ItemGuiInteraction interaction, InteractionHand hand, int extra) implements IMekanismPacket {

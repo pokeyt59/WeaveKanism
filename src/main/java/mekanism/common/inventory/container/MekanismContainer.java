@@ -58,7 +58,7 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import mekanism.fabric_shim.fluids.FluidStack;
-import net.neoforged.neoforge.network.PacketDistributor;
+import mekanism.fabric_shim.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

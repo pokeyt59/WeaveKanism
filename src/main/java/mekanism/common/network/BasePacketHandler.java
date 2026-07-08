@@ -7,9 +7,9 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
-import net.neoforged.neoforge.network.handling.IPayloadHandler;
-import net.neoforged.neoforge.network.registration.PayloadRegistrar;
+import mekanism.fabric_shim.network.event.RegisterPayloadHandlersEvent;
+import mekanism.fabric_shim.network.handling.IPayloadHandler;
+import mekanism.fabric_shim.network.registration.PayloadRegistrar;
 
 public abstract class BasePacketHandler {
 

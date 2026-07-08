@@ -48,6 +48,16 @@ net.neoforged.neoforge.common.TranslatableEnum	mekanism.fabric_shim.common.Trans
 net.neoforged.neoforge.common.MutableDataComponentHolder	mekanism.fabric_shim.common.MutableDataComponentHolder
 net.neoforged.neoforge.common.ItemAbility	mekanism.fabric_shim.common.ItemAbility
 net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs	mekanism.fabric_shim.network.codec.NeoForgeStreamCodecs
+# networking funnel surface (all Mekanism packets flow through PacketHandler/BasePacketHandler):
+# codec registration + serverbound receivers go live; clientbound/config receivers parked (Phase 3/4)
+net.neoforged.neoforge.network.handling.IPayloadContext	mekanism.fabric_shim.network.handling.IPayloadContext
+net.neoforged.neoforge.network.handling.IPayloadHandler	mekanism.fabric_shim.network.handling.IPayloadHandler
+net.neoforged.neoforge.network.registration.PayloadRegistrar	mekanism.fabric_shim.network.registration.PayloadRegistrar
+net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent	mekanism.fabric_shim.network.event.RegisterPayloadHandlersEvent
+net.neoforged.neoforge.network.event.RegisterConfigurationTasksEvent	mekanism.fabric_shim.network.event.RegisterConfigurationTasksEvent
+net.neoforged.neoforge.network.configuration.ICustomConfigurationTask	mekanism.fabric_shim.network.configuration.ICustomConfigurationTask
+net.neoforged.neoforge.network.PacketDistributor	mekanism.fabric_shim.network.PacketDistributor
+net.neoforged.neoforge.network.IContainerFactory	mekanism.fabric_shim.network.IContainerFactory
 net.neoforged.fml.LogicalSide	mekanism.fabric_shim.fml.LogicalSide
 
 # --- capabilities: tokens over Fabric API Lookup (registration/queries wired in Phase 2) ---

@@ -61,8 +61,8 @@ import mekanism.common.network.to_server.robit.PacketRobitSkin;
 import net.minecraft.network.protocol.configuration.ServerConfigurationPacketListener;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.network.PacketDistributor;
-import net.neoforged.neoforge.network.event.RegisterConfigurationTasksEvent;
+import mekanism.fabric_shim.network.PacketDistributor;
+import mekanism.fabric_shim.network.event.RegisterConfigurationTasksEvent;
 
 public class PacketHandler extends BasePacketHandler {
 

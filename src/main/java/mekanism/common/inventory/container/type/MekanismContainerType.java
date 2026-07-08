@@ -16,7 +16,7 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuConstructor;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import mekanism.fabric_shim.fml.FMLEnvironment;
-import net.neoforged.neoforge.network.IContainerFactory;
+import mekanism.fabric_shim.network.IContainerFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

@@ -57,7 +57,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import mekanism.fabric_shim.common.util.Lazy;
-import net.neoforged.neoforge.network.PacketDistributor;
+import mekanism.fabric_shim.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
 public class QIOFrequency extends Frequency implements IColorableFrequency, IQIOFrequency {

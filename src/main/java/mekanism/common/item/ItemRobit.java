@@ -41,7 +41,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
+import mekanism.fabric_shim.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 
 public class ItemRobit extends ItemEnergized implements ICapabilityAware {

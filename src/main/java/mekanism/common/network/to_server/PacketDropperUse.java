@@ -35,7 +35,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import mekanism.fabric_shim.fluids.FluidStack;
 import mekanism.fabric_shim.fluids.capability.IFluidHandlerItem;
-import net.neoforged.neoforge.network.handling.IPayloadContext;
+import mekanism.fabric_shim.network.handling.IPayloadContext;
 import org.jetbrains.annotations.NotNull;
 
 public record PacketDropperUse(BlockPos pos, DropperAction action, TankType tankType, int tankId) implements IMekanismPacket {
