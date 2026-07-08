@@ -40,7 +40,11 @@
       "net/minecraft/class_2378": ["mekanism/fabric_shim/inject/MekRegistryExt"],
       "net/minecraft/class_1293": ["mekanism/fabric_shim/inject/MekMobEffectInstanceExt"],
       "net/minecraft/class_1856": ["mekanism/fabric_shim/inject/MekIngredientExt"],
-      "net/minecraft/class_1735": ["mekanism/fabric_shim/inject/MekSlotExt"]
+      "net/minecraft/class_1735": ["mekanism/fabric_shim/inject/MekSlotExt"],
+      "net/minecraft/class_1657": ["mekanism/fabric_shim/inject/MekPlayerExt"],
+      "net/minecraft/class_1299": ["mekanism/fabric_shim/inject/MekEntityTypeExt"],
+      "net/minecraft/class_1538": ["mekanism/fabric_shim/inject/MekLightningBoltExt"],
+      "net/minecraft/class_7225$class_7874": ["mekanism/fabric_shim/inject/MekHolderLookupProviderExt"]
     }
   },
   "entrypoints": {

@@ -51,4 +51,8 @@ public interface MekBlockStateExt {
     default int getLightEmission(BlockGetter level, BlockPos pos) {
         return self().getLightEmission();
     }
+
+    default java.util.stream.Stream<net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block>> getTags() {
+        return self().getBlock().builtInRegistryHolder().tags();
+    }
 }

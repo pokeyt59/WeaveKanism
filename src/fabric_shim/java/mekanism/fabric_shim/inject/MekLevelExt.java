@@ -44,4 +44,10 @@ public interface MekLevelExt {
 
     default void registerCapabilityListener(BlockPos pos, ICapabilityInvalidationListener listener) {
     }
+
+    default <T> java.util.Optional<net.minecraft.core.Holder.Reference<T>> holder(net.minecraft.resources.ResourceKey<T> key) {
+        net.minecraft.resources.ResourceKey<? extends net.minecraft.core.Registry<? extends T>> registryKey =
+              net.minecraft.resources.ResourceKey.createRegistryKey(key.registry());
+        return self().registryAccess().lookup(registryKey).flatMap(lookup -> lookup.get(key));
+    }
 }

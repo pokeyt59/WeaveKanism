@@ -14,4 +14,8 @@ public interface MekFluidStateExt {
     default FluidType getFluidType() {
         return FluidTypes.resolve(((FluidState) this).getType());
     }
+
+    default java.util.stream.Stream<net.minecraft.tags.TagKey<net.minecraft.world.level.material.Fluid>> getTags() {
+        return ((FluidState) this).getType().builtInRegistryHolder().tags();
+    }
 }
