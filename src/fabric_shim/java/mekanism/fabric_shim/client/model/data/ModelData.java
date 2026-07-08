@@ -42,6 +42,13 @@ public final class ModelData {
         return new Builder(null);
     }
 
+    /** Convenience for a single-property model data (NeoForge parity); accepts a null value. */
+    public static <T> ModelData of(ModelProperty<T> property, @Nullable T value) {
+        Map<ModelProperty<?>, Object> map = new Reference2ObjectArrayMap<>();
+        map.put(property, value);
+        return new ModelData(map);
+    }
+
     public static final class Builder {
 
         private final Map<ModelProperty<?>, Object> properties = new Reference2ObjectArrayMap<>();

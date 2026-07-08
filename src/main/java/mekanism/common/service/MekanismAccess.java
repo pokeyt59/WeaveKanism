@@ -7,8 +7,6 @@ import mekanism.api.recipes.ingredients.creator.IChemicalIngredientCreator;
 import mekanism.api.recipes.ingredients.creator.IChemicalStackIngredientCreator;
 import mekanism.api.recipes.ingredients.creator.IFluidStackIngredientCreator;
 import mekanism.api.recipes.ingredients.creator.IItemStackIngredientCreator;
-import mekanism.client.recipe_viewer.emi.MekanismEmiHelper;
-import mekanism.client.recipe_viewer.jei.MekanismJEIHelper;
 import mekanism.common.Mekanism;
 import mekanism.common.recipe.ingredients.ChemicalIngredientCreator;
 import mekanism.common.recipe.ingredients.creator.ChemicalStackIngredientCreator;
@@ -23,13 +21,15 @@ public class MekanismAccess implements IMekanismAccess {
     @Override
     public IMekanismJEIHelper jeiHelper() {
         Mekanism.hooks.jei.assertLoaded();
-        return MekanismJEIHelper.INSTANCE;
+        //TODO(fabric-port, Phase 5): JEI recipe-viewer helper is client integration; null until wired
+        return null;
     }
 
     @Override
     public IMekanismEmiHelper emiHelper() {
         Mekanism.hooks.emi.assertLoaded();
-        return MekanismEmiHelper.INSTANCE;
+        //TODO(fabric-port, Phase 5): EMI recipe-viewer helper is client integration; null until wired
+        return null;
     }
 
     @Override
