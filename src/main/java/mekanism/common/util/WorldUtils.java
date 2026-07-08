@@ -46,7 +46,7 @@ import net.minecraft.world.level.material.FluidState;
 import mekanism.fabric_shim.capabilities.BlockCapability;
 import mekanism.fabric_shim.common.NeoForge;
 import mekanism.fabric_shim.common.SoundActions;
-import net.neoforged.neoforge.event.level.BlockDropsEvent;
+import mekanism.fabric_shim.event.level.BlockDropsEvent;
 import mekanism.fabric_shim.fluids.FluidStack;
 import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.Contract;

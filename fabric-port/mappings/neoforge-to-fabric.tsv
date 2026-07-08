@@ -177,6 +177,26 @@ net.neoforged.neoforge.common.damagesource.DamageContainer	mekanism.fabric_shim.
 net.neoforged.neoforge.event.entity.ProjectileImpactEvent	mekanism.fabric_shim.event.entity.ProjectileImpactEvent
 net.neoforged.neoforge.event.level.ExplosionEvent	mekanism.fabric_shim.event.level.ExplosionEvent
 net.neoforged.neoforge.event.entity.EntityStruckByLightningEvent	mekanism.fabric_shim.event.entity.EntityStruckByLightningEvent
+# Step 5.4: remaining game-bus event classes (compile surfaces; firing is Phase 3, see hook-wiring checklist)
+net.neoforged.neoforge.event.tick.ServerTickEvent	mekanism.fabric_shim.event.tick.ServerTickEvent
+net.neoforged.neoforge.event.tick.LevelTickEvent	mekanism.fabric_shim.event.tick.LevelTickEvent
+net.neoforged.neoforge.event.tick.PlayerTickEvent	mekanism.fabric_shim.event.tick.PlayerTickEvent
+net.neoforged.neoforge.event.tick.EntityTickEvent	mekanism.fabric_shim.event.tick.EntityTickEvent
+net.neoforged.neoforge.event.entity.player.PlayerInteractEvent	mekanism.fabric_shim.event.entity.player.PlayerInteractEvent
+net.neoforged.neoforge.event.entity.living.LivingDeathEvent	mekanism.fabric_shim.event.entity.living.LivingDeathEvent
+net.neoforged.neoforge.event.entity.living.LivingFallEvent	mekanism.fabric_shim.event.entity.living.LivingFallEvent
+net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent	mekanism.fabric_shim.event.entity.living.LivingIncomingDamageEvent
+net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent	mekanism.fabric_shim.event.entity.EntityInvulnerabilityCheckEvent
+net.neoforged.neoforge.event.entity.EntityJoinLevelEvent	mekanism.fabric_shim.event.entity.EntityJoinLevelEvent
+net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent	mekanism.fabric_shim.event.entity.RegisterSpawnPlacementsEvent
+net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent	mekanism.fabric_shim.event.entity.EntityAttributeCreationEvent
+net.neoforged.neoforge.event.level.ChunkTicketLevelUpdatedEvent	mekanism.fabric_shim.event.level.ChunkTicketLevelUpdatedEvent
+net.neoforged.neoforge.event.level.ChunkEvent	mekanism.fabric_shim.event.level.ChunkEvent
+net.neoforged.neoforge.event.level.ChunkDataEvent	mekanism.fabric_shim.event.level.ChunkDataEvent
+net.neoforged.neoforge.event.level.BlockDropsEvent	mekanism.fabric_shim.event.level.BlockDropsEvent
+net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent	mekanism.fabric_shim.event.BuildCreativeModeTabContentsEvent
+net.neoforged.neoforge.event.OnDatapackSyncEvent	mekanism.fabric_shim.event.OnDatapackSyncEvent
+net.neoforged.neoforge.event.ModifyDefaultComponentsEvent	mekanism.fabric_shim.event.ModifyDefaultComponentsEvent
 net.neoforged.neoforge.server.permission.PermissionAPI	mekanism.fabric_shim.server.permission.PermissionAPI
 net.neoforged.neoforge.server.permission.events.PermissionGatherEvent	mekanism.fabric_shim.server.permission.events.PermissionGatherEvent
 net.neoforged.neoforge.server.permission.nodes.PermissionNode	mekanism.fabric_shim.server.permission.nodes.PermissionNode

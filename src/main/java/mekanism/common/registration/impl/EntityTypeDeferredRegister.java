@@ -18,8 +18,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent;
-import net.neoforged.neoforge.event.entity.RegisterSpawnPlacementsEvent;
+import mekanism.fabric_shim.event.entity.EntityAttributeCreationEvent;
+import mekanism.fabric_shim.event.entity.RegisterSpawnPlacementsEvent;
 import org.jetbrains.annotations.NotNull;
 
 public class EntityTypeDeferredRegister extends MekanismDeferredRegister<EntityType<?>> {

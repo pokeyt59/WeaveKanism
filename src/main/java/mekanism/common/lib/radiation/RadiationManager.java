@@ -34,7 +34,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import mekanism.fabric_shim.event.tick.ServerTickEvent;
 import mekanism.fabric_shim.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.Nullable;
 

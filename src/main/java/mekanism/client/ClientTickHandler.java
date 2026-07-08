@@ -64,7 +64,7 @@ import net.neoforged.neoforge.client.event.InputEvent.MouseScrollingEvent;
 import net.neoforged.neoforge.client.event.RecipesUpdatedEvent;
 import net.neoforged.neoforge.client.event.RenderLivingEvent;
 import net.neoforged.neoforge.client.event.ViewportEvent;
-import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import mekanism.fabric_shim.event.entity.EntityJoinLevelEvent;
 
 /**
  * Client-side tick handler for Mekanism. Used mainly for the update check upon startup.

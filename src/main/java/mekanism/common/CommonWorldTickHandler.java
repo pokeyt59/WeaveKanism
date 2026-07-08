@@ -33,13 +33,13 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import mekanism.fabric_shim.event.entity.EntityJoinLevelEvent;
 import mekanism.fabric_shim.event.level.BlockEvent;
-import net.neoforged.neoforge.event.level.ChunkDataEvent;
-import net.neoforged.neoforge.event.level.ChunkEvent;
+import mekanism.fabric_shim.event.level.ChunkDataEvent;
+import mekanism.fabric_shim.event.level.ChunkEvent;
 import mekanism.fabric_shim.event.level.LevelEvent;
-import net.neoforged.neoforge.event.tick.LevelTickEvent;
-import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import mekanism.fabric_shim.event.tick.LevelTickEvent;
+import mekanism.fabric_shim.event.tick.ServerTickEvent;
 import org.jetbrains.annotations.Nullable;
 
 public class CommonWorldTickHandler {

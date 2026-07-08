@@ -24,8 +24,8 @@ import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.LevelAccessor;
 import net.neoforged.bus.api.SubscribeEvent;
 import mekanism.fabric_shim.common.NeoForge;
-import net.neoforged.neoforge.event.level.ChunkEvent;
-import net.neoforged.neoforge.event.level.ChunkTicketLevelUpdatedEvent;
+import mekanism.fabric_shim.event.level.ChunkEvent;
+import mekanism.fabric_shim.event.level.ChunkTicketLevelUpdatedEvent;
 import org.jetbrains.annotations.Nullable;
 
 public class ChunkCommand {

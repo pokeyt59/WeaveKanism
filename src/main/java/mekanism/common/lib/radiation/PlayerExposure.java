@@ -19,7 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.neoforged.bus.api.SubscribeEvent;
 import mekanism.fabric_shim.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import mekanism.fabric_shim.event.tick.EntityTickEvent;
 import mekanism.fabric_shim.network.PacketDistributor;
 import mekanism.fabric_shim.server.ServerLifecycleHooks;
 import org.jetbrains.annotations.Nullable;

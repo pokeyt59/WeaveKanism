@@ -6,7 +6,7 @@ import mekanism.common.recipe.MekanismRecipeType;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.OnDatapackSyncEvent;
+import mekanism.fabric_shim.event.OnDatapackSyncEvent;
 import mekanism.fabric_shim.event.server.ServerStartedEvent;
 
 public class IncompleteRecipeScanner {

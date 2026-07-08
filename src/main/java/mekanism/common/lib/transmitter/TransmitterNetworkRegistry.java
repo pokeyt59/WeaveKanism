@@ -32,8 +32,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.neoforged.bus.api.SubscribeEvent;
 import mekanism.fabric_shim.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.event.level.ChunkTicketLevelUpdatedEvent;
-import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import mekanism.fabric_shim.event.level.ChunkTicketLevelUpdatedEvent;
+import mekanism.fabric_shim.event.tick.ServerTickEvent;
 import org.jetbrains.annotations.Nullable;
 
 @EventBusSubscriber(modid = Mekanism.MODID)

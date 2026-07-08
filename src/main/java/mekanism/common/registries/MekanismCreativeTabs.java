@@ -30,7 +30,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluids;
 import mekanism.fabric_shim.common.Tags;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
+import mekanism.fabric_shim.event.BuildCreativeModeTabContentsEvent;
 
 public class MekanismCreativeTabs {
 
