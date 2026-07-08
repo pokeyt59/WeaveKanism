@@ -4,7 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
 import mekanism.client.RobitSpriteUploader;
-import mekanism.client.model.MekanismModelCache;
+import mekanism.fabric_shim.client.model.MekanismModelCache;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.entity.RenderRobit.RobitModelWrapper;
 import mekanism.common.Mekanism;

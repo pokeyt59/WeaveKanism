@@ -215,6 +215,14 @@ mekanism.client.key.MekKeyHandler	mekanism.fabric_shim.client.key.MekKeyHandler
 mekanism.client.key.MekanismKeyHandler	mekanism.fabric_shim.client.key.MekanismKeyHandler
 mekanism.client.render.hud.MekanismStatusOverlay	mekanism.fabric_shim.client.render.hud.MekanismStatusOverlay
 mekanism.client.model.data.TransmitterModelData	mekanism.fabric_shim.client.model.data.TransmitterModelData
+mekanism.client.render.RenderTickHandler	mekanism.fabric_shim.client.render.RenderTickHandler
+mekanism.client.model.MekanismModelCache	mekanism.fabric_shim.client.model.MekanismModelCache
+mekanism.client.render.armor.MekaSuitArmor	mekanism.fabric_shim.client.render.armor.MekaSuitArmor
+mekanism.client.model.data.DataBasedModelLoader	mekanism.fabric_shim.client.model.data.DataBasedModelLoader
+mekanism.client.SparkleAnimation	mekanism.fabric_shim.client.SparkleAnimation
+mekanism.client.recipe_viewer.RecipeViewerUtils	mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils
+mekanism.client.gui.element.progress.IProgressInfoHandler	mekanism.fabric_shim.client.gui.element.progress.IProgressInfoHandler
+mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler	mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler
 net.neoforged.neoforge.server.permission.PermissionAPI	mekanism.fabric_shim.server.permission.PermissionAPI
 net.neoforged.neoforge.server.permission.events.PermissionGatherEvent	mekanism.fabric_shim.server.permission.events.PermissionGatherEvent
 net.neoforged.neoforge.server.permission.nodes.PermissionNode	mekanism.fabric_shim.server.permission.nodes.PermissionNode

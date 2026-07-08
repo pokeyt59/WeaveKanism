@@ -18,7 +18,7 @@ import mekanism.client.gui.GuiRadialSelector;
 import mekanism.client.render.MekanismRenderer.Model3D;
 import mekanism.client.render.RenderResizableCuboid.FaceDisplay;
 import mekanism.client.render.armor.ISpecialGear;
-import mekanism.client.render.armor.MekaSuitArmor;
+import mekanism.fabric_shim.client.render.armor.MekaSuitArmor;
 import mekanism.client.render.hud.RadiationOverlay;
 import mekanism.client.render.lib.Outlines;
 import mekanism.client.render.lib.Outlines.Line;

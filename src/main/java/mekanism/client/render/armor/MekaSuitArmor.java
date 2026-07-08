@@ -33,7 +33,7 @@ import mekanism.api.gear.IModuleHelper;
 import mekanism.api.gear.ModuleData;
 import mekanism.client.model.BaseModelCache.MekanismModelData;
 import mekanism.client.model.BaseModelCache.OBJModelData;
-import mekanism.client.model.MekanismModelCache;
+import mekanism.fabric_shim.client.model.MekanismModelCache;
 import mekanism.client.render.MekanismRenderType;
 import mekanism.client.render.lib.QuadTransformation;
 import mekanism.client.render.lib.QuadUtils;

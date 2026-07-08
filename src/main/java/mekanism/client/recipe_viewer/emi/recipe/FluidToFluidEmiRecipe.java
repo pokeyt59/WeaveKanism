@@ -10,7 +10,7 @@ import mekanism.client.gui.element.bar.GuiHorizontalRateBar;
 import mekanism.client.gui.element.gauge.GaugeType;
 import mekanism.client.gui.element.gauge.GuiFluidGauge;
 import mekanism.client.gui.element.slot.SlotType;
-import mekanism.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.emi.MekanismEmiRecipeCategory;
 import mekanism.common.MekanismLang;
 import mekanism.common.content.evaporation.EvaporationMultiblockData;

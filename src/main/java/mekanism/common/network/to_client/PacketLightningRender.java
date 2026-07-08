@@ -3,7 +3,7 @@ package mekanism.common.network.to_client;
 import io.netty.buffer.ByteBuf;
 import java.util.function.BooleanSupplier;
 import java.util.function.IntFunction;
-import mekanism.client.render.RenderTickHandler;
+import mekanism.fabric_shim.client.render.RenderTickHandler;
 import mekanism.common.Mekanism;
 import mekanism.common.config.MekanismConfig;
 import mekanism.common.lib.effect.BoltEffect;

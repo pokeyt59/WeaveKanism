@@ -3,7 +3,7 @@ package mekanism.client;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import java.util.Map;
 import java.util.UUID;
-import mekanism.client.render.RenderTickHandler;
+import mekanism.fabric_shim.client.render.RenderTickHandler;
 import mekanism.client.render.tileentity.RenderSPS;
 import mekanism.fabric_shim.client.sound.SoundHandler;
 import mekanism.common.Mekanism;

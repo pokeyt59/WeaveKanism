@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.function.BooleanSupplier;
 import mekanism.client.gui.IGuiWrapper;
 import mekanism.client.gui.element.GuiTexturedElement;
-import mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler;
+import mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler;
 import mekanism.client.gui.element.slot.GuiSlot;
 import mekanism.client.gui.tooltip.TooltipUtils;
 import mekanism.common.inventory.warning.ISupportsWarning;

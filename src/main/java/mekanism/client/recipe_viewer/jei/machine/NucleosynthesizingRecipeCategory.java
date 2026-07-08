@@ -12,7 +12,7 @@ import mekanism.client.gui.element.gauge.GuiEnergyGauge.IEnergyInfoHandler;
 import mekanism.client.gui.element.gauge.GuiGauge;
 import mekanism.client.gui.element.slot.GuiSlot;
 import mekanism.client.gui.element.slot.SlotType;
-import mekanism.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.jei.HolderRecipeCategory;
 import mekanism.client.recipe_viewer.type.IRecipeViewerRecipeType;
 import mekanism.common.MekanismLang;

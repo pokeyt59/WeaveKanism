@@ -12,7 +12,7 @@ import mekanism.client.gui.GuiUtils;
 import mekanism.client.gui.GuiUtils.TilingDirection;
 import mekanism.client.gui.element.GuiElement;
 import mekanism.client.gui.element.gauge.GuiGauge;
-import mekanism.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.emi.ChemicalEmiStack;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.MekanismRenderer.FluidTextureType;

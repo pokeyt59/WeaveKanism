@@ -4,7 +4,7 @@ import java.util.List;
 import mekanism.client.gui.GuiMekanismTile;
 import mekanism.client.gui.element.GuiInnerScreen;
 import mekanism.client.gui.element.progress.GuiFlame;
-import mekanism.client.gui.element.progress.IProgressInfoHandler;
+import mekanism.fabric_shim.client.gui.element.progress.IProgressInfoHandler;
 import mekanism.client.gui.element.tab.GuiHeatTab;
 import mekanism.client.gui.element.tab.GuiWarningTab;
 import mekanism.common.MekanismLang;

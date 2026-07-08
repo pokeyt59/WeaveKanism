@@ -2,7 +2,7 @@ package mekanism.common.tile.qio;
 
 import java.util.Optional;
 import mekanism.api.SerializationConstants;
-import mekanism.client.model.data.DataBasedModelLoader;
+import mekanism.fabric_shim.client.model.data.DataBasedModelLoader;
 import mekanism.common.content.qio.QIOFrequency;
 import mekanism.common.integration.computer.ComputerException;
 import mekanism.common.integration.computer.annotation.ComputerMethod;

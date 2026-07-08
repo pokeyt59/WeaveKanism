@@ -12,7 +12,7 @@ import mekanism.api.text.EnumColor;
 import mekanism.api.text.TextComponentUtil;
 import mekanism.client.gui.GuiUtils;
 import mekanism.client.gui.GuiUtils.TilingDirection;
-import mekanism.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.common.MekanismLang;
 import mekanism.common.util.text.TextUtils;

@@ -10,7 +10,7 @@ import mekanism.api.chemical.Chemical;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.client.gui.GuiMekanism;
 import mekanism.client.gui.robit.GuiRobitRepair;
-import mekanism.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.alias.MekanismAliasMapping;
 import mekanism.client.recipe_viewer.jei.machine.BoilerRecipeCategory;
 import mekanism.client.recipe_viewer.jei.machine.ChemicalChemicalToChemicalRecipeCategory;
