@@ -207,6 +207,14 @@ net.neoforged.neoforge.common.world.StructureModifier	mekanism.fabric_shim.commo
 net.neoforged.neoforge.entity.IEntityWithComplexSpawn	mekanism.fabric_shim.entity.IEntityWithComplexSpawn
 net.neoforged.neoforge.entity.PartEntity	mekanism.fabric_shim.entity.PartEntity
 net.neoforged.neoforge.registries.holdersets.AnyHolderSet	mekanism.fabric_shim.registries.holdersets.AnyHolderSet
+# Step 6 client seams: common code reaches these client classes; server-safe stubs (Phase 4 replaces)
+mekanism.client.MekanismClient	mekanism.fabric_shim.client.MekanismClient
+mekanism.client.sound.SoundHandler	mekanism.fabric_shim.client.sound.SoundHandler
+mekanism.client.sound.PlayerSound	mekanism.fabric_shim.client.sound.PlayerSound
+mekanism.client.key.MekKeyHandler	mekanism.fabric_shim.client.key.MekKeyHandler
+mekanism.client.key.MekanismKeyHandler	mekanism.fabric_shim.client.key.MekanismKeyHandler
+mekanism.client.render.hud.MekanismStatusOverlay	mekanism.fabric_shim.client.render.hud.MekanismStatusOverlay
+mekanism.client.model.data.TransmitterModelData	mekanism.fabric_shim.client.model.data.TransmitterModelData
 net.neoforged.neoforge.server.permission.PermissionAPI	mekanism.fabric_shim.server.permission.PermissionAPI
 net.neoforged.neoforge.server.permission.events.PermissionGatherEvent	mekanism.fabric_shim.server.permission.events.PermissionGatherEvent
 net.neoforged.neoforge.server.permission.nodes.PermissionNode	mekanism.fabric_shim.server.permission.nodes.PermissionNode

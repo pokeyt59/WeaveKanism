@@ -4,7 +4,7 @@ import java.util.UUID;
 import mekanism.api.text.EnumColor;
 import mekanism.api.text.IHasTextComponent;
 import mekanism.api.text.TextComponentUtil;
-import mekanism.client.MekanismClient;
+import mekanism.fabric_shim.client.MekanismClient;
 import mekanism.common.MekanismLang;
 import mekanism.common.util.MekanismUtils;
 import net.minecraft.network.chat.Component;

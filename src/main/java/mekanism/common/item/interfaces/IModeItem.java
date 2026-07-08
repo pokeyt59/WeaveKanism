@@ -1,7 +1,7 @@
 package mekanism.common.item.interfaces;
 
 import java.util.function.Function;
-import mekanism.client.render.hud.MekanismStatusOverlay;
+import mekanism.fabric_shim.client.render.hud.MekanismStatusOverlay;
 import mekanism.common.Mekanism;
 import mekanism.common.lib.radial.IGenericRadialModeItem;
 import net.minecraft.core.component.DataComponentType;

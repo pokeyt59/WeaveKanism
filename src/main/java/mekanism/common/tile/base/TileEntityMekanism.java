@@ -33,7 +33,7 @@ import mekanism.api.radiation.IRadiationManager;
 import mekanism.api.security.IBlockSecurityUtils;
 import mekanism.api.security.SecurityMode;
 import mekanism.api.text.TextComponentUtil;
-import mekanism.client.sound.SoundHandler;
+import mekanism.fabric_shim.client.sound.SoundHandler;
 import mekanism.common.Mekanism;
 import mekanism.common.attachments.FilterAware;
 import mekanism.common.attachments.containers.ContainerType;

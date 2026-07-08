@@ -1,7 +1,7 @@
 package mekanism.common.tile.transmitter;
 
 import mekanism.api.tier.BaseTier;
-import mekanism.client.model.data.TransmitterModelData;
+import mekanism.fabric_shim.client.model.data.TransmitterModelData;
 import mekanism.common.block.states.BlockStateHelper;
 import mekanism.common.block.states.TransmitterType;
 import mekanism.common.content.network.transmitter.LogisticalTransporter;

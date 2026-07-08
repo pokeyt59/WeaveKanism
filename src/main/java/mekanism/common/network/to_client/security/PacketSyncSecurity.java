@@ -3,7 +3,7 @@ package mekanism.common.network.to_client.security;
 import io.netty.buffer.ByteBuf;
 import java.util.Optional;
 import java.util.UUID;
-import mekanism.client.MekanismClient;
+import mekanism.fabric_shim.client.MekanismClient;
 import mekanism.common.Mekanism;
 import mekanism.common.lib.security.SecurityData;
 import mekanism.common.lib.security.SecurityFrequency;

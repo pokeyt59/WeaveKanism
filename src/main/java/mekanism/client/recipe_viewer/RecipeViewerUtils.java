@@ -18,7 +18,7 @@ import mekanism.api.datamaps.chemical.ChemicalSolidTag;
 import mekanism.api.recipes.ItemStackToChemicalRecipe;
 import mekanism.api.recipes.basic.BasicItemStackToFluidOptionalItemRecipe;
 import mekanism.api.recipes.ingredients.ChemicalStackIngredient;
-import mekanism.client.MekanismClient;
+import mekanism.fabric_shim.client.MekanismClient;
 import mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler;
 import mekanism.client.gui.element.progress.IProgressInfoHandler;
 import mekanism.common.Mekanism;

@@ -1,6 +1,6 @@
 package mekanism.common.tile.transmitter;
 
-import mekanism.client.model.data.TransmitterModelData;
+import mekanism.fabric_shim.client.model.data.TransmitterModelData;
 import mekanism.common.block.states.TransmitterType;
 import mekanism.common.content.network.transmitter.DiversionTransporter;
 import mekanism.common.content.network.transmitter.DiversionTransporter.DiversionControl;

@@ -34,7 +34,7 @@ import mekanism.api.recipes.vanilla_input.SingleChemicalRecipeInput;
 import mekanism.api.recipes.vanilla_input.SingleFluidChemicalRecipeInput;
 import mekanism.api.recipes.vanilla_input.SingleFluidRecipeInput;
 import mekanism.api.recipes.vanilla_input.SingleItemChemicalRecipeInput;
-import mekanism.client.MekanismClient;
+import mekanism.fabric_shim.client.MekanismClient;
 import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.common.Mekanism;
 import mekanism.common.recipe.lookup.cache.IInputRecipeCache;

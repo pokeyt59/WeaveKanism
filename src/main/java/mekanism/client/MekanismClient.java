@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.UUID;
 import mekanism.client.render.RenderTickHandler;
 import mekanism.client.render.tileentity.RenderSPS;
-import mekanism.client.sound.SoundHandler;
+import mekanism.fabric_shim.client.sound.SoundHandler;
 import mekanism.common.Mekanism;
 import mekanism.common.base.IModModule;
 import mekanism.common.lib.radiation.ClientRadiation;

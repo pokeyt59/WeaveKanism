@@ -2,8 +2,8 @@ package mekanism.client.key;
 
 import java.util.Optional;
 import mekanism.client.ClientRegistrationUtil;
-import mekanism.client.MekanismClient;
-import mekanism.client.sound.SoundHandler;
+import mekanism.fabric_shim.client.MekanismClient;
+import mekanism.fabric_shim.client.sound.SoundHandler;
 import mekanism.common.Mekanism;
 import mekanism.common.MekanismLang;
 import mekanism.common.base.KeySync;

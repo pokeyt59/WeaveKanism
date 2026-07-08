@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import mekanism.api.security.SecurityMode;
-import mekanism.client.MekanismClient;
+import mekanism.fabric_shim.client.MekanismClient;
 import mekanism.common.Mekanism;
 import mekanism.common.lib.frequency.FrequencyType;
 import mekanism.common.lib.security.SecurityData;

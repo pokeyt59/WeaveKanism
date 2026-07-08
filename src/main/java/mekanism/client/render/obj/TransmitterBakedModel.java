@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.Function;
 import mekanism.api.annotations.NothingNullByDefault;
-import mekanism.client.model.data.TransmitterModelData;
+import mekanism.fabric_shim.client.model.data.TransmitterModelData;
 import mekanism.client.render.obj.TransmitterModelConfiguration.IconStatus;
 import mekanism.common.lib.transmitter.ConnectionType;
 import mekanism.common.tile.transmitter.TileEntityTransmitter;

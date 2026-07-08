@@ -6,7 +6,7 @@ import mekanism.api.IContentsListener;
 import mekanism.api.RelativeSide;
 import mekanism.api.SerializationConstants;
 import mekanism.api.text.EnumColor;
-import mekanism.client.sound.SoundHandler;
+import mekanism.fabric_shim.client.sound.SoundHandler;
 import mekanism.common.attachments.containers.ContainerType;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;

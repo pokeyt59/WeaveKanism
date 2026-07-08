@@ -9,7 +9,7 @@ import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import mekanism.api.Upgrade;
-import mekanism.client.sound.PlayerSound.SoundType;
+import mekanism.fabric_shim.client.sound.PlayerSound.SoundType;
 import mekanism.common.Mekanism;
 import mekanism.common.config.MekanismConfig;
 import mekanism.common.lib.radiation.RadiationScale;

@@ -2,8 +2,8 @@ package mekanism.client.render.obj;
 
 import java.util.Collections;
 import java.util.Objects;
-import mekanism.client.model.data.TransmitterModelData;
-import mekanism.client.model.data.TransmitterModelData.Diversion;
+import mekanism.fabric_shim.client.model.data.TransmitterModelData;
+import mekanism.fabric_shim.client.model.data.TransmitterModelData.Diversion;
 import mekanism.common.config.MekanismConfig;
 import mekanism.common.lib.transmitter.ConnectionType;
 import net.minecraft.client.resources.model.Material;
