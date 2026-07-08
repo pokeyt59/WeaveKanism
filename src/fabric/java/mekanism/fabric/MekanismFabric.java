@@ -53,6 +53,9 @@ public class MekanismFabric implements ModInitializer {
         ShimChunkManager.fireRegistration(ShimBuses.MOD_BUS);
         //Capability provider registration (on Fabric this registers straight into the API lookups)
         ShimBuses.MOD_BUS.post(new mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent());
+        //Payload (packet) channel + codec registration; serverbound receivers go live here, clientbound
+        //receivers are parked for the Phase 4 client entry point (see PendingClientReceivers)
+        ShimBuses.MOD_BUS.post(new mekanism.fabric_shim.network.event.RegisterPayloadHandlersEvent());
 
         //FML lifecycle order after registration; single-threaded, so enqueueWork runs inline
         ShimBuses.MOD_BUS.post(new FMLCommonSetupEvent());
