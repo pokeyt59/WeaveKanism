@@ -5,10 +5,13 @@
   "mixins": [
     "DataComponentHolderMixin",
     "DataComponentInputMixin",
+    "BlockMixin",
+    "BlockStateMixin",
     "DataComponentMapBuilderMixin",
     "EntityMixin",
     "FluidMixin",
     "FluidStateMixin",
+    "ItemMixin",
     "ItemPropertiesMixin",
     "ItemStackMixin"
   ],

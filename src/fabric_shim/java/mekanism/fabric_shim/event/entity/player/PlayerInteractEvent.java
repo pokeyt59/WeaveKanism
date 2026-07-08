@@ -1,5 +1,6 @@
 package mekanism.fabric_shim.event.entity.player;
 
+import mekanism.fabric_shim.common.util.TriState;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
@@ -52,6 +53,8 @@ public abstract class PlayerInteractEvent extends PlayerEvent {
     public static class RightClickBlock extends PlayerInteractEvent implements ICancellableEvent {
 
         private final BlockHitResult hitVec;
+        private TriState useBlock = TriState.DEFAULT;
+        private TriState useItem = TriState.DEFAULT;
 
         public RightClickBlock(Player player, InteractionHand hand, BlockPos pos, BlockHitResult hitVec) {
             super(player, hand, pos, hitVec.getDirection());
@@ -60,6 +63,22 @@ public abstract class PlayerInteractEvent extends PlayerEvent {
 
         public BlockHitResult getHitVec() {
             return this.hitVec;
+        }
+
+        public TriState getUseBlock() {
+            return this.useBlock;
+        }
+
+        public TriState getUseItem() {
+            return this.useItem;
+        }
+
+        public void setUseBlock(TriState triggerBlock) {
+            this.useBlock = triggerBlock;
+        }
+
+        public void setUseItem(TriState triggerItem) {
+            this.useItem = triggerItem;
         }
     }
 }
