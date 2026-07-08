@@ -29,4 +29,12 @@ public interface MekEntityExt {
     default <T> T getCapability(EntityCapability<T, @Nullable Void> capability) {
         return capability.getCapability((Entity) this, null);
     }
+
+    //NeoForge patches Entity with these; conservative 1f defaults.
+    default void onRemovedFromLevel() {
+    }
+
+    default boolean isFakePlayer() {
+        return false;
+    }
 }

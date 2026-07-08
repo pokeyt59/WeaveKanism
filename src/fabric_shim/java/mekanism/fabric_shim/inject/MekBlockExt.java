@@ -45,4 +45,8 @@ public interface MekBlockExt {
     default boolean canConnectRedstone(BlockState state, BlockGetter level, BlockPos pos, @Nullable Direction direction) {
         return false;
     }
+
+    default int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
+        return state.getLightEmission();
+    }
 }
