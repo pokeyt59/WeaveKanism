@@ -3,7 +3,10 @@ package mekanism.fabric_shim.inject;
 import java.util.Collections;
 import java.util.Map;
 import mekanism.fabric_shim.registries.datamaps.DataMapType;
+import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NeoForge patches vanilla {@code Registry} with {@code getDataMap(DataMapType)} (all entries carrying
@@ -15,5 +18,12 @@ public interface MekRegistryExt {
 
     default <R, T> Map<ResourceKey<R>, T> getDataMap(DataMapType<R, T> type) {
         return Collections.emptyMap();
+    }
+
+    //NeoForge IRegistryExtension.getKeyOrNull is vanilla getKey(value) under a nullable-explicit name.
+    @Nullable
+    @SuppressWarnings("unchecked")
+    default ResourceLocation getKeyOrNull(Object element) {
+        return ((Registry<Object>) this).getKey(element);
     }
 }

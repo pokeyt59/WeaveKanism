@@ -1,5 +1,7 @@
 package mekanism.fabric_shim.common;
 
+import java.util.Set;
+
 /**
  * Same constants as net.neoforged.neoforge.common.ItemAbilities (names must match — mods and
  * datagen reference them by name through ItemAbility.get).
@@ -32,4 +34,11 @@ public final class ItemAbilities {
     public static final ItemAbility TRIDENT_THROW = ItemAbility.get("trident_throw");
     public static final ItemAbility BRUSH_BRUSH = ItemAbility.get("brush_brush");
     public static final ItemAbility FIRESTARTER_LIGHT = ItemAbility.get("firestarter_light");
+
+    public static final Set<ItemAbility> DEFAULT_AXE_ACTIONS = Set.of(AXE_DIG, AXE_STRIP, AXE_SCRAPE, AXE_WAX_OFF);
+    public static final Set<ItemAbility> DEFAULT_HOE_ACTIONS = Set.of(HOE_DIG, HOE_TILL);
+    public static final Set<ItemAbility> DEFAULT_SHOVEL_ACTIONS = Set.of(SHOVEL_DIG, SHOVEL_FLATTEN, SHOVEL_DOUSE);
+    public static final Set<ItemAbility> DEFAULT_PICKAXE_ACTIONS = Set.of(PICKAXE_DIG);
+    public static final Set<ItemAbility> DEFAULT_SWORD_ACTIONS = Set.of(SWORD_DIG, SWORD_SWEEP);
+    public static final Set<ItemAbility> DEFAULT_SHEARS_ACTIONS = Set.of(SHEARS_DIG, SHEARS_HARVEST, SHEARS_REMOVE_ARMOR, SHEARS_CARVE, SHEARS_DISARM, SHEARS_TRIM);
 }

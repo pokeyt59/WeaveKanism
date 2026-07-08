@@ -47,4 +47,8 @@ public interface MekBlockStateExt {
     default boolean onDestroyedByPlayer(Level level, BlockPos pos, Player player, boolean willHarvest, FluidState fluid) {
         return level.setBlock(pos, fluid.createLegacyBlock(), level.isClientSide ? 11 : 3);
     }
+
+    default int getLightEmission(BlockGetter level, BlockPos pos) {
+        return self().getLightEmission();
+    }
 }

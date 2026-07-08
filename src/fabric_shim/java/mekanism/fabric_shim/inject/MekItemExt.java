@@ -74,4 +74,12 @@ public interface MekItemExt {
     default ItemStack getCraftingRemainingItem(ItemStack itemStack) {
         return ItemStack.EMPTY;
     }
+
+    default boolean shouldCauseReequipAnimation(ItemStack oldStack, ItemStack newStack, boolean slotChanged) {
+        return slotChanged || !ItemStack.isSameItem(oldStack, newStack);
+    }
+
+    default boolean shouldCauseBlockBreakReset(ItemStack oldStack, ItemStack newStack) {
+        return !ItemStack.isSameItem(oldStack, newStack);
+    }
 }
