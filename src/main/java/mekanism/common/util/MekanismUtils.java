@@ -85,7 +85,7 @@ import net.minecraft.world.phys.Vec3;
 import mekanism.fabric_shim.fml.FMLEnvironment;
 import mekanism.fabric_shim.fml.EffectiveSide;
 import mekanism.fabric_shim.common.CommonHooks;
-import net.neoforged.neoforge.common.EffectCures;
+import mekanism.fabric_shim.common.EffectCures;
 import mekanism.fabric_shim.common.Tags;
 import mekanism.fabric_shim.common.UsernameCache;
 import mekanism.fabric_shim.event.level.BlockEvent;

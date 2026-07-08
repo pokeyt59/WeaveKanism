@@ -30,7 +30,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.AABB;
 import mekanism.fabric_shim.common.CommonHooks;
-import net.neoforged.neoforge.common.IShearable;
+import mekanism.fabric_shim.common.IShearable;
 import mekanism.fabric_shim.common.ItemAbilities;
 import mekanism.fabric_shim.common.ItemAbility;
 import org.jetbrains.annotations.NotNull;

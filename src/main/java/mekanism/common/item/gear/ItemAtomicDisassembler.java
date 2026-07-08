@@ -72,7 +72,7 @@ import mekanism.fabric_shim.common.ItemAbilities;
 import mekanism.fabric_shim.common.ItemAbility;
 import mekanism.fabric_shim.common.util.Lazy;
 import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
-import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
+import mekanism.fabric_shim.registries.holdersets.AnyHolderSet;
 import org.jetbrains.annotations.NotNull;
 
 public class ItemAtomicDisassembler extends ItemEnergized implements IItemHUDProvider, IRadialModeItem<DisassemblerMode>, IHasConditionalAttributes {

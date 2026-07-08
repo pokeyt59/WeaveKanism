@@ -24,7 +24,7 @@ import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import mekanism.fabric_shim.fml.FMLEnvironment;
 import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
-import net.neoforged.neoforge.common.DeferredSpawnEggItem;
+import mekanism.fabric_shim.common.DeferredSpawnEggItem;
 import mekanism.fabric_shim.event.ModifyDefaultComponentsEvent;
 import mekanism.fabric_shim.registries.RegisterEvent;
 import org.jetbrains.annotations.NotNull;

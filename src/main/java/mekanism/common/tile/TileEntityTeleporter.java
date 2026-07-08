@@ -91,7 +91,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import mekanism.fabric_shim.common.NeoForge;
 import mekanism.fabric_shim.common.Tags;
-import net.neoforged.neoforge.entity.PartEntity;
+import mekanism.fabric_shim.entity.PartEntity;
 import mekanism.fabric_shim.network.PacketDistributor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

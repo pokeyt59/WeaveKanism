@@ -197,6 +197,16 @@ net.neoforged.neoforge.event.level.BlockDropsEvent	mekanism.fabric_shim.event.le
 net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent	mekanism.fabric_shim.event.BuildCreativeModeTabContentsEvent
 net.neoforged.neoforge.event.OnDatapackSyncEvent	mekanism.fabric_shim.event.OnDatapackSyncEvent
 net.neoforged.neoforge.event.ModifyDefaultComponentsEvent	mekanism.fabric_shim.event.ModifyDefaultComponentsEvent
+# Step 6 residue: standalone NeoForge classes Mekanism references (compile surfaces)
+net.neoforged.neoforge.common.IShearable	mekanism.fabric_shim.common.IShearable
+net.neoforged.neoforge.common.EffectCure	mekanism.fabric_shim.common.EffectCure
+net.neoforged.neoforge.common.EffectCures	mekanism.fabric_shim.common.EffectCures
+net.neoforged.neoforge.common.DeferredSpawnEggItem	mekanism.fabric_shim.common.DeferredSpawnEggItem
+net.neoforged.neoforge.common.world.BiomeModifier	mekanism.fabric_shim.common.world.BiomeModifier
+net.neoforged.neoforge.common.world.StructureModifier	mekanism.fabric_shim.common.world.StructureModifier
+net.neoforged.neoforge.entity.IEntityWithComplexSpawn	mekanism.fabric_shim.entity.IEntityWithComplexSpawn
+net.neoforged.neoforge.entity.PartEntity	mekanism.fabric_shim.entity.PartEntity
+net.neoforged.neoforge.registries.holdersets.AnyHolderSet	mekanism.fabric_shim.registries.holdersets.AnyHolderSet
 net.neoforged.neoforge.server.permission.PermissionAPI	mekanism.fabric_shim.server.permission.PermissionAPI
 net.neoforged.neoforge.server.permission.events.PermissionGatherEvent	mekanism.fabric_shim.server.permission.events.PermissionGatherEvent
 net.neoforged.neoforge.server.permission.nodes.PermissionNode	mekanism.fabric_shim.server.permission.nodes.PermissionNode

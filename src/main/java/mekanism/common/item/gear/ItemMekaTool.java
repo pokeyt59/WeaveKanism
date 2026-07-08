@@ -79,7 +79,7 @@ import net.minecraft.world.phys.HitResult;
 import mekanism.fabric_shim.common.ItemAbility;
 import mekanism.fabric_shim.common.NeoForge;
 import mekanism.fabric_shim.event.ItemAttributeModifierEvent;
-import net.neoforged.neoforge.registries.holdersets.AnyHolderSet;
+import mekanism.fabric_shim.registries.holdersets.AnyHolderSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

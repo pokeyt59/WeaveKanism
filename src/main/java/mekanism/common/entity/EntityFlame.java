@@ -49,7 +49,7 @@ import mekanism.fabric_shim.common.ItemAbilities;
 import mekanism.fabric_shim.common.ItemAbility;
 import mekanism.fabric_shim.common.NeoForge;
 import mekanism.fabric_shim.common.util.BlockSnapshot;
-import net.neoforged.neoforge.entity.IEntityWithComplexSpawn;
+import mekanism.fabric_shim.entity.IEntityWithComplexSpawn;
 import mekanism.fabric_shim.event.EventHooks;
 import mekanism.fabric_shim.event.level.BlockEvent;
 import org.jetbrains.annotations.NotNull;
