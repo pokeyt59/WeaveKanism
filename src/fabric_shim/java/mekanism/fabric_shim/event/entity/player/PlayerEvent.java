@@ -79,6 +79,34 @@ public abstract class PlayerEvent extends LivingEvent {
         }
     }
 
+    public static class StartTracking extends PlayerEvent {
+
+        private final net.minecraft.world.entity.Entity target;
+
+        public StartTracking(Player player, net.minecraft.world.entity.Entity target) {
+            super(player);
+            this.target = target;
+        }
+
+        public net.minecraft.world.entity.Entity getTarget() {
+            return this.target;
+        }
+    }
+
+    public static class StopTracking extends PlayerEvent {
+
+        private final net.minecraft.world.entity.Entity target;
+
+        public StopTracking(Player player, net.minecraft.world.entity.Entity target) {
+            super(player);
+            this.target = target;
+        }
+
+        public net.minecraft.world.entity.Entity getTarget() {
+            return this.target;
+        }
+    }
+
     public static class PlayerRespawnEvent extends PlayerEvent {
 
         private final boolean endConquered;

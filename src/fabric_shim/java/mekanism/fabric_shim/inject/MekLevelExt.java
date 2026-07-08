@@ -1,6 +1,7 @@
 package mekanism.fabric_shim.inject;
 
 import mekanism.fabric_shim.capabilities.BlockCapability;
+import mekanism.fabric_shim.capabilities.ICapabilityInvalidationListener;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
@@ -39,5 +40,8 @@ public interface MekLevelExt {
     }
 
     default void invalidateCapabilities(ChunkPos pos) {
+    }
+
+    default void registerCapabilityListener(BlockPos pos, ICapabilityInvalidationListener listener) {
     }
 }

@@ -13,11 +13,14 @@
     "FluidMixin",
     "FluidStateMixin",
     "HolderMixin",
+    "IngredientMixin",
     "ItemMixin",
     "ItemPropertiesMixin",
     "ItemStackMixin",
     "LevelMixin",
-    "RegistryMixin"
+    "MobEffectInstanceMixin",
+    "RegistryMixin",
+    "SlotMixin"
   ],
   "injectors": {
     "defaultRequire": 1

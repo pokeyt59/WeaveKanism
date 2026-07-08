@@ -47,6 +47,10 @@ public final class BlockSnapshot {
     /**
      * Restores the captured state (NeoForge's restoreToLocation with default flags).
      */
+    public int getFlags() {
+        return 0;
+    }
+
     public boolean restore() {
         return level.setBlock(pos, state, net.minecraft.world.level.block.Block.UPDATE_ALL);
     }

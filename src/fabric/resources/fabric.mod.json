@@ -37,7 +37,10 @@
       "net/minecraft/class_1937": ["mekanism/fabric_shim/inject/MekLevelExt", "mekanism/fabric_shim/inject/MekAttachmentExt"],
       "net/minecraft/class_2586": ["mekanism/fabric_shim/inject/MekBlockEntityExt"],
       "net/minecraft/class_6880": ["mekanism/fabric_shim/inject/MekHolderExt"],
-      "net/minecraft/class_2378": ["mekanism/fabric_shim/inject/MekRegistryExt"]
+      "net/minecraft/class_2378": ["mekanism/fabric_shim/inject/MekRegistryExt"],
+      "net/minecraft/class_1293": ["mekanism/fabric_shim/inject/MekMobEffectInstanceExt"],
+      "net/minecraft/class_1856": ["mekanism/fabric_shim/inject/MekIngredientExt"],
+      "net/minecraft/class_1735": ["mekanism/fabric_shim/inject/MekSlotExt"]
     }
   },
   "entrypoints": {
