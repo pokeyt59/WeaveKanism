@@ -9,7 +9,7 @@ import mekanism.client.gui.GuiUtils;
 import mekanism.client.render.HUDRenderer;
 import mekanism.common.Mekanism;
 import mekanism.common.config.MekanismConfig;
-import mekanism.common.integration.curios.CuriosIntegration;
+import mekanism.fabric_shim.integration.curios.CuriosIntegration;
 import mekanism.common.item.interfaces.IItemHUDProvider;
 import mekanism.common.tags.MekanismTags;
 import net.minecraft.client.DeltaTracker;

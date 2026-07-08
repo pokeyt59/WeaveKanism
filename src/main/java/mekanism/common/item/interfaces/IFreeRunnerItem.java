@@ -13,7 +13,7 @@ import mekanism.api.text.IHasTextComponent.IHasEnumNameTextComponent;
 import mekanism.api.text.ILangEntry;
 import mekanism.common.Mekanism;
 import mekanism.common.MekanismLang;
-import mekanism.common.integration.curios.CuriosIntegration;
+import mekanism.fabric_shim.integration.curios.CuriosIntegration;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;

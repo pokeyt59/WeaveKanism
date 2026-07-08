@@ -6,7 +6,7 @@ import mekanism.api.radiation.capability.IRadiationShielding;
 import mekanism.common.Mekanism;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.config.MekanismConfig;
-import mekanism.common.integration.curios.CuriosIntegration;
+import mekanism.fabric_shim.integration.curios.CuriosIntegration;
 import mekanism.common.util.EnumUtils;
 import net.minecraft.SharedConstants;
 import net.minecraft.core.BlockPos;

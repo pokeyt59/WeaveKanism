@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 //import mekanism.common.integration.computer.FactoryRegistry;
 //import mekanism.common.integration.computer.computercraft.CCCapabilityHelper;
 //import mekanism.common.integration.crafttweaker.content.CrTContentUtils;
-//import mekanism.common.integration.curios.CuriosIntegration;
+//import mekanism.fabric_shim.integration.curios.CuriosIntegration;
 import mekanism.common.integration.energy.EnergyCompatUtils;
 //import mekanism.common.integration.framedblocks.FramedBlocksIntegration;
 //import mekanism.common.integration.gender.MekanismGenderArmor;

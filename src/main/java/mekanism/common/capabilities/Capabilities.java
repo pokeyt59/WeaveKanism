@@ -15,7 +15,7 @@ import mekanism.api.security.IBlockSecurityUtils;
 import mekanism.api.security.IEntitySecurityUtils;
 import mekanism.common.Mekanism;
 import mekanism.common.entity.EntityRobit;
-import mekanism.common.integration.computer.ComputerCapabilityHelper;
+import mekanism.fabric_shim.integration.computer.ComputerCapabilityHelper;
 import mekanism.common.integration.energy.EnergyCompatUtils;
 import mekanism.common.lib.radiation.capability.RadiationEntity;
 import mekanism.common.registries.MekanismEntityTypes;

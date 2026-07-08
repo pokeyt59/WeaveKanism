@@ -11,7 +11,7 @@ import mekanism.common.block.basic.BlockFluidTank;
 import mekanism.common.block.prefab.BlockFactoryMachine.BlockFactory;
 import mekanism.common.capabilities.Capabilities;
 import mekanism.common.content.blocktype.FactoryType;
-import mekanism.common.integration.computer.ComputerCapabilityHelper;
+import mekanism.fabric_shim.integration.computer.ComputerCapabilityHelper;
 import mekanism.common.integration.energy.EnergyCompatUtils;
 import mekanism.common.item.block.ItemBlockChemicalTank;
 import mekanism.common.item.block.machine.ItemBlockFactory;

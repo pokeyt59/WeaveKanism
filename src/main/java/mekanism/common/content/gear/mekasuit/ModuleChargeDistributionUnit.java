@@ -13,7 +13,7 @@ import mekanism.common.config.MekanismConfig;
 import mekanism.common.content.network.EnergyNetwork;
 import mekanism.common.content.network.distribution.EnergySaveTarget;
 import mekanism.common.content.network.distribution.EnergySaveTarget.DelegateSaveHandler;
-import mekanism.common.integration.curios.CuriosIntegration;
+import mekanism.fabric_shim.integration.curios.CuriosIntegration;
 import mekanism.common.integration.energy.EnergyCompatUtils;
 import mekanism.common.util.EmitUtils;
 import mekanism.common.util.StorageUtils;

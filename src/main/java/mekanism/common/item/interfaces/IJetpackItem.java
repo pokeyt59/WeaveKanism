@@ -14,7 +14,7 @@ import mekanism.api.text.ILangEntry;
 import mekanism.common.CommonPlayerTickHandler;
 import mekanism.common.Mekanism;
 import mekanism.common.MekanismLang;
-import mekanism.common.integration.curios.CuriosIntegration;
+import mekanism.fabric_shim.integration.curios.CuriosIntegration;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.MekanismUtils.ResourceType;
 import net.minecraft.network.chat.Component;

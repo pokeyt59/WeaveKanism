@@ -15,7 +15,7 @@ import mekanism.common.block.attribute.Attribute;
 import mekanism.common.block.attribute.Attributes.AttributeComputerIntegration;
 import mekanism.common.block.attribute.Attributes.AttributeSecurity;
 import mekanism.common.capabilities.Capabilities;
-import mekanism.common.integration.computer.ComputerCapabilityHelper;
+import mekanism.fabric_shim.integration.computer.ComputerCapabilityHelper;
 import mekanism.common.integration.energy.EnergyCompatUtils;
 import mekanism.common.registration.MekanismDeferredRegister;
 import mekanism.common.registration.impl.TileEntityTypeRegistryObject.CapabilityData;

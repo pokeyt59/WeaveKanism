@@ -8,7 +8,7 @@ import mekanism.common.Mekanism;
 import mekanism.common.MekanismLang;
 import mekanism.common.base.KeySync;
 import mekanism.common.config.MekanismConfig;
-import mekanism.common.integration.curios.CuriosIntegration;
+import mekanism.fabric_shim.integration.curios.CuriosIntegration;
 import mekanism.common.inventory.container.ModuleTweakerContainer;
 import mekanism.common.item.interfaces.IChemicalItem;
 import mekanism.common.item.interfaces.IModeItem;

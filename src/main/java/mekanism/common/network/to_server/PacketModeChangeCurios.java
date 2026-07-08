@@ -1,7 +1,7 @@
 package mekanism.common.network.to_server;
 
 import mekanism.common.Mekanism;
-import mekanism.common.integration.curios.CuriosIntegration;
+import mekanism.fabric_shim.integration.curios.CuriosIntegration;
 import mekanism.common.item.interfaces.IModeItem;
 import mekanism.common.item.interfaces.IModeItem.DisplayChange;
 import mekanism.common.network.IMekanismPacket;
