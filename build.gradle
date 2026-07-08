@@ -63,6 +63,10 @@ sourceSets {
                 def p = el.path
                 p.startsWith('mekanism/client/') && !clientAllowlist.any { a -> p.startsWith(a) }
             }
+            //Client-only holiday renderer that lives in the common package (its own javadoc says
+            // "only reference from the client side"); depends on excluded client render classes
+            // (QuadTransformation) + a client-bus event, so it belongs with Phase 4.
+            exclude 'mekanism/common/base/holiday/ClientHolidayInfo.java'
             exclude { el ->
                 //CC bindings are Phase 5, but ComputerConstants is a pure constants class used by
                 // 22 core files — spare it

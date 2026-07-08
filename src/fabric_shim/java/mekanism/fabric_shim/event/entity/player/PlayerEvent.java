@@ -79,6 +79,20 @@ public abstract class PlayerEvent extends LivingEvent {
         }
     }
 
+    public static class PlayerRespawnEvent extends PlayerEvent {
+
+        private final boolean endConquered;
+
+        public PlayerRespawnEvent(Player player, boolean endConquered) {
+            super(player);
+            this.endConquered = endConquered;
+        }
+
+        public boolean isEndConquered() {
+            return this.endConquered;
+        }
+    }
+
     public static class BreakSpeed extends PlayerEvent implements ICancellableEvent {
 
         private final BlockState state;
