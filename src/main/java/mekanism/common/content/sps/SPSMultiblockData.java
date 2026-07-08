@@ -303,7 +303,7 @@ public class SPSMultiblockData extends MultiblockData implements IValveHandler {
         }
 
         public void write(CompoundTag tags) {
-            ListTag list = new ListTag(coilMap.size());
+            ListTag list = new ListTag();
             for (CoilData data : coilMap.values()) {
                 CompoundTag tag = new CompoundTag();
                 tag.put(SerializationConstants.POSITION, NbtUtils.writeBlockPos(data.coilPos));
