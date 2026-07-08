@@ -84,6 +84,27 @@ dead-on-Fabric with a reason. Do not delete entries; check them off with the fix
 - [ ] `mekanism/common/network/to_client/configuration/SyncAllSecurityData.java` — `type`
 - [ ] `mekanism/common/registration/impl/CreativeTabDeferredRegister.java` — `getLabelColor`
 - [x] `mekanism/common/registration/impl/FluidDeferredRegister.java` — `isVaporizedOnPlacement` (Step 5.1: real FluidType method; MekanismFluidType overrides it, called by BlockData/WorldUtils)
+
+## Compile-only event shims — firing deferred to Phase 3 (Steps 5.3 / 5.4)
+
+These shim event classes exist so `src/main` compiles; nothing posts them yet (the sole exception
+is `RegisterPayloadHandlersEvent`, posted from the bootstrap). Each must be bridged to its Fabric
+API equivalent in Phase 3, or the subscribed behavior silently does nothing.
+
+- [ ] `event.tick.{Server,Level,Player,Entity}TickEvent` → Fabric `ServerTickEvents` / `ClientTickEvents` / entity+player tick mixins
+- [ ] `event.entity.living.{LivingDeath,LivingFall,LivingIncomingDamage}Event` → `ServerLivingEntityEvents` / damage mixins
+- [ ] `event.entity.EntityInvulnerabilityCheckEvent` → damage-source invulnerability mixin
+- [ ] `event.entity.EntityJoinLevelEvent` → `ServerEntityEvents.ENTITY_LOAD`
+- [ ] `event.entity.player.PlayerInteractEvent.RightClickBlock` → `UseBlockCallback`
+- [ ] `event.entity.RegisterSpawnPlacementsEvent` → apply merged predicates to `SpawnPlacements` (records nothing today)
+- [ ] `event.entity.EntityAttributeCreationEvent` → `FabricDefaultAttributeRegistry`
+- [ ] `event.level.ChunkTicketLevelUpdatedEvent` → chunk-map mixin
+- [ ] `event.level.{Chunk,ChunkData}Event.*` → `ServerChunkEvents` / chunk (un)load
+- [ ] `event.level.BlockDropsEvent` → block-drops mixin
+- [ ] `event.BuildCreativeModeTabContentsEvent` → `ItemGroupEvents` (accept() discards entries today)
+- [ ] `event.OnDatapackSyncEvent` → `ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS` + player join
+- [ ] `event.ModifyDefaultComponentsEvent` → item default-component mixin (modify() records nothing today)
+- [ ] `network.event.RegisterConfigurationTasksEvent` → `ServerConfigurationConnectionEvents` (not posted; SyncAllSecurityData not sent during config)
 - [ ] `mekanism/common/tile/TileEntityEnergyCube.java` — `getModelData`
 - [ ] `mekanism/common/tile/base/TileEntityUpdateable.java` — `handleUpdateTag`
 - [ ] `mekanism/common/tile/base/TileEntityUpdateable.java` — `onDataPacket`

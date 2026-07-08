@@ -50,7 +50,7 @@ Then repair the seams this cuts:
 | 5.2 — capabilities surface (live Fabric registration; bootstrap posts RegisterCapabilitiesEvent) | DONE (371b439c8f + c935583125) | 1,798 |
 | 5.1 — FluidType + BaseFlowingFluid (+ getFluidType via injection) | DONE (ecdca2d0d8 + bb0840d34a; FLUID_TYPES custom registry; Fluid/FluidState/Entity injected getFluidType/getMaxHeightFluidType) | 1,328 |
 | 5.3 — networking surface (funnel-shaped; codecs + serverbound receivers live, clientbound/config parked) | DONE (a1cd700c1a + 9a65cdcc0d; RegisterPayloadHandlersEvent posted from bootstrap) | 982 |
-| 5.4 — remaining event classes (~90 errs; NeoForge sources jar for surfaces) | pending | — |
+| 5.4 — remaining game-bus event classes (compile-only; firing Phase 3) | DONE (11e7f04701 + 62c506cea4; 20 event shims + ClientHolidayInfo excluded) | 834 |
 | 6 — residue (openMenu, invalidateCapabilities args, ListTag(int), getData sites, seams) | pending | target 0 |
 
 Remaining top clusters at 2,166: FluidType ~250, capabilities (BlockCapabilityCache 124 +
