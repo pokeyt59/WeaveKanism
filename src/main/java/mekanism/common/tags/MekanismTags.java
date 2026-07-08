@@ -160,11 +160,11 @@ public class MekanismTags {
         public static final TagKey<Item> COLORABLE_BANNERS = tag("colorable/banners");
 
         private static TagKey<Item> commonTag(String name) {
-            return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
+            return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", name));
         }
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(Mekanism.rl(name));
+            return TagKey.create(Registries.ITEM, Mekanism.rl(name));
         }
     }
 

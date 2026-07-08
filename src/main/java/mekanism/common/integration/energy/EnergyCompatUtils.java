@@ -4,9 +4,7 @@ import java.util.List;
 import java.util.function.BiFunction;
 import mekanism.api.energy.IStrictEnergyHandler;
 import mekanism.common.capabilities.Capabilities;
-import mekanism.common.integration.energy.fluxnetworks.FNEnergyCompat;
 import mekanism.common.integration.energy.forgeenergy.ForgeEnergyCompat;
-import mekanism.common.integration.energy.grandpower.GPEnergyCompat;
 import mekanism.common.registration.impl.TileEntityTypeDeferredRegister.BlockEntityTypeBuilder;
 import mekanism.common.tile.base.CapabilityTileEntity;
 import net.minecraft.core.BlockPos;
@@ -34,10 +32,7 @@ public class EnergyCompatUtils {
     private static final List<IEnergyCompat> energyCompats = List.of(
           //We always have our own energy capability as the first one we check
           new StrictEnergyCompat(),
-          //Note: We check the Grand Power capability above Forge's so that we allow it to use the higher throughput amount supported by Grand Power
-          new GPEnergyCompat(),
-          //Note: We check the Flux Networks capability above Forge's so that we allow it to use the higher throughput amount supported by Flux Networks
-          new FNEnergyCompat(),
+          //fabric-port: Grand Power and Flux Networks are NeoForge-only mods; their compat is excluded (Phase 5)
           new ForgeEnergyCompat()
     );
 

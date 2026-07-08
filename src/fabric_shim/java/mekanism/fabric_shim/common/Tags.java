@@ -3,6 +3,8 @@ package mekanism.fabric_shim.common;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
@@ -61,6 +63,31 @@ public final class Tags {
 
         private static TagKey<Fluid> tag(String path) {
             return TagKey.create(Registries.FLUID, ResourceLocation.fromNamespaceAndPath("c", path));
+        }
+    }
+
+    public static final class EntityTypes {
+
+        private EntityTypes() {
+        }
+
+        public static final TagKey<EntityType<?>> TELEPORTING_NOT_SUPPORTED = tag("teleporting_not_supported");
+
+        private static TagKey<EntityType<?>> tag(String path) {
+            return TagKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath("c", path));
+        }
+    }
+
+    public static final class DamageTypes {
+
+        private DamageTypes() {
+        }
+
+        public static final TagKey<DamageType> IS_TECHNICAL = tag("is_technical");
+        public static final TagKey<DamageType> IS_PREVENTABLE_MAGIC = tag("is_preventable_magic");
+
+        private static TagKey<DamageType> tag(String path) {
+            return TagKey.create(Registries.DAMAGE_TYPE, ResourceLocation.fromNamespaceAndPath("c", path));
         }
     }
 }

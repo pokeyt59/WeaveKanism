@@ -193,9 +193,9 @@ public class EntityFlame extends Projectile implements IEntityWithComplexSpawn {
             level().setBlockAndUpdate(pos, modifiedState);
         }
         if (modifiedState == null || EventHooks.onBlockPlace(shooter, blockSnapshot, hitSide)) {
-            level().restoringBlockSnapshots = true;
+            //fabric-port: no restoringBlockSnapshots flag on Fabric's Level (NeoForge internal); the
+            //restore below runs without the recursion guard, which is fine for our single-block place
             blockSnapshot.restore(blockSnapshot.getFlags() | Block.UPDATE_CLIENTS);
-            level().restoringBlockSnapshots = false;
             return false;
         }
         return true;
@@ -205,9 +205,9 @@ public class EntityFlame extends Projectile implements IEntityWithComplexSpawn {
         BlockSnapshot blockSnapshot = BlockSnapshot.create(level().dimension(), level(), pos);
         level().setBlockAndUpdate(pos, newState);
         if (EventHooks.onBlockPlace(shooter, blockSnapshot, hitSide)) {
-            level().restoringBlockSnapshots = true;
+            //fabric-port: no restoringBlockSnapshots flag on Fabric's Level (NeoForge internal); the
+            //restore below runs without the recursion guard, which is fine for our single-block place
             blockSnapshot.restore(blockSnapshot.getFlags() | Block.UPDATE_CLIENTS);
-            level().restoringBlockSnapshots = false;
             return false;
         }
         return true;
