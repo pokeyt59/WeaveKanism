@@ -5,15 +5,19 @@
   "mixins": [
     "DataComponentHolderMixin",
     "DataComponentInputMixin",
+    "BlockEntityMixin",
     "BlockMixin",
     "BlockStateMixin",
     "DataComponentMapBuilderMixin",
     "EntityMixin",
     "FluidMixin",
     "FluidStateMixin",
+    "HolderMixin",
     "ItemMixin",
     "ItemPropertiesMixin",
-    "ItemStackMixin"
+    "ItemStackMixin",
+    "LevelMixin",
+    "RegistryMixin"
   ],
   "injectors": {
     "defaultRequire": 1

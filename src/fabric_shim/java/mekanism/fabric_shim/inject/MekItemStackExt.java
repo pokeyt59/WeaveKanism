@@ -2,6 +2,7 @@ package mekanism.fabric_shim.inject;
 
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
+import mekanism.fabric_shim.capabilities.ItemCapability;
 import mekanism.fabric_shim.common.ItemAbility;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -95,5 +96,14 @@ public interface MekItemStackExt {
 
     default boolean isComponentsPatchEmpty() {
         return self().getComponentsPatch().isEmpty();
+    }
+
+    //NeoForge IItemStackExtension capability accessors, delegating to the shim ItemCapability token.
+    default <T, C> T getCapability(ItemCapability<T, C> capability, C context) {
+        return capability.getCapability(self(), context);
+    }
+
+    default <T> T getCapability(ItemCapability<T, @Nullable Void> capability) {
+        return capability.getCapability(self(), null);
     }
 }

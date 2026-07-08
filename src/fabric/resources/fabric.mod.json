@@ -30,10 +30,14 @@
       "net/minecraft/class_2586$class_9473": ["mekanism/fabric_shim/inject/MekDataComponentInputExt"],
       "net/minecraft/class_3611": ["mekanism/fabric_shim/inject/MekFluidExt"],
       "net/minecraft/class_3610": ["mekanism/fabric_shim/inject/MekFluidStateExt"],
-      "net/minecraft/class_1297": ["mekanism/fabric_shim/inject/MekEntityExt"],
+      "net/minecraft/class_1297": ["mekanism/fabric_shim/inject/MekEntityExt", "mekanism/fabric_shim/inject/MekAttachmentExt"],
       "net/minecraft/class_1792": ["mekanism/fabric_shim/inject/MekItemExt"],
       "net/minecraft/class_2680": ["mekanism/fabric_shim/inject/MekBlockStateExt"],
-      "net/minecraft/class_2248": ["mekanism/fabric_shim/inject/MekBlockExt"]
+      "net/minecraft/class_2248": ["mekanism/fabric_shim/inject/MekBlockExt"],
+      "net/minecraft/class_1937": ["mekanism/fabric_shim/inject/MekLevelExt", "mekanism/fabric_shim/inject/MekAttachmentExt"],
+      "net/minecraft/class_2586": ["mekanism/fabric_shim/inject/MekBlockEntityExt"],
+      "net/minecraft/class_6880": ["mekanism/fabric_shim/inject/MekHolderExt"],
+      "net/minecraft/class_2378": ["mekanism/fabric_shim/inject/MekRegistryExt"]
     }
   },
   "entrypoints": {
