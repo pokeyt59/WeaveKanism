@@ -49,7 +49,7 @@ Then repair the seams this cuts:
 | 4 — trivial shims | DONE (5ae79149e4 + df73f47756; 23 classes incl. hooks/events/permissions/scan stubs) | 2,166 |
 | 5.2 — capabilities surface (live Fabric registration; bootstrap posts RegisterCapabilitiesEvent) | DONE (371b439c8f + c935583125) | 1,798 |
 | 5.1 — FluidType + BaseFlowingFluid (+ getFluidType via injection) | DONE (ecdca2d0d8 + bb0840d34a; FLUID_TYPES custom registry; Fluid/FluidState/Entity injected getFluidType/getMaxHeightFluidType) | 1,328 |
-| 5.3 — networking surface (read PacketHandler/BasePacketHandler first) | pending | — |
+| 5.3 — networking surface (funnel-shaped; codecs + serverbound receivers live, clientbound/config parked) | DONE (a1cd700c1a + 9a65cdcc0d; RegisterPayloadHandlersEvent posted from bootstrap) | 982 |
 | 5.4 — remaining event classes (~90 errs; NeoForge sources jar for surfaces) | pending | — |
 | 6 — residue (openMenu, invalidateCapabilities args, ListTag(int), getData sites, seams) | pending | target 0 |
 
