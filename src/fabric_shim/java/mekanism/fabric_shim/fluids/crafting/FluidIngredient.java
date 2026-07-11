@@ -49,14 +49,6 @@ public abstract class FluidIngredient implements Predicate<FluidStack> {
         TYPE_IDS.put(type, id);
     }
 
-    static {
-        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "single"), SingleFluidIngredient.TYPE);
-        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "tag"), TagFluidIngredient.TYPE);
-        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "empty"), EmptyFluidIngredient.TYPE);
-        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "compound"), CompoundFluidIngredient.TYPE);
-        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "components"), DataComponentFluidIngredient.TYPE);
-    }
-
     public static final Codec<FluidIngredientType<?>> TYPE_CODEC = ResourceLocation.CODEC.comapFlatMap(
           id -> {
               FluidIngredientType<?> type = TYPES.get(id);
@@ -115,6 +107,17 @@ public abstract class FluidIngredient implements Predicate<FluidStack> {
                         .map(FluidIngredient::single));
         }
     };
+
+    //Built-in type registration stays BELOW every codec field: initializing the subclasses here
+    //re-enters this class's <clinit>, and their own codecs read the fields above (a compound's
+    //list codec would otherwise observe null — boot-verified failure mode).
+    static {
+        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "single"), SingleFluidIngredient.TYPE);
+        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "tag"), TagFluidIngredient.TYPE);
+        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "empty"), EmptyFluidIngredient.TYPE);
+        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "compound"), CompoundFluidIngredient.TYPE);
+        registerType(ResourceLocation.fromNamespaceAndPath("neoforge", "components"), DataComponentFluidIngredient.TYPE);
+    }
 
     @Nullable
     private FluidStack[] stacks;

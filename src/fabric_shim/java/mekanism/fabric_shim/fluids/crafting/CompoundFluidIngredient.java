@@ -12,8 +12,10 @@ import mekanism.fabric_shim.fluids.FluidStack;
  */
 public final class CompoundFluidIngredient extends FluidIngredient {
 
+    //Lazy list-codec access: this class can be initialized from FluidIngredient's own <clinit>
+    //(type registration), before LIST_CODEC_NON_EMPTY is assigned.
     public static final MapCodec<CompoundFluidIngredient> CODEC =
-          NeoForgeExtraCodecs.aliasedFieldOf(FluidIngredient.LIST_CODEC_NON_EMPTY, "children", "ingredients")
+          NeoForgeExtraCodecs.aliasedFieldOf(com.mojang.serialization.Codec.lazyInitialized(() -> FluidIngredient.LIST_CODEC_NON_EMPTY), "children", "ingredients")
                 .xmap(CompoundFluidIngredient::new, CompoundFluidIngredient::children);
 
     private final List<FluidIngredient> children;

@@ -42,10 +42,11 @@ public class MekanismFabric implements ModInitializer {
         //neoforge:swim_speed / neoforge:creative_flight attributes (see NeoForgeMod shim notes)
         NeoForgeMod.init(ShimBuses.MOD_BUS);
 
-        //Mod construction goes here once src/main compiles (Phase 1f):
-        //  ModContainer container = new ModContainer(MODID);
-        //  container.bridgeConfigEvents();
-        //  new mekanism.common.Mekanism(container, ShimBuses.MOD_BUS);
+        //Mod construction, mirroring FML's @Mod constructor call (subscribes Mekanism's
+        //DeferredRegisters and lifecycle listeners to the mod bus before registration fires)
+        mekanism.fabric_shim.fml.ModContainer container = new mekanism.fabric_shim.fml.ModContainer(MODID);
+        container.bridgeConfigEvents();
+        new mekanism.common.Mekanism(container, ShimBuses.MOD_BUS);
 
         //Registration lifecycle: NewRegistryEvent, then RegisterEvent per registry in NeoForge's order.
         //Must happen inside onInitialize while Fabric still permits Registry.register.

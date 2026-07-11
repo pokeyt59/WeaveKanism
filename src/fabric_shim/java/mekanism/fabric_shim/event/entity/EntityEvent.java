@@ -4,13 +4,15 @@ import net.minecraft.world.entity.Entity;
 import net.neoforged.bus.api.Event;
 
 /**
- * Base class for entity events (stand-in for NeoForge's EntityEvent; same surface).
+ * Base class for entity events (stand-in for NeoForge's EntityEvent; same surface). Abstract like
+ * NeoForge's — the bus requires abstract event classes (LivingEvent, EntityTickEvent) to have
+ * abstract superclasses.
  */
-public class EntityEvent extends Event {
+public abstract class EntityEvent extends Event {
 
     private final Entity entity;
 
-    public EntityEvent(Entity entity) {
+    protected EntityEvent(Entity entity) {
         this.entity = entity;
     }
 

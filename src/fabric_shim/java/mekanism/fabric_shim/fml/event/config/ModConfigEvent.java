@@ -9,12 +9,15 @@ import net.neoforged.fml.config.ModConfig;
  * load/reload/unload as per-mod Fabric callbacks instead of bus events; the ModContainer shim
  * bridges those callbacks onto the shim mod bus as instances of this hierarchy, so upstream
  * listeners (e.g. MekanismConfig::onConfigLoad) work unchanged.
+ *
+ * <p>Concrete like FML's (the neoforged bus rejects listeners typed to abstract event classes,
+ * and Mekanism listens to this base type directly).
  */
-public abstract class ModConfigEvent extends Event implements IModBusEvent {
+public class ModConfigEvent extends Event implements IModBusEvent {
 
     private final ModConfig config;
 
-    protected ModConfigEvent(ModConfig config) {
+    ModConfigEvent(ModConfig config) {
         this.config = config;
     }
 
