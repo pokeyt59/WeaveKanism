@@ -16,11 +16,11 @@ public interface MekDataComponentInputExt {
     }
 
     @Nullable
-    default <T> T get(Supplier<? extends DataComponentType<? extends T>> type) {
+    default <T> T get(Supplier<? extends DataComponentType<T>> type) {
         return self().get(type.get());
     }
 
-    default <T> T getOrDefault(Supplier<? extends DataComponentType<? extends T>> type, T defaultValue) {
+    default <T> T getOrDefault(Supplier<? extends DataComponentType<T>> type, T defaultValue) {
         return self().getOrDefault(type.get(), defaultValue);
     }
 }

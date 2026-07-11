@@ -18,4 +18,9 @@ public interface MekFluidStateExt {
     default java.util.stream.Stream<net.minecraft.tags.TagKey<net.minecraft.world.level.material.Fluid>> getTags() {
         return ((FluidState) this).getType().builtInRegistryHolder().tags();
     }
+
+    default float getExplosionResistance(net.minecraft.world.level.BlockGetter level, net.minecraft.core.BlockPos pos,
+          net.minecraft.world.level.Explosion explosion) {
+        return ((FluidState) this).getExplosionResistance();
+    }
 }

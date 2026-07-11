@@ -37,6 +37,15 @@ public final class NeoForgeExtraCodecs {
     }
 
     /**
+     * Decodes with the primary codec, falling back to the alternative on failure; unlike
+     * {@link #mapWithAlternative}, encoding also falls back to the alternative if the primary
+     * cannot encode the value (matches NeoForge's withAlternative contract).
+     */
+    public static <T> MapCodec<T> withAlternative(final MapCodec<T> codec, final MapCodec<T> alternative) {
+        return new AlternativeMapCodec<>(codec, alternative);
+    }
+
+    /**
      * Like {@link Codec#optionalFieldOf(String, Object)}, except the default value is always written.
      */
     public static <T> MapCodec<T> optionalFieldAlwaysWrite(Codec<T> codec, String name, T defaultValue) {
@@ -84,6 +93,47 @@ public final class NeoForgeExtraCodecs {
                 return "DispatchOrElse[" + dispatchCodec + ", " + fallbackCodec + "]";
             }
         };
+    }
+
+    private static final class AlternativeMapCodec<T> extends MapCodec<T> {
+
+        private final MapCodec<T> codec;
+        private final MapCodec<T> alternative;
+
+        private AlternativeMapCodec(MapCodec<T> codec, MapCodec<T> alternative) {
+            this.codec = codec;
+            this.alternative = alternative;
+        }
+
+        @Override
+        public <O> Stream<O> keys(DynamicOps<O> ops) {
+            return Stream.concat(codec.keys(ops), alternative.keys(ops)).distinct();
+        }
+
+        @Override
+        public <O> DataResult<T> decode(DynamicOps<O> ops, MapLike<O> input) {
+            DataResult<T> primary = codec.decode(ops, input);
+            if (primary.result().isPresent()) {
+                return primary;
+            }
+            DataResult<T> fallback = alternative.decode(ops, input);
+            return fallback.result().isPresent() ? fallback : primary;
+        }
+
+        @Override
+        public <O> RecordBuilder<O> encode(T input, DynamicOps<O> ops, RecordBuilder<O> prefix) {
+            //Probe the primary codec against an empty builder; only fall back if it cannot encode this value
+            DataResult<O> probe = codec.encode(input, ops, ops.mapBuilder()).build(ops.emptyMap());
+            if (probe.result().isPresent()) {
+                return codec.encode(input, ops, prefix);
+            }
+            return alternative.encode(input, ops, prefix);
+        }
+
+        @Override
+        public String toString() {
+            return "AlternativeMapCodec[" + codec + ", " + alternative + "]";
+        }
     }
 
     private static final class XorMapCodec<F, S> extends MapCodec<Either<F, S>> {

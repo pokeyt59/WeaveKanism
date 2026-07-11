@@ -214,11 +214,11 @@ public class MekanismTags {
         public static final TagKey<Block> STORAGE_BLOCKS_FLUORITE = commonTag("storage_blocks/fluorite");
 
         private static TagKey<Block> commonTag(String name) {
-            return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
+            return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", name));
         }
 
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(Mekanism.rl(name));
+            return TagKey.create(Registries.BLOCK, Mekanism.rl(name));
         }
     }
 
@@ -280,7 +280,7 @@ public class MekanismTags {
         public static final TagKey<Fluid> NUTRITIONAL_PASTE = commonTag("nutritional_paste");
 
         private static TagKey<Fluid> commonTag(String name) {
-            return FluidTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
+            return TagKey.create(Registries.FLUID, ResourceLocation.fromNamespaceAndPath("c", name));
         }
     }
 

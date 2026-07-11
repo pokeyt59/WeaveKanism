@@ -206,7 +206,7 @@ public class ItemBlockFluidTank extends ItemBlockTooltip<BlockTile<?, ?>> implem
                                     return InteractionResultHolder.fail(stack);
                                 }
                             }
-                            sound = bucketPickup.getPickupSound(blockState);
+                            sound = bucketPickup.getPickupSound();
                         }
                         if (validFluid(fluidTank, fluidStack)) {
                             uncheckedGrow(fluidTank, fluidStack);
@@ -340,7 +340,7 @@ public class ItemBlockFluidTank extends ItemBlockTooltip<BlockTile<?, ?>> implem
                                 return super.execute(source, stack);
                             }
                         }
-                        sound = bucketPickup.getPickupSound(blockState);
+                        sound = bucketPickup.getPickupSound();
                     }
                     if (validFluid(fluidTank, fluidStack)) {
                         tank.uncheckedGrow(fluidTank, fluidStack);

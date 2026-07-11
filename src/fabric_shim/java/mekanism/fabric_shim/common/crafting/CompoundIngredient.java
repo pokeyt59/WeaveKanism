@@ -9,9 +9,10 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 /**
  * Union of several ingredients (stand-in for NeoForge's CompoundIngredient; same surface and JSON
- * format: {@code {"type": "neoforge:compound", "children": [...]}}).
+ * format: {@code {"type": "neoforge:compound", "children": [...]}}). A record, like upstream, so
+ * callers can use record deconstruction patterns on it.
  */
-public final class CompoundIngredient implements ICustomIngredient {
+public record CompoundIngredient(List<Ingredient> children) implements ICustomIngredient {
 
     public static final MapCodec<CompoundIngredient> CODEC =
           NeoForgeExtraCodecs.aliasedFieldOf(CustomIngredients.LIST_CODEC_NONEMPTY, "children", "ingredients")
@@ -19,13 +20,11 @@ public final class CompoundIngredient implements ICustomIngredient {
 
     public static final IngredientType<CompoundIngredient> TYPE = new IngredientType<>(CODEC);
 
-    private final List<Ingredient> children;
-
-    public CompoundIngredient(List<Ingredient> children) {
+    public CompoundIngredient {
         if (children.isEmpty()) {
             throw new IllegalArgumentException("Compound ingredient must have at least one child");
         }
-        this.children = List.copyOf(children);
+        children = List.copyOf(children);
     }
 
     public static Ingredient of(Ingredient... children) {
@@ -40,10 +39,6 @@ public final class CompoundIngredient implements ICustomIngredient {
             return children.getFirst();
         }
         return new CompoundIngredient(children).toVanilla();
-    }
-
-    public List<Ingredient> children() {
-        return children;
     }
 
     @Override
@@ -74,15 +69,5 @@ public final class CompoundIngredient implements ICustomIngredient {
     @Override
     public IngredientType<?> getType() {
         return TYPE;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        return o instanceof CompoundIngredient other && children.equals(other.children);
-    }
-
-    @Override
-    public int hashCode() {
-        return children.hashCode();
     }
 }

@@ -274,7 +274,8 @@ public class BlockBounding extends Block implements IHasTileEntity<TileEntityBou
     public float getExplosionResistance(@NotNull BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull Explosion explosion) {
         BlockPos mainPos = getMainBlockPos(world, pos);
         if (mainPos == null) {
-            return super.getExplosionResistance(state, world, pos, explosion);
+            //fabric-port: super can't reach the injected NeoForge default; inline its vanilla delegation
+            return getExplosionResistance();
         }
         return world.getBlockState(mainPos).getExplosionResistance(world, mainPos, explosion);
     }

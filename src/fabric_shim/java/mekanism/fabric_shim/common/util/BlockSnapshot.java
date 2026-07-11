@@ -52,6 +52,10 @@ public final class BlockSnapshot {
     }
 
     public boolean restore() {
-        return level.setBlock(pos, state, net.minecraft.world.level.block.Block.UPDATE_ALL);
+        return restore(net.minecraft.world.level.block.Block.UPDATE_ALL);
+    }
+
+    public boolean restore(int flags) {
+        return level.setBlock(pos, state, flags);
     }
 }

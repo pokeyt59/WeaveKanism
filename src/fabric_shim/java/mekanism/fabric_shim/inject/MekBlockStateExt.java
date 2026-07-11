@@ -52,6 +52,15 @@ public interface MekBlockStateExt {
         return self().getLightEmission();
     }
 
+    default net.minecraft.world.level.block.SoundType getSoundType(LevelReader level, BlockPos pos,
+          @Nullable net.minecraft.world.entity.Entity entity) {
+        return self().getSoundType();
+    }
+
+    default boolean getWeakChanges(LevelReader level, BlockPos pos) {
+        return false;
+    }
+
     default java.util.stream.Stream<net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block>> getTags() {
         return self().getBlock().builtInRegistryHolder().tags();
     }

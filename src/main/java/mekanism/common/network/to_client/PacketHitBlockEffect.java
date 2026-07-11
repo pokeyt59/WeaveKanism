@@ -26,6 +26,7 @@ public record PacketHitBlockEffect(BlockHitResult result) implements IMekanismPa
 
     @Override
     public void handle(IPayloadContext context) {
-        Minecraft.getInstance().particleEngine.addBlockHitEffects(result.getBlockPos(), result);
+        //fabric-port: vanilla equivalent of NeoForge's hit-result-aware addBlockHitEffects
+        Minecraft.getInstance().particleEngine.crack(result.getBlockPos(), result.getDirection());
     }
 }

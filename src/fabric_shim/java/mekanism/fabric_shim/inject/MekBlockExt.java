@@ -49,4 +49,13 @@ public interface MekBlockExt {
     default int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
         return state.getLightEmission();
     }
+
+    default net.minecraft.world.item.ItemStack getCloneItemStack(BlockState state, net.minecraft.world.phys.HitResult target,
+          net.minecraft.world.level.LevelReader level, BlockPos pos, Player player) {
+        return ((net.minecraft.world.level.block.Block) this).getCloneItemStack(level, pos, state);
+    }
+
+    default float getExplosionResistance(BlockState state, BlockGetter level, BlockPos pos, Explosion explosion) {
+        return ((net.minecraft.world.level.block.Block) this).getExplosionResistance();
+    }
 }

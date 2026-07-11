@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackLinkedSet;
 import net.minecraft.world.item.crafting.Ingredient;
 import mekanism.fabric_shim.common.crafting.CompoundIngredient;
+import mekanism.fabric_shim.common.crafting.CustomIngredients;
 import mekanism.fabric_shim.common.crafting.DataComponentIngredient;
 
 public class ItemInputCache<RECIPE extends MekanismRecipe<?>> extends ComponentSensitiveInputCache<Item, ItemStack, ItemStackIngredient, RECIPE> {
@@ -31,7 +32,7 @@ public class ItemInputCache<RECIPE extends MekanismRecipe<?>> extends ComponentS
                     addInputCache(item.getItem(), recipe);
                 }
             }
-        } else if (input.getCustomIngredient() instanceof CompoundIngredient(List<Ingredient> children)) {
+        } else if (CustomIngredients.getCustom(input) instanceof CompoundIngredient(List<Ingredient> children)) {
             //Special handling for neo's compound ingredient to map all children as best as we can
             // as maybe some of them are simple
             boolean result = false;
@@ -39,7 +40,7 @@ public class ItemInputCache<RECIPE extends MekanismRecipe<?>> extends ComponentS
                 result |= mapIngredient(recipe, child);
             }
             return result;
-        } else if (input.getCustomIngredient() instanceof DataComponentIngredient componentIngredient && componentIngredient.isStrict()) {
+        } else if (CustomIngredients.getCustom(input) instanceof DataComponentIngredient componentIngredient && componentIngredient.isStrict()) {
             //Special handling for neo's NBT Ingredient as it requires an exact component match
             for (ItemStack item : input.getItems()) {
                 //Note: We copy it with a count of one, as we need to copy it anyway to ensure nothing somehow causes our backing map to mutate it,

@@ -23,11 +23,12 @@ public abstract class MekanismSavedData extends SavedData {
             throw new IllegalStateException("Current server is null");
         }
         DimensionDataStorage dataStorage = currentServer.overworld().getDataStorage();
+        //fabric-port: vanilla Factory has no 2-arg convenience ctor; null DataFixTypes skips datafixing like NeoForge's
         return createSavedData(dataStorage, new Factory<>(createFunction, (tag, provider) -> {
             DATA handler = createFunction.get();
             handler.load(tag, provider);
             return handler;
-        }), name);
+        }, null), name);
     }
 
     /**

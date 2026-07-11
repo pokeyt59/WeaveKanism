@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import mekanism.api.functions.ConstantPredicates;
 import mekanism.api.text.ILangEntry;
-import mekanism.client.SpecialColors;
+import mekanism.fabric_shim.client.SpecialColors;
 import mekanism.common.registration.MekanismDeferredHolder;
 import mekanism.common.registration.MekanismDeferredRegister;
 import mekanism.common.registries.MekanismBlocks;
@@ -52,7 +52,8 @@ public class CreativeTabDeferredRegister extends MekanismDeferredRegister<Creati
      */
     public MekanismDeferredHolder<CreativeModeTab, CreativeModeTab> register(String name, ILangEntry title, Holder<Item> icon, UnaryOperator<CreativeModeTab.Builder> operator) {
         return register(name, () -> {
-            CreativeModeTab.Builder builder = CreativeModeTab.builder()
+            //fabric-port: vanilla builder() requires row/column (NeoForge's no-arg overload passes these same values)
+            CreativeModeTab.Builder builder = CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
                   .title(title.translate())
                   .icon(() -> new ItemStack(icon))
                   .withTabFactory(MekanismCreativeTab::new);
@@ -121,7 +122,8 @@ public class CreativeTabDeferredRegister extends MekanismDeferredRegister<Creati
     public static class MekanismCreativeTab extends CreativeModeTab {
 
         protected MekanismCreativeTab(CreativeModeTab.Builder builder) {
-            super(builder);
+            //fabric-port: no Builder-taking super ctor on vanilla; call the (access-widened) canonical one with the builder's state
+            super(builder.row, builder.column, builder.type, builder.displayName, builder.iconGenerator, builder.displayItemsGenerator);
         }
 
         public int getLabelColor() {

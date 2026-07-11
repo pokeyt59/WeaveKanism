@@ -1,35 +1,10 @@
 accessWidener v2 named
 
-accessible field net/minecraft/client/KeyMapping isDown Z
-accessible field net/minecraft/client/gui/Gui overlayMessageTime I
 accessible method net/minecraft/client/gui/components/AbstractWidget render (Lnet/minecraft/client/gui/GuiGraphics;IIF)V
 extendable method net/minecraft/client/gui/components/AbstractWidget render (Lnet/minecraft/client/gui/GuiGraphics;IIF)V
 accessible method net/minecraft/client/gui/components/events/ContainerEventHandler handleArrowNavigation (Lnet/minecraft/client/gui/navigation/FocusNavigationEvent$ArrowNavigation;)Lnet/minecraft/client/gui/ComponentPath;
 accessible method net/minecraft/client/gui/components/events/ContainerEventHandler handleTabNavigation (Lnet/minecraft/client/gui/navigation/FocusNavigationEvent$TabNavigation;)Lnet/minecraft/client/gui/ComponentPath;
-accessible field net/minecraft/client/gui/components/AbstractWidget MIN_SCROLL_PERIOD D
-accessible field net/minecraft/client/gui/components/AbstractWidget PERIOD_PER_SCROLLED_PIXEL D
-accessible field net/minecraft/client/gui/components/EditBox canLoseFocus Z
-accessible field net/minecraft/client/gui/components/EditBox maxLength I
-accessible field net/minecraft/client/gui/components/EditBox highlightPos I
-accessible field net/minecraft/client/gui/components/AbstractWidget tooltip Lnet/minecraft/client/gui/components/WidgetTooltipHolder;
 accessible method net/minecraft/client/gui/components/Tooltip <init> (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Component;)V
-accessible field net/minecraft/client/gui/components/Tooltip cachedTooltip Ljava/util/List;
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen quickCraftingType I
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen quickCraftingButton I
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackEnd Lnet/minecraft/world/inventory/Slot;
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackTime J
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackItem Lnet/minecraft/world/item/ItemStack;
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen lastClickButton I
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen doubleclick Z
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen lastQuickMoved Lnet/minecraft/world/item/ItemStack;
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen skipNextRelease Z
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen lastClickTime J
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen lastClickSlot Lnet/minecraft/world/inventory/Slot;
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen isSplittingStack Z
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen clickedSlot Lnet/minecraft/world/inventory/Slot;
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackStartY I
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackStartX I
-accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen draggingItem Lnet/minecraft/world/item/ItemStack;
 accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen recalculateQuickCraftRemaining ()V
 accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen renderFloatingItem (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V
 accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen findSlot (DD)Lnet/minecraft/world/inventory/Slot;
@@ -37,62 +12,30 @@ accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerSc
 accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen renderSlot (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/inventory/Slot;)V
 accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen checkHotbarMouseClicked (I)V
 accessible class net/minecraft/client/gui/screens/Screen$DeferredTooltipRendering
-accessible field net/minecraft/client/gui/screens/Screen deferredTooltipRendering Lnet/minecraft/client/gui/screens/Screen$DeferredTooltipRendering;
 accessible method net/minecraft/client/gui/screens/Screen renderWithTooltip (Lnet/minecraft/client/gui/GuiGraphics;IIF)V
 extendable method net/minecraft/client/gui/screens/Screen renderWithTooltip (Lnet/minecraft/client/gui/GuiGraphics;IIF)V
-accessible field net/minecraft/client/model/AgeableListModel scaleHead Z
-accessible field net/minecraft/client/model/AgeableListModel babyHeadScale F
-accessible field net/minecraft/client/model/AgeableListModel babyBodyScale F
-accessible field net/minecraft/client/model/AgeableListModel bodyYOffset F
-accessible field net/minecraft/client/model/AgeableListModel babyYHeadOffset F
-accessible field net/minecraft/client/model/AgeableListModel babyZHeadOffset F
-accessible field net/minecraft/client/model/ArmorStandModel shoulderStick Lnet/minecraft/client/model/geom/ModelPart;
-accessible field net/minecraft/client/model/ArmorStandModel rightBodyStick Lnet/minecraft/client/model/geom/ModelPart;
-accessible field net/minecraft/client/model/ArmorStandModel leftBodyStick Lnet/minecraft/client/model/geom/ModelPart;
-accessible field net/minecraft/client/model/PlayerModel cloak Lnet/minecraft/client/model/geom/ModelPart;
-accessible field net/minecraft/client/model/PlayerModel ear Lnet/minecraft/client/model/geom/ModelPart;
-accessible field net/minecraft/client/model/geom/ModelPart cubes Ljava/util/List;
-accessible field net/minecraft/client/model/geom/ModelPart children Ljava/util/Map;
-accessible field net/minecraft/client/model/geom/ModelPart$Cube polygons [Lnet/minecraft/client/model/geom/ModelPart$Polygon;
 accessible class net/minecraft/client/model/geom/ModelPart$Vertex
 accessible class net/minecraft/client/model/geom/ModelPart$Polygon
-accessible field net/minecraft/client/renderer/entity/LivingEntityRenderer layers Ljava/util/List;
-accessible field net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer innerModel Lnet/minecraft/client/model/HumanoidModel;
-accessible field net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer outerModel Lnet/minecraft/client/model/HumanoidModel;
 accessible method net/minecraft/client/renderer/LevelRenderer renderHitOutline (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Lnet/minecraft/world/entity/Entity;DDDLnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
 accessible method net/minecraft/client/resources/model/ModelBakery getModel (Lnet/minecraft/resources/ResourceLocation;)Lnet/minecraft/client/resources/model/UnbakedModel;
 accessible class net/minecraft/client/resources/model/ModelBakery$ModelBakerImpl
 accessible method net/minecraft/client/resources/model/ModelBakery$ModelBakerImpl <init> (Lnet/minecraft/client/resources/model/ModelBakery;Lnet/minecraft/client/resources/model/ModelBakery$TextureGetter;Lnet/minecraft/client/resources/model/ModelResourceLocation;)V
-accessible field net/minecraft/client/sounds/SoundManager soundEngine Lnet/minecraft/client/sounds/SoundEngine;
-accessible field net/minecraft/client/sounds/SoundEngine listeners Ljava/util/List;
-accessible field net/minecraft/client/sounds/SoundEngine instanceToChannel Ljava/util/Map;
-accessible field net/minecraft/server/network/ServerGamePacketListenerImpl aboveGroundTickCount I
-accessible field net/minecraft/world/effect/MobEffectInstance hiddenEffect Lnet/minecraft/world/effect/MobEffectInstance;
 accessible method net/minecraft/world/effect/MobEffectInstance setDetailsFrom (Lnet/minecraft/world/effect/MobEffectInstance;)V
 accessible method net/minecraft/world/effect/MobEffectInstance tickDownDuration ()I
 accessible method net/minecraft/world/entity/Entity isInRain ()Z
-accessible field net/minecraft/world/entity/LivingEntity effectsDirty Z
 accessible method net/minecraft/world/entity/LivingEntity refreshDirtyAttributes ()V
 accessible method net/minecraft/world/entity/LivingEntity hurtCurrentlyUsedShield (F)V
 accessible method net/minecraft/world/entity/player/Player hurtCurrentlyUsedShield (F)V
 accessible method net/minecraft/world/entity/player/Player playStepSound (Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V
-accessible field net/minecraft/world/entity/item/ItemEntity age I
 accessible method net/minecraft/world/entity/Entity setLevel (Lnet/minecraft/world/level/Level;)V
 accessible method net/minecraft/world/inventory/AbstractContainerMenu synchronizeCarriedToRemote ()V
 accessible method net/minecraft/world/level/Explosion addOrAppendStack (Ljava/util/List;Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/core/BlockPos;)V
 accessible method net/minecraft/world/level/biome/Biome getTemperature (Lnet/minecraft/core/BlockPos;)F
 accessible class net/minecraft/world/level/block/entity/BlockEntity$ComponentHelper
 accessible class net/minecraft/world/level/block/entity/BlockEntity$DataComponentInput
-accessible field net/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase destroySpeed F
-accessible field net/minecraft/world/level/block/state/BlockBehaviour$Properties lightEmission Ljava/util/function/ToIntFunction;
-accessible field net/minecraft/world/level/chunk/ChunkGenerator featuresPerStep Ljava/util/function/Supplier;
 accessible method net/minecraft/world/level/levelgen/placement/PlacedFeature placeWithContext (Lnet/minecraft/world/level/levelgen/placement/PlacementContext;Lnet/minecraft/util/RandomSource;Lnet/minecraft/core/BlockPos;)Z
-accessible field net/minecraft/world/level/material/MapColor MATERIAL_COLORS [Lnet/minecraft/world/level/material/MapColor;
 accessible method net/minecraft/world/phys/AABB getDirection (Lnet/minecraft/world/phys/AABB;Lnet/minecraft/world/phys/Vec3;[DLnet/minecraft/core/Direction;DDD)Lnet/minecraft/core/Direction;
-accessible field net/minecraft/server/level/ChunkMap playerMap Lnet/minecraft/server/level/PlayerMap;
 accessible method net/minecraft/server/level/ChunkMap isChunkTracked (Lnet/minecraft/server/level/ServerPlayer;II)Z
-accessible field net/minecraft/client/gui/Gui subtitleOverlay Lnet/minecraft/client/gui/components/SubtitleOverlay;
-accessible field net/minecraft/client/gui/components/SubtitleOverlay audibleSubtitles Ljava/util/List;
 accessible class net/minecraft/client/gui/components/SubtitleOverlay$Subtitle
 
 # --- port-specific entries from fabric-port/extra.aw (NeoForge-AT'd vanilla members) ---
@@ -106,3 +49,97 @@ accessible class net/minecraft/world/item/crafting/Ingredient$TagValue
 accessible class net/minecraft/world/item/crafting/Ingredient$ItemValue
 accessible field net/minecraft/world/item/crafting/Ingredient values [Lnet/minecraft/world/item/crafting/Ingredient$Value;
 accessible method net/minecraft/world/item/crafting/Ingredient fromValues (Ljava/util/stream/Stream;)Lnet/minecraft/world/item/crafting/Ingredient;
+# Step 6 residue: vanilla members NeoForge widens that Mekanism references directly.
+# Player.closeContainer (tile GUI close), SimpleParticleType(boolean) ctor (particle registration),
+# BucketItem.content (electric pump reads the bucket's fluid), CommandSourceStack.source,
+# ItemStackLinkedSet.TYPE_AND_TAG (QIO dedup strategy), ResourceLocation.validNamespaceChar.
+accessible method net/minecraft/world/entity/player/Player closeContainer ()V
+accessible method net/minecraft/core/particles/SimpleParticleType <init> (Z)V
+accessible field net/minecraft/world/item/BucketItem content Lnet/minecraft/world/level/material/Fluid;
+accessible field net/minecraft/commands/CommandSourceStack source Lnet/minecraft/commands/CommandSource;
+accessible field net/minecraft/world/item/ItemStackLinkedSet TYPE_AND_TAG Lit/unimi/dsi/fastutil/Hash$Strategy;
+accessible method net/minecraft/resources/ResourceLocation validNamespaceChar (C)Z
+# Private vanilla fields Mekanism reads directly (NeoForge widens these).
+accessible field net/minecraft/world/effect/MobEffectInstance hiddenEffect Lnet/minecraft/world/effect/MobEffectInstance;
+accessible field net/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase destroySpeed F
+accessible field net/minecraft/server/network/ServerGamePacketListenerImpl aboveGroundTickCount I
+accessible field net/minecraft/server/level/ChunkMap playerMap Lnet/minecraft/server/level/PlayerMap;
+accessible field net/minecraft/world/level/chunk/ChunkGenerator featuresPerStep Ljava/util/function/Supplier;
+accessible field net/minecraft/world/entity/LivingEntity effectsDirty Z
+accessible field net/minecraft/world/level/material/MapColor MATERIAL_COLORS [Lnet/minecraft/world/level/material/MapColor;
+# Step 6 residue batch 3: BlockStateHelper reads Properties.lightEmission, WrappedShapedRecipe reads
+# ShapedRecipe.pattern, TileEntitySolarNeutronActivator reads Biome.climateSettings (no biome
+# modifiers on the port, base == modified), and MekanismCreativeTab subclasses CreativeModeTab via
+# the canonical ctor + Builder state reads (NeoForge patches a protected Builder ctor instead).
+accessible field net/minecraft/world/level/block/state/BlockBehaviour$Properties lightEmission Ljava/util/function/ToIntFunction;
+accessible field net/minecraft/world/item/crafting/ShapedRecipe pattern Lnet/minecraft/world/item/crafting/ShapedRecipePattern;
+accessible class net/minecraft/world/level/biome/Biome$ClimateSettings
+accessible field net/minecraft/world/level/biome/Biome climateSettings Lnet/minecraft/world/level/biome/Biome$ClimateSettings;
+accessible method net/minecraft/world/item/CreativeModeTab <init> (Lnet/minecraft/world/item/CreativeModeTab$Row;ILnet/minecraft/world/item/CreativeModeTab$Type;Lnet/minecraft/network/chat/Component;Ljava/util/function/Supplier;Lnet/minecraft/world/item/CreativeModeTab$DisplayItemsGenerator;)V
+accessible field net/minecraft/world/item/CreativeModeTab$Builder row Lnet/minecraft/world/item/CreativeModeTab$Row;
+accessible field net/minecraft/world/item/CreativeModeTab$Builder column I
+accessible field net/minecraft/world/item/CreativeModeTab$Builder displayName Lnet/minecraft/network/chat/Component;
+accessible field net/minecraft/world/item/CreativeModeTab$Builder iconGenerator Ljava/util/function/Supplier;
+accessible field net/minecraft/world/item/CreativeModeTab$Builder displayItemsGenerator Lnet/minecraft/world/item/CreativeModeTab$DisplayItemsGenerator;
+accessible field net/minecraft/world/item/CreativeModeTab$Builder type Lnet/minecraft/world/item/CreativeModeTab$Type;
+# SyncAllSecurityData (config-phase task) completes itself on the listener impl.
+accessible method net/minecraft/server/network/ServerConfigurationPacketListenerImpl finishCurrentTask (Lnet/minecraft/server/network/ConfigurationTask$Type;)V
+
+# --- fields awaiting descriptor resolution (run with --mc-jar or via generateAccessWidener) ---
+# TODO(descriptor): accessible field net/minecraft/client/KeyMapping isDown <desc>   (from: protected net.minecraft.client.KeyMapping isDown)
+# TODO(descriptor): accessible field net/minecraft/client/gui/Gui overlayMessageTime <desc>   (from: public net.minecraft.client.gui.Gui overlayMessageTime)
+# TODO(descriptor): accessible field net/minecraft/client/gui/components/AbstractWidget MIN_SCROLL_PERIOD <desc>   (from: public net.minecraft.client.gui.components.AbstractWidget MIN_SCROLL_PERIOD)
+# TODO(descriptor): accessible field net/minecraft/client/gui/components/AbstractWidget PERIOD_PER_SCROLLED_PIXEL <desc>   (from: public net.minecraft.client.gui.components.AbstractWidget PERIOD_PER_SCROLLED_PIXEL)
+# TODO(descriptor): accessible field net/minecraft/client/gui/components/EditBox canLoseFocus <desc>   (from: public net.minecraft.client.gui.components.EditBox canLoseFocus)
+# TODO(descriptor): accessible field net/minecraft/client/gui/components/EditBox maxLength <desc>   (from: public net.minecraft.client.gui.components.EditBox maxLength)
+# TODO(descriptor): accessible field net/minecraft/client/gui/components/EditBox highlightPos <desc>   (from: public net.minecraft.client.gui.components.EditBox highlightPos)
+# TODO(descriptor): accessible field net/minecraft/client/gui/components/AbstractWidget tooltip <desc>   (from: public net.minecraft.client.gui.components.AbstractWidget tooltip)
+# TODO(descriptor): accessible field net/minecraft/client/gui/components/Tooltip cachedTooltip <desc>   (from: protected net.minecraft.client.gui.components.Tooltip cachedTooltip)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen quickCraftingType <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen quickCraftingType)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen quickCraftingButton <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen quickCraftingButton)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackEnd <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen snapbackEnd)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackTime <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen snapbackTime)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackItem <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen snapbackItem)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen lastClickButton <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen lastClickButton)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen doubleclick <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen doubleclick)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen lastQuickMoved <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen lastQuickMoved)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen skipNextRelease <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen skipNextRelease)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen lastClickTime <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen lastClickTime)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen lastClickSlot <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen lastClickSlot)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen isSplittingStack <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen isSplittingStack)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen clickedSlot <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen clickedSlot)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackStartY <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen snapbackStartY)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen snapbackStartX <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen snapbackStartX)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen draggingItem <desc>   (from: protected net.minecraft.client.gui.screens.inventory.AbstractContainerScreen draggingItem)
+# TODO(descriptor): accessible field net/minecraft/client/gui/screens/Screen deferredTooltipRendering <desc>   (from: public net.minecraft.client.gui.screens.Screen deferredTooltipRendering)
+# TODO(descriptor): accessible field net/minecraft/client/model/AgeableListModel scaleHead <desc>   (from: public net.minecraft.client.model.AgeableListModel scaleHead)
+# TODO(descriptor): accessible field net/minecraft/client/model/AgeableListModel babyHeadScale <desc>   (from: public net.minecraft.client.model.AgeableListModel babyHeadScale)
+# TODO(descriptor): accessible field net/minecraft/client/model/AgeableListModel babyBodyScale <desc>   (from: public net.minecraft.client.model.AgeableListModel babyBodyScale)
+# TODO(descriptor): accessible field net/minecraft/client/model/AgeableListModel bodyYOffset <desc>   (from: public net.minecraft.client.model.AgeableListModel bodyYOffset)
+# TODO(descriptor): accessible field net/minecraft/client/model/AgeableListModel babyYHeadOffset <desc>   (from: public net.minecraft.client.model.AgeableListModel babyYHeadOffset)
+# TODO(descriptor): accessible field net/minecraft/client/model/AgeableListModel babyZHeadOffset <desc>   (from: public net.minecraft.client.model.AgeableListModel babyZHeadOffset)
+# TODO(descriptor): accessible field net/minecraft/client/model/ArmorStandModel shoulderStick <desc>   (from: public net.minecraft.client.model.ArmorStandModel shoulderStick)
+# TODO(descriptor): accessible field net/minecraft/client/model/ArmorStandModel rightBodyStick <desc>   (from: public net.minecraft.client.model.ArmorStandModel rightBodyStick)
+# TODO(descriptor): accessible field net/minecraft/client/model/ArmorStandModel leftBodyStick <desc>   (from: public net.minecraft.client.model.ArmorStandModel leftBodyStick)
+# TODO(descriptor): accessible field net/minecraft/client/model/PlayerModel cloak <desc>   (from: public net.minecraft.client.model.PlayerModel cloak)
+# TODO(descriptor): accessible field net/minecraft/client/model/PlayerModel ear <desc>   (from: public net.minecraft.client.model.PlayerModel ear)
+# TODO(descriptor): accessible field net/minecraft/client/model/geom/ModelPart cubes <desc>   (from: public net.minecraft.client.model.geom.ModelPart cubes)
+# TODO(descriptor): accessible field net/minecraft/client/model/geom/ModelPart children <desc>   (from: public net.minecraft.client.model.geom.ModelPart children)
+# TODO(descriptor): accessible field net/minecraft/client/model/geom/ModelPart$Cube polygons <desc>   (from: public net.minecraft.client.model.geom.ModelPart$Cube polygons)
+# TODO(descriptor): accessible field net/minecraft/client/renderer/entity/LivingEntityRenderer layers <desc>   (from: public net.minecraft.client.renderer.entity.LivingEntityRenderer layers)
+# TODO(descriptor): accessible field net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer innerModel <desc>   (from: public net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer innerModel)
+# TODO(descriptor): accessible field net/minecraft/client/renderer/entity/layers/HumanoidArmorLayer outerModel <desc>   (from: public net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer outerModel)
+# TODO(descriptor): accessible field net/minecraft/client/sounds/SoundManager soundEngine <desc>   (from: public net.minecraft.client.sounds.SoundManager soundEngine)
+# TODO(descriptor): accessible field net/minecraft/client/sounds/SoundEngine listeners <desc>   (from: public net.minecraft.client.sounds.SoundEngine listeners)
+# TODO(descriptor): accessible field net/minecraft/client/sounds/SoundEngine instanceToChannel <desc>   (from: public net.minecraft.client.sounds.SoundEngine instanceToChannel)
+# TODO(descriptor): accessible field net/minecraft/server/network/ServerGamePacketListenerImpl aboveGroundTickCount <desc>   (from: public net.minecraft.server.network.ServerGamePacketListenerImpl aboveGroundTickCount)
+# TODO(descriptor): accessible field net/minecraft/world/effect/MobEffectInstance hiddenEffect <desc>   (from: public net.minecraft.world.effect.MobEffectInstance hiddenEffect)
+# TODO(descriptor): accessible field net/minecraft/world/entity/LivingEntity effectsDirty <desc>   (from: public net.minecraft.world.entity.LivingEntity effectsDirty)
+# TODO(descriptor): accessible field net/minecraft/world/entity/item/ItemEntity age <desc>   (from: public net.minecraft.world.entity.item.ItemEntity age)
+# TODO(descriptor): accessible field net/minecraft/world/level/block/state/BlockBehaviour$BlockStateBase destroySpeed <desc>   (from: public net.minecraft.world.level.block.state.BlockBehaviour$BlockStateBase destroySpeed)
+# TODO(descriptor): accessible field net/minecraft/world/level/block/state/BlockBehaviour$Properties lightEmission <desc>   (from: public net.minecraft.world.level.block.state.BlockBehaviour$Properties lightEmission)
+# TODO(descriptor): accessible field net/minecraft/world/level/chunk/ChunkGenerator featuresPerStep <desc>   (from: public net.minecraft.world.level.chunk.ChunkGenerator featuresPerStep)
+# TODO(descriptor): accessible field net/minecraft/world/level/material/MapColor MATERIAL_COLORS <desc>   (from: public net.minecraft.world.level.material.MapColor MATERIAL_COLORS)
+# TODO(descriptor): accessible field net/minecraft/server/level/ChunkMap playerMap <desc>   (from: public net.minecraft.server.level.ChunkMap playerMap)
+# TODO(descriptor): accessible field net/minecraft/client/gui/Gui subtitleOverlay <desc>   (from: public net.minecraft.client.gui.Gui subtitleOverlay)
+# TODO(descriptor): accessible field net/minecraft/client/gui/components/SubtitleOverlay audibleSubtitles <desc>   (from: public net.minecraft.client.gui.components.SubtitleOverlay audibleSubtitles)

@@ -88,7 +88,8 @@ public class BlockBase<TYPE extends BlockType> extends BlockMekanism implements 
 
     public float getExplosionResistance(@NotNull BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull Explosion explosion) {
         AttributeCustomResistance customResistance = type.get(AttributeCustomResistance.class);
-        return customResistance == null ? super.getExplosionResistance(state, world, pos, explosion) : customResistance.resistance();
+        //fabric-port: super can't reach the injected NeoForge default; inline its vanilla delegation
+        return customResistance == null ? getExplosionResistance() : customResistance.resistance();
     }
 
     @Override
