@@ -54,6 +54,8 @@ public class MekanismFabric implements ModInitializer {
         ShimChunkManager.fireRegistration(ShimBuses.MOD_BUS);
         //Capability provider registration (on Fabric this registers straight into the API lookups)
         ShimBuses.MOD_BUS.post(new mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent());
+        //Cross-ecosystem consume bridging: shim lookups fall back to Fabric-standard storages
+        mekanism.fabric_shim.transfer.TransferFallbacks.init();
         //Payload (packet) channel + codec registration; serverbound receivers go live here, clientbound
         //receivers are parked for the Phase 4 client entry point (see PendingClientReceivers)
         ShimBuses.MOD_BUS.post(new mekanism.fabric_shim.network.event.RegisterPayloadHandlersEvent());

@@ -2,29 +2,28 @@ package mekanism.fabric_shim.capabilities;
 
 import java.util.Objects;
 import java.util.function.BooleanSupplier;
+import net.fabricmc.fabric.api.lookup.v1.block.BlockApiCache;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Same surface as net.neoforged.neoforge.capabilities.BlockCapabilityCache.
- *
- * <p>Phase 1f implementation: every {@link #getCapability()} re-queries the lookup (Fabric caches
- * are pull-based; there is no push invalidation). The validity/invalidation parameters are
- * retained for source compatibility. Phase 2 replaces the body with a Fabric BlockApiCache +
- * neighbor-changed eviction and benchmarks transmitter networks — see transfer-bridge.md.
+ * Same surface as net.neoforged.neoforge.capabilities.BlockCapabilityCache, backed by Fabric's
+ * {@link BlockApiCache}: the block-entity lookup is cached and kept current by Fabric on BE
+ * load/unload, so repeat neighbor queries skip the chunk/BE resolution. Fabric caches are
+ * pull-based — the validity/invalidation parameters are retained for source compatibility but
+ * never fire; NeoForge callers use them to drop the cache object itself, which is unnecessary
+ * here (see transfer-bridge.md; benchmark transmitter networks before optimizing further).
  */
 public final class BlockCapabilityCache<T, C> {
 
+    private final BlockApiCache<T, C> cache;
     private final BlockCapability<T, C> capability;
-    private final ServerLevel level;
-    private final BlockPos pos;
     private final C context;
 
     private BlockCapabilityCache(BlockCapability<T, C> capability, ServerLevel level, BlockPos pos, C context) {
         this.capability = Objects.requireNonNull(capability);
-        this.level = Objects.requireNonNull(level);
-        this.pos = pos.immutable();
+        this.cache = BlockApiCache.create(capability.lookup(), Objects.requireNonNull(level), pos);
         this.context = context;
     }
 
@@ -38,19 +37,23 @@ public final class BlockCapabilityCache<T, C> {
     }
 
     public ServerLevel level() {
-        return level;
+        return cache.getWorld();
     }
 
     public BlockPos pos() {
-        return pos;
+        return cache.getPos();
     }
 
     public C context() {
         return context;
     }
 
+    public BlockCapability<T, C> capability() {
+        return capability;
+    }
+
     @Nullable
     public T getCapability() {
-        return capability.getCapability(level, pos, null, null, context);
+        return cache.find(context);
     }
 }
