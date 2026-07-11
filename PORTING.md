@@ -149,6 +149,19 @@ textually identical; no Yarn remap.
         StorageFluidHandler; 19 tests in `src/fabric_test`, run via `gradlew test`).
         Design locked in `fabric-port/design/transfer-bridge.md` — read it before any
         Phase 2 work; item/energy adapters follow the same patterns.
+  - [x] 2-item/energy (2026-07-11): InventorySlotStorage (unchecked setter as ctor
+        Consumer), StorageItemHandler (per-slot honesty: untargetable views reject),
+        EnergyContainerStorage (J↔unit via IEnergyConversion, whole-unit clamping mirrors
+        ForgeEnergyIntegration), StorageEnergyHandler (no unit math; Mekanism's own
+        ForgeStrictEnergyHandler converts on top). 40 guardrail tests total.
+  - [x] 2-consume (2026-07-11): TransferFallbacks — shim neoforge:* BLOCK lookups fall
+        back to FluidStorage.SIDED / ItemStorage.SIDED / team-reborn EnergyStorage.SIDED,
+        wrapped in the Storage*Handler adapters; BlockCapabilityCache now backed by
+        Fabric BlockApiCache. Mekanism's own providers (side-aware proxies) have been
+        registering live via TileEntityTypeDeferredRegister/ItemRegistryObject since 1f.
+  - [ ] 2-expose: Mekanism containers on the Fabric-standard lookups (so other Fabric
+        mods see Mekanism machines). OPEN design decision (side-config fidelity vs the
+        doc's literal per-container wrap) — stop-and-ask rule applies, see task notes.
 - [ ] Phase 3: events + networking
 - [ ] Phase 4: client (models, renderers, shaders)
 - [ ] Phase 5: integrations + API cleanup
