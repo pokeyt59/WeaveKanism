@@ -51,7 +51,11 @@ Then repair the seams this cuts:
 | 5.1 — FluidType + BaseFlowingFluid (+ getFluidType via injection) | DONE (ecdca2d0d8 + bb0840d34a; FLUID_TYPES custom registry; Fluid/FluidState/Entity injected getFluidType/getMaxHeightFluidType) | 1,328 |
 | 5.3 — networking surface (funnel-shaped; codecs + serverbound receivers live, clientbound/config parked) | DONE (a1cd700c1a + 9a65cdcc0d; RegisterPayloadHandlersEvent posted from bootstrap) | 982 |
 | 5.4 — remaining game-bus event classes (compile-only; firing Phase 3) | DONE (11e7f04701 + 62c506cea4; 20 event shims + ClientHolidayInfo excluded) | 834 |
-| 6 — residue (openMenu, invalidateCapabilities args, ListTag(int), getData sites, seams) | pending | target 0 |
+| 6 — residue (openMenu, invalidateCapabilities args, ListTag(int), getData sites, seams) | DONE (five [port]+[scripted] batches ending b9ecde707f/7286a4fba8; trail 834→…→82→0) | **0** |
+| final — srcDirs permanent, mod construction live, boot | DONE (578d7e1754; server "Done (3.460s)!", tests green; boot fixes: ModConfigEvent concrete, EntityEvent abstract, FluidIngredient clinit order) | 0 |
+
+**PHASE 1F COMPLETE 2026-07-11.** Definition of done below fully met (config TOMLs written,
+empty-registry errors gone, registration lines present, census log not committed).
 
 Remaining top clusters at 2,166: FluidType ~250, capabilities (BlockCapabilityCache 124 +
 RegisterCapabilitiesEvent + ICapabilityProvider + pkg ~330 incl. invalidateCapabilities 32),

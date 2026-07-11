@@ -95,10 +95,16 @@ textually identical; no Yarn remap.
         ModConfigEvents (bridge only Mekanism's own container — see ModContainer#bridgeConfigEvents).
         AttachmentType builder shim done (Fabric data-attachment wiring lands with Phase 3 usage
         sites). MekanismSavedData already fixed via shim ServerLifecycleHooks.
-  - [ ] 1f: main source set compiling (the long tail; overlaps Phases 2-3). Enable
-        'src/main/java' in build.gradle srcDirs, work the compile-error clusters down using the
-        pattern table below + new shims; keep the srcDirs change uncommitted until green.
-        Then uncomment the mod-construction block in MekanismFabric.onInitialize.
+  - [x] 1f: **src/main compiles and the mod constructs on Fabric** (census 9,060 errors
+        2026-07-06 → 0 on 2026-07-11; plan + step log in fabric-port/design/main-compile-plan.md).
+        src/main/java + src/fabric_client_stub/java + src/main/resources are in the default build
+        (ServiceLoader impls under META-INF/services made the API's service lookups work).
+        MekanismFabric constructs ModContainer → bridgeConfigEvents → `new Mekanism(...)` like
+        FML's @Mod ctor. Dev-server verified 2026-07-11: "Done (3.460s)!", world loads, zero
+        `neoforge:*` empty-registry errors, all 8 config TOMLs written under run/config/Mekanism/.
+        Boot-surfaced shim rules (bus is strict about event-class shape — see gotchas):
+        ModConfigEvent must be concrete like FML's; EntityEvent must be abstract like NeoForge's;
+        FluidIngredient's built-in type registration must run after its codec fields initialize.
 
 ### Phase 1 shim semantics deviations (revisit in later phases)
 
@@ -116,8 +122,13 @@ textually identical; no Yarn remap.
 | `RegisterConfigurationTasksEvent` is not posted (NeoForge fires it per connecting client during config); `SyncAllSecurityData` is therefore never sent during the configuration phase | network/event shim + bootstrap | Phase 3 (drive config tasks off `ServerConfigurationConnectionEvents`) |
 | Game-bus event classes (tick / living / entity / chunk families + `BuildCreativeModeTabContents`, `OnDatapackSync`, `ModifyDefaultComponents`, `RegisterSpawnPlacements`, `PlayerInteractEvent`) are compile-only — nothing posts them, so every `@SubscribeEvent` handler on them is inert (ticks, damage hooks, creative-tab population, spawn placements, default-component patches all currently do nothing) | event shims (`mekanism.fabric_shim.event.*`) | Phase 3 (bridge each to its Fabric API event — full list in hook-wiring-checklist.md) |
 | `common/base/holiday/ClientHolidayInfo.java` excluded from compile (client-only holiday renderer living in the common package; depends on excluded client render classes) | build.gradle 1f deferrals | Phase 4 (client) |
-| Empty `neoforge:*` shim registries log "Registry was empty after loading" errors | NeoForgeRegistries | self-resolves when main's registrations land (1f) |
-| ModConfigEvent.Loading may fire during registerConfigs (FCAP loads at registration), before Mekanism's listener subscribes — harmless: caches are lazy; listener matters for reloads | ModContainer shim | verify during 1f boot |
+| ~~Empty `neoforge:*` shim registries log "Registry was empty after loading" errors~~ resolved: 1f boot shows zero empty-registry errors | NeoForgeRegistries | done (verified 2026-07-11) |
+| ModConfigEvent.Loading may fire during registerConfigs (FCAP loads at registration), before Mekanism's listener subscribes — harmless: caches are lazy; listener matters for reloads. 1f boot: configs load + all TOMLs written, no related errors | ModContainer shim | verified 2026-07-11 |
+| `CreativeModeTab.Builder.withSearchBar()`/`withTabFactory()` are injected no-ops: tabs are plain CreativeModeTab instances (never MekanismCreativeTab), so the search bar and custom label color are absent | MekCreativeModeTabBuilderExt | Phase 4 (mixin Builder.build() to honor the factory + search bar) |
+| FluidBucketWrapper has no milk special-case (milk has no registered fluid on the port); milk buckets read as an empty fluid handler | fluids/capability/wrappers shim | Phase 2 (with the NeoForgeMod.MILK audit above) |
+| Registry aliases (DeferredRegister#addAlias — mekanism:gases→chemicals et al for data components + items) are collected but not applied; old-world data under alias ids won't resolve | DeferredRegister shim (logs a WARN at boot) | Phase 3 (registry alias support) |
+| Datapack registry configurators (RobitSkin's RegistryBuilder tweaks) are ignored by DataPackRegistryEvent (logs a WARN at boot) | DataPackRegistryEvent shim | Phase 3 if skin registration misbehaves |
+| `mekanism:incorrect_for_disassembler`/`incorrect_for_meka_tool` block tags missing at boot (datagen output not yet imported) | resources | Phase 6 (datagen import) |
 
 ### Hand-edit patterns for NeoForge patches to vanilla classes (recur in main)
 

@@ -25,7 +25,7 @@ set of residuals. This means:
 First milestone: Fabric dev client boots, world loads, a Metallurgic Infuser + Basic Energy Cube
 can be placed, opened, and store/transfer energy.
 
-## 2. Current state (2026-07-06) and TODO
+## 2. Current state (2026-07-11) and TODO
 
 Done (see `PORTING.md` "Port status" — that section is the source of truth, keep it updated):
 
@@ -36,25 +36,25 @@ Done (see `PORTING.md` "Port status" — that section is the source of truth, ke
 - Phase 1 c/d complete: FML shims (Mod/ModContainer/FMLPaths/ModConfigEvent/…), config via Forge
   Config API Port, game-event glue (`ShimGameEvents`), chunk tickets, attachment-type surface.
   `MekanismFabric.onInitialize` drives FML's full lifecycle order.
+- **Phase 1f complete (2026-07-11): all of `src/main` compiles and is in the default build;
+  mod construction is live; the dev server boots to `Done` with a world, zero empty-registry
+  errors, and all config TOMLs written.** §4 below is the (historical) workflow that got there.
 
 TODO, in order:
 
-1. **Phase 1f — make `src/main` compile** (~470 files still import `net.neoforged.*`). This is
-   the current task. Workflow in §4 below. When it compiles, uncomment the mod-construction block
-   in `src/fabric/java/mekanism/fabric/MekanismFabric.java`.
-2. **Phase 2 — capabilities + transfer/energy bridge** (critical path): the fluid bridge CORE IS
+1. **Phase 2 — capabilities + transfer/energy bridge** (critical path): the fluid bridge CORE IS
    ALREADY IMPLEMENTED AND TESTED (`mekanism.fabric_shim.transfer.*`, suite in
    `src/fabric_test`). Remaining: item/energy adapters (follow the identical patterns), the 11
    `RegisterCapabilitiesEvent` sites via Fabric API Lookup, `BlockCapabilityCache`. **Read
    `fabric-port/design/transfer-bridge.md` first — it locks the design; do not redesign.**
-3. **Phase 3 — events + networking**: `PacketHandler` funnel → Fabric play networking (57
+2. **Phase 3 — events + networking**: `PacketHandler` funnel → Fabric play networking (57
    packets untouched); remaining event glue + small mixins (`ChunkTicketLevelUpdatedEvent`);
    data-map JSON loader; registry alias support; chunk-ticket owner persistence; attachment
    data access wiring (`getData`/`setData` sites) over `fabric-data-attachment-api-v1`.
-4. **Phase 4 — client**: model loaders (OBJ via Porting Lib), BEWLR → `BuiltinItemRendererRegistry`,
+3. **Phase 4 — client**: model loaders (OBJ via Porting Lib), BEWLR → `BuiltinItemRendererRegistry`,
    core shaders, `FluidRenderHandlerRegistry`, keybinds, HUD. Entry point
    `mekanism.fabric.client.MekanismFabricClient` (declared in fabric.mod.json, not written yet).
-5. **Phase 5 — integrations** (JEI/EMI compileOnly deps already wired), **Phase 6 — datagen
+4. **Phase 5 — integrations** (JEI/EMI compileOnly deps already wired), **Phase 6 — datagen
    import + gametests + parity QA**. Then the 1.20.1 track (see PORTING.md branch model).
 
 ## 3. Golden rules
@@ -101,7 +101,8 @@ Ground rules while grinding:
 - Compile: `.\gradlew compileJava --console=plain -q`
 - Dev server (headless check): `.\gradlew runServer`, watch `run/` logs for `Done (` and for
   `ERROR`/`Exception`. Kill it after the check — it doesn't exit on its own. Known-benign noise:
-  FCAP night-config mixin WARN; "Registry 'neoforge:…' was empty" until 1f lands.
+  FCAP night-config mixin WARN; "No data fixer registered for flame/robit"; registry-alias +
+  robit_skin-configurator WARNs (Phase 3).
 - Dev client (needs user, GUI): `.\gradlew runClient`.
 - Transforms: `python fabric-port/remap.py`, `python fabric-port/at2aw.py`.
 
@@ -153,3 +154,10 @@ lifecycle/registration touched → `[port]`/`[scripted]` split correct → PORTI
   if AW regeneration drops `fabric-port/extra.aw` entries, api stops compiling.
 - Phase 1 shim semantic deviations are tabled in PORTING.md — check that table before debugging
   "missing" behavior (milk fluid, swim-speed attribute, chunk ticket validation are known gaps).
+- The neoforged bus validates event-class shape at listener registration: a listener can't target
+  an abstract event class, and an abstract event class must have an all-abstract superclass chain
+  up to `Event`. When shimming an event, mirror FML/NeoForge's `abstract` keyword exactly (FML's
+  `ModConfigEvent` is concrete; NeoForge's `EntityEvent` is abstract) — javap the real jar.
+- Shim classes that register their own subclass types from a `static {}` block (FluidIngredient,
+  CustomIngredients-style) must put that block AFTER every static codec field: subclass `<clinit>`
+  re-enters the half-initialized parent and reads null fields (boot-verified failure, not compile).
