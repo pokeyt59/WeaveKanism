@@ -3,7 +3,7 @@ package mekanism.client.gui.element.tab;
 import java.util.EnumMap;
 import java.util.Map;
 import mekanism.api.text.TextComponentUtil;
-import mekanism.client.SpecialColors;
+import mekanism.fabric_shim.client.SpecialColors;
 import mekanism.client.gui.IGuiWrapper;
 import mekanism.client.gui.element.GuiInsetElement;
 import mekanism.client.gui.element.window.GuiSideConfiguration;

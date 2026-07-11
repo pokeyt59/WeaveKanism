@@ -6,7 +6,7 @@ import java.util.function.IntSupplier;
 import java.util.function.UnaryOperator;
 import mekanism.api.functions.CharPredicate;
 import mekanism.api.functions.CharUnaryOperator;
-import mekanism.client.SpecialColors;
+import mekanism.fabric_shim.client.SpecialColors;
 import mekanism.client.gui.IGuiWrapper;
 import mekanism.client.gui.element.GuiElement;
 import mekanism.client.gui.element.button.MekanismImageButton;

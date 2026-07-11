@@ -20,7 +20,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.material.Fluid;
 import mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent;
 import mekanism.fabric_shim.fluids.FluidType;
-import net.neoforged.neoforge.fluids.capability.wrappers.FluidBucketWrapper;
+import mekanism.fabric_shim.fluids.capability.wrappers.FluidBucketWrapper;
 import org.jetbrains.annotations.NotNull;
 
 public class ItemNutritionalPasteBucket extends BucketItem implements ICapabilityAware {

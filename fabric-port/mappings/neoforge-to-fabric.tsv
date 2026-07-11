@@ -244,3 +244,6 @@ net.neoforged.neoforge.capabilities.BlockCapabilityCache	mekanism.fabric_shim.ca
 net.neoforged.neoforge.capabilities.ICapabilityProvider	mekanism.fabric_shim.capabilities.ICapabilityProvider
 net.neoforged.neoforge.capabilities.IBlockCapabilityProvider	mekanism.fabric_shim.capabilities.IBlockCapabilityProvider
 net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener	mekanism.fabric_shim.capabilities.ICapabilityInvalidationListener
+mekanism.client.SpecialColors	mekanism.fabric_shim.client.SpecialColors
+net.neoforged.fml.util.ObfuscationReflectionHelper	mekanism.fabric_shim.fml.util.ObfuscationReflectionHelper
+net.neoforged.neoforge.fluids.capability.wrappers.FluidBucketWrapper	mekanism.fabric_shim.fluids.capability.wrappers.FluidBucketWrapper

@@ -1,7 +1,7 @@
 package mekanism.client.gui.element.tab;
 
 import mekanism.api.text.EnumColor;
-import mekanism.client.SpecialColors;
+import mekanism.fabric_shim.client.SpecialColors;
 import mekanism.client.gui.IGuiWrapper;
 import mekanism.client.gui.element.GuiInsetElement;
 import mekanism.client.gui.tooltip.TooltipUtils;

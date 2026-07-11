@@ -5,8 +5,8 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.function.UnaryOperator;
 import mekanism.common.Mekanism;
-import net.neoforged.fml.util.ObfuscationReflectionHelper;
-import net.neoforged.fml.util.ObfuscationReflectionHelper.UnableToFindFieldException;
+import mekanism.fabric_shim.fml.util.ObfuscationReflectionHelper;
+import mekanism.fabric_shim.fml.util.ObfuscationReflectionHelper.UnableToFindFieldException;
 
 /**
  * Helper  to make reflecting and grabbing the value of fields in a cached way easier

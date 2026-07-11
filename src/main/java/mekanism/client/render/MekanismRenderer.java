@@ -15,7 +15,7 @@ import mekanism.api.MekanismAPITags;
 import mekanism.api.SupportsColorMap;
 import mekanism.api.chemical.Chemical;
 import mekanism.api.chemical.ChemicalStack;
-import mekanism.client.SpecialColors;
+import mekanism.fabric_shim.client.SpecialColors;
 import mekanism.client.gui.element.GuiElementHolder;
 import mekanism.client.render.RenderResizableCuboid.FaceDisplay;
 import mekanism.client.render.data.FluidRenderData;
