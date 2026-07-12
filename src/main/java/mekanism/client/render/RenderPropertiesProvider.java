@@ -16,8 +16,8 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.HitResult.Type;
-import net.neoforged.neoforge.client.extensions.common.IClientBlockExtensions;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
+import mekanism.fabric_shim.client.extensions.IClientBlockExtensions;
+import mekanism.fabric_shim.client.extensions.IClientItemExtensions;
 import org.jetbrains.annotations.NotNull;
 
 //This class is used to prevent class loading issues on the server without having to use OnlyIn hacks
@@ -50,8 +50,9 @@ public class RenderPropertiesProvider {
                                 case WEST -> x = pos.getX() + axisalignedbb.minX - 0.1;
                                 case EAST -> x = pos.getX() + axisalignedbb.maxX + 0.1;
                             }
-                            manager.add(new TerrainParticle((ClientLevel) world, x, y, z, 0, 0, 0, mainState)
-                                  .updateSprite(mainState, mainPos).setPower(0.2F).scale(0.6F));
+                            //fabric-port: NeoForge's updateSprite(state, pos) patch == vanilla's pos-taking ctor
+                            manager.add(new TerrainParticle((ClientLevel) world, x, y, z, 0, 0, 0, mainState, mainPos)
+                                  .setPower(0.2F).scale(0.6F));
                             return true;
                         }
                     }
@@ -101,8 +102,9 @@ public class RenderPropertiesProvider {
                                 double d7 = d4 * xDif + minX;
                                 double d8 = d5 * yDif + minY;
                                 double d9 = d6 * zDif + minZ;
+                                //fabric-port: NeoForge's updateSprite(state, pos) patch == vanilla's pos-taking ctor
                                 manager.add(new TerrainParticle((ClientLevel) Level, pos.getX() + d7, pos.getY() + d8,
-                                      pos.getZ() + d9, d4 - 0.5, d5 - 0.5, d6 - 0.5, state).updateSprite(state, pos));
+                                      pos.getZ() + d9, d4 - 0.5, d5 - 0.5, d6 - 0.5, state, pos));
                             }
                         }
                     }

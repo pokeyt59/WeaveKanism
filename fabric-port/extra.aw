@@ -106,3 +106,5 @@ accessible field net/minecraft/world/level/block/LiquidBlock fluid Lnet/minecraf
 accessible field net/minecraft/world/entity/item/ItemEntity age I
 accessible field net/minecraft/client/model/geom/ModelPart$Cube polygons [Lnet/minecraft/client/model/geom/ModelPart$Polygon;
 accessible field net/minecraft/client/KeyMapping key Lcom/mojang/blaze3d/platform/InputConstants$Key;
+# IClientItemExtensions.DEFAULT returns the vanilla shared BEWLR (private field, no accessor).
+accessible field net/minecraft/client/renderer/entity/ItemRenderer blockEntityRenderer Lnet/minecraft/client/renderer/BlockEntityWithoutLevelRenderer;
