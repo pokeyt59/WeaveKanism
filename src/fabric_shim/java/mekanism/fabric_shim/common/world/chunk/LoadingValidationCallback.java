@@ -3,8 +3,9 @@ package mekanism.fabric_shim.common.world.chunk;
 import net.minecraft.server.level.ServerLevel;
 
 /**
- * Same surface as net.neoforged.neoforge.common.world.chunk.LoadingValidationCallback. Not invoked
- * in Phase 1 (the shim does not yet track ticket owners across restarts — see TicketController).
+ * Same surface as net.neoforged.neoforge.common.world.chunk.LoadingValidationCallback. Invoked per
+ * level load by {@link ShimChunkManager} with the persisted per-owner tickets, before they are
+ * re-applied as region tickets.
  */
 @FunctionalInterface
 public interface LoadingValidationCallback {

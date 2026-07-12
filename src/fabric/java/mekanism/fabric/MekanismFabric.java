@@ -53,6 +53,8 @@ public class MekanismFabric implements ModInitializer {
         mekanism.fabric_shim.internal.ShimGameplayEvents.init();
         //Configuration-phase glue: RegisterConfigurationTasksEvent per connecting client
         mekanism.fabric_shim.internal.ShimConfigurationTasks.init();
+        //Forced-chunk persistence: validate + re-apply per-owner tickets when levels load
+        ShimChunkManager.init();
 
         //Registration lifecycle: NewRegistryEvent, then RegisterEvent per registry in NeoForge's order.
         //Must happen inside onInitialize while Fabric still permits Registry.register.

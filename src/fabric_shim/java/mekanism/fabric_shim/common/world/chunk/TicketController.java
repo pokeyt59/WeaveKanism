@@ -6,16 +6,16 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.level.ChunkPos;
 import org.jetbrains.annotations.Nullable;
 
 /**
  * Same surface as net.neoforged.neoforge.common.world.chunk.TicketController.
  *
- * <p>Phase 1 backing: vanilla forced chunks ({@link ServerLevel#setChunkForced}), which persist in
- * the vanilla saved data and always fully tick. Deviations from NeoForge, to revisit in Phase 3
- * (see PORTING.md): the {@code ticking} flag is ignored (vanilla forced chunks tick), per-owner
- * ticket tracking is not persisted (so {@code callback} is never invoked for load-time
- * validation), and unforcing a chunk that two owners forced releases it for both.
+ * <p>Phase 3 backing: {@link ForcedChunksSavedData} — per-owner tickets persisted per level, the
+ * ticking flag honored (entity-ticking vs block-ticking region tickets), release refcounted across
+ * owners, and {@link #callback()} invoked on level load with the persisted tickets (see
+ * {@link ShimChunkManager}).
  */
 public record TicketController(ResourceLocation id, @Nullable LoadingValidationCallback callback) {
 
@@ -28,7 +28,7 @@ public record TicketController(ResourceLocation id, @Nullable LoadingValidationC
     }
 
     public boolean forceChunk(ServerLevel level, BlockPos owner, int chunkX, int chunkZ, boolean add, boolean ticking) {
-        return level.setChunkForced(chunkX, chunkZ, add);
+        return ForcedChunksSavedData.get(level).forceBlock(level, id, owner, ChunkPos.asLong(chunkX, chunkZ), add, ticking);
     }
 
     public boolean forceChunk(ServerLevel level, Entity owner, int chunkX, int chunkZ, boolean add, boolean ticking) {
@@ -36,6 +36,6 @@ public record TicketController(ResourceLocation id, @Nullable LoadingValidationC
     }
 
     public boolean forceChunk(ServerLevel level, UUID owner, int chunkX, int chunkZ, boolean add, boolean ticking) {
-        return level.setChunkForced(chunkX, chunkZ, add);
+        return ForcedChunksSavedData.get(level).forceEntity(level, id, owner, ChunkPos.asLong(chunkX, chunkZ), add, ticking);
     }
 }
