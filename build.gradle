@@ -57,8 +57,10 @@ sourceSets {
                 'mekanism/client/recipe_viewer/recipe/SPSRecipeViewerRecipe.java',
                 'mekanism/client/recipe_viewer/emi/INamedRVRecipe.java',
             ]
+            //-PportClient: Phase 4 grind switch (like 1f's -PportMain) — includes mekanism/client/**
+            // and ClientHolidayInfo for census/grind runs; drop the gate when the client compiles green
             exclude { el ->
-                if (el.directory) {
+                if (el.directory || project.hasProperty('portClient')) {
                     return false
                 }
                 def p = el.path
@@ -67,7 +69,9 @@ sourceSets {
             //Client-only holiday renderer that lives in the common package (its own javadoc says
             // "only reference from the client side"); depends on excluded client render classes
             // (QuadTransformation) + a client-bus event, so it belongs with Phase 4.
-            exclude 'mekanism/common/base/holiday/ClientHolidayInfo.java'
+            exclude { el ->
+                !el.directory && !project.hasProperty('portClient') && el.path == 'mekanism/common/base/holiday/ClientHolidayInfo.java'
+            }
             exclude { el ->
                 //CC bindings are Phase 5, but ComputerConstants is a pure constants class used by
                 // 22 core files — spare it

@@ -41,7 +41,7 @@ public class PayloadRegistrar {
     public <T extends CustomPacketPayload> PayloadRegistrar playToClient(CustomPacketPayload.Type<T> type,
           StreamCodec<? super RegistryFriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
         PayloadTypeRegistry.playS2C().register(type, reader);
-        PendingClientReceivers.stashClientbound(type, handler);
+        PendingClientReceivers.stashClientboundPlay(type, handler);
         return this;
     }
 
@@ -55,7 +55,7 @@ public class PayloadRegistrar {
     public <T extends CustomPacketPayload> PayloadRegistrar configurationToClient(CustomPacketPayload.Type<T> type,
           StreamCodec<? super FriendlyByteBuf, T> reader, IPayloadHandler<T> handler) {
         PayloadTypeRegistry.configurationS2C().register(type, reader);
-        PendingClientReceivers.stashClientbound(type, handler);
+        PendingClientReceivers.stashClientboundConfig(type, handler);
         return this;
     }
 }
