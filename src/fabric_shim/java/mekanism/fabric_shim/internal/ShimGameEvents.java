@@ -59,11 +59,19 @@ public final class ShimGameEvents {
         ServerWorldEvents.LOAD.register((server, level) -> NeoForge.EVENT_BUS.post(new LevelEvent.Load(level)));
         ServerWorldEvents.UNLOAD.register((server, level) -> NeoForge.EVENT_BUS.post(new LevelEvent.Unload(level)));
 
-        CommonLifecycleEvents.TAGS_LOADED.register((registries, client) ->
-              NeoForge.EVENT_BUS.post(new TagsUpdatedEvent(registries, client, client && ServerLifecycleHooks.getCurrentServer() != null)));
+        CommonLifecycleEvents.TAGS_LOADED.register((registries, client) -> {
+            //Data maps commit before TagsUpdatedEvent posts, like NeoForge — tag listeners
+            // (chemical attribute caches) must never observe stale data-map values
+            mekanism.fabric_shim.registries.datamaps.DataMapLoader.applyPending(registries);
+            NeoForge.EVENT_BUS.post(new TagsUpdatedEvent(registries, client, client && ServerLifecycleHooks.getCurrentServer() != null));
+        });
 
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
               NeoForge.EVENT_BUS.post(new RegisterCommandsEvent(dispatcher, environment, registryAccess)));
+
+        //Data-map JSON discovery/parsing runs as its own reload listener; the TAGS_LOADED hook
+        // above commits what it parsed once tags are bound
+        mekanism.fabric_shim.registries.datamaps.DataMapLoader.init();
 
         //One permanent Fabric reload listener re-fires AddReloadListenerEvent per datapack (re)load,
         // matching NeoForge's collect-on-each-reload semantics. Fabric appends mod listeners after

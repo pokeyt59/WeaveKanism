@@ -17,9 +17,9 @@ import org.jetbrains.annotations.Nullable;
  * <p>On NeoForge, {@code Holder#getData(DataMapType)} is a patched-in vanilla method; on this port
  * those call sites are hand-edited to {@link #getData(Holder, DataMapType)}.
  *
- * <p>Values are populated by a datapack reload listener reading NeoForge's
- * {@code data/<ns>/data_maps/<registry>/<id>.json} format (lands in Phase 3); until then lookups
- * return {@code null}, matching "no data attached".
+ * <p>Values are populated by {@link DataMapLoader} (datapack reload listener + TAGS_LOADED
+ * commit) reading NeoForge's {@code data/<ns>/data_maps/<registry>/<id>.json} format; before the
+ * first load, lookups return {@code null}, matching "no data attached".
  */
 public final class DataMaps {
 
@@ -38,6 +38,20 @@ public final class DataMaps {
 
     public static Map<ResourceLocation, DataMapType<?, ?>> getTypes(ResourceKey<? extends Registry<?>> registryKey) {
         return Collections.unmodifiableMap(TYPES.getOrDefault(registryKey, Map.of()));
+    }
+
+    static java.util.Set<ResourceKey<? extends Registry<?>>> typedRegistries() {
+        return Collections.unmodifiableSet(TYPES.keySet());
+    }
+
+    /**
+     * The full loaded map for a data map type (empty until the loader commits). Registry-wide view
+     * behind {@code Registry#getDataMap} (via {@code MekRegistryExt}).
+     */
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    public static <R, T> Map<ResourceKey<R>, T> getValues(DataMapType<R, T> type) {
+        Map<ResourceKey<?>, Object> values = VALUES.get(type);
+        return values == null ? Map.of() : (Map) Collections.unmodifiableMap(values);
     }
 
     /**
