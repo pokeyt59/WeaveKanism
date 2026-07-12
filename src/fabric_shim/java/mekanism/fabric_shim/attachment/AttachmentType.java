@@ -23,13 +23,20 @@ public final class AttachmentType<T> {
     private final Function<IAttachmentHolder, T> defaultValueSupplier;
     @Nullable
     private final IAttachmentSerializer<?, T> serializer;
+    @Nullable
+    private final Codec<T> persistenceCodec;
     private final boolean copyOnDeath;
     @Nullable
     private final IAttachmentCopyHandler<T> copyHandler;
+    //Bound after registration by AttachmentHooks.bridgeRegisteredTypes — the Fabric attachment
+    // type that actually stores/persists the data on Entity/ServerLevel holders
+    @Nullable
+    private net.fabricmc.fabric.api.attachment.v1.AttachmentType<T> fabricType;
 
     private AttachmentType(Builder<T> builder) {
         this.defaultValueSupplier = builder.defaultValueSupplier;
         this.serializer = builder.serializer;
+        this.persistenceCodec = builder.persistenceCodec;
         this.copyOnDeath = builder.copyOnDeath;
         this.copyHandler = builder.copyHandler;
     }
@@ -41,6 +48,24 @@ public final class AttachmentType<T> {
     @Nullable
     public IAttachmentSerializer<?, T> serializer() {
         return serializer;
+    }
+
+    /** The raw codec captured from {@code serialize(Codec, ...)}, if that path built this type. */
+    @Nullable
+    public Codec<T> persistenceCodec() {
+        return persistenceCodec;
+    }
+
+    @Nullable
+    public net.fabricmc.fabric.api.attachment.v1.AttachmentType<T> fabricType() {
+        return fabricType;
+    }
+
+    public void bindFabricType(net.fabricmc.fabric.api.attachment.v1.AttachmentType<T> fabricType) {
+        if (this.fabricType != null) {
+            throw new IllegalStateException("Fabric attachment type already bound");
+        }
+        this.fabricType = fabricType;
     }
 
     public boolean copyOnDeath() {
@@ -87,6 +112,8 @@ public final class AttachmentType<T> {
         private final Function<IAttachmentHolder, T> defaultValueSupplier;
         @Nullable
         private IAttachmentSerializer<?, T> serializer;
+        @Nullable
+        private Codec<T> persistenceCodec;
         private boolean copyOnDeath;
         @Nullable
         private IAttachmentCopyHandler<T> copyHandler;
@@ -110,6 +137,7 @@ public final class AttachmentType<T> {
 
         public Builder<T> serialize(Codec<T> codec, Predicate<? super T> shouldSerialize) {
             Objects.requireNonNull(codec);
+            this.persistenceCodec = codec;
             return serialize(new IAttachmentSerializer<Tag, T>() {
                 @Override
                 public T read(IAttachmentHolder holder, Tag tag, HolderLookup.Provider provider) {

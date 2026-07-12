@@ -59,6 +59,9 @@ public class MekanismFabric implements ModInitializer {
         //Registration lifecycle: NewRegistryEvent, then RegisterEvent per registry in NeoForge's order.
         //Must happen inside onInitialize while Fabric still permits Registry.register.
         ShimRegistryEvents.fire(ShimBuses.MOD_BUS);
+        //Attachment types are registered now — create their Fabric counterparts (real storage +
+        //persistence for getData/setData over fabric-data-attachment-api)
+        mekanism.fabric_shim.attachment.AttachmentHooks.bridgeRegisteredTypes();
         ShimChunkManager.fireRegistration(ShimBuses.MOD_BUS);
         //Capability provider registration (on Fabric this registers straight into the API lookups)
         ShimBuses.MOD_BUS.post(new mekanism.fabric_shim.capabilities.RegisterCapabilitiesEvent());

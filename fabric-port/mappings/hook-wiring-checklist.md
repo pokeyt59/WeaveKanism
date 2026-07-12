@@ -80,8 +80,8 @@ dead-on-Fabric with a reason. Do not delete entries; check them off with the fix
 - [ ] `mekanism/common/item/gear/ItemSpecialArmor.java` — `isBookEnchantable`
 - [ ] `mekanism/common/item/gear/ItemSpecialArmor.java` — `isPrimaryItemFor`
 - [ ] `mekanism/common/item/gear/ItemSpecialArmor.java` — `supportsEnchantment`
-- [ ] `mekanism/common/network/to_client/configuration/SyncAllSecurityData.java` — `run`
-- [ ] `mekanism/common/network/to_client/configuration/SyncAllSecurityData.java` — `type`
+- [x] `mekanism/common/network/to_client/configuration/SyncAllSecurityData.java` — `run` (Phase 3: shim ICustomConfigurationTask.start default calls it; task enqueued per client by ShimConfigurationTasks)
+- [x] `mekanism/common/network/to_client/configuration/SyncAllSecurityData.java` — `type` (Phase 3: vanilla ConfigurationTask interface method, called by the vanilla task loop)
 - [ ] `mekanism/common/registration/impl/CreativeTabDeferredRegister.java` — `getLabelColor`
 - [x] `mekanism/common/registration/impl/FluidDeferredRegister.java` — `isVaporizedOnPlacement` (Step 5.1: real FluidType method; MekanismFluidType overrides it, called by BlockData/WorldUtils)
 
@@ -91,20 +91,20 @@ These shim event classes exist so `src/main` compiles; nothing posts them yet (t
 is `RegisterPayloadHandlersEvent`, posted from the bootstrap). Each must be bridged to its Fabric
 API equivalent in Phase 3, or the subscribed behavior silently does nothing.
 
-- [ ] `event.tick.{Server,Level,Player,Entity}TickEvent` → Fabric `ServerTickEvents` / `ClientTickEvents` / entity+player tick mixins
-- [ ] `event.entity.living.{LivingDeath,LivingFall,LivingIncomingDamage}Event` → `ServerLivingEntityEvents` / damage mixins
-- [ ] `event.entity.EntityInvulnerabilityCheckEvent` → damage-source invulnerability mixin
-- [ ] `event.entity.EntityJoinLevelEvent` → `ServerEntityEvents.ENTITY_LOAD`
-- [ ] `event.entity.player.PlayerInteractEvent.RightClickBlock` → `UseBlockCallback`
-- [ ] `event.entity.RegisterSpawnPlacementsEvent` → apply merged predicates to `SpawnPlacements` (records nothing today)
-- [ ] `event.entity.EntityAttributeCreationEvent` → `FabricDefaultAttributeRegistry`
-- [ ] `event.level.ChunkTicketLevelUpdatedEvent` → chunk-map mixin
-- [ ] `event.level.{Chunk,ChunkData}Event.*` → `ServerChunkEvents` / chunk (un)load
-- [ ] `event.level.BlockDropsEvent` → block-drops mixin
-- [ ] `event.BuildCreativeModeTabContentsEvent` → `ItemGroupEvents` (accept() discards entries today)
-- [ ] `event.OnDatapackSyncEvent` → `ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS` + player join
-- [ ] `event.ModifyDefaultComponentsEvent` → item default-component mixin (modify() records nothing today)
-- [ ] `network.event.RegisterConfigurationTasksEvent` → `ServerConfigurationConnectionEvents` (not posted; SyncAllSecurityData not sent during config)
+- [x] `event.tick.{Server,Level,Player,Entity}TickEvent` → ShimGameplayEvents over `ServerTickEvents` (Phase 3; timing deviations tabled in PORTING.md)
+- [x] `event.entity.living.{LivingDeath,LivingFall,LivingIncomingDamage}Event` → ALLOW_DEATH callback + LivingEntityMixin @WrapMethod (Phase 3)
+- [x] `event.entity.EntityInvulnerabilityCheckEvent` → EntityMixin isInvulnerableTo wrap (Phase 3)
+- [x] `event.entity.EntityJoinLevelEvent` → `ServerEntityEvents.ENTITY_LOAD` (Phase 3; fires post-add, handler discards the entity so cancellation is equivalent)
+- [x] `event.entity.player.PlayerInteractEvent.RightClickBlock` — NOT posted: no src/main listeners (census 2026-07-11); bridge via `UseBlockCallback` when a consumer appears (deviation row)
+- [x] `event.entity.RegisterSpawnPlacementsEvent` → posted from bootstrap, applies via AW'd `SpawnPlacements.register` (Phase 3; merge-ops unsupported, deviation row)
+- [x] `event.entity.EntityAttributeCreationEvent` → posted from bootstrap → `FabricDefaultAttributeRegistry` (Phase 3)
+- [x] `event.level.ChunkTicketLevelUpdatedEvent` → ChunkMapMixin on updateChunkScheduling (Phase 3)
+- [x] `event.level.{Chunk,ChunkData}Event.*` → `ServerChunkEvents` + ChunkSerializerMixin save/load (Phase 3)
+- [x] `event.level.BlockDropsEvent` — core needs no bridge: Mekanism itself POSTS it from WorldUtils.getDrops through the shim bus; only NeoForge's vanilla-patch firing sites are absent (matters to third-party listeners only — revisit with Phase 5)
+- [x] `event.BuildCreativeModeTabContentsEvent` → `ItemGroupEvents.MODIFY_ENTRIES_ALL`, entries collector doubles as the Output sink (Phase 3)
+- [x] `event.OnDatapackSyncEvent` → `ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS` per player (Phase 3)
+- [x] `event.ModifyDefaultComponentsEvent` — NOT posted: no src/main listeners (census 2026-07-11); needs an item default-component mixin when a consumer appears (deviation row)
+- [x] `network.event.RegisterConfigurationTasksEvent` → `ServerConfigurationConnectionEvents.CONFIGURE` per connecting client (Phase 3; SyncAllSecurityData runs during config)
 - [ ] `mekanism/common/tile/TileEntityEnergyCube.java` — `getModelData`
 - [ ] `mekanism/common/tile/base/TileEntityUpdateable.java` — `handleUpdateTag`
 - [ ] `mekanism/common/tile/base/TileEntityUpdateable.java` — `onDataPacket`

@@ -111,7 +111,7 @@ textually identical; no Yarn remap.
 | Deviation | Where | Revisit |
 |---|---|---|
 | `neoforge:swim_speed`/`creative_flight` attributes registered but behaviorless (nothing applies them to players; vanilla entities lack them in attribute maps) | NeoForgeMod shim | Phase 3 (default-attribute injection + movement/ability hooks) |
-| TicketController → vanilla forced chunks: `ticking` flag ignored, no per-owner persistence, validation callbacks never invoked | common/world/chunk shims | Phase 3 (own SavedData with owners) |
+| ~~TicketController → vanilla forced chunks: `ticking` flag ignored, no per-owner persistence, validation callbacks never invoked~~ resolved 2026-07-12: ForcedChunksSavedData (own NBT under `mekanism_shim_forced_chunks`) tracks per-owner tickets, ticking honored (entity-ticking vs block-ticking region tickets), release refcounted, validation callbacks run per level load. NeoForge's `chunk_manager` saved data is NOT imported (no shipped port builds → nothing to migrate) | common/world/chunk shims | cross-loader world import: revisit if ever needed |
 | AddReloadListenerEvent runs synchronous listeners only (Mekanism's only listener is synchronous) | ShimGameEvents | Phase 3 if an async listener appears |
 | ServerStartingEvent posted immediately before ServerStartedEvent (Fabric has no post-level-load pre-ready hook) | ShimGameEvents | acceptable |
 | `NeoForgeMod.MILK` is an absent holder: `is()` matches the id, `value()`/`get()` throws | NeoForgeMod shim | Phase 2 (audit fluid tank bucket/cauldron sites) |
@@ -119,7 +119,7 @@ textually identical; no Yarn remap.
 | Non-Mekanism fluids resolve to a generic `DEFAULT` FluidType (only vanilla water/lava/empty are special-cased); Mekanism fluids carry their real type via BaseFlowingFluid. WATER/LAVA built-in FluidType property values are best-effort | fluids shim (FluidTypes) | Phase 2 (refine if a consumer needs accurate cross-mod attributes) |
 | FluidType client render data (still/flowing/overlay textures, tint) + `IClientFluidTypeExtensions.getTintColor` return neutral defaults | fluids/client-extensions shim | Phase 4 (register real client fluid extensions) |
 | Clientbound + configuration packet handlers are parked in `PendingClientReceivers` (wire codecs register, but no receiver dispatch); only serverbound play packets are handled live | network/registration shim (PayloadRegistrar) | Phase 4 (client entry point drains them into `ClientPlayNetworking` receivers) |
-| `RegisterConfigurationTasksEvent` is not posted (NeoForge fires it per connecting client during config); `SyncAllSecurityData` is therefore never sent during the configuration phase | network/event shim + bootstrap | Phase 3 (drive config tasks off `ServerConfigurationConnectionEvents`) |
+| ~~`RegisterConfigurationTasksEvent` is not posted~~ resolved 2026-07-12: posted per connecting client from ShimConfigurationTasks (Fabric CONFIGURE), tasks run in the vanilla task loop, `SyncAllSecurityData` sends during config. Residual deviation: clients WITHOUT the mod also reach this point (NeoForge rejects them during negotiation) — the unknown payload is discarded client-side and they join without synced security data | ShimConfigurationTasks | Phase 4/QA (decide whether to gate unmodded clients) |
 | ~~Game-bus event classes are compile-only~~ resolved 2026-07-11: tick/living/entity/block/chunk families + datapack-sync/tab-contents/attributes/spawn-placements all fire (ShimGameplayEvents + behavior mixins + bootstrap posts). Remaining timing deviations: player/entity tick events fire at the world-tick boundary (not inside each entity's tick); `EntityTickEvent.Pre` is not posted (tick-cancelling unsupported); `EntityJoinLevelEvent` fires post-add (handlers discard the entity themselves, effective same tick) | ShimGameplayEvents + LivingEntity/Entity/ChunkSerializer/ChunkMap mixins | verify timing at QA |
 | `ItemAttributeModifierEvent` never fires — per-stack attribute computation needs an ItemStack mixin (`forEachModifier`); gear-module attribute tweaks (gravitational modulator speed, soul surfer, servo, disassembler/free-runner modifiers) are inert | event shims | Phase 4 (with gear/client work) |
 | `ModifyDefaultComponentsEvent` + `PlayerInteractEvent` still unposted — nothing in core `src/main` listens to them (verified by census); bridge when a consumer appears | event shims | Phase 5 (integrations may listen) |
@@ -129,11 +129,13 @@ textually identical; no Yarn remap.
 | ModConfigEvent.Loading may fire during registerConfigs (FCAP loads at registration), before Mekanism's listener subscribes — harmless: caches are lazy; listener matters for reloads. 1f boot: configs load + all TOMLs written, no related errors | ModContainer shim | verified 2026-07-11 |
 | `CreativeModeTab.Builder.withSearchBar()`/`withTabFactory()` are injected no-ops: tabs are plain CreativeModeTab instances (never MekanismCreativeTab), so the search bar and custom label color are absent | MekCreativeModeTabBuilderExt | Phase 4 (mixin Builder.build() to honor the factory + search bar) |
 | FluidBucketWrapper has no milk special-case (milk has no registered fluid on the port); milk buckets read as an empty fluid handler | fluids/capability/wrappers shim | Phase 2 (with the NeoForgeMod.MILK audit above) |
-| Registry aliases (DeferredRegister#addAlias — mekanism:gases→chemicals et al for data components + items) are collected but not applied; old-world data under alias ids won't resolve | DeferredRegister shim (logs a WARN at boot) | Phase 3 (registry alias support) |
+| ~~Registry aliases collected but not applied~~ resolved 2026-07-12: MappedRegistryMixin retries missed name lookups (get/getHolder/containsKey × location/key) through RegistryAliasResolver (NeoForge addAlias/resolve semantics, hop-limited); DeferredRegister applies aliases at RegisterEvent before its fill. mekanism:gases/infuse_types/pigments/slurries + upgrade_gas resolve | MappedRegistryMixin + RegistryAliasResolver (tested) | done |
 | Datapack registry configurators (RobitSkin's RegistryBuilder tweaks) are ignored by DataPackRegistryEvent (logs a WARN at boot) | DataPackRegistryEvent shim | Phase 3 if skin registration misbehaves |
 | `mekanism:incorrect_for_disassembler`/`incorrect_for_meka_tool` block tags missing at boot (datagen output not yet imported) | resources | Phase 6 (datagen import) |
 | Item-context capabilities are not cross-bridged: shim `FluidHandler.ITEM` (Void context) and Fabric's `FluidStorage.ITEM` (ContainerItemContext) don't see each other — Mekanism's own item caps work, but e.g. filling another mod's tank *item* in a Mekanism machine slot won't. Container-swap propagation has no clean mapping | transfer bridge | Phase 5/6 (revisit with FluidUtil-style usage sites + QA) |
 | Bounding blocks (multiblock spill-over positions) are not exposed on the Fabric-standard lookups (the tile isn't the api handler; its shim providers proxy to the main tile) — external Fabric pipes must target the main block | TransferFallbacks expose guards | revisit if QA flags it (register per-BE-type providers that follow the proxy) |
+| Data maps load from NeoForge's `data_maps` JSON (loader live 2026-07-12) with three bounds: `neoforge:conditions` in entries are not evaluated (a conditional entry fails that file; Mekanism ships none), registries whose packs provide no files are still rebuilt + get DataMapsUpdatedEvent (NeoForge skips them, which can keep stale values across /reload), and synced data maps do NOT sync to dedicated-server clients yet (client attribute tooltips need the Phase 4 sync packet). E2E exercise needs the Phase 6 datagen import — no data_maps files ship in resources yet | DataMapLoader | Phase 4 (sync packet) + Phase 6 (real files) |
+| Attachments (getData/setData) live on fabric-data-attachment-api since 2026-07-12: Entity + ServerLevel holders persist + respawn-copy natively. Three bounds: the `shouldSerialize` predicate is not applied (default-valued attachments write a few extra bytes; load equivalent), NeoForge `copyHandler` customization is unused (Fabric's plain copy is observably identical for Mekanism's four types), and the on-disk layout is Fabric's attachment format, not NeoForge's entity/level NBT — cross-loader world import of attachment data is lossy | AttachmentHooks bridge (codec tested) | acceptable; revisit only for cross-loader import |
 
 ### Hand-edit patterns for NeoForge patches to vanilla classes (recur in main)
 
@@ -174,7 +176,30 @@ textually identical; no Yarn remap.
         BEs (NeoForge null-semantics + breaks the fallback↔fallback cycle). 50 guardrail
         tests. Remaining Phase 2 tails are tabled as deviations (item-context bridging,
         bounding-block exposure) — revisit at QA.
-- [ ] Phase 3: events + networking
+- [x] Phase 3: events + networking (complete 2026-07-12)
+  - [x] 3-events (2026-07-11): ShimGameplayEvents bridges tick/entity/living/block/chunk +
+        datapack-sync/tab-contents from Fabric API; behavior mixins (LivingEntity hurt/fall/jump
+        via @WrapMethod, Entity isInvulnerableTo, ChunkSerializer save/load NBT, ChunkMap ticket
+        levels); MekanismEventSubscribers registers the 4 common @EventBusSubscriber classes
+        explicitly (no FML scan — **upstream-merge checklist item**); EntityAttributeCreation +
+        RegisterSpawnPlacements posted from bootstrap. PacketDistributor was already live
+        (serverbound play receivers; client receivers parked for Phase 4).
+  - [x] 3-config-tasks (2026-07-12): RegisterConfigurationTasksEvent posted per connecting
+        client via ServerConfigurationConnectionEvents.CONFIGURE (vanilla task queue, so
+        SyncAllSecurityData's synchronous finishCurrentTask self-completion works untouched).
+  - [x] 3-aliases (2026-07-12): MappedRegistryMixin + RegistryAliasResolver — NeoForge
+        addAlias/resolve semantics on missed name lookups; applied by DeferredRegister at
+        RegisterEvent. Old-world component/item ids resolve.
+  - [x] 3-data-maps (2026-07-12): DataMapLoader reads NeoForge's data_maps JSON in two stages
+        (reload listener parses; TAGS_LOADED decodes with registry ops + expands tags + commits
+        before TagsUpdatedEvent) and posts DataMapsUpdatedEvent per registry (chemical attribute
+        caches update). E2E with real files waits on the Phase 6 datagen import.
+  - [x] 3-chunk-tickets (2026-07-12): ForcedChunksSavedData — per-owner persistence, ticking
+        flag honored, refcounted release, LoadingValidationCallback runs per level load
+        (TileComponentChunkLoader self-heal live).
+  - [x] 3-attachments (2026-07-12): AttachmentHooks bridges shim AttachmentTypes onto
+        fabric-data-attachment-api (initializer/persistent codec/copyOnDeath); Entity +
+        ServerLevel getData/setData persist. Radiation + meltdown data survive restarts.
 - [ ] Phase 4: client (models, renderers, shaders)
 - [ ] Phase 5: integrations + API cleanup
 - [ ] Phase 6: datagen import, gametests, parity QA
