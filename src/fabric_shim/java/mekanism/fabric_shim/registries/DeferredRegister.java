@@ -124,9 +124,9 @@ public class DeferredRegister<T> {
     }
 
     /**
-     * Registers a name alias. Vanilla/Fabric registries have no alias support, so for now aliases
-     * are recorded but not applied.
-     * TODO(fabric-port, Phase 3): honor aliases when decoding old ids (items, data components).
+     * Registers a name alias, applied to the backing registry at RegisterEvent time (before this
+     * register's entries fill — NeoForge's order). Lookup-side resolution lives in
+     * {@code MappedRegistryMixin}: a miss retries once with the alias-resolved id.
      */
     public void addAlias(ResourceLocation from, ResourceLocation to) {
         if (seenRegisterEvent) {
@@ -169,7 +169,13 @@ public class DeferredRegister<T> {
         }
         this.seenRegisterEvent = true;
         if (!this.aliases.isEmpty()) {
-            LOGGER.warn("Registry aliases for {} are not yet applied on the Fabric port: {}", this.registryKey.location(), this.aliases);
+            //Apply before filling entries, mirroring NeoForge's DeferredRegister order
+            if (event.getRegistry(this.registryKey) instanceof mekanism.fabric_shim.inject.MekAliasedRegistry aliased) {
+                this.aliases.forEach(aliased::mekanism$addAlias);
+            } else {
+                LOGGER.warn("Registry {} does not support aliases on the Fabric port (not a MappedRegistry); dropping: {}",
+                      this.registryKey.location(), this.aliases);
+            }
         }
         for (Entry<DeferredHolder<T, ? extends T>, Supplier<? extends T>> e : entries.entrySet()) {
             event.register(this.registryKey, e.getKey().getId(), () -> e.getValue().get());

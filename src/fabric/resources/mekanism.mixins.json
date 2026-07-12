@@ -25,6 +25,7 @@
     "LevelMixin",
     "LightningBoltMixin",
     "LivingEntityMixin",
+    "MappedRegistryMixin",
     "MobEffectInstanceMixin",
     "PlayerMixin",
     "RegistryMixin",
