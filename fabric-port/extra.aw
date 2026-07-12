@@ -48,3 +48,5 @@ accessible method net/minecraft/server/network/ServerConfigurationPacketListener
 # Phase 3 tick-event bridges pass the server's haveTime supplier into ServerTickEvent/LevelTickEvent
 # (NeoForge's patched tick loop passes the same reference).
 accessible method net/minecraft/server/MinecraftServer haveTime ()Z
+# RegisterSpawnPlacementsEvent applies registrations through vanilla's private register.
+accessible method net/minecraft/world/entity/SpawnPlacements register (Lnet/minecraft/world/entity/EntityType;Lnet/minecraft/world/entity/SpawnPlacementType;Lnet/minecraft/world/level/levelgen/Heightmap$Types;Lnet/minecraft/world/entity/SpawnPlacements$SpawnPredicate;)V

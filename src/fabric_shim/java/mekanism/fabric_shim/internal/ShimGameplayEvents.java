@@ -1,6 +1,8 @@
 package mekanism.fabric_shim.internal;
 
 import mekanism.fabric_shim.common.NeoForge;
+import mekanism.fabric_shim.event.BuildCreativeModeTabContentsEvent;
+import mekanism.fabric_shim.event.OnDatapackSyncEvent;
 import mekanism.fabric_shim.event.entity.EntityJoinLevelEvent;
 import mekanism.fabric_shim.event.entity.living.LivingDeathEvent;
 import mekanism.fabric_shim.event.level.BlockEvent;
@@ -13,7 +15,10 @@ import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerChunkEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -78,5 +83,16 @@ public final class ShimGameplayEvents {
               NeoForge.EVENT_BUS.post(new ChunkEvent.Load(chunk, level, false)));
         ServerChunkEvents.CHUNK_UNLOAD.register((level, chunk) ->
               NeoForge.EVENT_BUS.post(new ChunkEvent.Unload(chunk, level)));
+
+        //--- Sync / tab population ---
+        //NeoForge fires one event with player (join) or null (reload, all players); per-player
+        //firing covers both — getRelevantPlayers() resolves to the same player set
+        ServerLifecycleEvents.SYNC_DATA_PACK_CONTENTS.register((player, joined) ->
+              NeoForge.EVENT_BUS.post(new OnDatapackSyncEvent(player.server.getPlayerList(), player)));
+        //Fires per tab during (client-side) tab population, like NeoForge's; the Fabric entries
+        //collector is itself a CreativeModeTab.Output, so it is the event's entry sink
+        ItemGroupEvents.MODIFY_ENTRIES_ALL.register((group, entries) ->
+              BuiltInRegistries.CREATIVE_MODE_TAB.getResourceKey(group).ifPresent(key ->
+                    ShimBuses.MOD_BUS.post(new BuildCreativeModeTabContentsEvent(key, entries.getContext(), entries))));
     }
 }

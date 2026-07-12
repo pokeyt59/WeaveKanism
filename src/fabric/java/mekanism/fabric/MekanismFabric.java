@@ -63,6 +63,12 @@ public class MekanismFabric implements ModInitializer {
         //Payload (packet) channel + codec registration; serverbound receivers go live here, clientbound
         //receivers are parked for the Phase 4 client entry point (see PendingClientReceivers)
         ShimBuses.MOD_BUS.post(new mekanism.fabric_shim.network.event.RegisterPayloadHandlersEvent());
+        //Entity attributes + spawn placements, in NeoForge's post-registration order; collected
+        //attributes apply through Fabric's default-attribute registry
+        mekanism.fabric_shim.event.entity.EntityAttributeCreationEvent attributeEvent = new mekanism.fabric_shim.event.entity.EntityAttributeCreationEvent();
+        ShimBuses.MOD_BUS.post(attributeEvent);
+        attributeEvent.getAttributes().forEach(net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry::register);
+        ShimBuses.MOD_BUS.post(new mekanism.fabric_shim.event.entity.RegisterSpawnPlacementsEvent());
 
         //FML lifecycle order after registration; single-threaded, so enqueueWork runs inline
         ShimBuses.MOD_BUS.post(new FMLCommonSetupEvent());
