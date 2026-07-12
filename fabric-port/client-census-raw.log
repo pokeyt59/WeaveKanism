@@ -1,0 +1,39 @@
+Calculating task graph as configuration cache cannot be reused because file 'build.gradle' has changed.
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy UP-TO-DATE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+
+> Configure project :
+Fabric Loom: 1.17.14
+
+> Task :annotation-processor:compileJava UP-TO-DATE
+> Task :compileJava FAILED
+
+1 problem was found storing the configuration cache.
+- Task `:compileJava` of type `org.gradle.api.tasks.compile.JavaCompile`: invocation of 'project' references a Gradle script object from a Groovy closure at execution time, which is unsupported with the configuration cache.
+  See https://docs.gradle.org/9.6.0/userguide/configuration_cache_requirements.html#config_cache:requirements:gradle_model_types
+
+See the complete report at file:///D:/mc/MODEVS/Mekanism/build/reports/configuration-cache/2r7yqtk0vbw5dm9z6lgia7l1c/2it4uh9km7h95jzmqg5i3r8g1/configuration-cache-report.html
+
+[Incubating] Problems report is available at: file:///D:/mc/MODEVS/Mekanism/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* Where:
+Build file 'D:\mc\MODEVS\Mekanism\build.gradle' line: 63
+
+* What went wrong:
+Execution failed for task ':compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
+> Invocation of 'project' references a Gradle script object from a Groovy closure at execution time, which is unsupported with the configuration cache.
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 3s
+4 actionable tasks: 1 executed, 3 up-to-date
+Configuration cache entry discarded with 1 problem.
