@@ -25,36 +25,30 @@ set of residuals. This means:
 First milestone: Fabric dev client boots, world loads, a Metallurgic Infuser + Basic Energy Cube
 can be placed, opened, and store/transfer energy.
 
-## 2. Current state (2026-07-11) and TODO
+## 2. Current state (2026-07-12) and TODO
 
 Done (see `PORTING.md` "Port status" — that section is the source of truth, keep it updated):
 
-- Phase 0 complete: Loom build (Mojang mappings), AT→AW generation, transform pipeline.
-- Phase 1 a–e complete: full shim registration lifecycle on the **real NeoForge event bus**
-  (`net.neoforged:bus:8.0.5` JiJ'd — `net.neoforged.bus.api.*` imports need NO remap);
-  `src/api` (265 files) compiles and a dev server boots clean.
-- Phase 1 c/d complete: FML shims (Mod/ModContainer/FMLPaths/ModConfigEvent/…), config via Forge
-  Config API Port, game-event glue (`ShimGameEvents`), chunk tickets, attachment-type surface.
-  `MekanismFabric.onInitialize` drives FML's full lifecycle order.
-- **Phase 1f complete (2026-07-11): all of `src/main` compiles and is in the default build;
-  mod construction is live; the dev server boots to `Done` with a world, zero empty-registry
-  errors, and all config TOMLs written.** §4 below is the (historical) workflow that got there.
+- Phases 0–1 complete: Loom build, AT→AW pipeline, full shim registration lifecycle on the real
+  NeoForge bus (JiJ'd; `net.neoforged.bus.api.*` needs NO remap), FML shims + FCAP config, all
+  of `src/api` + `src/main` in the default build, mod construction live, dev server boots clean.
+- **Phase 2 complete**: transfer/energy bridge per `fabric-port/design/transfer-bridge.md`
+  (do not redesign), capability lookups, BlockCapabilityCache, proxied expose direction.
+- **Phase 3 complete**: gameplay/startup event glue + behavior mixins, config-phase tasks,
+  registry aliases, data-map JSON loader, chunk-ticket owner persistence, attachments over
+  fabric-data-attachment-api. 54 guardrail tests.
+- **Phase 4 IN PROGRESS — client compile grind.** Entry point + receiver drain live; first
+  `runClient` reaches the title screen. **Continue via `fabric-port/design/handoff-phase4.md`
+  (method + refinement loop + state), then `client-compile-plan.md` (step scoreboard).**
+  Census 1,948 → 1,326 so far; `-PportClient` is the grind switch.
 
 TODO, in order:
 
-1. **Phase 2 — capabilities + transfer/energy bridge** (critical path): the fluid bridge CORE IS
-   ALREADY IMPLEMENTED AND TESTED (`mekanism.fabric_shim.transfer.*`, suite in
-   `src/fabric_test`). Remaining: item/energy adapters (follow the identical patterns), the 11
-   `RegisterCapabilitiesEvent` sites via Fabric API Lookup, `BlockCapabilityCache`. **Read
-   `fabric-port/design/transfer-bridge.md` first — it locks the design; do not redesign.**
-2. **Phase 3 — events + networking**: `PacketHandler` funnel → Fabric play networking (57
-   packets untouched); remaining event glue + small mixins (`ChunkTicketLevelUpdatedEvent`);
-   data-map JSON loader; registry alias support; chunk-ticket owner persistence; attachment
-   data access wiring (`getData`/`setData` sites) over `fabric-data-attachment-api-v1`.
-3. **Phase 4 — client**: model loaders (OBJ via Porting Lib), BEWLR → `BuiltinItemRendererRegistry`,
-   core shaders, `FluidRenderHandlerRegistry`, keybinds, HUD. Entry point
-   `mekanism.fabric.client.MekanismFabricClient` (declared in fabric.mod.json, not written yet).
-4. **Phase 5 — integrations** (JEI/EMI compileOnly deps already wired), **Phase 6 — datagen
+1. **Phase 4 remainder** (see the handoff + plan docs above): step 3 client event shims, step 4
+   model/OBJ stack (design doc first — Porting Lib obj_loader), step 5 gui tail, step 6+7
+   atomic stub-swap + gate drop, step 8 milestone (world loads, Metallurgic Infuser + Basic
+   Energy Cube placeable/openable).
+2. **Phase 5 — integrations** (JEI/EMI compileOnly deps already wired), **Phase 6 — datagen
    import + gametests + parity QA**. Then the 1.20.1 track (see PORTING.md branch model).
 
 ## 3. Golden rules
