@@ -58,9 +58,12 @@ sourceSets {
                 'mekanism/client/recipe_viewer/emi/INamedRVRecipe.java',
             ]
             //-PportClient: Phase 4 grind switch (like 1f's -PportMain) — includes mekanism/client/**
-            // and ClientHolidayInfo for census/grind runs; drop the gate when the client compiles green
+            // and ClientHolidayInfo for census/grind runs; drop the gate when the client compiles green.
+            //Captured into a local at configuration time: closures must not touch `project` at
+            // execution time under the configuration cache.
+            def portClient = project.hasProperty('portClient')
             exclude { el ->
-                if (el.directory || project.hasProperty('portClient')) {
+                if (el.directory || portClient) {
                     return false
                 }
                 def p = el.path
@@ -70,7 +73,18 @@ sourceSets {
             // "only reference from the client side"); depends on excluded client render classes
             // (QuadTransformation) + a client-bus event, so it belongs with Phase 4.
             exclude { el ->
-                !el.directory && !project.hasProperty('portClient') && el.path == 'mekanism/common/base/holiday/ClientHolidayInfo.java'
+                !el.directory && !portClient && el.path == 'mekanism/common/base/holiday/ClientHolidayInfo.java'
+            }
+            //JEI/EMI recipe-viewer bindings are Phase 5 (like the common per-mod integrations):
+            // 242 census errors incl. intermediary-name mismatches against the compileOnly jars.
+            // INamedRVRecipe stays — it's the one emi file referenced from common code.
+            exclude { el ->
+                if (el.directory) {
+                    return false
+                }
+                def p = el.path
+                (p.startsWith('mekanism/client/recipe_viewer/jei/') || p.startsWith('mekanism/client/recipe_viewer/emi/')) &&
+                      p != 'mekanism/client/recipe_viewer/emi/INamedRVRecipe.java'
             }
             exclude { el ->
                 //CC bindings are Phase 5, but ComputerConstants is a pure constants class used by
