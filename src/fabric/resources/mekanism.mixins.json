@@ -31,6 +31,9 @@
     "RegistryMixin",
     "SlotMixin"
   ],
+  "client": [
+    "KeyMappingMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }

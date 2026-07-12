@@ -24,7 +24,10 @@ public class MekKeyBinding extends KeyMapping {
 
     MekKeyBinding(String description, IKeyConflictContext keyConflictContext, KeyModifier keyModifier, InputConstants.Key key, String category,
           @Nullable BiConsumer<KeyMapping, Boolean> onKeyDown, @Nullable Consumer<KeyMapping> onKeyUp, @Nullable BooleanSupplier toggleable, boolean repeating) {
-        super(description, keyConflictContext, keyModifier, key, category);
+        //fabric-port: NeoForge's patched-in ctor overload is vanilla ctor + context/modifier setters (side store)
+        super(description, key.getType(), key.getValue(), category);
+        setKeyConflictContext(keyConflictContext);
+        setKeyModifierAndCode(keyModifier, key);
         this.onKeyDown = onKeyDown;
         this.onKeyUp = onKeyUp;
         this.toggleable = toggleable;
