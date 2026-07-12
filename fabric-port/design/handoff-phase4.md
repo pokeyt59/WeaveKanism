@@ -109,6 +109,30 @@ Per grind step, in order — this loop produced every count drop so far:
   gap you deliberately left (find the table, mirror row style), memory updated only at
   session-scale milestones.
 
+### Per-commit refinement checklist (run it literally, every time)
+
+1. Did every vanilla member I referenced come from a javap/extracted-source check this session?
+   (One remembered accessor = the one build break so far.)
+2. Does the DEFAULT `compileJava test` pass — not just the -PportClient census compile? New
+   fabric_shim files are in the default build even though client code isn't.
+3. Is the census total ≥ my prediction's ballpark, and is my target cluster at ~0? If the
+   cluster still has errors, they're either (a) missed surface — extend the shim now, or
+   (b) provably another cluster's types — name that cluster in the commit message.
+4. [scripted] and [port] separated? Nothing staged from census logs? Trailer present?
+5. Would the nearest committed neighbor (same pattern) look structurally like my new file?
+   If I invented a pattern, is there truly no committed precedent? (Search first.)
+6. If I touched mixins.json / bootstrap init paths / resources: did I boot-check runServer —
+   and kill the previous java process first?
+
+### When something surprises you
+
+Two failed attempts at the same fix = stop; re-read the relevant plan section + re-run the
+census detail for that file; the answer is usually a wrong assumption about which cluster the
+error belongs to, or a NeoForge-vs-vanilla surface difference javap settles in one call. Do NOT
+widen scope to "fix nearby things" mid-surprise. If the surprise is a genuine design gap the
+docs don't cover (CLAUDE.md §7 areas), write the question down in the scoreboard row and ask
+the user in one batched message instead of piecemeal.
+
 ## 5. Open decisions & traps specific to the next steps
 
 - **Step 3 (client events, ~350-400 errs)**: mirror the COMMON side — ShimGameplayEvents /
@@ -146,6 +170,81 @@ Per grind step, in order — this loop produced every count drop so far:
   bridge. Expect missing datagen models (116 known) — cosmetic, Phase 6.
 - `common/base/holiday/ClientHolidayInfo` (4 errs) rides whichever step clears
   QuadTransformation (model cluster).
+
+## 6a. Step 3a worklist — MID-FLIGHT, resume here (2026-07-12)
+
+Step 3a = all client MOD-BUS event shims so ClientRegistration/Util + MekanismShaders/
+MekanismRenderer/SoundHandler's mod-bus imports resolve. DONE so far (d95851448e):
+`client/event/EntityRenderersEvent` (3 nested), `client/event/RegisterColorHandlersEvent`
+(Block/Item → ColorProviderRegistry), `client/model/geometry/IGeometryLoader` (type only).
+
+Remaining files to write (every fact below is already verified — do not re-derive):
+
+1. `client/event/ModelEvent.java` — abstract outer + 4 nested (all IModBusEvent):
+   - `RegisterGeometryLoaders`: `register(ResourceLocation, IGeometryLoader<?>)` → store in a
+     new `client/model/ClientModelHooks` (Map<ResourceLocation, IGeometryLoader<?>>).
+   - `RegisterAdditional`: `register(ModelResourceLocation)` → ClientModelHooks set (step 4
+     feeds ModelLoadingPlugin.addModels).
+   - `ModifyBakingResult`: ctor-injected `Map<ModelResourceLocation, BakedModel> getModels()`
+     (`ModelResourceLocation.id()` is vanilla — a record component — no shim needed there).
+   - `BakingCompleted`: ctor-injected getModels() + `ModelBakery getModelBakery()` (check
+     MekanismModelCache.onBake/BaseModelCache for the exact members it reads before finalizing).
+2. `client/event/RegisterGuiLayersEvent.java` — `registerBelowAll(ResourceLocation,
+   LayeredDraw.Layer)` + `registerAbove(ResourceLocation vanillaId, ResourceLocation,
+   LayeredDraw.Layer)` (LayeredDraw.Layer is vanilla 1.21.1) → ordered store (new small
+   GuiLayerHooks or a section in ClientExtensionsHooks); dispatch = HudRenderCallback at step 7
+   (vanilla-relative ordering approximated by registration order — deviation row).
+   Also `client/gui/VanillaGuiLayers.java` — constants shim; Mekanism uses ARMOR_LEVEL,
+   SELECTED_ITEM_NAME, SUBTITLE_OVERLAY (ResourceLocation.withDefaultNamespace of those paths).
+3. `client/event/RegisterMenuScreensEvent.java` — `<M extends AbstractContainerMenu, S extends
+   Screen & MenuAccess<M>> register(MenuType<? extends M>, MenuScreens.ScreenConstructor<M, S>)`.
+   **Vanilla has NO public MenuScreens.register** — AW the private static `SCREENS` map
+   (`accessible field net/minecraft/client/gui/screens/MenuScreens SCREENS Ljava/util/Map;`)
+   and put directly (raw cast).
+4. `client/event/RegisterClientReloadListenersEvent.java` — `registerReloadListener(
+   PreparableReloadListener)` → ResourceManagerHelper.get(PackType.CLIENT_RESOURCES)
+   .registerReloadListener wrapping in an IdentifiableResourceReloadListener with a generated
+   `mekanism:client_reload_<n>` id (mirror ShimGameEvents' server-side wrapper).
+5. `client/event/RegisterParticleProvidersEvent.java` — `registerSpriteSet(ParticleType<T>,
+   ParticleEngine.SpriteParticleRegistration<T>)` → Fabric
+   `ParticleFactoryRegistry.getInstance().register(type, registration::create)` (Fabric's
+   FabricSpriteProvider extends vanilla SpriteSet, so the method ref adapts directly).
+6. `client/event/RegisterShadersEvent.java` — data-carrying: ctor `ResourceProvider`;
+   `getResourceProvider()`; `registerShader(ShaderInstance, Consumer<ShaderInstance>)` collects
+   into a list the poster consumes (post from CoreShaderRegistrationCallback at step 7; close
+   replaced instances on re-post). MekanismShaders is the only user.
+7. `client/event/TextureAtlasStitchedEvent.java` — ctor-injected `TextureAtlas getAtlas()`
+   (game-bus? NeoForge fires on MOD bus — check MekanismRenderer's subscription: it's
+   @SubscribeEvent in a @EventBusSubscriber(modid, value=Dist.CLIENT) class → MOD bus,
+   IModBusEvent). Posted from an atlas-upload tail mixin at step 3b/7.
+8. `client/event/sound/SoundEngineLoadEvent.java` — ctor-injected `SoundEngine getEngine()`,
+   MOD bus. `client/event/sound/PlaySoundEvent.java` — GAME bus: fields engine, String name,
+   SoundInstance originalSound, @Nullable SoundInstance sound; getSound/setSound/
+   getOriginalSound/getName (SoundHandler lines ~255-285 are the exact consumer).
+9. `MekanismClient`'s ConfigurationScreen/IConfigScreenFactory imports: **FCAP 21.1.6 ships both
+   under `net.neoforged.neoforge.client.gui.*` on Fabric — NO remap, NO shim** (verified in the
+   remapped FCAP jar). If the census still flags them, check IConfigScreenFactory really is in
+   the jar before doing anything else.
+10. TSV rows for all of the above under their NeoForge names (client.event.*,
+    client.event.sound.*, client.gui.VanillaGuiLayers, client.model.geometry.IGeometryLoader)
+    → remap.py → separate [scripted] commit. Then re-census: predict client root ~178 → ~40
+    (residue = SeparateTransformsModel/DynamicFluidContainerModel + model-typed errors that
+    belong to step 4).
+11. Hand-edit: ClientRegistrationUtil.setPropertyOverride's param type ItemPropertyFunction →
+    ClampedItemPropertyFunction (vanilla ItemProperties.register wants the clamped type;
+    NeoForge widens it — call-site lambdas fit both). One line + //fabric-port comment.
+
+Then step 3b (game-bus client events + mixins): ClientTickEvent.Pre/Post →
+ClientTickEvents; ClientPlayerNetworkEvent.LoggingIn/LoggingOut → ClientPlayConnectionEvents
+JOIN/DISCONNECT; RenderHighlightEvent.Block → WorldRenderEvents.BLOCK_OUTLINE;
+RenderLevelStageEvent → WorldRenderEvents stages; ScreenEvent.Opening (RenderTickHandler
+guiOpening) → ScreenEvents; mixins for MouseScrollingEvent (MouseHandler), RecipesUpdatedEvent
+(ClientPacketListener.handleUpdateRecipes tail), RenderLivingEvent.Pre/Post
+(LivingEntityRenderer, cancellable Pre), ViewportEvent fog (check ClientTickHandler's exact
+subevent first), RenderArmEvent (ItemInHandRenderer, cancellable), RenderGuiLayerEvent.Pre
+(check RenderTickHandler usage), PlaySoundEvent (SoundEngine.play), TextureAtlasStitchedEvent
+(atlas upload tail), SoundEngineLoadEvent (SoundEngine ctor/reload tail). All client-only
+mixins go in the mixins.json "client" array.
 
 ## 6. Standing rules that bit before (don't relearn)
 
