@@ -8,11 +8,11 @@ import net.minecraft.server.network.ConfigurationTask;
 import net.neoforged.bus.api.Event;
 
 /**
- * Stand-in for NeoForge's {@code RegisterConfigurationTasksEvent}. Same surface, but NOT yet posted:
- * on NeoForge this fires per connecting client during the configuration phase. The Fabric equivalent
- * (driving tasks off {@code ServerConfigurationConnectionEvents}) is Phase 3 — until then Mekanism's
- * listener registers but never runs, so {@code SyncAllSecurityData} is not sent during config.
- * Tracked in the hook-wiring checklist.
+ * Stand-in for NeoForge's {@code RegisterConfigurationTasksEvent}. Same surface; posted per
+ * connecting client from {@code ShimConfigurationTasks} (Fabric's
+ * {@code ServerConfigurationConnectionEvents.CONFIGURE}), with the collected tasks appended to the
+ * vanilla configuration-task queue — so {@code SyncAllSecurityData} runs during config like on
+ * NeoForge. Note the post happens on the connection's netty thread, same as upstream.
  */
 public class RegisterConfigurationTasksEvent extends Event implements IModBusEvent {
 

@@ -51,6 +51,8 @@ public class MekanismFabric implements ModInitializer {
         MekanismEventSubscribers.registerCommon();
         //Gameplay event glue: tick/entity/living/block/chunk families over Fabric API callbacks
         mekanism.fabric_shim.internal.ShimGameplayEvents.init();
+        //Configuration-phase glue: RegisterConfigurationTasksEvent per connecting client
+        mekanism.fabric_shim.internal.ShimConfigurationTasks.init();
 
         //Registration lifecycle: NewRegistryEvent, then RegisterEvent per registry in NeoForge's order.
         //Must happen inside onInitialize while Fabric still permits Registry.register.
