@@ -4,10 +4,11 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.chunk.ChunkAccess;
 
 /**
- * Stand-in for NeoForge's {@code ChunkEvent}. Compile-only; firing is Phase 3.
+ * Stand-in for NeoForge's {@code ChunkEvent}, fired by the Phase 3 gameplay bridges.
  *
- * <p>NeoForge's single-arg constructor derives the level from a patched {@code ChunkAccess#getLevel()}
- * that vanilla lacks, so here it passes {@code null} — harmless while these events do not fire.
+ * <p>NeoForge's single-arg constructors derive the level from a patched
+ * {@code ChunkAccess#getLevel()} that vanilla lacks, so the port's bridges use the level-carrying
+ * overloads (port-only additions; upstream code never constructs these).
  */
 public abstract class ChunkEvent extends LevelEvent {
 
@@ -31,7 +32,11 @@ public abstract class ChunkEvent extends LevelEvent {
         private final boolean newChunk;
 
         public Load(ChunkAccess chunk, boolean newChunk) {
-            super(chunk);
+            this(chunk, null, newChunk);
+        }
+
+        public Load(ChunkAccess chunk, @org.jetbrains.annotations.Nullable LevelAccessor level, boolean newChunk) {
+            super(chunk, level);
             this.newChunk = newChunk;
         }
 
@@ -44,6 +49,10 @@ public abstract class ChunkEvent extends LevelEvent {
 
         public Unload(ChunkAccess chunk) {
             super(chunk);
+        }
+
+        public Unload(ChunkAccess chunk, @org.jetbrains.annotations.Nullable LevelAccessor level) {
+            super(chunk, level);
         }
     }
 }

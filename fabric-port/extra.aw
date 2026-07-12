@@ -45,3 +45,6 @@ accessible field net/minecraft/world/item/CreativeModeTab$Builder displayItemsGe
 accessible field net/minecraft/world/item/CreativeModeTab$Builder type Lnet/minecraft/world/item/CreativeModeTab$Type;
 # SyncAllSecurityData (config-phase task) completes itself on the listener impl.
 accessible method net/minecraft/server/network/ServerConfigurationPacketListenerImpl finishCurrentTask (Lnet/minecraft/server/network/ConfigurationTask$Type;)V
+# Phase 3 tick-event bridges pass the server's haveTime supplier into ServerTickEvent/LevelTickEvent
+# (NeoForge's patched tick loop passes the same reference).
+accessible method net/minecraft/server/MinecraftServer haveTime ()Z

@@ -35,6 +35,13 @@ public abstract class ChunkDataEvent extends ChunkEvent {
             this.type = type;
         }
 
+        //Port-only overload: NeoForge derives the level from its patched ChunkAccess#getLevel,
+        //so the ChunkSerializer bridge mixin passes it explicitly instead.
+        public Load(ChunkAccess chunk, LevelAccessor world, CompoundTag data, ChunkType type) {
+            super(chunk, world, data);
+            this.type = type;
+        }
+
         public ChunkType getType() {
             return this.type;
         }

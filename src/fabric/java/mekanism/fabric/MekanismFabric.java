@@ -47,6 +47,10 @@ public class MekanismFabric implements ModInitializer {
         mekanism.fabric_shim.fml.ModContainer container = new mekanism.fabric_shim.fml.ModContainer(MODID);
         container.bridgeConfigEvents();
         new mekanism.common.Mekanism(container, ShimBuses.MOD_BUS);
+        //@EventBusSubscriber classes (FML's annotation scan on NeoForge; an explicit list here)
+        MekanismEventSubscribers.registerCommon();
+        //Gameplay event glue: tick/entity/living/block/chunk families over Fabric API callbacks
+        mekanism.fabric_shim.internal.ShimGameplayEvents.init();
 
         //Registration lifecycle: NewRegistryEvent, then RegisterEvent per registry in NeoForge's order.
         //Must happen inside onInitialize while Fabric still permits Registry.register.
