@@ -253,3 +253,8 @@ net.neoforged.neoforge.client.settings.KeyModifier	mekanism.fabric_shim.client.s
 net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent	mekanism.fabric_shim.client.event.RegisterKeyMappingsEvent
 top.theillusivec4.curios.api.SlotContext	mekanism.fabric_shim.integration.curios.SlotContext
 top.theillusivec4.curios.api.SlotResult	mekanism.fabric_shim.integration.curios.SlotResult
+net.neoforged.neoforge.client.extensions.common.IClientItemExtensions	mekanism.fabric_shim.client.extensions.IClientItemExtensions
+net.neoforged.neoforge.client.extensions.common.IClientBlockExtensions	mekanism.fabric_shim.client.extensions.IClientBlockExtensions
+net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent	mekanism.fabric_shim.client.extensions.RegisterClientExtensionsEvent
+net.neoforged.neoforge.client.IItemDecorator	mekanism.fabric_shim.client.IItemDecorator
+net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent	mekanism.fabric_shim.client.event.RegisterItemDecorationsEvent

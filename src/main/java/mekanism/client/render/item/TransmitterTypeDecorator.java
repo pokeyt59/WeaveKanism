@@ -8,8 +8,8 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.client.IItemDecorator;
-import net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent;
+import mekanism.fabric_shim.client.IItemDecorator;
+import mekanism.fabric_shim.client.event.RegisterItemDecorationsEvent;
 
 public class TransmitterTypeDecorator implements IItemDecorator {
 

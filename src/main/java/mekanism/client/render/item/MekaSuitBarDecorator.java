@@ -14,7 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.client.IItemDecorator;
+import mekanism.fabric_shim.client.IItemDecorator;
 
 public class MekaSuitBarDecorator implements IItemDecorator {
 

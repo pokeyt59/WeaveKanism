@@ -15,7 +15,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.client.IItemDecorator;
+import mekanism.fabric_shim.client.IItemDecorator;
 import mekanism.fabric_shim.fluids.FluidStack;
 
 public class ChemicalFluidBarDecorator implements IItemDecorator {
