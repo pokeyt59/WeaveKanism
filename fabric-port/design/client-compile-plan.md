@@ -84,17 +84,18 @@ placeable/openable with plain JSON models; fancy renderers can land as later ste
 
 ## Step order (counts filled in from the javac census)
 
-| Step | What | Predicted effect |
+| Step | What | Status / counts |
 |---|---|---|
-| 0 | javac census with -PportClient (blocked on tool outage at writing; numbers TBD) | ground truth |
-| 1 | [scripted] TSV remaps for mechanically-mappable client imports (Dist, EventBusSubscriber variants already mapped; add client-event rows only where a same-surface shim will exist) | import-line errors fall |
-| 2 | Keybinds + client extensions + misc shims (clusters 5, 4, 6 — small, unblock many files) | key/**, render/item/** compile |
-| 3 | Client event shims: mod-bus registration events (cluster 1) applying into Fabric registries + ShimClientGameplayEvents + client mixins (cluster 2) | ClientRegistration + handlers compile |
-| 4 | **Design doc first**, then the model/OBJ stack (cluster 3) over Porting Lib obj_loader | model/**, render/obj/** compile |
-| 5 | @Override strips + patched-vanilla-method residue (pattern table) — expect the 1f-style long tail in gui/** | remaining errors → 0 |
-| 6 | Stub swap [scripted]: delete TSV rows 211–225 + 247, apply reverse remap tree-wide, delete src/fabric_client_stub (single-state MekanismClient etc.); keep server-safety via upstream's own lazy-classloading guards — boot-verify runServer after | stubs gone |
-| 7 | Wire MekanismFabricClient: register client subscribers, post client lifecycle events in NeoForge order, drop -PportClient gate, commit srcDirs | client in default build |
-| 8 | runClient: title screen → world → place/open Metallurgic Infuser + Basic Energy Cube (**milestone**) | verified |
+| 0 | javac census with -PportClient | **DONE 2026-07-12: 1,948** |
+| 1 | AW batch (52 javap-verified lines) + JEI/EMI → Phase 5 exclusion | **DONE: 1,948 → 1,532** (0487efee56) |
+| 2a | Keybind conflict/modifier system (cluster 5) | **DONE: 1,532 → 1,426** (cbf5eff06c; key/** = 0) |
+| 2b | Client extensions + item decorators (cluster 4) + TerrainParticle ctor hand-edits | **DONE: 1,426 → 1,326** (d08f328038) |
+| 3 | Client event shims: mod-bus registration events (cluster 1) applying into Fabric registries + ShimClientGameplayEvents + client mixins (cluster 2) | pending (~400 errs in root/render/sound) |
+| 4 | **Design doc first** (`client-models.md`), then the model/OBJ stack (cluster 3) over Porting Lib obj_loader; incl. BakedModel extension shims (getRenderPasses/getRenderTypes/getQuads+ModelData — MekanismISTER/RenderEnergyCubeItem residues belong here) | pending (~450 errs) |
+| 5 | @Override strips + patched-vanilla-method residue (pattern table) — expect the 1f-style long tail in gui/** | pending |
+| 6 | Stub swap [scripted]: delete TSV rows 211–225 + 247, apply reverse remap tree-wide, delete src/fabric_client_stub (single-state MekanismClient etc.); keep server-safety via upstream's own lazy-classloading guards — boot-verify runServer after. **Must be ONE commit with step 7's gate drop: reverse-remapped common code does not compile while the client exclusion is active** | pending |
+| 7 | Wire MekanismFabricClient: register client subscribers, post client lifecycle events in NeoForge order, drop -PportClient gate, commit srcDirs | pending |
+| 8 | runClient: title screen → world → place/open Metallurgic Infuser + Basic Energy Cube (**milestone**) | pending (title screen already verified pre-grind, 1aedb033de) |
 
 Ground rules identical to 1f: census count must drop as predicted per step — stop and investigate
 if it doesn't; new shims are same-surface fresh implementations (signatures from sources jars,
