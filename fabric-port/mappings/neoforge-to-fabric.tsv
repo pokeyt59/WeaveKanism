@@ -247,3 +247,9 @@ net.neoforged.neoforge.capabilities.ICapabilityInvalidationListener	mekanism.fab
 mekanism.client.SpecialColors	mekanism.fabric_shim.client.SpecialColors
 net.neoforged.fml.util.ObfuscationReflectionHelper	mekanism.fabric_shim.fml.util.ObfuscationReflectionHelper
 net.neoforged.neoforge.fluids.capability.wrappers.FluidBucketWrapper	mekanism.fabric_shim.fluids.capability.wrappers.FluidBucketWrapper
+net.neoforged.neoforge.client.settings.IKeyConflictContext	mekanism.fabric_shim.client.settings.IKeyConflictContext
+net.neoforged.neoforge.client.settings.KeyConflictContext	mekanism.fabric_shim.client.settings.KeyConflictContext
+net.neoforged.neoforge.client.settings.KeyModifier	mekanism.fabric_shim.client.settings.KeyModifier
+net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent	mekanism.fabric_shim.client.event.RegisterKeyMappingsEvent
+top.theillusivec4.curios.api.SlotContext	mekanism.fabric_shim.integration.curios.SlotContext
+top.theillusivec4.curios.api.SlotResult	mekanism.fabric_shim.integration.curios.SlotResult

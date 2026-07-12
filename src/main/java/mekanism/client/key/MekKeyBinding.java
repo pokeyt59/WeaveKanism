@@ -6,8 +6,8 @@ import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
 import mekanism.api.annotations.ParametersAreNotNullByDefault;
 import net.minecraft.client.KeyMapping;
-import net.neoforged.neoforge.client.settings.IKeyConflictContext;
-import net.neoforged.neoforge.client.settings.KeyModifier;
+import mekanism.fabric_shim.client.settings.IKeyConflictContext;
+import mekanism.fabric_shim.client.settings.KeyModifier;
 import org.jetbrains.annotations.Nullable;
 
 @ParametersAreNotNullByDefault

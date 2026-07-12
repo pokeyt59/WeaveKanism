@@ -10,9 +10,9 @@ import mekanism.api.functions.ConstantPredicates;
 import mekanism.api.text.IHasTranslationKey;
 import mekanism.common.MekanismLang;
 import net.minecraft.client.KeyMapping;
-import net.neoforged.neoforge.client.settings.IKeyConflictContext;
-import net.neoforged.neoforge.client.settings.KeyConflictContext;
-import net.neoforged.neoforge.client.settings.KeyModifier;
+import mekanism.fabric_shim.client.settings.IKeyConflictContext;
+import mekanism.fabric_shim.client.settings.KeyConflictContext;
+import mekanism.fabric_shim.client.settings.KeyModifier;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault

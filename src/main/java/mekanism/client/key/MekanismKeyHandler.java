@@ -22,11 +22,11 @@ import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.player.Player;
-import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
-import net.neoforged.neoforge.client.settings.KeyModifier;
+import mekanism.fabric_shim.client.event.RegisterKeyMappingsEvent;
+import mekanism.fabric_shim.client.settings.KeyModifier;
 import org.lwjgl.glfw.GLFW;
-import top.theillusivec4.curios.api.SlotContext;
-import top.theillusivec4.curios.api.SlotResult;
+import mekanism.fabric_shim.integration.curios.SlotContext;
+import mekanism.fabric_shim.integration.curios.SlotResult;
 
 public class MekanismKeyHandler {
 
