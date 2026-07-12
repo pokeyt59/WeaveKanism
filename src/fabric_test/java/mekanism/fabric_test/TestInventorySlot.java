@@ -1,5 +1,7 @@
 package mekanism.fabric_test;
 
+import mekanism.api.SerializationConstants;
+import mekanism.api.SerializerHelper;
 import mekanism.api.inventory.IInventorySlot;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -54,6 +56,7 @@ public class TestInventorySlot implements IInventorySlot {
 
     @Override
     public void deserializeNBT(HolderLookup.Provider provider, CompoundTag nbt) {
-        //Not exercised by bridge tests
+        //Mirrors BasicInventorySlot: restore through the unchecked setter, never re-validated
+        setStackUnchecked(SerializerHelper.parseOversizedOptional(provider, nbt.getCompound(SerializationConstants.ITEM)));
     }
 }

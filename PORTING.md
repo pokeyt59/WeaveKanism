@@ -129,6 +129,8 @@ textually identical; no Yarn remap.
 | Registry aliases (DeferredRegister#addAlias — mekanism:gases→chemicals et al for data components + items) are collected but not applied; old-world data under alias ids won't resolve | DeferredRegister shim (logs a WARN at boot) | Phase 3 (registry alias support) |
 | Datapack registry configurators (RobitSkin's RegistryBuilder tweaks) are ignored by DataPackRegistryEvent (logs a WARN at boot) | DataPackRegistryEvent shim | Phase 3 if skin registration misbehaves |
 | `mekanism:incorrect_for_disassembler`/`incorrect_for_meka_tool` block tags missing at boot (datagen output not yet imported) | resources | Phase 6 (datagen import) |
+| Item-context capabilities are not cross-bridged: shim `FluidHandler.ITEM` (Void context) and Fabric's `FluidStorage.ITEM` (ContainerItemContext) don't see each other — Mekanism's own item caps work, but e.g. filling another mod's tank *item* in a Mekanism machine slot won't. Container-swap propagation has no clean mapping | transfer bridge | Phase 5/6 (revisit with FluidUtil-style usage sites + QA) |
+| Bounding blocks (multiblock spill-over positions) are not exposed on the Fabric-standard lookups (the tile isn't the api handler; its shim providers proxy to the main tile) — external Fabric pipes must target the main block | TransferFallbacks expose guards | revisit if QA flags it (register per-BE-type providers that follow the proxy) |
 
 ### Hand-edit patterns for NeoForge patches to vanilla classes (recur in main)
 
@@ -159,9 +161,16 @@ textually identical; no Yarn remap.
         wrapped in the Storage*Handler adapters; BlockCapabilityCache now backed by
         Fabric BlockApiCache. Mekanism's own providers (side-aware proxies) have been
         registering live via TileEntityTypeDeferredRegister/ItemRegistryObject since 1f.
-  - [ ] 2-expose: Mekanism containers on the Fabric-standard lookups (so other Fabric
-        mods see Mekanism machines). OPEN design decision (side-config fidelity vs the
-        doc's literal per-container wrap) — stop-and-ask rule applies, see task notes.
+  - [x] 2-expose (2026-07-11, user-approved "route through proxies" design): Proxied
+        Fluid/Item/EnergyStorage — operations go through the tile's own side-aware
+        capability proxy (per-side permissions + configured J↔FE conversion are
+        Mekanism's own code), rollback snapshots the side's containers (fluid/energy via
+        unchecked setters, item slots via their NBT round-trip which Mekanism slots
+        implement unchecked). Registered as guarded fallbacks on FluidStorage.SIDED /
+        ItemStorage.SIDED / EnergyStorage.SIDED; the consume fallbacks now skip Mekanism
+        BEs (NeoForge null-semantics + breaks the fallback↔fallback cycle). 50 guardrail
+        tests. Remaining Phase 2 tails are tabled as deviations (item-context bridging,
+        bounding-block exposure) — revisit at QA.
 - [ ] Phase 3: events + networking
 - [ ] Phase 4: client (models, renderers, shaders)
 - [ ] Phase 5: integrations + API cleanup
