@@ -58,12 +58,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.material.FogType;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
-import net.neoforged.neoforge.client.event.ClientTickEvent;
-import net.neoforged.neoforge.client.event.InputEvent.MouseScrollingEvent;
-import net.neoforged.neoforge.client.event.RecipesUpdatedEvent;
-import net.neoforged.neoforge.client.event.RenderLivingEvent;
-import net.neoforged.neoforge.client.event.ViewportEvent;
+import mekanism.fabric_shim.client.event.ClientPlayerNetworkEvent;
+import mekanism.fabric_shim.client.event.ClientTickEvent;
+import mekanism.fabric_shim.client.event.InputEvent.MouseScrollingEvent;
+import mekanism.fabric_shim.client.event.RecipesUpdatedEvent;
+import mekanism.fabric_shim.client.event.RenderLivingEvent;
+import mekanism.fabric_shim.client.event.ViewportEvent;
 import mekanism.fabric_shim.event.entity.EntityJoinLevelEvent;
 
 /**

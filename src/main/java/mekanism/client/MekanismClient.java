@@ -23,7 +23,7 @@ import mekanism.fabric_shim.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import mekanism.fabric_shim.fml.ModContainer;
 import mekanism.fabric_shim.fml.Mod;
-import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
+import mekanism.fabric_shim.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 import org.jetbrains.annotations.Nullable;

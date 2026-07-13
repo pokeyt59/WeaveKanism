@@ -273,3 +273,16 @@ net.neoforged.neoforge.client.event.RegisterShadersEvent	mekanism.fabric_shim.cl
 net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent	mekanism.fabric_shim.client.event.TextureAtlasStitchedEvent
 net.neoforged.neoforge.client.event.sound.SoundEngineLoadEvent	mekanism.fabric_shim.client.event.sound.SoundEngineLoadEvent
 net.neoforged.neoforge.client.event.sound.PlaySoundEvent	mekanism.fabric_shim.client.event.sound.PlaySoundEvent
+
+# --- Phase 4 Step 3b: client game-bus event shims ---
+net.neoforged.neoforge.client.event.ClientTickEvent	mekanism.fabric_shim.client.event.ClientTickEvent
+net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent	mekanism.fabric_shim.client.event.ClientPlayerNetworkEvent
+net.neoforged.neoforge.client.event.InputEvent	mekanism.fabric_shim.client.event.InputEvent
+net.neoforged.neoforge.client.event.RecipesUpdatedEvent	mekanism.fabric_shim.client.event.RecipesUpdatedEvent
+net.neoforged.neoforge.client.event.RenderLivingEvent	mekanism.fabric_shim.client.event.RenderLivingEvent
+net.neoforged.neoforge.client.event.ViewportEvent	mekanism.fabric_shim.client.event.ViewportEvent
+net.neoforged.neoforge.client.event.ScreenEvent	mekanism.fabric_shim.client.event.ScreenEvent
+net.neoforged.neoforge.client.event.RenderLevelStageEvent	mekanism.fabric_shim.client.event.RenderLevelStageEvent
+net.neoforged.neoforge.client.event.RenderGuiLayerEvent	mekanism.fabric_shim.client.event.RenderGuiLayerEvent
+net.neoforged.neoforge.client.event.RenderArmEvent	mekanism.fabric_shim.client.event.RenderArmEvent
+net.neoforged.neoforge.client.event.RenderHighlightEvent	mekanism.fabric_shim.client.event.RenderHighlightEvent
