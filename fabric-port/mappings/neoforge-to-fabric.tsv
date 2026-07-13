@@ -258,3 +258,18 @@ net.neoforged.neoforge.client.extensions.common.IClientBlockExtensions	mekanism.
 net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent	mekanism.fabric_shim.client.extensions.RegisterClientExtensionsEvent
 net.neoforged.neoforge.client.IItemDecorator	mekanism.fabric_shim.client.IItemDecorator
 net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent	mekanism.fabric_shim.client.event.RegisterItemDecorationsEvent
+
+# --- Phase 4 Step 3a: client mod-bus registration event shims ---
+net.neoforged.neoforge.client.event.EntityRenderersEvent	mekanism.fabric_shim.client.event.EntityRenderersEvent
+net.neoforged.neoforge.client.event.RegisterColorHandlersEvent	mekanism.fabric_shim.client.event.RegisterColorHandlersEvent
+net.neoforged.neoforge.client.model.geometry.IGeometryLoader	mekanism.fabric_shim.client.model.geometry.IGeometryLoader
+net.neoforged.neoforge.client.event.ModelEvent	mekanism.fabric_shim.client.event.ModelEvent
+net.neoforged.neoforge.client.event.RegisterGuiLayersEvent	mekanism.fabric_shim.client.event.RegisterGuiLayersEvent
+net.neoforged.neoforge.client.gui.VanillaGuiLayers	mekanism.fabric_shim.client.gui.VanillaGuiLayers
+net.neoforged.neoforge.client.event.RegisterMenuScreensEvent	mekanism.fabric_shim.client.event.RegisterMenuScreensEvent
+net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent	mekanism.fabric_shim.client.event.RegisterClientReloadListenersEvent
+net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent	mekanism.fabric_shim.client.event.RegisterParticleProvidersEvent
+net.neoforged.neoforge.client.event.RegisterShadersEvent	mekanism.fabric_shim.client.event.RegisterShadersEvent
+net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent	mekanism.fabric_shim.client.event.TextureAtlasStitchedEvent
+net.neoforged.neoforge.client.event.sound.SoundEngineLoadEvent	mekanism.fabric_shim.client.event.sound.SoundEngineLoadEvent
+net.neoforged.neoforge.client.event.sound.PlaySoundEvent	mekanism.fabric_shim.client.event.sound.PlaySoundEvent

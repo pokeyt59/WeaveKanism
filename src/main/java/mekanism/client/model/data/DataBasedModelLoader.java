@@ -8,7 +8,7 @@ import java.util.Map;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.GsonHelper;
 import mekanism.fabric_shim.client.model.data.ModelProperty;
-import net.neoforged.neoforge.client.model.geometry.IGeometryLoader;
+import mekanism.fabric_shim.client.model.geometry.IGeometryLoader;
 import org.jetbrains.annotations.NotNull;
 
 /**

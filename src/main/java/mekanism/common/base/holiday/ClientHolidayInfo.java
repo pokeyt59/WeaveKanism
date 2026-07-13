@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import mekanism.fabric_shim.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import mekanism.fabric_shim.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.client.event.TextureAtlasStitchedEvent;
+import mekanism.fabric_shim.client.event.TextureAtlasStitchedEvent;
 import org.jetbrains.annotations.Nullable;
 
 /**
