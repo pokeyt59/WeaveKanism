@@ -134,19 +134,34 @@ the only new glue.
 
 ## 7. OPEN DECISIONS (need the user)
 
-**A. OBJ / Porting Lib strategy (pivotal).** Porting Lib 1.21.1 is not on mvn.devos.one (verified:
-`base/core/transfer/fluids/obj_loader` all cap at `2.3.15+1.20.1`; `Porting-Lib` is the only artifact
-under the group). Options:
-- **A1 (recommended): defer OBJ.** Stub `ObjModel`/`ObjLoader`/`ObjModel.ModelSettings` so
-  `ObjLoader.INSTANCE.loadModel(...)` returns a placeholder/`missing` geometry; transmitters render as
-  the missing model. Milestone (infuser + energy cube) is unaffected; wire real OBJ in a later phase.
-  Aligns with "Phase 4 minimal first."
-- **A2: port a minimal OBJ loader ourselves** (fresh impl — parse `.obj`/`.mtl`, bake to `BakedQuad`s).
-  Large, LGPL-clean effort; only transmitters need it.
-- **A3: hunt for Porting Lib 1.21.1 elsewhere** (Modrinth maven / Jared's maven / a different devos
-  path). Uncertain it exists; the 1.20.1 cap suggests the model modules stalled.
-- **A4: vendor Porting Lib's `obj_loader` source** (LGPL — legally includable with attribution, but the
-  port's ground rule is "don't copy LGPL bodies"; would be an explicit exception).
+**A. OBJ / Porting Lib strategy — RESOLVED 2026-07-13 (user: "hunt for Porting Lib 1.21.1").**
+Porting Lib 1.21.1 IS published — on the devos **snapshots** channel (`mvn.devos.one/snapshots`, NOT
+`/releases`): `obj_loader`/`models`/`model_loader` at `3.1.0-beta.87+1.21.1` (latest). The pinned
+`porting_lib_version=3.1.0` is a snapshot beta; the build just points at the wrong channel/version.
+
+What Porting Lib 1.21.1 PROVIDES (verified by jar inspection + sources; simple names + `bake`/context
+signatures match NeoForge exactly → remappable):
+- `models.geometry.{IGeometryLoader, IUnbakedGeometry, IGeometryBakingContext, StandaloneGeometryBakingContext}` (model_loader)
+- `models.obj.{ObjModel, ObjLoader}` (obj_loader)
+- `models.{ElementsModel, SeparateTransformsModel, DynamicFluidContainerModel, IQuadTransformer}`, `models.geometry.SimpleModelState`, `models.pipeline.QuadBakingVertexConsumer`
+- `models.{ModelEvent (+ RegisterAdditional, ModifyBakingResult, BakingCompleted)}` **plus a working
+  Fabric model-loading integration** (`PortingLibModelLoadingRegistry`, `PortingLibModels`) that FIRES
+  those events — so the loader→bake→cache flow works through Porting Lib's tested glue, no hand bridge.
+
+What Porting Lib does NOT provide (Fabric handles the data flow via FRAPI instead — still shim, per §5):
+`BakedModelWrapper`, `IDynamicBakedModel`, `ChunkRenderTypeSet`, `RenderTypeGroup`, and
+`ModelData`/`ModelProperty` (already shimmed in 1f, TSV 158/159).
+
+**Revised strategy: remap-to-Porting-Lib + shim-the-FRAPI-gaps.** Remap Mekanism's
+`net.neoforged.neoforge.client.model.{geometry,obj}.*` + ElementsModel/SeparateTransformsModel/
+DynamicFluidContainerModel/SimpleModelState/IQuadTransformer/QuadBakingVertexConsumer → Porting Lib;
+shim only the four BakedModel-extension types + wire ModelData through FRAPI (decisions B/C). This
+SUPERSEDES part of step 3a: the type-only `IGeometryLoader` shim and `ModelEvent.RegisterGeometryLoaders
+→ClientModelHooks` get reconciled to Porting Lib's `IGeometryLoader`/loader-registration (RegisterAdditional/
+ModifyBakingResult/BakingCompleted may remap to PL's ModelEvent — confirm PL fires them where Mekanism
+expects). Needs a build change (add snapshots repo, bump version to `3.1.0-beta.87+1.21.1`, modImplementation
++ JiJ model_loader/models/obj_loader + transitive base/core) — **gated on user OK per CLAUDE.md §6
+(new remote dependency).**
 
 **B. ModelData handoff mechanism.** Recommended **block-view-api-v2** `RenderDataBlockEntity` +
 `getBlockEntityRenderData` (modern, present). Alternative: `fabric-rendering-data-attachment-v1` (older,
