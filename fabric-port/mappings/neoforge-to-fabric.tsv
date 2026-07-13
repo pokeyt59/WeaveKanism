@@ -293,3 +293,8 @@ net.neoforged.neoforge.client.model.SimpleModelState	mekanism.fabric_shim.client
 net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext	mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext
 net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry	mekanism.fabric_shim.client.model.geometry.IUnbakedGeometry
 net.neoforged.neoforge.client.model.geometry.StandaloneGeometryBakingContext	mekanism.fabric_shim.client.model.geometry.StandaloneGeometryBakingContext
+
+# --- Phase 4 Step 4-baked: BakedModel extension shims (MekBakedModelExt inject-interface) ---
+net.neoforged.neoforge.client.ChunkRenderTypeSet	mekanism.fabric_shim.client.ChunkRenderTypeSet
+net.neoforged.neoforge.client.model.BakedModelWrapper	mekanism.fabric_shim.client.model.BakedModelWrapper
+net.neoforged.neoforge.client.model.IDynamicBakedModel	mekanism.fabric_shim.client.model.IDynamicBakedModel

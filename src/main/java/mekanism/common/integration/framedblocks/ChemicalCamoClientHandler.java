@@ -8,7 +8,7 @@ import net.minecraft.client.particle.Particle;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
-import net.neoforged.neoforge.client.ChunkRenderTypeSet;
+import mekanism.fabric_shim.client.ChunkRenderTypeSet;
 import mekanism.fabric_shim.client.model.data.ModelData;
 import xfacthd.framedblocks.api.camo.CamoClientHandler;
 import xfacthd.framedblocks.api.model.util.ModelUtils;
