@@ -128,9 +128,11 @@ the only new glue.
 - **Quad utils**: `IQuadTransformer` (Outlines) and `QuadBakingVertexConsumer` (Quad) are self-contained
   vertex math over vanilla `BakedQuad`/`VertexFormat`; fresh same-surface shims. Not milestone-critical
   → land last.
-- **OBJ (`ObjModel`/`ObjLoader`)**: **blocked — see §7 decision A.** Porting Lib has no 1.21.1 release
-  (mvn.devos.one caps every module at `2.3.15+1.20.1`; the pinned `porting_lib_version=3.1.0` matches
-  nothing there). Transmitters are the only OBJ users and are outside the milestone.
+- **OBJ (`ObjModel`/`ObjLoader`)**: **stubbed** (§7 decision A — Porting Lib available but declined).
+  Fresh same-surface shims (`ObjModel`, `ObjLoader`, `ObjModel.ModelSettings`) whose `loadModel`/`bake`
+  return an empty/`missing` geometry, so `render/obj/**` + BaseModelCache's `OBJModelData` compile and
+  transmitters render as the missing model. Real OBJ parsing is a later phase. Transmitters are the only
+  OBJ users and are outside the milestone.
 
 ## 7. OPEN DECISIONS (need the user)
 
@@ -152,26 +154,22 @@ What Porting Lib does NOT provide (Fabric handles the data flow via FRAPI instea
 `BakedModelWrapper`, `IDynamicBakedModel`, `ChunkRenderTypeSet`, `RenderTypeGroup`, and
 `ModelData`/`ModelProperty` (already shimmed in 1f, TSV 158/159).
 
-**Revised strategy: remap-to-Porting-Lib + shim-the-FRAPI-gaps.** Remap Mekanism's
-`net.neoforged.neoforge.client.model.{geometry,obj}.*` + ElementsModel/SeparateTransformsModel/
-DynamicFluidContainerModel/SimpleModelState/IQuadTransformer/QuadBakingVertexConsumer → Porting Lib;
-shim only the four BakedModel-extension types + wire ModelData through FRAPI (decisions B/C). This
-SUPERSEDES part of step 3a: the type-only `IGeometryLoader` shim and `ModelEvent.RegisterGeometryLoaders
-→ClientModelHooks` get reconciled to Porting Lib's `IGeometryLoader`/loader-registration (RegisterAdditional/
-ModifyBakingResult/BakingCompleted may remap to PL's ModelEvent — confirm PL fires them where Mekanism
-expects). Needs a build change (add snapshots repo, bump version to `3.1.0-beta.87+1.21.1`, modImplementation
-+ JiJ model_loader/models/obj_loader + transitive base/core) — **gated on user OK per CLAUDE.md §6
-(new remote dependency).**
+**DECISION 2026-07-13 (user: "No — hand-shim instead"): do NOT add the Porting Lib snapshot
+dependency.** Step 4 uses the self-contained hand-shim path (§5), keeping the port dependency-free and
+avoiding a beta/snapshot dep. The step-3a `IGeometryLoader`/`ModelEvent` shims + `ClientModelHooks`
+STAY as the foundation (no Porting Lib reconciliation). OBJ (transmitters, non-milestone) is
+**stubbed** — `ObjModel`/`ObjLoader`/`ObjModel.ModelSettings` fresh shims whose `loadModel`/`bake`
+return a `missing`/empty geometry so transmitters render as the missing model; real OBJ is a later
+phase (aligns with "Phase 4 minimal first"). Deviation row goes in PORTING.md.
 
-**B. ModelData handoff mechanism.** Recommended **block-view-api-v2** `RenderDataBlockEntity` +
-`getBlockEntityRenderData` (modern, present). Alternative: `fabric-rendering-data-attachment-v1` (older,
-deprecated) or a Mekanism-owned side map. Recommendation: block-view-v2.
+**B. ModelData handoff mechanism — DECIDED: block-view-api-v2.** `RenderDataBlockEntity` +
+`getBlockEntityRenderData` (modern, present on the classpath). BE `getModelData()` → `getRenderData()`;
+render thread reads it in the FRAPI emit shim.
 
-**C. Multi-render-layer fidelity (`ChunkRenderTypeSet`).** Recommended **FRAPI per-quad material** in
-the emit shim (honours the model's `getRenderTypes` set; needed because the energy cube mixes
-solid+cutout LEDs). Coarser alternative: `BlockRenderLayerMap` per-block (one layer/block — would flatten
-the energy cube's multi-layer look). Recommendation: FRAPI material path, BlockRenderLayerMap only if the
-emit path proves too costly for the milestone.
+**C. Multi-render-layer fidelity — DECIDED: FRAPI per-quad material.** The emit shim sets a
+`RenderMaterial` blend mode per layer from the model's `getRenderTypes`/`ChunkRenderTypeSet` set (needed
+because the energy cube mixes solid+cutout LEDs). `BlockRenderLayerMap` per-block only as a fallback if
+the emit path proves too costly for the milestone.
 
 ## 8. Build / verify plan (once A–C are settled)
 
