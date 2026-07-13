@@ -46,7 +46,8 @@
       "net/minecraft/class_1538": ["mekanism/fabric_shim/inject/MekLightningBoltExt"],
       "net/minecraft/class_7225$class_7874": ["mekanism/fabric_shim/inject/MekHolderLookupProviderExt"],
       "net/minecraft/class_1761$class_7913": ["mekanism/fabric_shim/inject/MekCreativeModeTabBuilderExt"],
-      "net/minecraft/class_304": ["mekanism/fabric_shim/inject/MekKeyMappingExt"]
+      "net/minecraft/class_304": ["mekanism/fabric_shim/inject/MekKeyMappingExt"],
+      "net/minecraft/class_1087": ["mekanism/fabric_shim/inject/MekBakedModelExt"]
     }
   },
   "entrypoints": {

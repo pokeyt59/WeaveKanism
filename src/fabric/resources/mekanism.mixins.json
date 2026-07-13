@@ -32,6 +32,7 @@
     "SlotMixin"
   ],
   "client": [
+    "BakedModelMixin",
     "KeyMappingMixin"
   ],
   "injectors": {

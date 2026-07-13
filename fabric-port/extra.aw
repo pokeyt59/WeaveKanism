@@ -112,3 +112,5 @@ accessible field net/minecraft/client/renderer/entity/ItemRenderer blockEntityRe
 accessible field net/minecraft/client/gui/screens/MenuScreens SCREENS Ljava/util/Map;
 # RegisterParticleProvidersEvent shim names vanilla's private SpriteParticleRegistration in its signature.
 accessible class net/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration
+# MekanismISTER draws baked quads directly through ItemRenderer's private renderQuadList (NeoForge widens it).
+accessible method net/minecraft/client/renderer/entity/ItemRenderer renderQuadList (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Ljava/util/List;Lnet/minecraft/world/item/ItemStack;II)V
