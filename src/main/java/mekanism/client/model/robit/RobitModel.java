@@ -16,7 +16,7 @@ import net.minecraft.client.resources.model.ModelBaker;
 import net.minecraft.client.resources.model.ModelState;
 import net.minecraft.util.GsonHelper;
 import net.neoforged.neoforge.client.model.ElementsModel;
-import net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext;
+import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
 import mekanism.fabric_shim.client.model.geometry.IGeometryLoader;
 import org.jetbrains.annotations.NotNull;
 

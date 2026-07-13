@@ -33,8 +33,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import mekanism.fabric_shim.client.model.data.ModelData;
-import net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext;
-import net.neoforged.neoforge.client.model.geometry.StandaloneGeometryBakingContext;
+import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
+import mekanism.fabric_shim.client.model.geometry.StandaloneGeometryBakingContext;
 import org.joml.Vector3f;
 
 @NothingNullByDefault

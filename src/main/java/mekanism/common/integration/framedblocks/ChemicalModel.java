@@ -24,7 +24,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.ChunkRenderTypeSet;
-import net.neoforged.neoforge.client.model.SimpleModelState;
+import mekanism.fabric_shim.client.model.SimpleModelState;
 import mekanism.fabric_shim.client.model.data.ModelData;
 import org.jetbrains.annotations.Nullable;
 

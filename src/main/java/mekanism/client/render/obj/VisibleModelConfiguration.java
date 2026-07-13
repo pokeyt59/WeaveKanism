@@ -1,7 +1,7 @@
 package mekanism.client.render.obj;
 
 import java.util.Collection;
-import net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext;
+import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
 
 public class VisibleModelConfiguration extends WrapperModelConfiguration {
 

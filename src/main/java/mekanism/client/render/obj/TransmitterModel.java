@@ -9,8 +9,8 @@ import net.minecraft.client.resources.model.ModelBaker;
 import net.minecraft.client.resources.model.ModelState;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.resources.ResourceLocation;
-import net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext;
-import net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry;
+import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
+import mekanism.fabric_shim.client.model.geometry.IUnbakedGeometry;
 import net.neoforged.neoforge.client.model.obj.ObjModel;
 import org.jetbrains.annotations.Nullable;
 

@@ -29,7 +29,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.ChunkRenderTypeSet;
-import net.neoforged.neoforge.client.RenderTypeGroup;
+import mekanism.fabric_shim.client.RenderTypeGroup;
 import net.neoforged.neoforge.client.model.IDynamicBakedModel;
 import mekanism.fabric_shim.client.model.data.ModelData;
 import org.jetbrains.annotations.NotNull;

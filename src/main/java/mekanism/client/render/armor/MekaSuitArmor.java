@@ -71,7 +71,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec3;
 import mekanism.fabric_shim.client.event.ModelEvent.BakingCompleted;
 import mekanism.fabric_shim.client.model.data.ModelData;
-import net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext;
+import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
 import org.jetbrains.annotations.ApiStatus.Internal;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

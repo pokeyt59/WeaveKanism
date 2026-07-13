@@ -286,3 +286,10 @@ net.neoforged.neoforge.client.event.RenderLevelStageEvent	mekanism.fabric_shim.c
 net.neoforged.neoforge.client.event.RenderGuiLayerEvent	mekanism.fabric_shim.client.event.RenderGuiLayerEvent
 net.neoforged.neoforge.client.event.RenderArmEvent	mekanism.fabric_shim.client.event.RenderArmEvent
 net.neoforged.neoforge.client.event.RenderHighlightEvent	mekanism.fabric_shim.client.event.RenderHighlightEvent
+
+# --- Phase 4 Step 4: model geometry interface shims (hand-shim, no Porting Lib) ---
+net.neoforged.neoforge.client.RenderTypeGroup	mekanism.fabric_shim.client.RenderTypeGroup
+net.neoforged.neoforge.client.model.SimpleModelState	mekanism.fabric_shim.client.model.SimpleModelState
+net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext	mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext
+net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry	mekanism.fabric_shim.client.model.geometry.IUnbakedGeometry
+net.neoforged.neoforge.client.model.geometry.StandaloneGeometryBakingContext	mekanism.fabric_shim.client.model.geometry.StandaloneGeometryBakingContext

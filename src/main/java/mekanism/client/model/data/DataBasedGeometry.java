@@ -18,8 +18,8 @@ import net.minecraft.client.resources.model.ModelState;
 import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.resources.ResourceLocation;
 import mekanism.fabric_shim.client.model.data.ModelProperty;
-import net.neoforged.neoforge.client.model.geometry.IGeometryBakingContext;
-import net.neoforged.neoforge.client.model.geometry.IUnbakedGeometry;
+import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
+import mekanism.fabric_shim.client.model.geometry.IUnbakedGeometry;
 import org.jetbrains.annotations.Nullable;
 
 @NothingNullByDefault
