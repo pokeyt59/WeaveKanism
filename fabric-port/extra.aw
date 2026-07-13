@@ -108,3 +108,7 @@ accessible field net/minecraft/client/model/geom/ModelPart$Cube polygons [Lnet/m
 accessible field net/minecraft/client/KeyMapping key Lcom/mojang/blaze3d/platform/InputConstants$Key;
 # IClientItemExtensions.DEFAULT returns the vanilla shared BEWLR (private field, no accessor).
 accessible field net/minecraft/client/renderer/entity/ItemRenderer blockEntityRenderer Lnet/minecraft/client/renderer/BlockEntityWithoutLevelRenderer;
+# RegisterMenuScreensEvent shim puts into vanilla's SCREENS map directly (register is private).
+accessible field net/minecraft/client/gui/screens/MenuScreens SCREENS Ljava/util/Map;
+# RegisterParticleProvidersEvent shim names vanilla's private SpriteParticleRegistration in its signature.
+accessible class net/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration

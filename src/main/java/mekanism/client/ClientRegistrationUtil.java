@@ -34,7 +34,7 @@ import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.client.renderer.item.ItemPropertyFunction;
+import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.PreparableReloadListener;
@@ -45,11 +45,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
-import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+import mekanism.fabric_shim.client.event.EntityRenderersEvent;
+import mekanism.fabric_shim.client.event.RegisterClientReloadListenersEvent;
+import mekanism.fabric_shim.client.event.RegisterColorHandlersEvent;
 import mekanism.fabric_shim.client.event.RegisterKeyMappingsEvent;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import mekanism.fabric_shim.client.event.RegisterMenuScreensEvent;
 import mekanism.fabric_shim.client.extensions.IClientFluidTypeExtensions;
 import mekanism.fabric_shim.client.extensions.IClientItemExtensions;
 import mekanism.fabric_shim.client.extensions.RegisterClientExtensionsEvent;
@@ -160,7 +160,9 @@ public class ClientRegistrationUtil {
         }
     }
 
-    public static void setPropertyOverride(Holder<Item> item, ResourceLocation override, ItemPropertyFunction propertyGetter) {
+    //fabric-port: vanilla ItemProperties.register wants the clamped type (NeoForge widens it to
+    // ItemPropertyFunction); every call-site lambda binds to ClampedItemPropertyFunction just as well.
+    public static void setPropertyOverride(Holder<Item> item, ResourceLocation override, ClampedItemPropertyFunction propertyGetter) {
         ItemProperties.register(item.value(), override, propertyGetter);
     }
 
