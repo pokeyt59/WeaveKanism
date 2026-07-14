@@ -14,7 +14,7 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Direction.Axis;
 import net.minecraft.core.Vec3i;
-import net.neoforged.neoforge.client.model.pipeline.QuadBakingVertexConsumer;
+import mekanism.fabric_shim.client.model.pipeline.QuadBakingVertexConsumer;
 import org.joml.Vector3f;
 
 public class Quad {

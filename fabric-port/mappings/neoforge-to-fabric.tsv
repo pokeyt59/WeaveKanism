@@ -304,3 +304,6 @@ net.neoforged.neoforge.client.model.obj.ObjModel	mekanism.fabric_shim.client.mod
 net.neoforged.neoforge.client.model.obj.ObjLoader	mekanism.fabric_shim.client.model.obj.ObjLoader
 net.neoforged.neoforge.client.model.ElementsModel	mekanism.fabric_shim.client.model.ElementsModel
 net.neoforged.neoforge.client.model.IQuadTransformer	mekanism.fabric_shim.client.model.IQuadTransformer
+
+# --- Phase 4 Step 4-quadbaker: QuadBakingVertexConsumer (VertexConsumer/BakedQuad ext inject-ifaces) ---
+net.neoforged.neoforge.client.model.pipeline.QuadBakingVertexConsumer	mekanism.fabric_shim.client.model.pipeline.QuadBakingVertexConsumer
