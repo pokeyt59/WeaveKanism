@@ -172,9 +172,16 @@ def to_aw_lines(entries: list[Entry], field_desc: dict[tuple[str, str], str]) ->
             if e.definalize:
                 lines.append(f"extendable class {owner}")
         elif e.kind == "method":
-            lines.append(f"accessible method {owner} {e.member} {e.desc}")
-            if e.definalize:
+            # A `protected` method AT means Mekanism overrides or calls the member from a subclass, so it
+            # must stay protected (extendable), NOT become public (accessible): a protected override of a
+            # public method is a "weaker access privileges" compile error. Constructors can't be extendable
+            # (nothing overrides them), so they keep `accessible`.
+            if e.access == "protected" and e.member != "<init>":
                 lines.append(f"extendable method {owner} {e.member} {e.desc}")
+            else:
+                lines.append(f"accessible method {owner} {e.member} {e.desc}")
+                if e.definalize:
+                    lines.append(f"extendable method {owner} {e.member} {e.desc}")
         else:  # field
             desc = field_desc.get((owner, e.member))
             if desc is None:

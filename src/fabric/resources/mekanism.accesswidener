@@ -5,12 +5,12 @@ extendable method net/minecraft/client/gui/components/AbstractWidget render (Lne
 accessible method net/minecraft/client/gui/components/events/ContainerEventHandler handleArrowNavigation (Lnet/minecraft/client/gui/navigation/FocusNavigationEvent$ArrowNavigation;)Lnet/minecraft/client/gui/ComponentPath;
 accessible method net/minecraft/client/gui/components/events/ContainerEventHandler handleTabNavigation (Lnet/minecraft/client/gui/navigation/FocusNavigationEvent$TabNavigation;)Lnet/minecraft/client/gui/ComponentPath;
 accessible method net/minecraft/client/gui/components/Tooltip <init> (Lnet/minecraft/network/chat/Component;Lnet/minecraft/network/chat/Component;)V
-accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen recalculateQuickCraftRemaining ()V
-accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen renderFloatingItem (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V
-accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen findSlot (DD)Lnet/minecraft/world/inventory/Slot;
-accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen isHovering (Lnet/minecraft/world/inventory/Slot;DD)Z
-accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen renderSlot (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/inventory/Slot;)V
-accessible method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen checkHotbarMouseClicked (I)V
+extendable method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen recalculateQuickCraftRemaining ()V
+extendable method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen renderFloatingItem (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V
+extendable method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen findSlot (DD)Lnet/minecraft/world/inventory/Slot;
+extendable method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen isHovering (Lnet/minecraft/world/inventory/Slot;DD)Z
+extendable method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen renderSlot (Lnet/minecraft/client/gui/GuiGraphics;Lnet/minecraft/world/inventory/Slot;)V
+extendable method net/minecraft/client/gui/screens/inventory/AbstractContainerScreen checkHotbarMouseClicked (I)V
 accessible class net/minecraft/client/gui/screens/Screen$DeferredTooltipRendering
 accessible method net/minecraft/client/gui/screens/Screen renderWithTooltip (Lnet/minecraft/client/gui/GuiGraphics;IIF)V
 extendable method net/minecraft/client/gui/screens/Screen renderWithTooltip (Lnet/minecraft/client/gui/GuiGraphics;IIF)V
