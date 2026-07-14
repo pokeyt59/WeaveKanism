@@ -33,7 +33,9 @@
   ],
   "client": [
     "BakedModelMixin",
-    "KeyMappingMixin"
+    "BakedQuadMixin",
+    "KeyMappingMixin",
+    "VertexConsumerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
