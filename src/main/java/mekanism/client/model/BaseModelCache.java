@@ -27,9 +27,9 @@ import mekanism.fabric_shim.client.event.ModelEvent.RegisterAdditional;
 import mekanism.fabric_shim.client.model.data.ModelData;
 import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
 import mekanism.fabric_shim.client.model.geometry.IUnbakedGeometry;
-import net.neoforged.neoforge.client.model.obj.ObjLoader;
-import net.neoforged.neoforge.client.model.obj.ObjModel;
-import net.neoforged.neoforge.client.model.obj.ObjModel.ModelSettings;
+import mekanism.fabric_shim.client.model.obj.ObjLoader;
+import mekanism.fabric_shim.client.model.obj.ObjModel;
+import mekanism.fabric_shim.client.model.obj.ObjModel.ModelSettings;
 import org.jetbrains.annotations.Nullable;
 
 public class BaseModelCache {

@@ -35,7 +35,7 @@ import mekanism.fabric_shim.client.model.BakedModelWrapper;
 import mekanism.fabric_shim.client.model.SimpleModelState;
 import mekanism.fabric_shim.client.model.data.ModelData;
 import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
-import net.neoforged.neoforge.client.model.obj.ObjModel;
+import mekanism.fabric_shim.client.model.obj.ObjModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Quaternionf;

@@ -298,3 +298,9 @@ net.neoforged.neoforge.client.model.geometry.StandaloneGeometryBakingContext	mek
 net.neoforged.neoforge.client.ChunkRenderTypeSet	mekanism.fabric_shim.client.ChunkRenderTypeSet
 net.neoforged.neoforge.client.model.BakedModelWrapper	mekanism.fabric_shim.client.model.BakedModelWrapper
 net.neoforged.neoforge.client.model.IDynamicBakedModel	mekanism.fabric_shim.client.model.IDynamicBakedModel
+
+# --- Phase 4 Step 4-obj: OBJ stubs + ElementsModel stub + IQuadTransformer constants ---
+net.neoforged.neoforge.client.model.obj.ObjModel	mekanism.fabric_shim.client.model.obj.ObjModel
+net.neoforged.neoforge.client.model.obj.ObjLoader	mekanism.fabric_shim.client.model.obj.ObjLoader
+net.neoforged.neoforge.client.model.ElementsModel	mekanism.fabric_shim.client.model.ElementsModel
+net.neoforged.neoforge.client.model.IQuadTransformer	mekanism.fabric_shim.client.model.IQuadTransformer

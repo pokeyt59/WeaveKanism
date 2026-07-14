@@ -11,7 +11,7 @@ import net.minecraft.client.resources.model.UnbakedModel;
 import net.minecraft.resources.ResourceLocation;
 import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
 import mekanism.fabric_shim.client.model.geometry.IUnbakedGeometry;
-import net.neoforged.neoforge.client.model.obj.ObjModel;
+import mekanism.fabric_shim.client.model.obj.ObjModel;
 import org.jetbrains.annotations.Nullable;
 
 public class TransmitterModel implements IUnbakedGeometry<TransmitterModel> {
