@@ -70,6 +70,29 @@ public abstract class GuiMekanism<CONTAINER extends AbstractContainerMenu> exten
         super(container, inv, title);
     }
 
+    //fabric-port: NeoForge patches AbstractContainerScreen with getGuiLeft/getGuiTop/getXSize/getYSize
+    // (returning the vanilla leftPos/topPos/imageWidth/imageHeight fields). Vanilla has no such
+    // methods, so IGuiWrapper's abstract geometry methods are implemented here on the screen base.
+    @Override
+    public int getGuiLeft() {
+        return leftPos;
+    }
+
+    @Override
+    public int getGuiTop() {
+        return topPos;
+    }
+
+    @Override
+    public int getXSize() {
+        return imageWidth;
+    }
+
+    @Override
+    public int getYSize() {
+        return imageHeight;
+    }
+
     @NotNull
     @Override
     public BooleanSupplier trackWarning(@NotNull WarningType type, @NotNull BooleanSupplier warningSupplier) {
