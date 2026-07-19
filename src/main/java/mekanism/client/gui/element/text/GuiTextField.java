@@ -360,6 +360,10 @@ public class GuiTextField extends GuiElement {
     private static class ClearingEditBox extends EditBox {
 
         private boolean allowColors;
+        //fabric-port: vanilla EditBox receives onClick(mouseX, mouseY) without the button (NeoForge
+        // patches AbstractWidget to pass it); capture it from mouseClicked so right-click-to-clear
+        // keeps working (same bridge as GuiElement).
+        private int lastClickButton;
 
         public ClearingEditBox(Font font, int x, int y, int width, int height, Component message) {
             super(font, x, y, width, height, message);
@@ -371,12 +375,18 @@ public class GuiTextField extends GuiElement {
         }
 
         @Override
-        public void onClick(double mouseX, double mouseY, int button) {
-            if (button == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
+        public boolean mouseClicked(double mouseX, double mouseY, int button) {
+            lastClickButton = button;
+            return super.mouseClicked(mouseX, mouseY, button);
+        }
+
+        @Override
+        public void onClick(double mouseX, double mouseY) {
+            if (lastClickButton == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
                 //Allow clearing on right click
                 setValue("");
             } else {
-                super.onClick(mouseX, mouseY, button);
+                super.onClick(mouseX, mouseY);
             }
         }
 

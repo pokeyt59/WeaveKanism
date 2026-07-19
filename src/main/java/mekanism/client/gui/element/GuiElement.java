@@ -422,6 +422,7 @@ public abstract class GuiElement extends AbstractWidget implements IFancyFontRen
     //TODO - 1.20: Do we want things like the merged bars/gauges to have setFocused also mark the "children" as focused?
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        lastClickButton = button;
         GuiElement clickedChild = GuiUtils.findChild(children, mouseX, mouseY, button, GuiElement::mouseClicked);
         //Note: This setFocused call is outside the clickedChild find, so that if we couldn't find one
         // then we un-focus whatever child is currently focused
@@ -433,6 +434,21 @@ public abstract class GuiElement extends AbstractWidget implements IFancyFontRen
             clearFocus();
         }
         return super.mouseClicked(mouseX, mouseY, button);
+    }
+
+    //fabric-port: NeoForge patches AbstractWidget#onClick to (mouseX, mouseY, button) and its
+    // mouseClicked dispatches that form; vanilla dispatches the 2-arg form under the same
+    // isValidClickButton gate, dropping the button. Capture it in mouseClicked and bridge, so
+    // subclass overrides of the 3-arg form keep their button semantics (several branch on
+    // left vs right click). 0 = left button, matching NeoForge's default when no click occurred.
+    private int lastClickButton;
+
+    @Override
+    public final void onClick(double mouseX, double mouseY) {
+        onClick(mouseX, mouseY, lastClickButton);
+    }
+
+    public void onClick(double mouseX, double mouseY, int button) {
     }
 
     @Override
@@ -608,7 +624,11 @@ public abstract class GuiElement extends AbstractWidget implements IFancyFontRen
     public void renderWidget(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
     }
 
-    @Override
+    //fabric-port: UNSET_FG_COLOR/packedFGColor/getFGColor are NeoForge additions to AbstractWidget;
+    // declared here instead (vanilla has none), so getFGColor is not an override.
+    public static final int UNSET_FG_COLOR = -1;
+    protected int packedFGColor = UNSET_FG_COLOR;
+
     public int getFGColor() {
         if (packedFGColor != UNSET_FG_COLOR) {
             return packedFGColor;
