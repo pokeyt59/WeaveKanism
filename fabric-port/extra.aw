@@ -53,7 +53,9 @@ accessible method net/minecraft/world/entity/SpawnPlacements register (Lnet/mine
 
 # Phase 4 client batch: vanilla client members NeoForge ATs that Mekanism's client code
 # reads directly (census 2026-07-12; descriptors javap-verified).
-accessible class net/minecraft/client/resources/model/ItemOverrides$BakedOverride
+# (A stale line for client/resources/model/ItemOverrides$BakedOverride — wrong package, class
+# doesn't exist in 1.21.1 — was removed 2026-07-18; Loom silently skips unmatched AW entries,
+# so it never applied. The correct renderer/block/model line lives in the step 5d batch below.)
 accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen quickCraftingType I
 accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen clickedSlot Lnet/minecraft/world/inventory/Slot;
 accessible field net/minecraft/client/gui/screens/inventory/AbstractContainerScreen isSplittingStack Z
@@ -114,3 +116,14 @@ accessible field net/minecraft/client/gui/screens/MenuScreens SCREENS Ljava/util
 accessible class net/minecraft/client/particle/ParticleEngine$SpriteParticleRegistration
 # MekanismISTER draws baked quads directly through ItemRenderer's private renderQuadList (NeoForge widens it).
 accessible method net/minecraft/client/renderer/entity/ItemRenderer renderQuadList (Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;Ljava/util/List;Lnet/minecraft/world/item/ItemStack;II)V
+# Phase 4 step 5d — javap-verified. ExtensionOverrideBakedModel subclasses ItemOverrides
+# (private no-arg ctor) and names its package-private BakedOverride inner class.
+accessible method net/minecraft/client/renderer/block/model/ItemOverrides <init> ()V
+accessible class net/minecraft/client/renderer/block/model/ItemOverrides$BakedOverride
+# ClientRegistration adds Mekanism layers to vanilla renderers from the AddLayers event shim.
+accessible method net/minecraft/client/renderer/entity/LivingEntityRenderer addLayer (Lnet/minecraft/client/renderer/entity/layers/RenderLayer;)Z
+# EnergyCubeGeometry bakes element faces through BlockModel's private static bakeFace (NeoForge widens it).
+accessible method net/minecraft/client/renderer/block/model/BlockModel bakeFace (Lnet/minecraft/client/renderer/block/model/BlockElement;Lnet/minecraft/client/renderer/block/model/BlockElementFace;Lnet/minecraft/client/renderer/texture/TextureAtlasSprite;Lnet/minecraft/core/Direction;Lnet/minecraft/client/resources/model/ModelState;)Lnet/minecraft/client/renderer/block/model/BakedQuad;
+# Jetpack/scuba particles extend vanilla particles whose ctors are package-private.
+accessible method net/minecraft/client/particle/FlameParticle <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)V
+accessible method net/minecraft/client/particle/BubbleParticle <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)V

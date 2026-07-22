@@ -53,6 +53,14 @@ public interface IClientFluidTypeExtensions {
         return ResourceLocation.withDefaultNamespace("block/water_flow");
     }
 
+    default ResourceLocation getStillTexture(FluidStack stack) {
+        return getStillTexture();
+    }
+
+    default ResourceLocation getFlowingTexture(FluidStack stack) {
+        return getFlowingTexture();
+    }
+
     @Nullable
     default ResourceLocation getOverlayTexture() {
         return null;

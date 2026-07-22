@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.RenderStateShard.ShaderStateShard;
 import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.resources.ResourceLocation;
 import mekanism.fabric_shim.distmarker.Dist;
+import net.fabricmc.fabric.impl.client.rendering.FabricShaderProgram;
 import net.neoforged.bus.api.SubscribeEvent;
 import mekanism.fabric_shim.fml.common.EventBusSubscriber;
 import mekanism.fabric_shim.client.event.RegisterShadersEvent;
@@ -30,7 +31,11 @@ public class MekanismShaders {
     }
 
     private static void registerShader(RegisterShadersEvent event, ResourceLocation shaderLocation, VertexFormat vertexFormat, ShaderTracker tracker) throws IOException {
-        event.registerShader(new ShaderInstance(event.getResourceProvider(), shaderLocation, vertexFormat), tracker::setInstance);
+        //fabric-port: NeoForge patches a ResourceLocation ctor onto ShaderInstance; vanilla's String
+        // ctor forces the minecraft namespace. FabricShaderProgram is the subclass Fabric's own core
+        // shader registration constructs — fabric-rendering-v1's ShaderProgramMixin only rewrites
+        // namespaced ids for instances of it.
+        event.registerShader(new FabricShaderProgram(event.getResourceProvider(), shaderLocation, vertexFormat), tracker::setInstance);
     }
 
     static class ShaderTracker implements Supplier<ShaderInstance> {

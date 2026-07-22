@@ -96,6 +96,10 @@ sourceSets {
             exclude 'mekanism/common/integration/computer/ComputerCapabilityHelper.java'
             exclude 'mekanism/common/integration/crafttweaker/**'
             exclude 'mekanism/common/integration/curios/**'
+            //Client half of the curios Phase-5 deferral: this renderer imports the curios client API
+            // and is referenced only from the excluded CuriosIntegration. Excluded even under
+            // -PportClient (the closures above don't cover it).
+            exclude 'mekanism/client/render/MekanismCurioRenderer.java'
             exclude 'mekanism/common/integration/framedblocks/**'
             exclude 'mekanism/common/integration/gender/**'
             exclude 'mekanism/common/integration/jsonthings/**'
