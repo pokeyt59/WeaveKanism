@@ -101,7 +101,6 @@ public class RenderTeleporter extends MekanismTileEntityRenderer<TileEntityTelep
         return tile.shouldRender && tile.getLevel() != null && super.shouldRender(tile, camera);
     }
 
-    @Override
     public AABB getRenderBoundingBox(TileEntityTeleporter tile) {
         //Note: If the frame direction is "null" we instead just only mark the teleporter itself.
         Direction frameDirection = tile.getFrameDirection();

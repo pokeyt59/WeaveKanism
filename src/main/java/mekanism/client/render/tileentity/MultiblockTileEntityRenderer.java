@@ -43,7 +43,6 @@ public abstract class MultiblockTileEntityRenderer<MULTIBLOCK extends Multiblock
         return multiblock.renderLocation != null;
     }
 
-    @Override
     public AABB getRenderBoundingBox(TILE tile) {
         if (tile.isMaster()) {
             MULTIBLOCK multiblock = tile.getMultiblock();

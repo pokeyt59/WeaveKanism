@@ -156,7 +156,6 @@ public class RenderDimensionalStabilizer extends MekanismTileEntityRenderer<Tile
         return tile.isClientRendering() && tile.canDisplayVisuals() && super.shouldRender(tile, camera);
     }
 
-    @Override
     public AABB getRenderBoundingBox(TileEntityDimensionalStabilizer tile) {
         Level level = tile.getLevel();
         if (tile.isClientRendering() && tile.canDisplayVisuals() && level != null) {

@@ -19,13 +19,11 @@ public class MekanismElytraLayer<ENTITY extends LivingEntity, MODEL extends Enti
         super(entityRenderer, modelSet);
     }
 
-    @Override
     public boolean shouldRender(@NotNull ItemStack stack, @NotNull ENTITY entity) {
         return stack.is(MekanismItems.HDPE_REINFORCED_ELYTRA);
     }
 
     @NotNull
-    @Override
     public ResourceLocation getElytraTexture(@NotNull ItemStack stack, @NotNull ENTITY entity) {
         return HDPE_ELYTRA;
     }

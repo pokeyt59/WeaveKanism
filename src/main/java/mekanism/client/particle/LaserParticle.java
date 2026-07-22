@@ -137,7 +137,6 @@ public class LaserParticle extends TextureSheetParticle {
     }
 
     @NotNull
-    @Override
     public AABB getRenderBoundingBox(float partialTicks) {
         return getBoundingBox();
     }

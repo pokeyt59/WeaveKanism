@@ -114,3 +114,12 @@ API equivalent in Phase 3, or the subscribed behavior silently does nothing.
 - [ ] `mekanism/common/tile/qio/TileEntityQIORedstoneAdapter.java` — `getModelData`
 - [ ] `mekanism/common/tile/transmitter/TileEntityTransmitter.java` — `getModelData`
 - [ ] `mekanism/common/tile/transmitter/TileEntityTransmitter.java` — `onChunkUnloaded`
+- [ ] `mekanism/client/particle/LaserParticle.java` — `getRenderBoundingBox`
+- [ ] `mekanism/client/render/layer/MekanismElytraLayer.java` — `getElytraTexture`
+- [ ] `mekanism/client/render/layer/MekanismElytraLayer.java` — `shouldRender`
+- [ ] `mekanism/client/render/tileentity/MultiblockTileEntityRenderer.java` — `getRenderBoundingBox`
+- [ ] `mekanism/client/render/tileentity/RenderDigitalMiner.java` — `getRenderBoundingBox`
+- [ ] `mekanism/client/render/tileentity/RenderDimensionalStabilizer.java` — `getRenderBoundingBox`
+- [ ] `mekanism/client/render/tileentity/RenderPigmentMixer.java` — `getRenderBoundingBox`
+- [ ] `mekanism/client/render/tileentity/RenderSeismicVibrator.java` — `getRenderBoundingBox`
+- [ ] `mekanism/client/render/tileentity/RenderTeleporter.java` — `getRenderBoundingBox`

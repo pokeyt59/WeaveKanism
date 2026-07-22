@@ -75,7 +75,6 @@ public class RenderDigitalMiner extends MekanismTileEntityRenderer<TileEntityDig
         return tile.isClientRendering() && tile.canDisplayVisuals() && super.shouldRender(tile, camera);
     }
 
-    @Override
     public AABB getRenderBoundingBox(TileEntityDigitalMiner tile) {
         if (tile.isClientRendering() && tile.canDisplayVisuals()) {
             BlockPos pos = tile.getBlockPos();

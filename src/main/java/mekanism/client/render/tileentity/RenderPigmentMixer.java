@@ -100,7 +100,6 @@ public class RenderPigmentMixer extends MekanismTileEntityRenderer<TileEntityPig
         matrix.translate(-shift, 0, -shift);
     }
 
-    @Override
     public AABB getRenderBoundingBox(TileEntityPigmentMixer tile) {
         //We only care about the position that is above because we only use the BER to render the shaft which is in the upper block
         return new AABB(tile.getBlockPos().above());
