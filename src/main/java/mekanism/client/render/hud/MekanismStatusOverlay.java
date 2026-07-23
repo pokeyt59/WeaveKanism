@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import mekanism.client.gui.GuiUtils;
 import mekanism.common.item.interfaces.IModeItem;
 import mekanism.common.lib.Color;
+import mekanism.fabric_shim.client.gui.GuiLayerHooks;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
@@ -42,7 +43,8 @@ public class MekanismStatusOverlay implements LayeredDraw.Layer {
                     Color color = Color.rgbad(1, 1, 1, modeSwitchTimer / (float) BASE_TIMER);
                     Font font = minecraft.gui.getFont();
                     int componentWidth = font.width(scrollTextComponent);
-                    int targetShift = Math.max(59, Math.max(minecraft.gui.leftHeight, minecraft.gui.rightHeight));
+                    //fabric-port: leftHeight/rightHeight are NeoForge Gui fields (HUD-stack accounting)
+                    int targetShift = Math.max(59, Math.max(GuiLayerHooks.leftHeight(), GuiLayerHooks.rightHeight()));
                     if (minecraft.gameMode != null && !minecraft.gameMode.canHurtPlayer()) {
                         //Same shift as done in Gui#renderSelectedItemName
                         targetShift -= 14;

@@ -13,4 +13,7 @@ public final class RenderTickHandler {
 
     public static void renderBolt(Object renderer, BoltEffect bolt) {
     }
+
+    public static void clearQueued() {
+    }
 }

@@ -25,14 +25,15 @@ import mekanism.fabric_shim.fml.ModContainer;
 import mekanism.fabric_shim.fml.Mod;
 import mekanism.fabric_shim.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import mekanism.fabric_shim.client.gui.IConfigScreenFactory;
 import org.jetbrains.annotations.Nullable;
 
 @Mod(value = Mekanism.MODID, dist = Dist.CLIENT)
 public class MekanismClient {
 
     public MekanismClient(ModContainer container) {
-        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
+        //fabric-port: FCAP's ConfigurationScreen takes the mod id where NeoForge's takes the container
+        container.registerExtensionPoint(IConfigScreenFactory.class, (modContainer, lastScreen) -> new ConfigurationScreen(modContainer.getModId(), lastScreen));
     }
 
     public static final Map<UUID, SecurityData> clientSecurityMap = new Object2ObjectOpenHashMap<>();

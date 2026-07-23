@@ -54,6 +54,9 @@ public final class SoundHandler {
     public static void stopTileSound(BlockPos pos) {
     }
 
+    public static void restartSounds() {
+    }
+
     //UI feedback sounds (keybind mode switches): implemented for real — the client classes are
     // on the compile classpath, and these only ever run on the physical client
     public static void playSound(SoundEventRegistryObject<?> soundEventRO) {

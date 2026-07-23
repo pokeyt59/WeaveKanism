@@ -9,6 +9,7 @@ import mekanism.common.item.gear.ItemMekaSuitArmor;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.MekanismUtils.ResourceType;
 import mekanism.common.util.StorageUtils;
+import mekanism.fabric_shim.client.gui.GuiLayerHooks;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -44,11 +45,12 @@ public class MekaSuitEnergyLevel implements LayeredDraw.Layer {
         }
         if (capacity != 0L) {
             int x = graphics.guiWidth() / 2 - 91;
-            int y = graphics.guiHeight() - minecraft.gui.leftHeight + 2;
+            //fabric-port: leftHeight is a NeoForge Gui field (HUD-stack accounting)
+            int y = graphics.guiHeight() - GuiLayerHooks.leftHeight() + 2;
             int length = (int) Math.round(((double) stored / capacity) * 79);
             GuiUtils.renderExtendedTexture(graphics, GuiBar.BAR, 2, 2, x, y, 81, 6);
             graphics.blit(POWER_BAR, x + 1, y + 1, length, 4, 0, 0, length, 4, 79, 4);
-            minecraft.gui.leftHeight += 8;
+            GuiLayerHooks.addLeftHeight(8);
         }
     }
 }

@@ -50,7 +50,8 @@ public class EnergyCubeGeometry implements IUnbakedGeometry<EnergyCubeGeometry> 
         RenderTypeGroup renderTypes = renderTypeHint == null ? RenderTypeGroup.EMPTY : context.getRenderType(renderTypeHint);
 
         Transformation rootTransform = context.getRootTransform();
-        if (!rootTransform.isIdentity()) {
+        //fabric-port: isIdentity/rotateTransform (below) are NeoForge additions to Transformation
+        if (!rootTransform.equals(Transformation.identity())) {
             modelState = new SimpleModelState(modelState.getRotation().compose(rootTransform), modelState.isUvLocked());
         }
         Function<String, TextureAtlasSprite> rawSpriteGetter = spriteGetter.compose(context::getMaterial);
@@ -77,7 +78,7 @@ public class EnergyCubeGeometry implements IUnbakedGeometry<EnergyCubeGeometry> 
             for (Entry<Direction, BlockElementFace> faceEntry : element.faces.entrySet()) {
                 BlockElementFace face = faceEntry.getValue();
                 TextureAtlasSprite sprite = spriteGetter.apply(face.texture());
-                Direction direction = face.cullForDirection() == null ? null : modelState.getRotation().rotateTransform(face.cullForDirection());
+                Direction direction = face.cullForDirection() == null ? null : Direction.rotate(modelState.getRotation().getMatrix(), face.cullForDirection());
                 data.addFace(direction, BlockModel.bakeFace(element, face, sprite, faceEntry.getKey(), modelState));
             }
         }

@@ -28,4 +28,19 @@ public final class GuiLayerHooks {
     public static List<NamedLayer> layers() {
         return LAYERS;
     }
+
+    //NeoForge patches Gui with leftHeight/rightHeight fields that HUD layers bump as they stack.
+    // No Fabric analog: expose the survival-baseline constant (39 base + health row + armor row)
+    // and drop the writes — only Mekanism's own overlays read these, and both already floor at
+    // this value (PORTING.md deviation table).
+    public static int leftHeight() {
+        return 59;
+    }
+
+    public static int rightHeight() {
+        return 59;
+    }
+
+    public static void addLeftHeight(int height) {
+    }
 }

@@ -2,7 +2,10 @@ package mekanism.fabric_shim.fml;
 
 import fuzs.forgeconfigapiport.fabric.api.neoforge.v4.NeoForgeConfigRegistry;
 import fuzs.forgeconfigapiport.fabric.api.neoforge.v4.NeoForgeModConfigEvents;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
 import mekanism.fabric_shim.fml.event.config.ModConfigEvent;
 import mekanism.fabric_shim.internal.ShimBuses;
 import net.fabricmc.loader.api.FabricLoader;
@@ -24,6 +27,7 @@ public final class ModContainer {
 
     private final String modId;
     private final IModInfo modInfo;
+    private final Map<Class<?>, Object> extensionPoints = new HashMap<>();
 
     public ModContainer(String modId) {
         this.modId = Objects.requireNonNull(modId);
@@ -73,5 +77,18 @@ public final class ModContainer {
 
     public ModConfig registerConfig(ModConfig.Type type, IConfigSpec spec, String fileName) {
         return NeoForgeConfigRegistry.INSTANCE.register(modId, type, spec, fileName);
+    }
+
+    /**
+     * NeoForge extension-point surface: stores the extension (e.g. the config screen factory) for
+     * later consumers — the Phase 5 ModMenu bridge reads it back via {@link #getCustomExtension}.
+     */
+    public <T> void registerExtensionPoint(Class<? extends T> point, T extension) {
+        extensionPoints.put(point, extension);
+    }
+
+    @SuppressWarnings("unchecked")
+    public <T> Optional<T> getCustomExtension(Class<T> point) {
+        return Optional.ofNullable((T) extensionPoints.get(point));
     }
 }
