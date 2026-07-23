@@ -167,6 +167,8 @@ accessible method net/minecraft/client/particle/FlameParticle <init> (Lnet/minec
 accessible method net/minecraft/client/particle/BubbleParticle <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)V
 # Phase 4 step 5e — MekGuiGraphicsExt (injected float drawString) flushes like vanilla drawString does.
 accessible method net/minecraft/client/gui/GuiGraphics flushIfUnmanaged ()V
+# DynamicFluidContainerModel.Colors shim reads the bucket's contained fluid for layer-1 tint.
+accessible field net/minecraft/world/item/BucketItem content Lnet/minecraft/world/level/material/Fluid;
 
 # --- fields awaiting descriptor resolution (run with --mc-jar or via generateAccessWidener) ---
 # TODO(descriptor): accessible field net/minecraft/client/KeyMapping isDown <desc>   (from: protected net.minecraft.client.KeyMapping isDown)

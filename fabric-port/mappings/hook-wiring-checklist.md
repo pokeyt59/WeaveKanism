@@ -123,3 +123,4 @@ API equivalent in Phase 3, or the subscribed behavior silently does nothing.
 - [ ] `mekanism/client/render/tileentity/RenderPigmentMixer.java` — `getRenderBoundingBox`
 - [ ] `mekanism/client/render/tileentity/RenderSeismicVibrator.java` — `getRenderBoundingBox`
 - [ ] `mekanism/client/render/tileentity/RenderTeleporter.java` — `getRenderBoundingBox`
+- [ ] `mekanism/common/item/gear/ItemHDPEElytra.java` — `canElytraFly` (ADDED, not stripped: upstream inherits NeoForge's ElytraItem patch; port mirrors isFlyEnabled. Wiring: none needed for flight — vanilla ElytraItem handles it; only the `broken` item-property override calls this)
