@@ -53,7 +53,7 @@ import mekanism.fabric_shim.client.event.RegisterMenuScreensEvent;
 import mekanism.fabric_shim.client.extensions.IClientFluidTypeExtensions;
 import mekanism.fabric_shim.client.extensions.IClientItemExtensions;
 import mekanism.fabric_shim.client.extensions.RegisterClientExtensionsEvent;
-import net.neoforged.neoforge.client.model.DynamicFluidContainerModel;
+import mekanism.fabric_shim.client.model.DynamicFluidContainerModel;
 import mekanism.fabric_shim.fluids.FluidType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

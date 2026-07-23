@@ -311,3 +311,5 @@ net.neoforged.neoforge.client.model.pipeline.QuadBakingVertexConsumer	mekanism.f
 # --- Phase 4 Step 5f: ClientHooks (event-posting hooks) + config screen factory extension point ---
 net.neoforged.neoforge.client.ClientHooks	mekanism.fabric_shim.client.ClientHooks
 net.neoforged.neoforge.client.gui.IConfigScreenFactory	mekanism.fabric_shim.client.gui.IConfigScreenFactory
+net.neoforged.neoforge.client.model.SeparateTransformsModel	mekanism.fabric_shim.client.model.SeparateTransformsModel
+net.neoforged.neoforge.client.model.DynamicFluidContainerModel	mekanism.fabric_shim.client.model.DynamicFluidContainerModel

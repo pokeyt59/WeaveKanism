@@ -181,7 +181,7 @@ import net.minecraft.SharedConstants;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
@@ -219,7 +219,7 @@ import mekanism.fabric_shim.client.event.RegisterMenuScreensEvent;
 import mekanism.fabric_shim.client.event.RegisterParticleProvidersEvent;
 import mekanism.fabric_shim.client.extensions.RegisterClientExtensionsEvent;
 import mekanism.fabric_shim.client.gui.VanillaGuiLayers;
-import net.neoforged.neoforge.client.model.SeparateTransformsModel;
+import mekanism.fabric_shim.client.model.SeparateTransformsModel;
 import mekanism.fabric_shim.common.NeoForge;
 import org.jetbrains.annotations.NotNull;
 
@@ -249,7 +249,9 @@ public class ClientRegistration {
         event.enqueueWork(() -> {
             //Set fluids to a translucent render layer
             for (Holder<Fluid> fluid : MekanismFluids.FLUIDS.getFluidEntries()) {
-                ItemBlockRenderTypes.setRenderLayer(fluid.value(), RenderType.translucent());
+                //fabric-port: setRenderLayer is a NeoForge patch on ItemBlockRenderTypes; Fabric's
+                // render-layer registry is the equivalent
+                BlockRenderLayerMap.INSTANCE.putFluid(fluid.value(), RenderType.translucent());
             }
             ClientRegistrationUtil.setPropertyOverride(MekanismBlocks.CARDBOARD_BOX.getItemHolder(), Mekanism.rl("storage"),
                   (stack, world, entity, seed) -> stack.has(MekanismDataComponents.BLOCK_DATA) ? 1 : 0);
