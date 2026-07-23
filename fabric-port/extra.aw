@@ -127,3 +127,5 @@ accessible method net/minecraft/client/renderer/block/model/BlockModel bakeFace 
 # Jetpack/scuba particles extend vanilla particles whose ctors are package-private.
 accessible method net/minecraft/client/particle/FlameParticle <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)V
 accessible method net/minecraft/client/particle/BubbleParticle <init> (Lnet/minecraft/client/multiplayer/ClientLevel;DDDDDD)V
+# Phase 4 step 5e — MekGuiGraphicsExt (injected float drawString) flushes like vanilla drawString does.
+accessible method net/minecraft/client/gui/GuiGraphics flushIfUnmanaged ()V

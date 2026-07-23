@@ -47,6 +47,7 @@
       "net/minecraft/class_7225$class_7874": ["mekanism/fabric_shim/inject/MekHolderLookupProviderExt"],
       "net/minecraft/class_1761$class_7913": ["mekanism/fabric_shim/inject/MekCreativeModeTabBuilderExt"],
       "net/minecraft/class_304": ["mekanism/fabric_shim/inject/MekKeyMappingExt"],
+      "net/minecraft/class_332": ["mekanism/fabric_shim/inject/MekGuiGraphicsExt"],
       "net/minecraft/class_1087": ["mekanism/fabric_shim/inject/MekBakedModelExt"],
       "net/minecraft/class_4588": ["mekanism/fabric_shim/inject/MekVertexConsumerExt"],
       "net/minecraft/class_777": ["mekanism/fabric_shim/inject/MekBakedQuadExt"]

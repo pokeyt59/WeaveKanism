@@ -34,6 +34,7 @@
   "client": [
     "BakedModelMixin",
     "BakedQuadMixin",
+    "GuiGraphicsMixin",
     "KeyMappingMixin",
     "VertexConsumerMixin"
   ],

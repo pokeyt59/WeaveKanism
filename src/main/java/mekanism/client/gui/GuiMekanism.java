@@ -31,6 +31,7 @@ import mekanism.common.tile.interfaces.ISideConfiguration;
 import mekanism.common.util.MekanismUtils;
 import mekanism.common.util.MekanismUtils.ResourceType;
 import net.minecraft.Util;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ComponentPath;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -91,6 +92,12 @@ public abstract class GuiMekanism<CONTAINER extends AbstractContainerMenu> exten
     @Override
     public int getYSize() {
         return imageHeight;
+    }
+
+    //fabric-port: NeoForge patches Screen with a public getMinecraft() accessor for the protected
+    // minecraft field; vanilla has no such method, so screens that call it get it from this base.
+    public Minecraft getMinecraft() {
+        return minecraft;
     }
 
     @NotNull
