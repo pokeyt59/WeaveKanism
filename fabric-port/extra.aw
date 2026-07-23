@@ -131,3 +131,6 @@ accessible method net/minecraft/client/particle/BubbleParticle <init> (Lnet/mine
 accessible method net/minecraft/client/gui/GuiGraphics flushIfUnmanaged ()V
 # DynamicFluidContainerModel.Colors shim reads the bucket's contained fluid for layer-1 tint.
 accessible field net/minecraft/world/item/BucketItem content Lnet/minecraft/world/level/material/Fluid;
+# ModelManagerMixin captures the ModelBakery from the package-private reload-state record
+# (implements MekModelManagerExt.getModelBakery = NeoForge's retained-bakery patch).
+accessible class net/minecraft/client/resources/model/ModelManager$ReloadState

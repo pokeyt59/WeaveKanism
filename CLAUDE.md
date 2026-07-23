@@ -155,3 +155,7 @@ lifecycle/registration touched → `[port]`/`[scripted]` split correct → PORTI
 - Shim classes that register their own subclass types from a `static {}` block (FluidIngredient,
   CustomIngredients-style) must put that block AFTER every static codec field: subclass `<clinit>`
   re-enters the half-initialized parent and reads null fields (boot-verified failure, not compile).
+- Loom injected-interface methods MUST be `default` (or static): an abstract method on an injected
+  interface does not even RESOLVE at compile time against the target class (verified: same compile,
+  same jar — defaults resolved, the abstract didn't). Runtime impl goes in the mixin, whose class
+  override always beats the interface default; give the default a throwing body.

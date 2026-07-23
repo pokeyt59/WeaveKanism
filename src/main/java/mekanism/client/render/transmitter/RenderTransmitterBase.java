@@ -41,7 +41,8 @@ import org.joml.Vector3f;
 public abstract class RenderTransmitterBase<TRANSMITTER extends TileEntityTransmitter> extends MekanismTileEntityRenderer<TRANSMITTER> {
 
     public static final ResourceLocation MODEL_LOCATION = MekanismUtils.getResource(ResourceType.MODEL, "transmitter_contents.obj");
-    private static final ModelResourceLocation MODEL_VARIANT = ModelResourceLocation.standalone(MODEL_LOCATION);
+    //fabric-port: MRL.standalone is a NeoForge addition
+    private static final ModelResourceLocation MODEL_VARIANT = new ModelResourceLocation(MODEL_LOCATION, "standalone");
     private static final IGeometryBakingContext contentsConfiguration = StandaloneGeometryBakingContext.builder()
           .withGui3d(false)
           .withUseBlockLight(false)

@@ -24,6 +24,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
 import mekanism.fabric_shim.client.event.ModelEvent.BakingCompleted;
 import mekanism.fabric_shim.client.event.ModelEvent.RegisterAdditional;
+import mekanism.fabric_shim.client.model.ClientModelHooks;
 import mekanism.fabric_shim.client.model.data.ModelData;
 import mekanism.fabric_shim.client.model.geometry.IGeometryBakingContext;
 import mekanism.fabric_shim.client.model.geometry.IUnbakedGeometry;
@@ -77,7 +78,8 @@ public class BaseModelCache {
     protected JSONModelData registerJSONAndBake(ResourceLocation rl) {
         ModelManager modelManager = Minecraft.getInstance().getModelManager();
         ModelBakery modelBakery = modelManager.getModelBakery();
-        ModelResourceLocation mrl = ModelResourceLocation.standalone(rl);
+        //fabric-port: MRL.standalone + BlockModel.customData (below) are NeoForge additions
+        ModelResourceLocation mrl = new ModelResourceLocation(rl, "standalone");
         ModelBaker baker = modelBakery.new ModelBakerImpl(
               (modelLoc, material) -> material.sprite(),
               mrl
@@ -87,7 +89,7 @@ public class BaseModelCache {
         //Manually run the JsonModelData#reload logic
         data.bakedModel = baker.bake(rl, BlockModelRotation.X0_Y0, Material::sprite);
         if (getUnbakedModel(modelBakery, baker, mrl) instanceof BlockModel blockModel) {
-            data.model = blockModel.customData.getCustomGeometry();
+            data.model = ClientModelHooks.getCustomGeometry(blockModel);
         }
         return data;
     }
@@ -125,7 +127,7 @@ public class BaseModelCache {
 
         protected MekanismModelData(ResourceLocation rl) {
             this.rl = rl;
-            this.mrl = ModelResourceLocation.standalone(rl);
+            this.mrl = new ModelResourceLocation(rl, "standalone");
         }
 
         protected void reload(BakingCompleted evt) {
@@ -192,7 +194,7 @@ public class BaseModelCache {
                   mrl
             );
             if (getUnbakedModel(evt.getModelBakery(), baker, mrl) instanceof BlockModel blockModel) {
-                model = blockModel.customData.getCustomGeometry();
+                model = ClientModelHooks.getCustomGeometry(blockModel);
             }
         }
 

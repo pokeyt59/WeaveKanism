@@ -36,6 +36,8 @@
     "BakedQuadMixin",
     "GuiGraphicsMixin",
     "KeyMappingMixin",
+    "ModelBakerMixin",
+    "ModelManagerMixin",
     "VertexConsumerMixin"
   ],
   "injectors": {
