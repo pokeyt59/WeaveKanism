@@ -43,4 +43,9 @@ public interface MekKeyMappingExt {
     default boolean isConflictContextAndModifierActive() {
         return getKeyConflictContext().isActive() && getKeyModifier().isActive(getKeyConflictContext());
     }
+
+    /** NeoForge's modifier/context-aware key test (vanilla's matches has no modifier gate). */
+    default boolean isActiveAndMatches(InputConstants.Key keyCode) {
+        return keyCode != InputConstants.UNKNOWN && keyCode.equals(getKey()) && isConflictContextAndModifierActive();
+    }
 }

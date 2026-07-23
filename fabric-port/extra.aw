@@ -134,3 +134,6 @@ accessible field net/minecraft/world/item/BucketItem content Lnet/minecraft/worl
 # ModelManagerMixin captures the ModelBakery from the package-private reload-state record
 # (implements MekModelManagerExt.getModelBakery = NeoForge's retained-bakery patch).
 accessible class net/minecraft/client/resources/model/ModelManager$ReloadState
+# MekItemOverridesExt/MekLevelRendererExt inject defaults read these private members (Neo getters).
+accessible field net/minecraft/client/renderer/block/model/ItemOverrides overrides [Lnet/minecraft/client/renderer/block/model/ItemOverrides$BakedOverride;
+accessible field net/minecraft/client/renderer/LevelRenderer ticks I

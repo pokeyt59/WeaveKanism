@@ -64,4 +64,12 @@ public interface MekBlockStateExt {
     default java.util.stream.Stream<net.minecraft.tags.TagKey<net.minecraft.world.level.block.Block>> getTags() {
         return self().getBlock().builtInRegistryHolder().tags();
     }
+
+    /**
+     * NeoForge's hit-context pick-block form; the extra context only matters to blocks overriding
+     * the extension (none in core Mekanism), so delegate to vanilla's simple form.
+     */
+    default net.minecraft.world.item.ItemStack getCloneItemStack(net.minecraft.world.phys.HitResult target, LevelReader level, BlockPos pos, Player player) {
+        return self().getBlock().getCloneItemStack(level, pos, self());
+    }
 }

@@ -23,6 +23,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.profiling.ProfilerFiller;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -40,6 +41,13 @@ public abstract class MekanismTileEntityRenderer<TILE extends BlockEntity> imple
     public int getViewDistance() {
         //Override and change the default range for TERs for mekanism tiles to the value defined in the config
         return MekanismConfig.client.berRange.get();
+    }
+
+    //fabric-port: NeoForge adds getRenderBoundingBox to BlockEntityRenderer for frustum culling;
+    // subclasses override it (hook-wiring checklist) and some fall back via super. Nothing calls it
+    // on Fabric until the culling hook is wired — conservative one-block box as the base value.
+    public AABB getRenderBoundingBox(TILE tile) {
+        return new AABB(tile.getBlockPos());
     }
 
     protected boolean isTickingNormally(TILE tile) {

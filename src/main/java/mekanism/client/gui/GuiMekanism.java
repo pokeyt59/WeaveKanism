@@ -100,6 +100,13 @@ public abstract class GuiMekanism<CONTAINER extends AbstractContainerMenu> exten
         return minecraft;
     }
 
+    //fabric-port: NeoForge patches AbstractContainerScreen with a public getSlotUnderMouse()
+    // accessor for the protected hoveredSlot field.
+    @Nullable
+    public Slot getSlotUnderMouse() {
+        return hoveredSlot;
+    }
+
     @NotNull
     @Override
     public BooleanSupplier trackWarning(@NotNull WarningType type, @NotNull BooleanSupplier warningSupplier) {

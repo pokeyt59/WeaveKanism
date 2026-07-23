@@ -50,6 +50,8 @@
       "net/minecraft/class_332": ["mekanism/fabric_shim/inject/MekGuiGraphicsExt"],
       "net/minecraft/class_1092": ["mekanism/fabric_shim/inject/MekModelManagerExt"],
       "net/minecraft/class_7775": ["mekanism/fabric_shim/inject/MekModelBakerExt"],
+      "net/minecraft/class_806": ["mekanism/fabric_shim/inject/MekItemOverridesExt"],
+      "net/minecraft/class_761": ["mekanism/fabric_shim/inject/MekLevelRendererExt"],
       "net/minecraft/class_1087": ["mekanism/fabric_shim/inject/MekBakedModelExt"],
       "net/minecraft/class_4588": ["mekanism/fabric_shim/inject/MekVertexConsumerExt"],
       "net/minecraft/class_777": ["mekanism/fabric_shim/inject/MekBakedQuadExt"]

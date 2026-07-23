@@ -35,7 +35,9 @@
     "BakedModelMixin",
     "BakedQuadMixin",
     "GuiGraphicsMixin",
+    "ItemOverridesMixin",
     "KeyMappingMixin",
+    "LevelRendererMixin",
     "ModelBakerMixin",
     "ModelManagerMixin",
     "VertexConsumerMixin"
