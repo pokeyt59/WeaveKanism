@@ -25,6 +25,12 @@ public class MekanismFabric implements ModInitializer {
 
     public static final String MODID = "mekanism";
     public static final Logger LOGGER = LoggerFactory.getLogger("Mekanism");
+    /**
+     * The mod's container, shared with the client bootstrap: NeoForge hands the same instance to
+     * every entry point, and the client's config-screen extension point must land on the container
+     * the Phase 5 ModMenu bridge reads back.
+     */
+    public static mekanism.fabric_shim.fml.ModContainer modContainer;
 
     @Override
     public void onInitialize() {
@@ -45,6 +51,7 @@ public class MekanismFabric implements ModInitializer {
         //Mod construction, mirroring FML's @Mod constructor call (subscribes Mekanism's
         //DeferredRegisters and lifecycle listeners to the mod bus before registration fires)
         mekanism.fabric_shim.fml.ModContainer container = new mekanism.fabric_shim.fml.ModContainer(MODID);
+        modContainer = container;
         container.bridgeConfigEvents();
         new mekanism.common.Mekanism(container, ShimBuses.MOD_BUS);
         //@EventBusSubscriber classes (FML's annotation scan on NeoForge; an explicit list here)

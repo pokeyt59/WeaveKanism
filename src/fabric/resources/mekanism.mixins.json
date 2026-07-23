@@ -34,10 +34,13 @@
   "client": [
     "BakedModelMixin",
     "BakedQuadMixin",
+    "EntityRenderDispatcherMixin",
+    "GameRendererMixin",
     "GuiGraphicsMixin",
     "ItemOverridesMixin",
     "KeyMappingMixin",
     "LevelRendererMixin",
+    "MinecraftMixin",
     "ModelBakerMixin",
     "ModelManagerMixin",
     "VertexConsumerMixin"
