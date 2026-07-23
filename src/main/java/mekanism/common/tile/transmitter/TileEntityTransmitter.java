@@ -8,7 +8,7 @@ import mekanism.api.IConfigurable;
 import mekanism.api.text.EnumColor;
 import mekanism.api.tier.BaseTier;
 import mekanism.api.tier.IAlloyTier;
-import mekanism.fabric_shim.client.model.data.TransmitterModelData;
+import mekanism.client.model.data.TransmitterModelData;
 import mekanism.common.Mekanism;
 import mekanism.common.MekanismLang;
 import mekanism.common.advancements.MekanismCriteriaTriggers;

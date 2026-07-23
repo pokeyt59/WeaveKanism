@@ -9,7 +9,7 @@ import mekanism.client.gui.element.bar.GuiVerticalPowerBar;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.slot.GuiSlot;
 import mekanism.client.gui.element.slot.SlotType;
-import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.jei.HolderRecipeCategory;
 import mekanism.client.recipe_viewer.type.IRecipeViewerRecipeType;
 import mekanism.common.inventory.container.slot.SlotOverlay;

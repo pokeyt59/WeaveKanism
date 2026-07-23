@@ -1,6 +1,6 @@
 package mekanism.common.network;
 
-import mekanism.fabric_shim.client.render.hud.MekanismStatusOverlay;
+import mekanism.client.render.hud.MekanismStatusOverlay;
 import mekanism.common.Mekanism;
 import mekanism.common.inventory.container.QIOItemViewerContainer;
 import mekanism.common.lib.Version;

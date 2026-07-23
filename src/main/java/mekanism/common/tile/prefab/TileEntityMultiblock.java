@@ -6,7 +6,7 @@ import mekanism.api.IConfigurable;
 import mekanism.api.IContentsListener;
 import mekanism.api.SerializationConstants;
 import mekanism.api.text.EnumColor;
-import mekanism.fabric_shim.client.SparkleAnimation;
+import mekanism.client.SparkleAnimation;
 import mekanism.common.MekanismLang;
 import mekanism.common.attachments.containers.ContainerType;
 import mekanism.common.capabilities.holder.slot.IInventorySlotHolder;

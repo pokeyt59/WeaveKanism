@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
-import mekanism.fabric_shim.client.render.RenderTickHandler;
+import mekanism.client.render.RenderTickHandler;
 import mekanism.client.render.lib.Outlines.Line;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.model.geom.ModelPart;

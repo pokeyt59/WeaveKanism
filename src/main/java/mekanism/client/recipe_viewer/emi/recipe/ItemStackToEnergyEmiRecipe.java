@@ -7,7 +7,7 @@ import mekanism.client.gui.element.gauge.GuiEnergyGauge;
 import mekanism.client.gui.element.gauge.GuiEnergyGauge.IEnergyInfoHandler;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.slot.SlotType;
-import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.emi.MekanismEmiRecipeCategory;
 import mekanism.common.tile.component.config.DataType;
 import net.minecraft.world.item.crafting.RecipeHolder;

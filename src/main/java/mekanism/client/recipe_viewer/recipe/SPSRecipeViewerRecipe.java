@@ -8,7 +8,7 @@ import mekanism.api.SerializationConstants;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.recipes.ingredients.ChemicalStackIngredient;
 import mekanism.api.recipes.ingredients.creator.IngredientCreatorAccess;
-import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.emi.INamedRVRecipe;
 import mekanism.common.Mekanism;
 import mekanism.common.config.MekanismConfig;

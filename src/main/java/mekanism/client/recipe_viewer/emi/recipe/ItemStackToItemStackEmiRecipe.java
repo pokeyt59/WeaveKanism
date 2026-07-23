@@ -6,7 +6,7 @@ import mekanism.client.gui.element.GuiUpArrow;
 import mekanism.client.gui.element.bar.GuiVerticalPowerBar;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.slot.SlotType;
-import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.emi.MekanismEmiRecipeCategory;
 import mekanism.common.inventory.container.slot.SlotOverlay;
 import mekanism.common.tile.prefab.TileEntityElectricMachine;

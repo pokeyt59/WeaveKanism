@@ -2,7 +2,7 @@ package mekanism.client.gui.robit;
 
 import java.util.List;
 import java.util.function.Supplier;
-import mekanism.fabric_shim.client.SpecialColors;
+import mekanism.client.SpecialColors;
 import mekanism.client.gui.GuiMekanism;
 import mekanism.client.gui.element.GuiElement;
 import mekanism.client.gui.element.GuiInnerScreen;

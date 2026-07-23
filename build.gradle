@@ -33,48 +33,18 @@ sourceSets {
     main {
         //fabric_shim: Fabric-backed stand-ins for NeoForge classes (same simple names; see fabric-port/README.md).
         //Upstream api/main srcDirs join this list as porting phases land (see PORTING.md).
-        //fabric_client_stub: server-safe stand-ins for the handful of client classes common code
-        //reaches into (sound/key/client-player/model-data). They live there rather than in
-        //fabric_shim because they reference src/main common types; Phase 4 replaces them with real
-        //client wiring.
-        java.srcDirs = ['src/fabric/java', 'src/fabric_shim/java', 'src/api/java', 'src/main/java', 'src/fabric_client_stub/java']
+        //fabric_client_stub was deleted at Phase 4 step 6: common code imports the real
+        //mekanism.client.* classes again (server-safety via upstream's lazy-classloading guards).
+        java.srcDirs = ['src/fabric/java', 'src/fabric_shim/java', 'src/api/java', 'src/main/java']
         //src/main/resources: upstream assets + the META-INF/services impls MekanismAPI loads via
         //ServiceLoader (neoforge.mods.toml / accesstransformer.cfg ride along inert on Fabric).
         resources.srcDirs = ['src/fabric/resources', 'src/main/resources']
-        //Phase 1f deferrals (inert until src/main/java joins srcDirs; see fabric-port/design/main-compile-plan.md):
-        // client is Phase 4 — EXCEPT recipe_viewer/type (loader-agnostic data classes imported by
-        // ~30 common files). Per-mod integrations are Phase 5; the integration/computer CORE stays
-        // in (its annotations/wrappers are used by 80+ core tiles) — only the CC/OC2 bindings and
-        // the one CC-touching helper are deferred. integration/energy core stays (used by tiles);
-        // fluxnetworks/grandpower are Neo-only.
+        //Phase 5 deferrals (Phase 4 step 6 dropped the -PportClient gate: mekanism/client/** and
+        // ClientHolidayInfo compile in the default build now). Per-mod integrations are Phase 5;
+        // the integration/computer CORE stays in (its annotations/wrappers are used by 80+ core
+        // tiles) — only the CC/OC2 bindings and the one CC-touching helper are deferred.
+        // integration/energy core stays (used by tiles); fluxnetworks/grandpower are Neo-only.
         java {
-            //Allowlisted client files are loader-neutral data referenced by common code (recipe
-            // viewer types appear in core tile signatures). If the allowlist needs to grow past a
-            // handful of files, stop and hand-edit the dependency out instead (see the plan doc).
-            def clientAllowlist = [
-                'mekanism/client/recipe_viewer/type/',
-                'mekanism/client/recipe_viewer/recipe/BoilerRecipeViewerRecipe.java',
-                'mekanism/client/recipe_viewer/recipe/SPSRecipeViewerRecipe.java',
-                'mekanism/client/recipe_viewer/emi/INamedRVRecipe.java',
-            ]
-            //-PportClient: Phase 4 grind switch (like 1f's -PportMain) — includes mekanism/client/**
-            // and ClientHolidayInfo for census/grind runs; drop the gate when the client compiles green.
-            //Captured into a local at configuration time: closures must not touch `project` at
-            // execution time under the configuration cache.
-            def portClient = project.hasProperty('portClient')
-            exclude { el ->
-                if (el.directory || portClient) {
-                    return false
-                }
-                def p = el.path
-                p.startsWith('mekanism/client/') && !clientAllowlist.any { a -> p.startsWith(a) }
-            }
-            //Client-only holiday renderer that lives in the common package (its own javadoc says
-            // "only reference from the client side"); depends on excluded client render classes
-            // (QuadTransformation) + a client-bus event, so it belongs with Phase 4.
-            exclude { el ->
-                !el.directory && !portClient && el.path == 'mekanism/common/base/holiday/ClientHolidayInfo.java'
-            }
             //JEI/EMI recipe-viewer bindings are Phase 5 (like the common per-mod integrations):
             // 242 census errors incl. intermediary-name mismatches against the compileOnly jars.
             // INamedRVRecipe stays — it's the one emi file referenced from common code.

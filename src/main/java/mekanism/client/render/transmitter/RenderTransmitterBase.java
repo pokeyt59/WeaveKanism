@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import mekanism.api.annotations.NothingNullByDefault;
-import mekanism.fabric_shim.client.model.MekanismModelCache;
+import mekanism.client.model.MekanismModelCache;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.lib.Quad;
 import mekanism.client.render.lib.QuadUtils;

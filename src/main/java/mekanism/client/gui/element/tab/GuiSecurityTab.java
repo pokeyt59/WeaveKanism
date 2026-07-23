@@ -14,7 +14,7 @@ import mekanism.api.security.ISecurityUtils;
 import mekanism.api.security.ITypedSecurityUtils;
 import mekanism.api.security.SecurityMode;
 import mekanism.api.text.EnumColor;
-import mekanism.fabric_shim.client.SpecialColors;
+import mekanism.client.SpecialColors;
 import mekanism.client.gui.IGuiWrapper;
 import mekanism.client.gui.element.GuiInsetElement;
 import mekanism.client.gui.element.tab.GuiSecurityTab.SecurityInfoProvider;

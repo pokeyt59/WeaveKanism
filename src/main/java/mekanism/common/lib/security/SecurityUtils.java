@@ -10,7 +10,7 @@ import mekanism.api.security.ISecurityObject;
 import mekanism.api.security.ISecurityUtils;
 import mekanism.api.security.SecurityMode;
 import mekanism.api.text.EnumColor;
-import mekanism.fabric_shim.client.MekanismClient;
+import mekanism.client.MekanismClient;
 import mekanism.common.MekanismLang;
 import mekanism.common.base.MekanismPermissions;
 import mekanism.common.config.MekanismConfig;

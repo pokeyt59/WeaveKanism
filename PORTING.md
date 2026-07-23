@@ -204,7 +204,15 @@ textually identical; no Yarn remap.
   - [x] 3-attachments (2026-07-12): AttachmentHooks bridges shim AttachmentTypes onto
         fabric-data-attachment-api (initializer/persistent codec/copyOnDeath); Entity +
         ServerLevel getData/setData persist. Radiation + meltdown data survive restarts.
-- [ ] Phase 4: client (models, renderers, shaders)
+- [ ] Phase 4: client (models, renderers, shaders) — **client compile grind COMPLETE 2026-07-23**
+      (census 1,948 → 0 across steps 1–6; step log in fabric-port/design/client-compile-plan.md).
+      Step 6 stub swap landed: src/fabric_client_stub deleted (its Phase-5 integration seams moved
+      to fabric_shim/integration), 16 stub TSV rows reversed tree-wide (134 files) and removed,
+      -PportClient gate dropped — the DEFAULT build compiles the full client tree. Dev-server
+      boot verified post-swap: "Done (3.970s)!" (client classes present but lazily unloaded).
+      Remaining: step 7 (MekanismFabricClient wiring: client subscribers, lifecycle events in
+      NeoForge order, HudRenderCallback/receiver drains), 3b-wiring + 4-data + 4-loader runtime
+      bridges, step 8 runClient milestone (world + Metallurgic Infuser + Basic Energy Cube).
 - [ ] Phase 5: integrations + API cleanup
 - [ ] Phase 6: datagen import, gametests, parity QA
 

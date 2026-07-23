@@ -9,7 +9,7 @@ import com.mojang.blaze3d.vertex.VertexFormat.Mode;
 import java.util.function.BooleanSupplier;
 import mekanism.client.gui.IGuiWrapper;
 import mekanism.client.gui.element.GuiTexturedElement;
-import mekanism.fabric_shim.client.gui.element.progress.IProgressInfoHandler.IBooleanProgressInfoHandler;
+import mekanism.client.gui.element.progress.IProgressInfoHandler.IBooleanProgressInfoHandler;
 import mekanism.client.recipe_viewer.type.IRecipeViewerRecipeType;
 import mekanism.client.recipe_viewer.interfaces.IRecipeViewerRecipeArea;
 import mekanism.client.render.MekanismRenderer;

@@ -12,7 +12,7 @@ import java.util.Map;
 import java.util.WeakHashMap;
 import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.api.math.MathUtils;
-import mekanism.fabric_shim.client.model.MekanismModelCache;
+import mekanism.client.model.MekanismModelCache;
 import mekanism.client.render.MekanismRenderType;
 import mekanism.client.render.MekanismRenderer;
 import mekanism.client.render.MekanismRenderer.FluidTextureType;

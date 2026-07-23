@@ -1,6 +1,6 @@
 package mekanism.client.gui.element.custom;
 
-import mekanism.fabric_shim.client.SpecialColors;
+import mekanism.client.SpecialColors;
 import mekanism.client.gui.IGuiWrapper;
 import mekanism.client.gui.element.GuiSideHolder;
 import mekanism.client.gui.element.button.MekanismImageButton;

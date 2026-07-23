@@ -15,7 +15,7 @@ import mekanism.client.gui.element.GuiElement;
 import mekanism.client.gui.element.GuiElementHolder;
 import mekanism.client.gui.element.GuiInnerScreen;
 import mekanism.client.gui.tooltip.TooltipUtils;
-import mekanism.fabric_shim.client.model.MekanismModelCache;
+import mekanism.client.model.MekanismModelCache;
 import mekanism.common.Mekanism;
 import mekanism.common.MekanismLang;
 import mekanism.common.entity.EntityRobit;

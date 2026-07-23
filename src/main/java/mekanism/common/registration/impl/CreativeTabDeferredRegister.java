@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
 import mekanism.api.functions.ConstantPredicates;
 import mekanism.api.text.ILangEntry;
-import mekanism.fabric_shim.client.SpecialColors;
+import mekanism.client.SpecialColors;
 import mekanism.common.registration.MekanismDeferredHolder;
 import mekanism.common.registration.MekanismDeferredRegister;
 import mekanism.common.registries.MekanismBlocks;

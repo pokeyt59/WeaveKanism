@@ -26,7 +26,7 @@ import mekanism.api.energy.IStrictEnergyHandler;
 import mekanism.api.gear.ModuleData;
 import mekanism.api.recipes.MekanismRecipe;
 import mekanism.api.recipes.RotaryRecipe;
-import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.emi.recipe.BoilerEmiRecipe;
 import mekanism.client.recipe_viewer.emi.recipe.ChemicalChemicalToChemicalEmiRecipe;
 import mekanism.client.recipe_viewer.emi.recipe.ChemicalCrystallizerEmiRecipe;

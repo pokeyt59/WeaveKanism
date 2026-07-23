@@ -16,7 +16,7 @@ import mekanism.client.gui.element.progress.GuiProgress;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.slot.GuiSlot;
 import mekanism.client.gui.element.slot.SlotType;
-import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.jei.BaseRecipeCategory;
 import mekanism.client.recipe_viewer.type.IRecipeViewerRecipeType;
 import mekanism.common.Mekanism;

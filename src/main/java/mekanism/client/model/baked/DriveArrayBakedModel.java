@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.function.BiPredicate;
 import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.api.inventory.IInventorySlot;
-import mekanism.fabric_shim.client.model.MekanismModelCache;
+import mekanism.client.model.MekanismModelCache;
 import mekanism.client.render.lib.Quad;
 import mekanism.client.render.lib.QuadTransformation;
 import mekanism.common.attachments.FrequencyAware;

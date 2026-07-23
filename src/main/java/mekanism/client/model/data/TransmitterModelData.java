@@ -2,7 +2,7 @@ package mekanism.client.model.data;
 
 import java.util.EnumMap;
 import java.util.Map;
-import mekanism.fabric_shim.client.model.data.TransmitterModelData.Diversion;
+import mekanism.client.model.data.TransmitterModelData.Diversion;
 import mekanism.common.lib.transmitter.ConnectionType;
 import mekanism.common.util.EnumUtils;
 import net.minecraft.core.Direction;

@@ -22,7 +22,7 @@ import mekanism.client.gui.element.progress.GuiProgress;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.slot.GuiSlot;
 import mekanism.client.gui.element.slot.SlotType;
-import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.emi.ChemicalEmiStack;
 import mekanism.client.recipe_viewer.emi.MekanismEmiRecipeCategory;
 import mekanism.client.recipe_viewer.emi.widget.MekanismEmiWidget;

@@ -1,7 +1,7 @@
 package mekanism.client.gui;
 
 import java.util.List;
-import mekanism.fabric_shim.client.SpecialColors;
+import mekanism.client.SpecialColors;
 import mekanism.client.gui.element.GuiElementHolder;
 import mekanism.client.gui.element.GuiInnerScreen;
 import mekanism.client.gui.element.GuiSideHolder;

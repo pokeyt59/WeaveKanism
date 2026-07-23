@@ -7,7 +7,7 @@ import mekanism.api.gear.IHUDElement;
 import mekanism.api.gear.IModule;
 import mekanism.api.gear.IModuleContainer;
 import mekanism.api.gear.IModuleHelper;
-import mekanism.fabric_shim.client.key.MekanismKeyHandler;
+import mekanism.client.key.MekanismKeyHandler;
 import mekanism.common.Mekanism;
 import mekanism.common.MekanismLang;
 import mekanism.common.base.KeySync;

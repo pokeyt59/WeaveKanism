@@ -12,7 +12,7 @@ import mekanism.client.gui.element.gauge.GuiChemicalGauge;
 import mekanism.client.gui.element.gauge.GuiFluidGauge;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.slot.SlotType;
-import mekanism.fabric_shim.client.recipe_viewer.RecipeViewerUtils;
+import mekanism.client.recipe_viewer.RecipeViewerUtils;
 import mekanism.client.recipe_viewer.emi.MekanismEmiRecipeCategory;
 import mekanism.common.inventory.container.slot.SlotOverlay;
 import mekanism.common.tile.component.config.DataType;

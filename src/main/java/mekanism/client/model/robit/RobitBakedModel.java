@@ -5,7 +5,7 @@ import java.util.function.BiPredicate;
 import mekanism.api.annotations.NothingNullByDefault;
 import mekanism.api.robit.RobitSkin;
 import mekanism.client.RobitSpriteUploader;
-import mekanism.fabric_shim.client.model.MekanismModelCache;
+import mekanism.client.model.MekanismModelCache;
 import mekanism.client.model.baked.ExtensionOverrideBakedModel;
 import mekanism.client.render.lib.QuadTransformation;
 import mekanism.client.render.lib.QuadTransformation.TextureFilteredTransformation;

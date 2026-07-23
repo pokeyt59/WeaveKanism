@@ -11,7 +11,7 @@ import mekanism.client.gui.element.gauge.GaugeType;
 import mekanism.client.gui.element.gauge.GuiChemicalGauge;
 import mekanism.client.gui.element.gauge.GuiFluidGauge;
 import mekanism.client.gui.element.progress.GuiProgress;
-import mekanism.fabric_shim.client.gui.element.progress.IProgressInfoHandler.IBooleanProgressInfoHandler;
+import mekanism.client.gui.element.progress.IProgressInfoHandler.IBooleanProgressInfoHandler;
 import mekanism.client.gui.element.progress.ProgressType;
 import mekanism.client.gui.element.tab.GuiEnergyTab;
 import mekanism.client.recipe_viewer.type.RecipeViewerRecipeType;
