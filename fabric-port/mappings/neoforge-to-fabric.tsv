@@ -307,3 +307,7 @@ net.neoforged.neoforge.client.model.IQuadTransformer	mekanism.fabric_shim.client
 
 # --- Phase 4 Step 4-quadbaker: QuadBakingVertexConsumer (VertexConsumer/BakedQuad ext inject-ifaces) ---
 net.neoforged.neoforge.client.model.pipeline.QuadBakingVertexConsumer	mekanism.fabric_shim.client.model.pipeline.QuadBakingVertexConsumer
+
+# --- Phase 4 Step 5f: ClientHooks (event-posting hooks) + config screen factory extension point ---
+net.neoforged.neoforge.client.ClientHooks	mekanism.fabric_shim.client.ClientHooks
+net.neoforged.neoforge.client.gui.IConfigScreenFactory	mekanism.fabric_shim.client.gui.IConfigScreenFactory

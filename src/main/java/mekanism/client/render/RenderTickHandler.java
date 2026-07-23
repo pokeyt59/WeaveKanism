@@ -81,7 +81,7 @@ import net.minecraft.world.phys.HitResult.Type;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.client.ClientHooks;
+import mekanism.fabric_shim.client.ClientHooks;
 import mekanism.fabric_shim.client.event.ClientTickEvent;
 import mekanism.fabric_shim.client.event.RenderArmEvent;
 import mekanism.fabric_shim.client.event.RenderGuiLayerEvent;
