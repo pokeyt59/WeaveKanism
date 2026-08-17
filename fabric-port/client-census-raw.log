@@ -1,5 +1,4 @@
-Starting a Gradle Daemon, 2 busy Daemons could not be reused, use --status for details
-Calculating task graph as configuration cache cannot be reused because file 'build.gradle' has changed.
+Calculating task graph as configuration cache cannot be reused because file 'src\fabric\resources\fabric.mod.json' has changed.
 > Task :buildSrc:compileJava NO-SOURCE
 > Task :buildSrc:compileGroovy UP-TO-DATE
 > Task :buildSrc:processResources NO-SOURCE
@@ -12,18 +11,6 @@ Fabric Loom: 1.17.16
 > Task :annotation-processor:compileJava UP-TO-DATE
 
 > Task :compileJava
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:222: error: package net.neoforged.neoforge.client.model does not exist
-import net.neoforged.neoforge.client.model.SeparateTransformsModel;
-                                          ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:229: error: package SeparateTransformsModel does not exist
-    private static final FieldReflectionHelper<SeparateTransformsModel.Baked, BakedModel> SEPARATE_PERSPECTIVE_BASE_MODEL =
-                                                                      ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:231: error: package SeparateTransformsModel does not exist
-    private static final FieldReflectionHelper<SeparateTransformsModel.Baked, ImmutableMap<ItemDisplayContext, BakedModel>> SEPARATE_PERSPECTIVE_PERSPECTIVES =
-                                                                      ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistrationUtil.java:56: error: package net.neoforged.neoforge.client.model does not exist
-import net.neoforged.neoforge.client.model.DynamicFluidContainerModel;
-                                          ^
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\progress\GuiProgress.java:12: error: cannot find symbol
 import mekanism.fabric_shim.client.gui.element.progress.IProgressInfoHandler.IBooleanProgressInfoHandler;
                                                                             ^
@@ -39,11 +26,6 @@ import mekanism.fabric_shim.client.gui.element.progress.IProgressInfoHandler.IBo
                                                                             ^
   symbol:   class IBooleanProgressInfoHandler
   location: interface IProgressInfoHandler
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\MekanismClient.java:28: error: cannot find symbol
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-                                        ^
-  symbol:   class IConfigScreenFactory
-  location: package net.neoforged.neoforge.client.gui
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\MekanismModelCache.java:9: error: cannot find symbol
 import mekanism.fabric_shim.client.render.armor.MekaSuitArmor.ModuleOBJModelData;
                                                              ^
@@ -69,11 +51,6 @@ import mekanism.fabric_shim.client.render.RenderTickHandler.LazyRender;
                                                            ^
   symbol:   class LazyRender
   location: class RenderTickHandler
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\RenderTickHandler.java:84: error: cannot find symbol
-import net.neoforged.neoforge.client.ClientHooks;
-                                    ^
-  symbol:   class ClientHooks
-  location: package net.neoforged.neoforge.client
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderEnergyCube.java:10: error: cannot find symbol
 import mekanism.fabric_shim.client.render.RenderTickHandler.LazyRender;
                                                            ^
@@ -84,17 +61,6 @@ import mekanism.fabric_shim.client.render.RenderTickHandler.LazyRender;
                                                            ^
   symbol:   class LazyRender
   location: class RenderTickHandler
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\sound\SoundHandler.java:40: error: cannot find symbol
-import net.neoforged.neoforge.client.ClientHooks;
-                                    ^
-  symbol:   class ClientHooks
-  location: package net.neoforged.neoforge.client
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:230: error: package SeparateTransformsModel does not exist
-          new FieldReflectionHelper<>(SeparateTransformsModel.Baked.class, "baseModel", () -> null);
-                                                             ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:232: error: package SeparateTransformsModel does not exist
-          new FieldReflectionHelper<>(SeparateTransformsModel.Baked.class, "perspectives", ImmutableMap::of);
-                                                             ^
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:238: error: RenderTickHandler() has private access in RenderTickHandler
         NeoForge.EVENT_BUS.register(new RenderTickHandler());
                                     ^
@@ -110,70 +76,49 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:241:
   cannot find symbol
     symbol:   method guiOpening()
     location: class RenderTickHandler
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:252: error: cannot find symbol
-                ItemBlockRenderTypes.setRenderLayer(fluid.value(), RenderType.translucent());
-                                    ^
-  symbol:   method setRenderLayer(Fluid,RenderType)
-  location: class ItemBlockRenderTypes
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:295: error: cannot find symbol
-                    canFly = MekanismItems.HDPE_REINFORCED_ELYTRA.get().canElytraFly(stack, entity);
-                                                                       ^
-  symbol:   method canElytraFly(ItemStack,LivingEntity)
-  location: class ItemHDPEElytra
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:309: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:311: error: cannot find symbol
         MekanismKeyHandler.registerKeybindings(event);
                           ^
   symbol:   method registerKeybindings(RegisterKeyMappingsEvent)
   location: class MekanismKeyHandler
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:318: error: incompatible types: MekanismStatusOverlay cannot be converted to Layer
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:320: error: incompatible types: MekanismStatusOverlay cannot be converted to Layer
         event.registerAbove(VanillaGuiLayers.SELECTED_ITEM_NAME, Mekanism.rl("status_overlay"), MekanismStatusOverlay.INSTANCE);
                                                                                                                      ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:474: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:476: error: cannot find symbol
         event.register(Mekanism.rl("data_based"), DataBasedModelLoader.INSTANCE);
                                                                       ^
   symbol:   variable INSTANCE
   location: class DataBasedModelLoader
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:482: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:484: error: cannot find symbol
         MekanismModelCache.INSTANCE.setup(event);
                                    ^
   symbol:   method setup(RegisterAdditional)
   location: variable INSTANCE of type MekanismModelCache
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:495: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:497: error: cannot find symbol
         MekanismModelCache.INSTANCE.onBake(event);
                                    ^
   symbol:   method onBake(BakingCompleted)
   location: variable INSTANCE of type MekanismModelCache
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:609: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:611: error: cannot find symbol
         event.registerItem(MekaSuitArmor.HELMET, MekanismItems.MEKASUIT_HELMET);
                                         ^
   symbol:   variable HELMET
   location: class MekaSuitArmor
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:610: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:612: error: cannot find symbol
         event.registerItem(MekaSuitArmor.BODYARMOR, MekanismItems.MEKASUIT_BODYARMOR);
                                         ^
   symbol:   variable BODYARMOR
   location: class MekaSuitArmor
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:611: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:613: error: cannot find symbol
         event.registerItem(MekaSuitArmor.PANTS, MekanismItems.MEKASUIT_PANTS);
                                         ^
   symbol:   variable PANTS
   location: class MekaSuitArmor
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:612: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:614: error: cannot find symbol
         event.registerItem(MekaSuitArmor.BOOTS, MekanismItems.MEKASUIT_BOOTS);
                                         ^
   symbol:   variable BOOTS
   location: class MekaSuitArmor
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:686: error: package SeparateTransformsModel does not exist
-        if (orig instanceof SeparateTransformsModel.Baked separatePerspectiveModel) {
-                                                   ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistrationUtil.java:93: error: package DynamicFluidContainerModel does not exist
-    private static final ItemColor BUCKET_ITEM_COLOR = new DynamicFluidContainerModel.Colors();
-                                                                                     ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientTickHandler.java:178: error: cannot find symbol
-        SoundHandler.restartSounds();
-                    ^
-  symbol:   method restartSounds()
-  location: class SoundHandler
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\IFancyFontRenderer.java:41: error: cannot find symbol
         return SpecialColors.TEXT_HEADING.argb();
                             ^
@@ -199,37 +144,6 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\IFancyFontRenderer.ja
                             ^
   symbol:   variable TEXT_INACTIVE_BUTTON
   location: class SpecialColors
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\IFancyFontRenderer.java:109: error: no suitable method found for drawString(Font,FormattedCharSequence,float,float,int,boolean)
-        graphics.drawString(font, text.getVisualOrderText(), targetX, targetY, color, shadow);
-                ^
-    method GuiGraphics.drawString(Font,String,int,int,int,boolean) is not applicable
-      (argument mismatch; FormattedCharSequence cannot be converted to String)
-    method GuiGraphics.drawString(Font,FormattedCharSequence,int,int,int,boolean) is not applicable
-      (argument mismatch; possible lossy conversion from float to int)
-    method GuiGraphics.drawString(Font,Component,int,int,int,boolean) is not applicable
-      (argument mismatch; FormattedCharSequence cannot be converted to Component)
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\IFancyFontRenderer.java:274: error: no suitable method found for drawString(Font,FormattedCharSequence,float,int,int,boolean)
-                graphics.drawString(font, line, alignment.getTarget(font, x, maxX, scale * font.width(line)), startY, color, false);
-                        ^
-    method GuiGraphics.drawString(Font,String,int,int,int,boolean) is not applicable
-      (argument mismatch; FormattedCharSequence cannot be converted to String)
-    method GuiGraphics.drawString(Font,FormattedCharSequence,int,int,int,boolean) is not applicable
-      (argument mismatch; possible lossy conversion from float to int)
-    method GuiGraphics.drawString(Font,Component,int,int,int,boolean) is not applicable
-      (argument mismatch; FormattedCharSequence cannot be converted to Component)
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\IGuiWrapper.java:73: error: no suitable method found for renderTooltip(Font,List<Component>,Optional<TooltipComponent>,@org.jetbrains.annotations.NotNull ItemStack,int,int)
-            guiGraphics.renderTooltip(font(), tooltip, stack.getTooltipImage(), stack, xAxis, yAxis);
-                       ^
-    method GuiGraphics.renderTooltip(Font,ItemStack,int,int) is not applicable
-      (actual and formal argument lists differ in length)
-    method GuiGraphics.renderTooltip(Font,List<Component>,Optional<TooltipComponent>,int,int) is not applicable
-      (actual and formal argument lists differ in length)
-    method GuiGraphics.renderTooltip(Font,Component,int,int) is not applicable
-      (actual and formal argument lists differ in length)
-    method GuiGraphics.renderTooltip(Font,List<? extends FormattedCharSequence>,int,int) is not applicable
-      (actual and formal argument lists differ in length)
-    method GuiGraphics.renderTooltip(Font,List<FormattedCharSequence>,ClientTooltipPositioner,int,int) is not applicable
-      (actual and formal argument lists differ in length)
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\bar\GuiTankBar.java:31: error: type argument TankInfoProvider<STACK> is not within bounds of type-variable INFO
 public abstract class GuiTankBar<STACK> extends GuiBar<TankInfoProvider<STACK>> implements IRecipeViewerIngredientHelper {
                                                                        ^
@@ -267,26 +181,6 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\bar\GuiVerticalP
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\bar\GuiVerticalRateBar.java:17: error: incompatible types: mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler cannot be converted to mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler
         super(RATE_BAR, gui, handler, x, y, texWidth, texHeight, false);
                              ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\slot\GuiSlot.java:214: error: cannot find symbol
-            gui.getTileEntity() instanceof ISideConfiguration config && gui.getSlotUnderMouse() instanceof InventoryContainerSlot slot) {
-                                                                           ^
-  symbol:   method getSlotUnderMouse()
-  location: variable gui of type GuiMekanismTile<?,?>
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\button\SideDataButton.java:69: error: cannot find symbol
-                otherBlockItem = blockOnSide.getCloneItemStack(new BlockHitResult(otherBlockPos.getCenter().relative(globalSide.getOpposite(), 0.5), globalSide.getOpposite(), otherBlockPos, false), tileWorld, otherBlockPos, Minecraft.getInstance().player);
-                                            ^
-  symbol:   method getCloneItemStack(BlockHitResult,Level,BlockPos,LocalPlayer)
-  location: variable blockOnSide of type BlockState
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\VirtualSlotContainerScreen.java:130: error: cannot find symbol
-        boolean pickBlockButton = minecraft.options.keyPickItem.isActiveAndMatches(mouseKey);
-                                                               ^
-  symbol:   method isActiveAndMatches(Key)
-  location: variable keyPickItem of type KeyMapping
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\item\GuiDictionary.java:71: error: cannot find symbol
-            Slot slot = getSlotUnderMouse();
-                        ^
-  symbol:   method getSlotUnderMouse()
-  location: class GuiDictionary
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\text\GuiTextField.java:36: error: cannot find symbol
     public static final IntSupplier SCREEN_COLOR = SpecialColors.TEXT_SCREEN::argb;
                                                                 ^
@@ -308,11 +202,6 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\custom\GuiResize
                                                          ^
   symbol:   variable TAB_RESIZE_CONTROLS
   location: class SpecialColors
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\GuiModuleTweaker.java:59: error: cannot find symbol
-                    int slotIndex = menu.slots.get(selected).getSlotIndex();
-                                                            ^
-  symbol:   method getSlotIndex()
-  location: class Slot
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\progress\GuiProgress.java:36: error: recursive constructor invocation
         this((IProgressInfoHandler) handler, type, gui, x, y);
         ^
@@ -462,11 +351,6 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\GuiMatrixStats.java:45: 
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\GuiMatrixStats.java:57: error: incompatible types: <anonymous mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler> cannot be converted to mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler
         addRenderableWidget(new GuiVerticalRateBar(this, new IBarInfoHandler() {
                                                          ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\GuiSecurityDesk.java:129: error: cannot find symbol
-        return frequency != null && tile.ownerMatches(getMinecraft().player);
-                                                      ^
-  symbol:   method getMinecraft()
-  location: class GuiSecurityDesk
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\GuiSPS.java:49: error: incompatible types: <anonymous mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler> cannot be converted to mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler
         addRenderableWidget(new GuiDynamicHorizontalRateBar(this, new IBarInfoHandler() {
                                                                   ^
@@ -486,11 +370,6 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\item\GuiPortableTeleport
       (argument mismatch; <anonymous mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler> cannot be converted to IEnergyContainer)
     constructor GuiVerticalPowerBar.GuiVerticalPowerBar(IGuiWrapper,mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler,int,int) is not applicable
       (argument mismatch; <anonymous mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler> cannot be converted to mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler)
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\item\GuiSeismicReader.java:70: error: cannot find symbol
-            ItemStack stack = state.getCloneItemStack(new BlockHitResult(p.getCenter().relative(Direction.UP, 0.5), Direction.UP, p, false), level, p, player);
-                                   ^
-  symbol:   method getCloneItemStack(BlockHitResult,Level,BlockPos,Player)
-  location: variable state of type BlockState
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\machine\GuiAntiprotonicNucleosynthesizer.java:68: error: incompatible types: <anonymous mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler> cannot be converted to mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler
         addRenderableWidget(new GuiDynamicHorizontalRateBar(this, new IBarInfoHandler() {
                                                                   ^
@@ -533,143 +412,22 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\machine\GuiRotaryCondens
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\machine\GuiRotaryCondensentrator.java:72: error: method does not override or implement a method from a supertype
             @Override
             ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:111: error: cannot find symbol
-        addRenderableWidget(new GuiResizeControls(this, (getMinecraft().getWindow().getGuiScaledHeight() / 2) - topPos));
-                                                         ^
-  symbol:   method getMinecraft()
-  location: class GuiQIOItemViewer<CONTAINER>
-  where CONTAINER is a type-variable:
-    CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:178: error: cannot find symbol
-        getMinecraft().screen = null;
-        ^
-  symbol:   method getMinecraft()
-  location: class GuiQIOItemViewer<CONTAINER>
-  where CONTAINER is a type-variable:
-    CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:179: error: cannot find symbol
-        getMinecraft().player.containerMenu = s.getMenu();
-        ^
-  symbol:   method getMinecraft()
-  location: class GuiQIOItemViewer<CONTAINER>
-  where CONTAINER is a type-variable:
-    CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:180: error: cannot find symbol
-        getMinecraft().setScreen(s);
-        ^
-  symbol:   method getMinecraft()
-  location: class GuiQIOItemViewer<CONTAINER>
-  where CONTAINER is a type-variable:
-    CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:223: error: cannot find symbol
-            menu.pauseSorting(InputConstants.isKeyDown(getMinecraft().getWindow().getWindow(), GLFW.GLFW_KEY_RIGHT_SHIFT));
-                                                       ^
-  symbol:   method getMinecraft()
-  location: class GuiQIOItemViewer<CONTAINER>
-  where CONTAINER is a type-variable:
-    CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:225: error: cannot find symbol
-            menu.pauseSorting(InputConstants.isKeyDown(getMinecraft().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT));
-                                                       ^
-  symbol:   method getMinecraft()
-  location: class GuiQIOItemViewer<CONTAINER>
-  where CONTAINER is a type-variable:
-    CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\robit\GuiRobit.java:30: error: cannot find symbol
         addRenderableWidget(GuiSideHolder.create(this, imageWidth, 6, 106, false, false, SpecialColors.TAB_ROBIT_MENU));
                                                                                                       ^
   symbol:   variable TAB_ROBIT_MENU
   location: class SpecialColors
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\robit\GuiRobitRepair.java:69: error: cannot find symbol
-                getMinecraft().player.connection.send(new ServerboundRenameItemPacket(newText));
-                ^
-  symbol:   method getMinecraft()
-  location: class GuiRobitRepair
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\robit\GuiRobitRepair.java:91: error: cannot find symbol
-            if (maximumCost >= 40 && !getMinecraft().player.getAbilities().instabuild) {
-                                      ^
-  symbol:   method getMinecraft()
-  location: class GuiRobitRepair
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\MekanismClient.java:35: error: cannot find symbol
-        container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
-                                         ^
-  symbol:   class IConfigScreenFactory
-  location: class MekanismClient
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\MekanismClient.java:65: error: cannot find symbol
-        RenderTickHandler.clearQueued();
-                         ^
-  symbol:   method clearQueued()
-  location: class RenderTickHandler
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\baked\ExtensionOverrideBakedModel.java:53: error: method does not override or implement a method from a supertype
-        @Override
-        ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\baked\ExtensionOverrideBakedModel.java:55: error: cannot find symbol
-            return original.getOverrides();
-                           ^
-  symbol:   method getOverrides()
-  location: variable original of type ItemOverrides
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\baked\DriveArrayBakedModel.java:66: error: cannot find symbol
                 for (BakedQuad bakedQuad : MekanismModelCache.INSTANCE.QIO_DRIVES[status.ordinal()].getQuads(blockState, side, key.getRandom(), ModelData.EMPTY, renderType)) {
                                                                       ^
   symbol:   variable QIO_DRIVES
   location: variable INSTANCE of type MekanismModelCache
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:79: error: cannot find symbol
-        ModelBakery modelBakery = modelManager.getModelBakery();
-                                              ^
-  symbol:   method getModelBakery()
-  location: variable modelManager of type ModelManager
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:80: error: cannot find symbol
-        ModelResourceLocation mrl = ModelResourceLocation.standalone(rl);
-                                                         ^
-  symbol:   method standalone(ResourceLocation)
-  location: class ModelResourceLocation
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:88: error: method bake in interface ModelBaker cannot be applied to given types;
-        data.bakedModel = baker.bake(rl, BlockModelRotation.X0_Y0, Material::sprite);
-                               ^
-  required: ResourceLocation,ModelState
-  found:    ResourceLocation,BlockModelRotation,Material::sprite
-  reason: actual and formal argument lists differ in length
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:90: error: cannot find symbol
-            data.model = blockModel.customData.getCustomGeometry();
-                                   ^
-  symbol:   variable customData
-  location: variable blockModel of type BlockModel
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:102: error: cannot find symbol
-        UnbakedModel unbakedModel = baker.getTopLevelModel(rl);
-                                         ^
-  symbol:   method getTopLevelModel(ModelResourceLocation)
-  location: variable baker of type ModelBaker
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:128: error: cannot find symbol
-            this.mrl = ModelResourceLocation.standalone(rl);
-                                            ^
-  symbol:   method standalone(ResourceLocation)
-  location: class ModelResourceLocation
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:141: error: cannot find symbol
-                ModelBaker baker = Minecraft.getInstance().getModelManager().getModelBakery().new ModelBakerImpl(
-                                                                            ^
-  symbol:   method getModelBakery()
-  location: class ModelManager
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:195: error: cannot find symbol
-                model = blockModel.customData.getCustomGeometry();
-                                  ^
-  symbol:   variable customData
-  location: variable blockModel of type BlockModel
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\data\TransmitterModelData.java:10: error: class TransmitterModelData in unnamed module cannot extend a sealed class in a different package
 public sealed class TransmitterModelData permits Diversion {
                                                  ^
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\data\TransmitterModelData.java:62: error: class is not allowed to extend sealed class: TransmitterModelData (as it is not listed in its 'permits' clause)
     public static final class Diversion extends TransmitterModelData {
                         ^
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\energycube\EnergyCubeGeometry.java:53: error: cannot find symbol
-        if (!rootTransform.isIdentity()) {
-                          ^
-  symbol:   method isIdentity()
-  location: variable rootTransform of type Transformation
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\energycube\EnergyCubeGeometry.java:80: error: cannot find symbol
-                Direction direction = face.cullForDirection() == null ? null : modelState.getRotation().rotateTransform(face.cullForDirection());
-                                                                                                       ^
-  symbol:   method rotateTransform(Direction)
-  location: class Transformation
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\MekanismJavaModel.java:115: error: cannot find symbol
         RenderTickHandler.renderVertexWireFrame(lines, buffer, pose, poseNormal, pos, normal);
                          ^
@@ -730,31 +488,6 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\entity\RenderRobit.ja
                                                           ^
   symbol:   method getRobitSkin(SkinLookup)
   location: variable INSTANCE of type MekanismModelCache
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\hud\MekanismStatusOverlay.java:45: error: cannot find symbol
-                    int targetShift = Math.max(59, Math.max(minecraft.gui.leftHeight, minecraft.gui.rightHeight));
-                                                                         ^
-  symbol:   variable leftHeight
-  location: variable gui of type Gui
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\hud\MekanismStatusOverlay.java:45: error: cannot find symbol
-                    int targetShift = Math.max(59, Math.max(minecraft.gui.leftHeight, minecraft.gui.rightHeight));
-                                                                                                   ^
-  symbol:   variable rightHeight
-  location: variable gui of type Gui
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\hud\MekaSuitEnergyLevel.java:47: error: cannot find symbol
-            int y = graphics.guiHeight() - minecraft.gui.leftHeight + 2;
-                                                        ^
-  symbol:   variable leftHeight
-  location: variable gui of type Gui
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\hud\MekaSuitEnergyLevel.java:51: error: cannot find symbol
-            minecraft.gui.leftHeight += 8;
-                         ^
-  symbol:   variable leftHeight
-  location: variable gui of type Gui
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\item\block\RenderEnergyCubeItem.java:58: error: cannot find symbol
-            float ticks = Minecraft.getInstance().levelRenderer.getTicks() + MekanismRenderer.getPartialTick();
-                                                               ^
-  symbol:   method getTicks()
-  location: variable levelRenderer of type LevelRenderer
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\lib\effect\BillboardingEffectRenderer.java:31: error: cannot find symbol
         RenderTickHandler.addTransparentRenderer(new LazyRender() {
                                                      ^
@@ -825,26 +558,6 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\RenderTickHandler.jav
                  ^
   symbol:   method renderArm(PlayerModel<AbstractClientPlayer>,PoseStack,MultiBufferSource,int,int,AbstractClientPlayer,ItemStack,boolean)
   location: variable armor of type MekaSuitArmor
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\RenderTickHandler.java:404: error: cannot find symbol
-                            if (!pos.equals(blastingTarget) && !ClientHooks.onDrawHighlight(levelRenderer, info, rayTraceResult.withPosition(blastingTarget), event.getDeltaTracker(), matrix, renderer)) {
-                                                                ^
-  symbol:   variable ClientHooks
-  location: class RenderTickHandler
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\MultiblockTileEntityRenderer.java:56: error: cannot find symbol
-        return super.getRenderBoundingBox(tile);
-                    ^
-  symbol: method getRenderBoundingBox(TILE)
-  where TILE,MULTIBLOCK are type-variables:
-    TILE extends TileEntityMultiblock<MULTIBLOCK> declared in class MultiblockTileEntityRenderer
-    MULTIBLOCK extends MultiblockData declared in class MultiblockTileEntityRenderer
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderDigitalMiner.java:91: error: cannot find symbol
-        return super.getRenderBoundingBox(tile);
-                    ^
-  symbol: method getRenderBoundingBox(TileEntityDigitalMiner)
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderDimensionalStabilizer.java:181: error: cannot find symbol
-        return super.getRenderBoundingBox(tile);
-                    ^
-  symbol: method getRenderBoundingBox(TileEntityDimensionalStabilizer)
 D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderEnergyCube.java:38: error: cannot find symbol
         RenderTickHandler.addTransparentRenderer(new LazyRender() {
                                                      ^
@@ -914,36 +627,17 @@ D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderSeis
                              ^
   symbol:   method renderVertexWireFrame(@org.jetbrains.annotations.Nullable List<Line>,VertexConsumer,Matrix4f,Matrix3f)
   location: class RenderTickHandler
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderTeleporter.java:107: error: cannot find symbol
-        return frameDirection == null ? super.getRenderBoundingBox(tile) : tile.getTeleporterBoundingBox(frameDirection);
-                                             ^
-  symbol: method getRenderBoundingBox(TileEntityTeleporter)
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\transmitter\RenderTransmitterBase.java:44: error: cannot find symbol
-    private static final ModelResourceLocation MODEL_VARIANT = ModelResourceLocation.standalone(MODEL_LOCATION);
-                                                                                    ^
-  symbol:   method standalone(ResourceLocation)
-  location: class ModelResourceLocation
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\transmitter\RenderTransmitterBase.java:61: error: cannot find symbol
-            ModelBaker baker = Minecraft.getInstance().getModelManager().getModelBakery().new ModelBakerImpl(
-                                                                        ^
-  symbol:   method getModelBakery()
-  location: class ModelManager
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\transmitter\RenderTransmitterBase.java:66: error: cannot find symbol
+D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\transmitter\RenderTransmitterBase.java:67: error: cannot find symbol
             List<BakedQuad> bakedQuads = MekanismModelCache.INSTANCE.TRANSMITTER_CONTENTS.getModel()
                                                                     ^
   symbol:   variable TRANSMITTER_CONTENTS
   location: variable INSTANCE of type MekanismModelCache
-D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\sound\SoundHandler.java:338: error: cannot find symbol
-                SoundInstance s = ClientHooks.playSound(soundEngine, this);
-                                  ^
-  symbol:   variable ClientHooks
-  location: class TileTickableSound
 Note: Some input files use or override a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 Note: Some input files use unchecked or unsafe operations.
 Note: Recompile with -Xlint:unchecked for details.
 Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-200 errors
+141 errors
 
 > Task :compileJava FAILED
 
@@ -954,43 +648,6 @@ FAILURE: Build failed with an exception.
 * What went wrong:
 Execution failed for task ':compileJava' (registered by plugin class 'org.gradle.api.plugins.JavaBasePlugin').
 > Compilation failed; see the compiler output below.
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:88: error: method bake in interface ModelBaker cannot be applied to given types;
-          data.bakedModel = baker.bake(rl, BlockModelRotation.X0_Y0, Material::sprite);
-                                 ^
-    required: ResourceLocation,ModelState
-    found:    ResourceLocation,BlockModelRotation,Material::sprite
-    reason: actual and formal argument lists differ in length
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\IFancyFontRenderer.java:109: error: no suitable method found for drawString(Font,FormattedCharSequence,float,float,int,boolean)
-          graphics.drawString(font, text.getVisualOrderText(), targetX, targetY, color, shadow);
-                  ^
-      method GuiGraphics.drawString(Font,String,int,int,int,boolean) is not applicable
-        (argument mismatch; FormattedCharSequence cannot be converted to String)
-      method GuiGraphics.drawString(Font,FormattedCharSequence,int,int,int,boolean) is not applicable
-        (argument mismatch; possible lossy conversion from float to int)
-      method GuiGraphics.drawString(Font,Component,int,int,int,boolean) is not applicable
-        (argument mismatch; FormattedCharSequence cannot be converted to Component)
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\IFancyFontRenderer.java:274: error: no suitable method found for drawString(Font,FormattedCharSequence,float,int,int,boolean)
-                  graphics.drawString(font, line, alignment.getTarget(font, x, maxX, scale * font.width(line)), startY, color, false);
-                          ^
-      method GuiGraphics.drawString(Font,String,int,int,int,boolean) is not applicable
-        (argument mismatch; FormattedCharSequence cannot be converted to String)
-      method GuiGraphics.drawString(Font,FormattedCharSequence,int,int,int,boolean) is not applicable
-        (argument mismatch; possible lossy conversion from float to int)
-      method GuiGraphics.drawString(Font,Component,int,int,int,boolean) is not applicable
-        (argument mismatch; FormattedCharSequence cannot be converted to Component)
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\IGuiWrapper.java:73: error: no suitable method found for renderTooltip(Font,List<Component>,Optional<TooltipComponent>,@org.jetbrains.annotations.NotNull ItemStack,int,int)
-              guiGraphics.renderTooltip(font(), tooltip, stack.getTooltipImage(), stack, xAxis, yAxis);
-                         ^
-      method GuiGraphics.renderTooltip(Font,ItemStack,int,int) is not applicable
-        (actual and formal argument lists differ in length)
-      method GuiGraphics.renderTooltip(Font,List<Component>,Optional<TooltipComponent>,int,int) is not applicable
-        (actual and formal argument lists differ in length)
-      method GuiGraphics.renderTooltip(Font,Component,int,int) is not applicable
-        (actual and formal argument lists differ in length)
-      method GuiGraphics.renderTooltip(Font,List<? extends FormattedCharSequence>,int,int) is not applicable
-        (actual and formal argument lists differ in length)
-      method GuiGraphics.renderTooltip(Font,List<FormattedCharSequence>,ClientTooltipPositioner,int,int) is not applicable
-        (actual and formal argument lists differ in length)
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\item\GuiPortableTeleporter.java:45: error: no suitable constructor found for GuiVerticalPowerBar(GuiPortableTeleporter,<anonymous mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler>,int,int)
           addRenderableWidget(new GuiVerticalPowerBar(this, new IBarInfoHandler() {
                               ^
@@ -1026,11 +683,6 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
                                                                               ^
     symbol:   class IBooleanProgressInfoHandler
     location: interface IProgressInfoHandler
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\MekanismClient.java:28: error: cannot find symbol
-  import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
-                                          ^
-    symbol:   class IConfigScreenFactory
-    location: package net.neoforged.neoforge.client.gui
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\MekanismModelCache.java:9: error: cannot find symbol
   import mekanism.fabric_shim.client.render.armor.MekaSuitArmor.ModuleOBJModelData;
                                                                ^
@@ -1056,11 +708,6 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
                                                              ^
     symbol:   class LazyRender
     location: class RenderTickHandler
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\RenderTickHandler.java:84: error: cannot find symbol
-  import net.neoforged.neoforge.client.ClientHooks;
-                                      ^
-    symbol:   class ClientHooks
-    location: package net.neoforged.neoforge.client
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderEnergyCube.java:10: error: cannot find symbol
   import mekanism.fabric_shim.client.render.RenderTickHandler.LazyRender;
                                                              ^
@@ -1071,32 +718,27 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
                                                              ^
     symbol:   class LazyRender
     location: class RenderTickHandler
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\sound\SoundHandler.java:40: error: cannot find symbol
-  import net.neoforged.neoforge.client.ClientHooks;
-                                      ^
-    symbol:   class ClientHooks
-    location: package net.neoforged.neoforge.client
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:474: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:476: error: cannot find symbol
           event.register(Mekanism.rl("data_based"), DataBasedModelLoader.INSTANCE);
                                                                         ^
     symbol:   variable INSTANCE
     location: class DataBasedModelLoader
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:609: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:611: error: cannot find symbol
           event.registerItem(MekaSuitArmor.HELMET, MekanismItems.MEKASUIT_HELMET);
                                           ^
     symbol:   variable HELMET
     location: class MekaSuitArmor
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:610: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:612: error: cannot find symbol
           event.registerItem(MekaSuitArmor.BODYARMOR, MekanismItems.MEKASUIT_BODYARMOR);
                                           ^
     symbol:   variable BODYARMOR
     location: class MekaSuitArmor
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:611: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:613: error: cannot find symbol
           event.registerItem(MekaSuitArmor.PANTS, MekanismItems.MEKASUIT_PANTS);
                                           ^
     symbol:   variable PANTS
     location: class MekaSuitArmor
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:612: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:614: error: cannot find symbol
           event.registerItem(MekaSuitArmor.BOOTS, MekanismItems.MEKASUIT_BOOTS);
                                           ^
     symbol:   variable BOOTS
@@ -1296,26 +938,11 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
                                                                                                         ^
     symbol:   variable TAB_ROBIT_MENU
     location: class SpecialColors
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\MekanismClient.java:35: error: cannot find symbol
-          container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
-                                           ^
-    symbol:   class IConfigScreenFactory
-    location: class MekanismClient
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\baked\DriveArrayBakedModel.java:66: error: cannot find symbol
                   for (BakedQuad bakedQuad : MekanismModelCache.INSTANCE.QIO_DRIVES[status.ordinal()].getQuads(blockState, side, key.getRandom(), ModelData.EMPTY, renderType)) {
                                                                         ^
     symbol:   variable QIO_DRIVES
     location: variable INSTANCE of type MekanismModelCache
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:90: error: cannot find symbol
-              data.model = blockModel.customData.getCustomGeometry();
-                                     ^
-    symbol:   variable customData
-    location: variable blockModel of type BlockModel
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:195: error: cannot find symbol
-                  model = blockModel.customData.getCustomGeometry();
-                                    ^
-    symbol:   variable customData
-    location: variable blockModel of type BlockModel
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\MekanismModelCache.java:94: error: cannot find symbol
           ModuleOBJModelData data = register(rl, ModuleOBJModelData::new);
           ^
@@ -1356,36 +983,11 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
                                                            ^
     symbol:   variable MEKASUIT
     location: variable INSTANCE of type MekanismModelCache
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\hud\MekanismStatusOverlay.java:45: error: cannot find symbol
-                      int targetShift = Math.max(59, Math.max(minecraft.gui.leftHeight, minecraft.gui.rightHeight));
-                                                                           ^
-    symbol:   variable leftHeight
-    location: variable gui of type Gui
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\hud\MekanismStatusOverlay.java:45: error: cannot find symbol
-                      int targetShift = Math.max(59, Math.max(minecraft.gui.leftHeight, minecraft.gui.rightHeight));
-                                                                                                     ^
-    symbol:   variable rightHeight
-    location: variable gui of type Gui
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\hud\MekaSuitEnergyLevel.java:47: error: cannot find symbol
-              int y = graphics.guiHeight() - minecraft.gui.leftHeight + 2;
-                                                          ^
-    symbol:   variable leftHeight
-    location: variable gui of type Gui
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\hud\MekaSuitEnergyLevel.java:51: error: cannot find symbol
-              minecraft.gui.leftHeight += 8;
-                           ^
-    symbol:   variable leftHeight
-    location: variable gui of type Gui
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\lib\effect\BillboardingEffectRenderer.java:31: error: cannot find symbol
           RenderTickHandler.addTransparentRenderer(new LazyRender() {
                                                        ^
     symbol:   class LazyRender
     location: class BillboardingEffectRenderer
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\RenderTickHandler.java:404: error: cannot find symbol
-                              if (!pos.equals(blastingTarget) && !ClientHooks.onDrawHighlight(levelRenderer, info, rayTraceResult.withPosition(blastingTarget), event.getDeltaTracker(), matrix, renderer)) {
-                                                                  ^
-    symbol:   variable ClientHooks
-    location: class RenderTickHandler
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderEnergyCube.java:38: error: cannot find symbol
           RenderTickHandler.addTransparentRenderer(new LazyRender() {
                                                        ^
@@ -1421,16 +1023,11 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
                                                                       ^
     symbol:   variable VIBRATOR_SHAFT
     location: variable INSTANCE of type MekanismModelCache
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\transmitter\RenderTransmitterBase.java:66: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\transmitter\RenderTransmitterBase.java:67: error: cannot find symbol
               List<BakedQuad> bakedQuads = MekanismModelCache.INSTANCE.TRANSMITTER_CONTENTS.getModel()
                                                                       ^
     symbol:   variable TRANSMITTER_CONTENTS
     location: variable INSTANCE of type MekanismModelCache
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\sound\SoundHandler.java:338: error: cannot find symbol
-                  SoundInstance s = ClientHooks.playSound(soundEngine, this);
-                                    ^
-    symbol:   variable ClientHooks
-    location: class TileTickableSound
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:238: error: RenderTickHandler() has private access in RenderTickHandler
           NeoForge.EVENT_BUS.register(new RenderTickHandler());
                                       ^
@@ -1448,9 +1045,6 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\machine\GuiRotaryCondensentrator.java:72: error: method does not override or implement a method from a supertype
               @Override
               ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\baked\ExtensionOverrideBakedModel.java:53: error: method does not override or implement a method from a supertype
-          @Override
-          ^
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\lib\effect\BillboardingEffectRenderer.java:32: error: method does not override or implement a method from a supertype
               @Override
               ^
@@ -1497,173 +1091,26 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
       STACK extends Object declared in class GuiTankBar
       INFO extends IBarInfoHandler declared in class GuiBar
   Note: Some input files use unchecked or unsafe operations.
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:252: error: cannot find symbol
-                  ItemBlockRenderTypes.setRenderLayer(fluid.value(), RenderType.translucent());
-                                      ^
-    symbol:   method setRenderLayer(Fluid,RenderType)
-    location: class ItemBlockRenderTypes
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:295: error: cannot find symbol
-                      canFly = MekanismItems.HDPE_REINFORCED_ELYTRA.get().canElytraFly(stack, entity);
-                                                                         ^
-    symbol:   method canElytraFly(ItemStack,LivingEntity)
-    location: class ItemHDPEElytra
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:309: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:311: error: cannot find symbol
           MekanismKeyHandler.registerKeybindings(event);
                             ^
     symbol:   method registerKeybindings(RegisterKeyMappingsEvent)
     location: class MekanismKeyHandler
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:482: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:484: error: cannot find symbol
           MekanismModelCache.INSTANCE.setup(event);
                                      ^
     symbol:   method setup(RegisterAdditional)
     location: variable INSTANCE of type MekanismModelCache
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:495: error: cannot find symbol
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:497: error: cannot find symbol
           MekanismModelCache.INSTANCE.onBake(event);
                                      ^
     symbol:   method onBake(BakingCompleted)
     location: variable INSTANCE of type MekanismModelCache
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientTickHandler.java:178: error: cannot find symbol
-          SoundHandler.restartSounds();
-                      ^
-    symbol:   method restartSounds()
-    location: class SoundHandler
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\slot\GuiSlot.java:214: error: cannot find symbol
-              gui.getTileEntity() instanceof ISideConfiguration config && gui.getSlotUnderMouse() instanceof InventoryContainerSlot slot) {
-                                                                             ^
-    symbol:   method getSlotUnderMouse()
-    location: variable gui of type GuiMekanismTile<?,?>
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\button\SideDataButton.java:69: error: cannot find symbol
-                  otherBlockItem = blockOnSide.getCloneItemStack(new BlockHitResult(otherBlockPos.getCenter().relative(globalSide.getOpposite(), 0.5), globalSide.getOpposite(), otherBlockPos, false), tileWorld, otherBlockPos, Minecraft.getInstance().player);
-                                              ^
-    symbol:   method getCloneItemStack(BlockHitResult,Level,BlockPos,LocalPlayer)
-    location: variable blockOnSide of type BlockState
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\VirtualSlotContainerScreen.java:130: error: cannot find symbol
-          boolean pickBlockButton = minecraft.options.keyPickItem.isActiveAndMatches(mouseKey);
-                                                                 ^
-    symbol:   method isActiveAndMatches(Key)
-    location: variable keyPickItem of type KeyMapping
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\item\GuiDictionary.java:71: error: cannot find symbol
-              Slot slot = getSlotUnderMouse();
-                          ^
-    symbol:   method getSlotUnderMouse()
-    location: class GuiDictionary
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\GuiModuleTweaker.java:59: error: cannot find symbol
-                      int slotIndex = menu.slots.get(selected).getSlotIndex();
-                                                              ^
-    symbol:   method getSlotIndex()
-    location: class Slot
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\scroll\GuiRobitSkinSelectScroll.java:201: error: cannot find symbol
           BakedModel model = MekanismModelCache.INSTANCE.getRobitSkin(skinLookup);
                                                         ^
     symbol:   method getRobitSkin(SkinLookup)
     location: variable INSTANCE of type MekanismModelCache
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\GuiSecurityDesk.java:129: error: cannot find symbol
-          return frequency != null && tile.ownerMatches(getMinecraft().player);
-                                                        ^
-    symbol:   method getMinecraft()
-    location: class GuiSecurityDesk
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\item\GuiSeismicReader.java:70: error: cannot find symbol
-              ItemStack stack = state.getCloneItemStack(new BlockHitResult(p.getCenter().relative(Direction.UP, 0.5), Direction.UP, p, false), level, p, player);
-                                     ^
-    symbol:   method getCloneItemStack(BlockHitResult,Level,BlockPos,Player)
-    location: variable state of type BlockState
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:111: error: cannot find symbol
-          addRenderableWidget(new GuiResizeControls(this, (getMinecraft().getWindow().getGuiScaledHeight() / 2) - topPos));
-                                                           ^
-    symbol:   method getMinecraft()
-    location: class GuiQIOItemViewer<CONTAINER>
-    where CONTAINER is a type-variable:
-      CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:178: error: cannot find symbol
-          getMinecraft().screen = null;
-          ^
-    symbol:   method getMinecraft()
-    location: class GuiQIOItemViewer<CONTAINER>
-    where CONTAINER is a type-variable:
-      CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:179: error: cannot find symbol
-          getMinecraft().player.containerMenu = s.getMenu();
-          ^
-    symbol:   method getMinecraft()
-    location: class GuiQIOItemViewer<CONTAINER>
-    where CONTAINER is a type-variable:
-      CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:180: error: cannot find symbol
-          getMinecraft().setScreen(s);
-          ^
-    symbol:   method getMinecraft()
-    location: class GuiQIOItemViewer<CONTAINER>
-    where CONTAINER is a type-variable:
-      CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:223: error: cannot find symbol
-              menu.pauseSorting(InputConstants.isKeyDown(getMinecraft().getWindow().getWindow(), GLFW.GLFW_KEY_RIGHT_SHIFT));
-                                                         ^
-    symbol:   method getMinecraft()
-    location: class GuiQIOItemViewer<CONTAINER>
-    where CONTAINER is a type-variable:
-      CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\qio\GuiQIOItemViewer.java:225: error: cannot find symbol
-              menu.pauseSorting(InputConstants.isKeyDown(getMinecraft().getWindow().getWindow(), GLFW.GLFW_KEY_LEFT_SHIFT));
-                                                         ^
-    symbol:   method getMinecraft()
-    location: class GuiQIOItemViewer<CONTAINER>
-    where CONTAINER is a type-variable:
-      CONTAINER extends QIOItemViewerContainer declared in class GuiQIOItemViewer
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\robit\GuiRobitRepair.java:69: error: cannot find symbol
-                  getMinecraft().player.connection.send(new ServerboundRenameItemPacket(newText));
-                  ^
-    symbol:   method getMinecraft()
-    location: class GuiRobitRepair
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\robit\GuiRobitRepair.java:91: error: cannot find symbol
-              if (maximumCost >= 40 && !getMinecraft().player.getAbilities().instabuild) {
-                                        ^
-    symbol:   method getMinecraft()
-    location: class GuiRobitRepair
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\MekanismClient.java:65: error: cannot find symbol
-          RenderTickHandler.clearQueued();
-                           ^
-    symbol:   method clearQueued()
-    location: class RenderTickHandler
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\baked\ExtensionOverrideBakedModel.java:55: error: cannot find symbol
-              return original.getOverrides();
-                             ^
-    symbol:   method getOverrides()
-    location: variable original of type ItemOverrides
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:79: error: cannot find symbol
-          ModelBakery modelBakery = modelManager.getModelBakery();
-                                                ^
-    symbol:   method getModelBakery()
-    location: variable modelManager of type ModelManager
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:80: error: cannot find symbol
-          ModelResourceLocation mrl = ModelResourceLocation.standalone(rl);
-                                                           ^
-    symbol:   method standalone(ResourceLocation)
-    location: class ModelResourceLocation
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:102: error: cannot find symbol
-          UnbakedModel unbakedModel = baker.getTopLevelModel(rl);
-                                           ^
-    symbol:   method getTopLevelModel(ModelResourceLocation)
-    location: variable baker of type ModelBaker
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:128: error: cannot find symbol
-              this.mrl = ModelResourceLocation.standalone(rl);
-                                              ^
-    symbol:   method standalone(ResourceLocation)
-    location: class ModelResourceLocation
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\BaseModelCache.java:141: error: cannot find symbol
-                  ModelBaker baker = Minecraft.getInstance().getModelManager().getModelBakery().new ModelBakerImpl(
-                                                                              ^
-    symbol:   method getModelBakery()
-    location: class ModelManager
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\energycube\EnergyCubeGeometry.java:53: error: cannot find symbol
-          if (!rootTransform.isIdentity()) {
-                            ^
-    symbol:   method isIdentity()
-    location: variable rootTransform of type Transformation
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\energycube\EnergyCubeGeometry.java:80: error: cannot find symbol
-                  Direction direction = face.cullForDirection() == null ? null : modelState.getRotation().rotateTransform(face.cullForDirection());
-                                                                                                         ^
-    symbol:   method rotateTransform(Direction)
-    location: class Transformation
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\model\MekanismJavaModel.java:115: error: cannot find symbol
           RenderTickHandler.renderVertexWireFrame(lines, buffer, pose, poseNormal, pos, normal);
                            ^
@@ -1684,11 +1131,6 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
                                                             ^
     symbol:   method getRobitSkin(SkinLookup)
     location: variable INSTANCE of type MekanismModelCache
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\item\block\RenderEnergyCubeItem.java:58: error: cannot find symbol
-              float ticks = Minecraft.getInstance().levelRenderer.getTicks() + MekanismRenderer.getPartialTick();
-                                                                 ^
-    symbol:   method getTicks()
-    location: variable levelRenderer of type LevelRenderer
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\obj\TransmitterModelConfiguration.java:79: error: cannot find symbol
           boolean hasA = modelData.getConnectionType(a) != ConnectionType.NONE;
                                   ^
@@ -1749,43 +1191,14 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
                                ^
     symbol:   method renderVertexWireFrame(@org.jetbrains.annotations.Nullable List<Line>,VertexConsumer,Matrix4f,Matrix3f)
     location: class RenderTickHandler
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\transmitter\RenderTransmitterBase.java:44: error: cannot find symbol
-      private static final ModelResourceLocation MODEL_VARIANT = ModelResourceLocation.standalone(MODEL_LOCATION);
-                                                                                      ^
-    symbol:   method standalone(ResourceLocation)
-    location: class ModelResourceLocation
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\transmitter\RenderTransmitterBase.java:61: error: cannot find symbol
-              ModelBaker baker = Minecraft.getInstance().getModelManager().getModelBakery().new ModelBakerImpl(
-                                                                          ^
-    symbol:   method getModelBakery()
-    location: class ModelManager
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\tab\GuiConfigTypeTab.java:41: error: reference to color is ambiguous
           MekanismRenderer.color(guiGraphics, switch (transmission) {
                           ^
     both method color(GuiGraphics,@org.jetbrains.annotations.NotNull ChemicalStack) in MekanismRenderer and method color(GuiGraphics,@org.jetbrains.annotations.Nullable SupportsColorMap) in MekanismRenderer match
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\MultiblockTileEntityRenderer.java:56: error: cannot find symbol
-          return super.getRenderBoundingBox(tile);
-                      ^
-    symbol: method getRenderBoundingBox(TILE)
-    where TILE,MULTIBLOCK are type-variables:
-      TILE extends TileEntityMultiblock<MULTIBLOCK> declared in class MultiblockTileEntityRenderer
-      MULTIBLOCK extends MultiblockData declared in class MultiblockTileEntityRenderer
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderDigitalMiner.java:91: error: cannot find symbol
-          return super.getRenderBoundingBox(tile);
-                      ^
-    symbol: method getRenderBoundingBox(TileEntityDigitalMiner)
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderDimensionalStabilizer.java:181: error: cannot find symbol
-          return super.getRenderBoundingBox(tile);
-                      ^
-    symbol: method getRenderBoundingBox(TileEntityDimensionalStabilizer)
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\render\tileentity\RenderTeleporter.java:107: error: cannot find symbol
-          return frameDirection == null ? super.getRenderBoundingBox(tile) : tile.getTeleporterBoundingBox(frameDirection);
-                                               ^
-    symbol: method getRenderBoundingBox(TileEntityTeleporter)
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\progress\GuiProgress.java:36: error: recursive constructor invocation
           this((IProgressInfoHandler) handler, type, gui, x, y);
           ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:318: error: incompatible types: MekanismStatusOverlay cannot be converted to Layer
+  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:320: error: incompatible types: MekanismStatusOverlay cannot be converted to Layer
           event.registerAbove(VanillaGuiLayers.SELECTED_ITEM_NAME, Mekanism.rl("status_overlay"), MekanismStatusOverlay.INSTANCE);
                                                                                                                        ^
   D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\gui\element\bar\GuiDigitalBar.java:17: error: incompatible types: mekanism.client.gui.element.bar.GuiBar.IBarInfoHandler cannot be converted to mekanism.fabric_shim.client.gui.element.bar.IBarInfoHandler
@@ -1861,36 +1274,12 @@ Execution failed for task ':compileJava' (registered by plugin class 'org.gradle
   public sealed class TransmitterModelData permits Diversion {
                                                    ^
   Note: Some messages have been simplified; recompile with -Xdiags:verbose to get full output
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:222: error: package net.neoforged.neoforge.client.model does not exist
-  import net.neoforged.neoforge.client.model.SeparateTransformsModel;
-                                            ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:229: error: package SeparateTransformsModel does not exist
-      private static final FieldReflectionHelper<SeparateTransformsModel.Baked, BakedModel> SEPARATE_PERSPECTIVE_BASE_MODEL =
-                                                                        ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:231: error: package SeparateTransformsModel does not exist
-      private static final FieldReflectionHelper<SeparateTransformsModel.Baked, ImmutableMap<ItemDisplayContext, BakedModel>> SEPARATE_PERSPECTIVE_PERSPECTIVES =
-                                                                        ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistrationUtil.java:56: error: package net.neoforged.neoforge.client.model does not exist
-  import net.neoforged.neoforge.client.model.DynamicFluidContainerModel;
-                                            ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:230: error: package SeparateTransformsModel does not exist
-            new FieldReflectionHelper<>(SeparateTransformsModel.Baked.class, "baseModel", () -> null);
-                                                               ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:232: error: package SeparateTransformsModel does not exist
-            new FieldReflectionHelper<>(SeparateTransformsModel.Baked.class, "perspectives", ImmutableMap::of);
-                                                               ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistration.java:686: error: package SeparateTransformsModel does not exist
-          if (orig instanceof SeparateTransformsModel.Baked separatePerspectiveModel) {
-                                                     ^
-  D:\mc\MODEVS\Mekanism\src\main\java\mekanism\client\ClientRegistrationUtil.java:93: error: package DynamicFluidContainerModel does not exist
-      private static final ItemColor BUCKET_ITEM_COLOR = new DynamicFluidContainerModel.Colors();
-                                                                                       ^
-  200 errors
+  141 errors
 
 * Try:
 > Check your code and dependencies to fix the compilation error(s)
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
 
-BUILD FAILED in 35s
+BUILD FAILED in 28s
 4 actionable tasks: 1 executed, 3 up-to-date
 Configuration cache entry stored.

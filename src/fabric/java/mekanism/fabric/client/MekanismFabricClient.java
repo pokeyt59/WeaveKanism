@@ -48,6 +48,8 @@ public class MekanismFabricClient implements ClientModInitializer {
         //Client @Mod construction (registers the config-screen extension point on the shared container)
         new MekanismClient(MekanismFabric.modContainer);
         MekanismClientEventSubscribers.registerClient();
+        //Game-bus client events over Fabric callbacks (tick/login/entity-join/world-render/screen)
+        mekanism.fabric_shim.internal.ShimClientGameplayEvents.init();
 
         //Client mod-bus registration events. The shims apply straight into the Fabric/vanilla
         // registries (or Hooks stores read at runtime), so posting order only has to respect

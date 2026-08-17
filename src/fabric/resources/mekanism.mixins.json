@@ -34,15 +34,23 @@
   "client": [
     "BakedModelMixin",
     "BakedQuadMixin",
+    "ClientPacketListenerMixin",
     "EntityRenderDispatcherMixin",
+    "FogRendererMixin",
     "GameRendererMixin",
     "GuiGraphicsMixin",
+    "GuiMixin",
+    "ItemInHandRendererMixin",
     "ItemOverridesMixin",
     "KeyMappingMixin",
     "LevelRendererMixin",
+    "LivingEntityRendererMixin",
     "MinecraftMixin",
     "ModelBakerMixin",
     "ModelManagerMixin",
+    "MouseHandlerMixin",
+    "SoundEngineMixin",
+    "TextureAtlasMixin",
     "VertexConsumerMixin"
   ],
   "injectors": {

@@ -137,3 +137,5 @@ accessible class net/minecraft/client/resources/model/ModelManager$ReloadState
 # MekItemOverridesExt/MekLevelRendererExt inject defaults read these private members (Neo getters).
 accessible field net/minecraft/client/renderer/block/model/ItemOverrides overrides [Lnet/minecraft/client/renderer/block/model/ItemOverrides$BakedOverride;
 accessible field net/minecraft/client/renderer/LevelRenderer ticks I
+# FogRendererMixin names the package-private fog-planes holder in its RenderFog injection.
+accessible class net/minecraft/client/renderer/FogRenderer$FogData
